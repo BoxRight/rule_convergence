@@ -1,0 +1,65 @@
+{
+  "assets": [1, 2, 3, 7, 9, 10, 11, 12, 13],
+  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "7": "causa_generadora_probada", "9": "posesion_temporal", "10": "allanamiento_demandado", "11": "posesion_pacifico_continuo_publico", "12": "prueba_independiente", "13": "proteccion_terceros"},
+  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "allanamiento_demandado(demandado:make acquiescence/admission to the claim:demandante)", "subject": "demandado", "action": "make acquiescence/admission to the claim", "object": "demandante"}, "11": {"asset_name": "posesion_pacifico_continuo_publico(demandante:possess peacefully, continuously, and publicly:tercero)", "subject": "demandante", "action": "possess peacefully, continuously, and publicly", "object": "tercero"}, "12": {"asset_name": "prueba_independiente(demandante:prove independently without relying on acquiescence:tribunal)", "subject": "demandante", "action": "prove independently without relying on acquiescence", "object": "tribunal"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}},
+  "clauses": [
+    {
+      "name": "tesis2021398_exclusividad_fe",
+      "asset_ids": [1, 2, 3],
+      "assignments": [
+        [-1, -2, -3],
+        [-1, -2, 3],
+        [-1, 2, -3],
+        [-1, 2, 3],
+        [1, -2, 3],
+        [1, 2, -3]
+      ]
+    },
+    {
+      "name": "tesis2021398_principio_fundamental",
+      "asset_ids": [2, 7, 10, 11],
+      "assignments": [
+        [-2, -7, -10, -11],
+        [-2, -7, -10, 11],
+        [-2, 7, -10, -11],
+        [-2, 7, -10, 11],
+        [2, -7, -10, -11],
+        [2, -7, -10, 11],
+        [2, 7, -10, -11],
+        [2, 7, -10, 11],
+        [2, 7, 10, -11]
+      ]
+    },
+    {
+      "name": "tesis2021398_prueba_independiente",
+      "asset_ids": [1, 12],
+      "assignments": [
+        [-1, -12],
+        [-1, 12],
+        [1, 12]
+      ]
+    },
+    {
+      "name": "tesis2021398_proteccion_terceros",
+      "asset_ids": [10, 13],
+      "assignments": [
+        [-10, -13],
+        [-10, 13],
+        [10, -13]
+      ]
+    },
+    {
+      "name": "tesis2021398_requisito_temporal",
+      "asset_ids": [1, 2, 9],
+      "assignments": [
+        [-1, -2, -9],
+        [-1, -2, 9],
+        [-1, 2, -9],
+        [-1, 2, 9],
+        [1, -2, -9],
+        [1, -2, 9],
+        [1, 2, 9]
+      ]
+    }
+  ]
+}

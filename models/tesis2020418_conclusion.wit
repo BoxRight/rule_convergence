@@ -1,0 +1,83 @@
+// ==========================================
+// LEGAL CONCLUSION: ADVERSE POSSESSION AND UNREGISTERED CONTRACTS
+// Abstract principle from Mexican Supreme Court Tesis 2020418
+// ==========================================
+
+// ==========================================
+// CORE LEGAL CONCEPTS
+// ==========================================
+
+// Legal objects
+object inmueble = "real property subject to adverse possession claim", immovable;
+object contrato_compraventa = "sale contract executed in public deed", movable;
+
+// Legal services  
+service posesion_legal = "legal possession with ownership character", positive;
+service inscripcion_registral = "registration in public property registry", positive;
+service oponibilidad = "legal opposability against third parties", positive;
+
+// ==========================================
+// LEGAL SUBJECTS
+// ==========================================
+
+subject demandante_prescripcion = "adverse possession claimant";
+subject titular_registral = "registered property owner";
+subject registro_publico = "Public Property Registry";
+
+// ==========================================
+// FUNDAMENTAL ACTIONS
+// ==========================================
+
+action poseer_como_propietario = "possess property with ownership character", posesion_legal;
+action estar_inscrito_registro = "be registered in public property registry", inscripcion_registral;
+action celebrar_contrato_no_inscrito = "execute unregistered sale contract", contrato_compraventa;
+action ser_oponible_terceros = "be legally opposable to third parties", oponibilidad;
+action ejercer_prescripcion_positiva = "exercise adverse possession action", posesion_legal;
+
+// ==========================================
+// CORE LEGAL ASSETS
+// ==========================================
+
+// Registered ownership (legal protection)
+asset titularidad_registral = titular_registral, estar_inscrito_registro, registro_publico;
+
+// Unregistered contract (legal weakness)
+asset contrato_no_inscrito = demandante_prescripcion, celebrar_contrato_no_inscrito, titular_registral;
+
+// Adverse possession claim (legal action)
+asset demanda_prescripcion = demandante_prescripcion, ejercer_prescripcion_positiva, titular_registral;
+
+// Opposability requirement (legal standard)
+asset oponibilidad_terceros = demandante_prescripcion, ser_oponible_terceros, titular_registral;
+
+// ==========================================
+// FUNDAMENTAL LEGAL PRINCIPLE
+// ==========================================
+
+// Core conclusion: Unregistered contracts cannot establish adverse possession against registered owners
+clause principio_fundamental = oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion));
+
+// Legal protection: Registration creates opposability
+clause proteccion_registral = oblig(titularidad_registral) IMPLIES claim(oponibilidad_terceros);
+
+// Legal limitation: Non-registration prevents opposability  
+clause limitacion_no_inscripcion = oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros));
+
+// Logical consequence: No opposability means no adverse possession basis
+clause consecuencia_logica = not(oblig(oponibilidad_terceros)) IMPLIES not(claim(demanda_prescripcion));
+
+// ==========================================
+// ABSTRACT LEGAL STRUCTURE
+// ==========================================
+
+// The fundamental legal protection system
+asset sistema_proteccion_registral = compensation(titularidad_registral, oponibilidad_terceros);
+
+// The legal barrier for unregistered claims
+asset barrera_contratos_no_inscritos = join(contrato_no_inscrito, demanda_prescripcion);
+
+// ==========================================
+// VALIDATION
+// ==========================================
+
+asset conclusion_legal_valida = global(); 

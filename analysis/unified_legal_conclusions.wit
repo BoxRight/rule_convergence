@@ -1,0 +1,416 @@
+// ==========================================
+// UNIFIED LEGAL CONCLUSIONS MODEL
+// Mexican Supreme Court Thesis Analysis
+// Reusable assets with thesis-specific conclusions
+// ==========================================
+
+// ==========================================
+// SHARED FOUNDATION - CORE LEGAL CONCEPTS
+// These assets are reused across all thesis models
+// ==========================================
+
+// ==========================================
+// UNIVERSAL LEGAL OBJECTS
+// ==========================================
+
+object inmueble = "real property subject to legal proceedings", immovable;
+object contrato_compraventa = "sale contract executed in public deed", movable;
+object contrato_arrendamiento = "lease contract", movable;
+object titulo_propiedad = "property title document", movable;
+object bien_mueble = "movable property", movable;
+object derecho_real = "real property right", immovable;
+
+// ==========================================
+// UNIVERSAL LEGAL SERVICES
+// ==========================================
+
+service posesion_legal = "legal possession with ownership character", positive;
+service inscripcion_registral = "registration in public property registry", positive;
+service oponibilidad = "legal opposability against third parties", positive;
+service cumplimiento_contractual = "contractual compliance", positive;
+service proteccion_legal = "legal protection", positive;
+service ejercicio_derecho = "exercise of legal right", positive;
+service buena_fe = "good faith in legal proceedings", positive;
+service prescripcion_legal = "legal prescription/limitation", positive;
+
+// ==========================================
+// UNIVERSAL LEGAL SUBJECTS
+// ==========================================
+
+subject demandante = "legal claimant/plaintiff";
+subject demandado = "legal defendant";
+subject titular_registral = "registered property owner";
+subject tercero = "third party";
+subject autoridad_registral = "registry authority";
+subject tribunal = "court/tribunal";
+subject notario = "notary public";
+
+// ==========================================
+// UNIVERSAL LEGAL ACTIONS
+// ==========================================
+
+action poseer_como_propietario = "possess property with ownership character", posesion_legal;
+action estar_inscrito_registro = "be registered in public property registry", inscripcion_registral;
+action celebrar_contrato = "execute contract", cumplimiento_contractual;
+action ser_oponible_terceros = "be legally opposable to third parties", oponibilidad;
+action ejercer_prescripcion_positiva = "exercise adverse possession action", prescripcion_legal;
+action ejercer_derecho_legal = "exercise legal right", ejercicio_derecho;
+action actuar_buena_fe = "act in good faith", buena_fe;
+action actuar_mala_fe = "act in bad faith", buena_fe;
+action obtener_proteccion_legal = "obtain legal protection", proteccion_legal;
+action cumplir_requisitos_legales = "comply with legal requirements", cumplimiento_contractual;
+action demostrar_causa_generadora = "prove the generating cause of possession", posesion_legal;
+action poseer_tiempo_determinado = "possess property for specified time period", posesion_legal;
+
+// ==========================================
+// UNIVERSAL LEGAL ASSETS
+// (These can be referenced in any thesis-specific section)
+// ==========================================
+
+// Core legal relationships
+asset titularidad_registral = titular_registral, estar_inscrito_registro, autoridad_registral;
+asset contrato_no_inscrito = demandante, celebrar_contrato, tercero;
+asset demanda_prescripcion = demandante, ejercer_prescripcion_positiva, titular_registral;
+asset oponibilidad_terceros = demandante, ser_oponible_terceros, titular_registral;
+asset proteccion_registral = titular_registral, obtener_proteccion_legal, autoridad_registral;
+asset ejercicio_buena_fe = demandante, actuar_buena_fe, tribunal;
+asset ejercicio_mala_fe = demandante, actuar_mala_fe, tribunal;
+asset posesion_como_propietario = demandante, poseer_como_propietario, titular_registral;
+asset causa_generadora_probada = demandante, demostrar_causa_generadora, tribunal;
+asset posesion_temporal = demandante, poseer_tiempo_determinado, titular_registral;
+
+// Universal legal protection patterns
+asset sistema_proteccion_registral = compensation(titularidad_registral, oponibilidad_terceros);
+asset barrera_contratos_no_inscritos = join(contrato_no_inscrito, demanda_prescripcion);
+
+// ==========================================
+// THESIS 2020418: ADVERSE POSSESSION AND UNREGISTERED CONTRACTS
+// ==========================================
+
+// Fundamental legal constraint: Possession is either good faith XOR bad faith (mutually exclusive)
+clause tesis2020418_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Unregistered contracts cannot establish adverse possession against registered owners
+clause tesis2020418_principio_fundamental = oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion));
+
+// Supporting legal logic
+clause tesis2020418_proteccion_registral = oblig(titularidad_registral) IMPLIES claim(oponibilidad_terceros);
+clause tesis2020418_limitacion_no_inscripcion = oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros));
+clause tesis2020418_consecuencia_logica = not(oblig(oponibilidad_terceros)) IMPLIES not(claim(demanda_prescripcion));
+
+// Thesis validation
+asset tesis2020418_valida = global();
+
+// ==========================================
+
+// ==========================================
+// THESIS 2021246: Bad Faith Adverse Possession - Proof of Generating Cause
+// ==========================================
+
+// Fundamental legal constraint: Possession is either good faith XOR bad faith (mutually exclusive)
+clause tesis2021246_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Bad faith possessors must prove generating cause even without just title
+clause tesis2021246_principio_fundamental = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada);
+
+// Supporting legal logic: Bad faith possession requires demonstrating ownership character
+clause tesis2021246_causa_generadora = oblig(causa_generadora_probada) IMPLIES oblig(posesion_como_propietario);
+
+// Temporal requirement: Bad faith possession requires extended time period (10 years)
+clause tesis2021246_plazo_mala_fe = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal);
+
+// Elevated proof standard: Bad faith requires higher burden of proof than good faith
+clause tesis2021246_estandar_probatorio = oblig(ejercicio_mala_fe) IMPLIES oblig(causa_generadora_probada);
+
+// Thesis validation
+asset tesis2021246_valida = global();
+
+// ==========================================
+// THESIS 2021398: Usucapion - Limits of Allanamiento in Proving Possession Qualities
+// ==========================================
+
+// Additional actions for this thesis
+action realizar_allanamiento = "make acquiescence/admission to the claim", cumplimiento_contractual;
+action poseer_pacifico_continuo_publico = "possess peacefully, continuously, and publicly", posesion_legal;
+action probar_independientemente = "prove independently without relying on acquiescence", cumplimiento_contractual;
+action afectar_terceros = "affect third parties or public interest", proteccion_legal;
+
+// Additional assets for allanamiento limitations
+asset allanamiento_demandado = demandado, realizar_allanamiento, demandante;
+asset posesion_pacifico_continuo_publico = demandante, poseer_pacifico_continuo_publico, tercero;
+asset prueba_independiente = demandante, probar_independientemente, tribunal;
+asset proteccion_terceros = tercero, afectar_terceros, tribunal;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2021398_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Allanamiento can prove good faith and transmission, but NOT peaceful/continuous/public possession
+clause tesis2021398_principio_fundamental = oblig(allanamiento_demandado) IMPLIES (oblig(ejercicio_buena_fe) AND oblig(causa_generadora_probada)) AND not(oblig(posesion_pacifico_continuo_publico));
+
+// Limitation rule: Peaceful, continuous, public possession must be proven independently
+clause tesis2021398_prueba_independiente = claim(demanda_prescripcion) IMPLIES oblig(prueba_independiente);
+
+// Protection rule: Qualities affecting third parties cannot be established by allanamiento alone
+clause tesis2021398_proteccion_terceros = oblig(proteccion_terceros) IMPLIES not(oblig(allanamiento_demandado));
+
+// Temporal requirement: Good faith usucapion requires 5+ years with independent proof
+clause tesis2021398_requisito_temporal = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal);
+
+// Thesis validation
+asset tesis2021398_valida = global();
+
+// ==========================================
+// THESIS 2021537: Bad Faith Adverse Possession - Defective Documents Are Less Significant
+// ==========================================
+
+// Additional actions for this thesis
+action tener_vicios_documentales = "have documentary defects in generating cause", cumplimiento_contractual;
+action demostrar_desinteres_prolongado = "demonstrate prolonged disinterest by legitimate owner", posesion_legal;
+
+// Additional assets for defective document tolerance
+asset documento_con_vicios = demandante, tener_vicios_documentales, tribunal;
+asset desinteres_propietario = titular_registral, demostrar_desinteres_prolongado, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2021537_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Bad faith adverse possession tolerates defective documents due to extended time period
+clause tesis2021537_principio_fundamental = oblig(ejercicio_mala_fe) AND oblig(documento_con_vicios) AND oblig(posesion_temporal) IMPLIES claim(demanda_prescripcion);
+
+// Temporal compensation: Longer time period compensates for document defects
+clause tesis2021537_compensacion_temporal = oblig(documento_con_vicios) AND oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_temporal);
+
+// Disinterest demonstration: Extended possession shows legitimate owner's disinterest
+clause tesis2021537_desinteres_propietario = oblig(posesion_temporal) IMPLIES oblig(desinteres_propietario);
+
+// Ownership exercise: Must demonstrate full ownership rights regardless of document defects
+clause tesis2021537_ejercicio_dominio = claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario);
+
+// Contrast with good faith: Good faith requires more perfect documentation
+clause tesis2021537_contraste_buena_fe = oblig(ejercicio_buena_fe) IMPLIES not(oblig(documento_con_vicios));
+
+// Thesis validation
+asset tesis2021537_valida = global();
+
+// ==========================================
+// THESIS 2023487: Good Faith Adverse Possession - Donation Contract for Different Property Cannot Constitute Just Title
+// ==========================================
+
+// Additional actions for this thesis
+action referirse_inmueble_diverso = "refer to a different property than the one being claimed", cumplimiento_contractual;
+action cometer_error_ubicacion = "make material error in property location", cumplimiento_contractual;
+
+// Additional assets for property specificity requirement
+asset contrato_inmueble_diverso = demandante, referirse_inmueble_diverso, tercero;
+asset error_ubicacion_material = tercero, cometer_error_ubicacion, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2023487_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Donation contract for different property cannot constitute just title for good faith adverse possession
+clause tesis2023487_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(contrato_inmueble_diverso) IMPLIES not(oblig(causa_generadora_probada));
+
+// Specificity requirement: Just title must relate to the exact property being claimed
+clause tesis2023487_especificidad_titulo = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(contrato_inmueble_diverso));
+
+// Material error limitation: Physical mistakes don't cure legal defects
+clause tesis2023487_error_material = oblig(error_ubicacion_material) IMPLIES not(oblig(causa_generadora_probada));
+
+// Fraud prevention: Protects against using one contract for multiple properties
+clause tesis2023487_prevencion_fraude = oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_terceros);
+
+// Equity protection: Protects original parties from unintended consequences
+clause tesis2023487_proteccion_equidad = oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_registral);
+
+// Good faith requirement: Must have valid just title for good faith adverse possession
+clause tesis2023487_requisito_buena_fe = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada);
+
+// Thesis validation
+asset tesis2023487_valida = global();
+
+// ==========================================
+// THESIS 2025237: Agrarian Adverse Possession - Third Party Requirement for Interruption
+// ==========================================
+
+// Additional subjects for agrarian context
+subject tribunal_agrario = "Agrarian Tribunal";
+subject comisariado_ejidal = "Ejidal Commissariat";
+
+// Additional actions for this thesis
+action interrumpir_prescripcion = "interrupt adverse possession period", prescripcion_legal;
+
+// Additional assets for agrarian adverse possession
+asset interrupcion_prescripcion = tercero, interrumpir_prescripcion, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2025237_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Only third parties with contrary interests can interrupt agrarian adverse possession
+clause tesis2025237_principio_fundamental = oblig(interrupcion_prescripcion) IMPLIES (oblig(proteccion_terceros) AND oblig(ejercicio_derecho_legal));
+
+// Third party requirement: Interruptor must be separate from possessor
+clause tesis2025237_requisito_tercero = claim(interrupcion_prescripcion) IMPLIES oblig(proteccion_terceros);
+
+// Contrary interest requirement: Interruptor must have opposing interests
+clause tesis2025237_intereses_contrarios = oblig(interrupcion_prescripcion) IMPLIES oblig(ejercicio_derecho_legal);
+
+// Agrarian context: Applies specifically to ejidal land possession
+clause tesis2025237_contexto_agrario = claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario);
+
+// Temporal framework: Agrarian adverse possession follows same time periods
+clause tesis2025237_plazo_agrario = oblig(posesion_como_propietario) IMPLIES oblig(posesion_temporal);
+
+// Thesis validation
+asset tesis2025237_valida = global();
+
+// ==========================================
+// THESIS 2025433: Good Faith Adverse Possession - Knowledge of INFONAVIT Mortgage Does Not Vitiate Just Title
+// ==========================================
+
+// Additional subjects for mortgage context
+subject infonavit = "Instituto del Fondo Nacional de la Vivienda para los Trabajadores";
+
+// Additional actions for this thesis
+action tener_conocimiento_hipoteca = "have knowledge of mortgage with non-alienation clause", buena_fe;
+
+// Additional assets for mortgage knowledge and ownership rights
+asset conocimiento_hipoteca_infonavit = demandante, tener_conocimiento_hipoteca, infonavit;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2025433_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Knowledge of INFONAVIT mortgage does not vitiate just title for good faith adverse possession
+clause tesis2025433_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(causa_generadora_probada);
+
+// Ius abutendi preservation: Contractual obligations don't eliminate ownership powers
+clause tesis2025433_conservacion_dominio = oblig(cumplir_requisitos_legales) IMPLIES oblig(posesion_como_propietario);
+
+// Good faith protection: Knowledge of restrictions doesn't destroy good faith
+clause tesis2025433_proteccion_buena_fe = oblig(conocimiento_hipoteca_infonavit) IMPLIES not(not(oblig(ejercicio_buena_fe)));
+
+// Verbal contract validity: Verbal sale can constitute just title
+clause tesis2025433_validez_verbal = oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
+
+// Ownership vs. obligation distinction: Obligations don't transfer ownership powers
+clause tesis2025433_distincion_obligacion = oblig(cumplir_requisitos_legales) IMPLIES not(not(oblig(posesion_como_propietario)));
+
+// Thesis validation
+asset tesis2025433_valida = global();
+
+// ==========================================
+// THESIS 2029251: Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption
+// ==========================================
+
+// Additional actions for this thesis
+action inutilizar_tiempo_transcurrido = "nullify all time elapsed before recognition", prescripcion_legal;
+
+// Additional assets for recognition-based interruption
+asset inutilizacion_tiempo = tribunal, inutilizar_tiempo_transcurrido, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2029251_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Recognition-based interruption is constitutionally valid and doesn't violate property rights
+clause tesis2029251_principio_fundamental = oblig(ejercicio_derecho_legal) IMPLIES (oblig(interrupcion_prescripcion) AND oblig(proteccion_registral));
+
+// Interruption effect: Recognition nullifies elapsed time and restarts prescription period
+clause tesis2029251_efecto_interrupcion = oblig(ejercicio_derecho_legal) IMPLIES oblig(inutilizacion_tiempo);
+
+// Good faith permanence: Good faith must be continuous throughout prescription period
+clause tesis2029251_permanencia_buena_fe = oblig(ejercicio_buena_fe) AND oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_mala_fe);
+
+// Constitutional validity: Interruption mechanism provides legal security without violating rights
+clause tesis2029251_validez_constitucional = oblig(interrupcion_prescripcion) IMPLIES oblig(proteccion_registral);
+
+// Legal security purpose: Rights exercise leads to protection
+clause tesis2029251_proteccion_titulares = oblig(ejercicio_derecho_legal) IMPLIES oblig(proteccion_registral);
+
+// Thesis validation
+asset tesis2029251_valida = global();
+
+// ==========================================
+// THESIS 2030499: Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations
+// ==========================================
+
+// Additional actions for this thesis
+action aplicar_supletoriamente = "apply civil law supplementarily with agrarian adaptations", cumplimiento_contractual;
+
+// Additional assets for supplementary application and agrarian customs
+asset aplicacion_supletoria = tribunal_agrario, aplicar_supletoriamente, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2030499_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Civil law applies supplementarily in agrarian matters with appropriate adaptations
+clause tesis2030499_principio_fundamental = claim(demanda_prescripcion) IMPLIES (oblig(aplicacion_supletoria) AND oblig(ejercicio_derecho_legal));
+
+// No just title requirement: Only generating cause needed in agrarian adverse possession
+clause tesis2030499_sin_justo_titulo = oblig(aplicacion_supletoria) IMPLIES oblig(causa_generadora_probada);
+
+// Cultural adaptation: Formal requirements relaxed for agrarian customs
+clause tesis2030499_adaptacion_cultural = oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_buena_fe);
+
+// Rights assignment validity: Agrarian rights transfers follow custom-based practices
+clause tesis2030499_cesion_valida = oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
+
+// Supplementary application scope: Civil law fills gaps but respects agrarian specificity
+clause tesis2030499_alcance_supletorio = oblig(aplicacion_supletoria) IMPLIES oblig(posesion_como_propietario);
+
+// Thesis validation
+asset tesis2030499_valida = global();
+
+// ==========================================
+// THESIS 2030500: Adverse Possession - Judicially Nullified Title Cannot Establish Generating Cause
+// ==========================================
+
+// Additional actions for this thesis
+action declarar_nulidad_judicial = "judicially declare title nullity", prescripcion_legal;
+action carecer_efecto_juridico = "lack any legal effect due to nullification", cumplimiento_contractual;
+action ser_inexistente_acto = "be a legally inexistent act", cumplimiento_contractual;
+action generar_certidumbre_propiedad = "generate certainty in property ownership", proteccion_legal;
+
+// Additional assets for judicial nullification effects
+asset nulidad_judicial_titulo = tribunal, declarar_nulidad_judicial, demandante;
+asset ausencia_efecto_juridico = demandante, carecer_efecto_juridico, tribunal;
+asset acto_inexistente = demandante, ser_inexistente_acto, tribunal;
+asset certidumbre_propiedad = tribunal, generar_certidumbre_propiedad, titular_registral;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2030500_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Judicially nullified title cannot establish generating cause for adverse possession
+clause tesis2030500_principio_fundamental = oblig(nulidad_judicial_titulo) IMPLIES not(oblig(causa_generadora_probada));
+
+// Nullification effect: Judicially nullified acts lack legal effect
+clause tesis2030500_efecto_nulidad = oblig(nulidad_judicial_titulo) IMPLIES oblig(ausencia_efecto_juridico);
+
+// Inexistent act consequence: Nullified acts are treated as legally inexistent
+clause tesis2030500_acto_inexistente = oblig(ausencia_efecto_juridico) IMPLIES oblig(acto_inexistente);
+
+// Ownership character impossibility: Nullified title cannot establish ownership possession
+clause tesis2030500_imposibilidad_propietario = oblig(acto_inexistente) IMPLIES not(oblig(posesion_como_propietario));
+
+// Good faith impossibility: Nullified title prevents good faith establishment
+clause tesis2030500_imposibilidad_buena_fe = oblig(nulidad_judicial_titulo) AND claim(demanda_prescripcion) IMPLIES oblig(ejercicio_mala_fe);
+
+// Public order purpose: Adverse possession serves property certainty
+clause tesis2030500_orden_publico = claim(demanda_prescripcion) IMPLIES oblig(certidumbre_propiedad);
+
+// Thesis validation
+asset tesis2030500_valida = global();
+// THESIS [NEXT]: [TITLE]
+// Template for next thesis
+// ==========================================
+
+// [Add thesis-specific clauses here using the shared assets]
+// clause tesis[NUMBER]_principio_fundamental = [LOGICAL_EXPRESSION];
+// asset tesis[NUMBER]_valida = global();
+
+// ==========================================
+// COMPARATIVE ANALYSIS SECTION
+// (To be developed after multiple thesis models)
+// ==========================================
+
+// Future: Cross-thesis pattern analysis
+// Future: Rule convergence identification
+// Future: Legal principle evolution tracking 
