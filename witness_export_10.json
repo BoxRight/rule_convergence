@@ -1,7 +1,7 @@
 {
-  "assets": [1, 2, 3, 7, 8, 25, 26, 27, 28],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "25": "nulidad_judicial_titulo", "26": "ausencia_efecto_juridico", "27": "acto_inexistente", "28": "certidumbre_propiedad"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "25": {"asset_name": "nulidad_judicial_titulo(tribunal:judicially declare title nullity:demandante)", "subject": "tribunal", "action": "judicially declare title nullity", "object": "demandante"}, "26": {"asset_name": "ausencia_efecto_juridico(demandante:lack any legal effect due to nullification:tribunal)", "subject": "demandante", "action": "lack any legal effect due to nullification", "object": "tribunal"}, "27": {"asset_name": "acto_inexistente(demandante:be a legally inexistent act:tribunal)", "subject": "demandante", "action": "be a legally inexistent act", "object": "tribunal"}, "28": {"asset_name": "certidumbre_propiedad(tribunal:generate certainty in property ownership:titular_registral)", "subject": "tribunal", "action": "generate certainty in property ownership", "object": "titular_registral"}},
+  "assets": [1, 2, 3, 7, 8, 18, 25, 26, 27],
+  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "18": "proteccion_registral", "25": "nulidad_judicial_titulo", "26": "ausencia_efecto_juridico", "27": "acto_inexistente"},
+  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "25": {"asset_name": "nulidad_judicial_titulo(tribunal:exercise legal right:demandante)", "subject": "tribunal", "action": "exercise legal right", "object": "demandante"}, "26": {"asset_name": "ausencia_efecto_juridico(demandante:exercise legal right:tribunal)", "subject": "demandante", "action": "exercise legal right", "object": "tribunal"}, "27": {"asset_name": "acto_inexistente(demandante:comply with legal requirements:tribunal)", "subject": "demandante", "action": "comply with legal requirements", "object": "tribunal"}},
   "clauses": [
     {
       "name": "tesis2030500_exclusividad_fe",
@@ -66,11 +66,11 @@
     },
     {
       "name": "tesis2030500_orden_publico",
-      "asset_ids": [1, 28],
+      "asset_ids": [1, 18],
       "assignments": [
-        [-1, -28],
-        [-1, 28],
-        [1, 28]
+        [-1, -18],
+        [-1, 18],
+        [1, 18]
       ]
     }
   ]

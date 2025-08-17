@@ -363,17 +363,10 @@ asset tesis2030499_valida = global();
 // THESIS 2030500: Adverse Possession - Judicially Nullified Title Cannot Establish Generating Cause
 // ==========================================
 
-// Additional actions for this thesis
-action declarar_nulidad_judicial = "judicially declare title nullity", prescripcion_legal;
-action carecer_efecto_juridico = "lack any legal effect due to nullification", cumplimiento_contractual;
-action ser_inexistente_acto = "be a legally inexistent act", cumplimiento_contractual;
-action generar_certidumbre_propiedad = "generate certainty in property ownership", proteccion_legal;
-
 // Additional assets for judicial nullification effects
-asset nulidad_judicial_titulo = tribunal, declarar_nulidad_judicial, demandante;
-asset ausencia_efecto_juridico = demandante, carecer_efecto_juridico, tribunal;
-asset acto_inexistente = demandante, ser_inexistente_acto, tribunal;
-asset certidumbre_propiedad = tribunal, generar_certidumbre_propiedad, titular_registral;
+asset nulidad_judicial_titulo = tribunal, ejercer_derecho_legal, demandante;
+asset ausencia_efecto_juridico = demandante, ejercer_derecho_legal, tribunal;
+asset acto_inexistente = demandante, cumplir_requisitos_legales, tribunal;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
 clause tesis2030500_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
@@ -394,10 +387,45 @@ clause tesis2030500_imposibilidad_propietario = oblig(acto_inexistente) IMPLIES 
 clause tesis2030500_imposibilidad_buena_fe = oblig(nulidad_judicial_titulo) AND claim(demanda_prescripcion) IMPLIES oblig(ejercicio_mala_fe);
 
 // Public order purpose: Adverse possession serves property certainty
-clause tesis2030500_orden_publico = claim(demanda_prescripcion) IMPLIES oblig(certidumbre_propiedad);
+clause tesis2030500_orden_publico = claim(demanda_prescripcion) IMPLIES oblig(proteccion_registral);
 
 // Thesis validation
 asset tesis2030500_valida = global();
+
+// ==========================================
+// THESIS 2030717: Adverse Possession - Improcedence Against Municipal Public Domain Properties
+// ==========================================
+
+// Additional subjects for municipal context
+subject ayuntamiento_municipal = "municipal government/city hall";
+
+// Additional assets for municipal public domain (using universal actions)
+asset propiedad_municipal = ayuntamiento_municipal, ejercer_derecho_legal, demandante;
+asset dominio_publico = ayuntamiento_municipal, ejercer_derecho_legal, tribunal;
+asset exclusion_comercial = tribunal, cumplir_requisitos_legales, demandante;
+asset reserva_ecologica = ayuntamiento_municipal, obtener_proteccion_legal, demandante;
+asset caracter_imprescriptible = tribunal, cumplir_requisitos_legales, demandante;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2030717_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Municipal public domain properties designated for ecological reserves are imprescriptible
+clause tesis2030717_principio_fundamental = oblig(dominio_publico) AND oblig(reserva_ecologica) IMPLIES oblig(caracter_imprescriptible);
+
+// Commercial exclusion: Properties outside commerce cannot be prescribed
+clause tesis2030717_exclusion_comercial = oblig(exclusion_comercial) IMPLIES oblig(caracter_imprescriptible);
+
+// Ecological protection: Ecological reserves are protected from prescription
+clause tesis2030717_proteccion_ecologica = oblig(reserva_ecologica) IMPLIES oblig(exclusion_comercial);
+
+// Municipal ownership effect: Municipal public domain creates special legal status
+clause tesis2030717_estatus_municipal = oblig(propiedad_municipal) AND oblig(dominio_publico) IMPLIES oblig(proteccion_registral);
+
+// Imprescriptibility consequence: Imprescriptible properties cannot be subject to adverse possession
+clause tesis2030717_improcedencia = oblig(caracter_imprescriptible) IMPLIES not(claim(demanda_prescripcion));
+
+// Thesis validation
+asset tesis2030717_valida = global();
 // THESIS [NEXT]: [TITLE]
 // Template for next thesis
 // ==========================================

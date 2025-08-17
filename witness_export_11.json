@@ -1,0 +1,72 @@
+{
+  "assets": [1, 2, 3, 18, 28, 29, 30, 31, 32],
+  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "18": "proteccion_registral", "28": "dominio_publico", "29": "reserva_ecologica", "30": "caracter_imprescriptible", "31": "exclusion_comercial", "32": "propiedad_municipal"},
+  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "28": {"asset_name": "dominio_publico(ayuntamiento_municipal:exercise legal right:tribunal)", "subject": "ayuntamiento_municipal", "action": "exercise legal right", "object": "tribunal"}, "29": {"asset_name": "reserva_ecologica(ayuntamiento_municipal:obtain legal protection:demandante)", "subject": "ayuntamiento_municipal", "action": "obtain legal protection", "object": "demandante"}, "30": {"asset_name": "caracter_imprescriptible(tribunal:comply with legal requirements:demandante)", "subject": "tribunal", "action": "comply with legal requirements", "object": "demandante"}, "31": {"asset_name": "exclusion_comercial(tribunal:comply with legal requirements:demandante)", "subject": "tribunal", "action": "comply with legal requirements", "object": "demandante"}, "32": {"asset_name": "propiedad_municipal(ayuntamiento_municipal:exercise legal right:demandante)", "subject": "ayuntamiento_municipal", "action": "exercise legal right", "object": "demandante"}},
+  "clauses": [
+    {
+      "name": "tesis2030717_exclusividad_fe",
+      "asset_ids": [1, 2, 3],
+      "assignments": [
+        [-1, -2, -3],
+        [-1, -2, 3],
+        [-1, 2, -3],
+        [-1, 2, 3],
+        [1, -2, 3],
+        [1, 2, -3]
+      ]
+    },
+    {
+      "name": "tesis2030717_principio_fundamental",
+      "asset_ids": [28, 29, 30],
+      "assignments": [
+        [-28, -29, -30],
+        [-28, -29, 30],
+        [-28, 29, -30],
+        [-28, 29, 30],
+        [28, -29, -30],
+        [28, -29, 30],
+        [28, 29, 30]
+      ]
+    },
+    {
+      "name": "tesis2030717_exclusion_comercial",
+      "asset_ids": [30, 31],
+      "assignments": [
+        [-30, -31],
+        [30, -31],
+        [30, 31]
+      ]
+    },
+    {
+      "name": "tesis2030717_proteccion_ecologica",
+      "asset_ids": [29, 31],
+      "assignments": [
+        [-29, -31],
+        [-29, 31],
+        [29, 31]
+      ]
+    },
+    {
+      "name": "tesis2030717_estatus_municipal",
+      "asset_ids": [18, 28, 32],
+      "assignments": [
+        [-18, -28, -32],
+        [-18, -28, 32],
+        [-18, 28, -32],
+        [18, -28, -32],
+        [18, -28, 32],
+        [18, 28, -32],
+        [18, 28, 32]
+      ]
+    },
+    {
+      "name": "tesis2030717_improcedencia",
+      "asset_ids": [1, 30],
+      "assignments": [
+        [-1, -30],
+        [-1, 30],
+        [1, -30]
+      ]
+    }
+  ]
+}
