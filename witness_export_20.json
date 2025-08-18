@@ -1,0 +1,107 @@
+{
+  "assets": [1, 2, 5, 7, 9, 10, 11, 12, 13, 57],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "7": "causa_generadora_probada", "9": "posesion_temporal", "10": "allanamiento_demandado", "11": "posesion_pacifico_continuo_publico", "12": "prueba_independiente", "13": "proteccion_terceros", "57": "seguridad_juridica"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "allanamiento_demandado(demandado:make acquiescence/admission to the claim:demandante)", "subject": "demandado", "action": "make acquiescence/admission to the claim", "object": "demandante"}, "11": {"asset_name": "posesion_pacifico_continuo_publico(demandante:possess peacefully, continuously, and publicly:tercero)", "subject": "demandante", "action": "possess peacefully, continuously, and publicly", "object": "tercero"}, "12": {"asset_name": "prueba_independiente(demandante:prove independently without relying on other evidence:tribunal)", "subject": "demandante", "action": "prove independently without relying on other evidence", "object": "tribunal"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}, "57": {"asset_name": "seguridad_juridica(demandante:provide legal security to possessors:tribunal)", "subject": "demandante", "action": "provide legal security to possessors", "object": "tribunal"}},
+  "clauses": [
+    {
+      "name": "tesis2018505_exclusividad_fe",
+      "asset_ids": [1, 2],
+      "assignments": [
+        [-1, 2],
+        [1, -2]
+      ]
+    },
+    {
+      "name": "tesis2018505_principio_fundamental",
+      "asset_ids": [7, 10, 11],
+      "assignments": [
+        [-7, -10, -11],
+        [-7, -10, 11],
+        [7, -10, -11],
+        [7, -10, 11],
+        [7, 10, -11]
+      ]
+    },
+    {
+      "name": "tesis2018505_orden_publico",
+      "asset_ids": [5, 11, 57],
+      "assignments": [
+        [-5, -11, -57],
+        [-5, -11, 57],
+        [-5, 11, -57],
+        [-5, 11, 57],
+        [5, 11, 57]
+      ]
+    },
+    {
+      "name": "tesis2018505_prueba_independiente",
+      "asset_ids": [10, 12],
+      "assignments": [
+        [-10, -12],
+        [-10, 12],
+        [10, 12]
+      ]
+    },
+    {
+      "name": "tesis2018505_hechos_intrinsecos",
+      "asset_ids": [11, 12],
+      "assignments": [
+        [-11, -12],
+        [-11, 12],
+        [11, 12]
+      ]
+    },
+    {
+      "name": "tesis2018505_proteccion_terceros",
+      "asset_ids": [12, 13],
+      "assignments": [
+        [-12, -13],
+        [12, -13],
+        [12, 13]
+      ]
+    },
+    {
+      "name": "tesis2018505_carga_probatoria",
+      "asset_ids": [5, 7, 11],
+      "assignments": [
+        [-5, -7, -11],
+        [-5, -7, 11],
+        [-5, 7, -11],
+        [-5, 7, 11],
+        [5, 7, 11]
+      ]
+    },
+    {
+      "name": "tesis2018505_proposito_seguridad",
+      "asset_ids": [1, 9, 11, 57],
+      "assignments": [
+        [-1, -9, -11, -57],
+        [-1, -9, -11, 57],
+        [-1, -9, 11, -57],
+        [-1, -9, 11, 57],
+        [-1, 9, -11, -57],
+        [-1, 9, -11, 57],
+        [-1, 9, 11, -57],
+        [-1, 9, 11, 57],
+        [1, -9, -11, -57],
+        [1, -9, -11, 57],
+        [1, -9, 11, -57],
+        [1, -9, 11, 57],
+        [1, 9, -11, -57],
+        [1, 9, -11, 57],
+        [1, 9, 11, 57]
+      ]
+    },
+    {
+      "name": "tesis2018505_requisito_temporal",
+      "asset_ids": [5, 9, 11],
+      "assignments": [
+        [-5, -9, -11],
+        [-5, -9, 11],
+        [-5, 9, -11],
+        [-5, 9, 11],
+        [5, 9, 11]
+      ]
+    }
+  ]
+}

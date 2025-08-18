@@ -1,0 +1,106 @@
+{
+  "assets": [1, 2, 49, 50, 52, 53, 54, 55, 56],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "49": "accion_extincion_dominio", "50": "posibilidad_fisica_conocimiento", "52": "presuncion_humana", "53": "cumplimiento_deber_legal", "54": "conocimiento_problemas_legales", "55": "elementos_probatorios", "56": "carga_dinamica_prueba"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "49": {"asset_name": "accion_extincion_dominio(tribunal:exercise legal right:tercero)", "subject": "tribunal", "action": "exercise legal right", "object": "tercero"}, "50": {"asset_name": "posibilidad_fisica_conocimiento(tribunal:evaluate physical possibility of knowledge or action:tercero)", "subject": "tribunal", "action": "evaluate physical possibility of knowledge or action", "object": "tercero"}, "52": {"asset_name": "presuncion_humana(tribunal:use human presumption for knowledge determination:tercero)", "subject": "tribunal", "action": "use human presumption for knowledge determination", "object": "tercero"}, "53": {"asset_name": "cumplimiento_deber_legal(tercero:fulfill legal duty or obligation:autoridad_registral)", "subject": "tercero", "action": "fulfill legal duty or obligation", "object": "autoridad_registral"}, "54": {"asset_name": "conocimiento_problemas_legales(tercero:be aware of legal problems (defects, illegal activities, etc.):tribunal)", "subject": "tercero", "action": "be aware of legal problems (defects, illegal activities, etc.)", "object": "tribunal"}, "55": {"asset_name": "elementos_probatorios(autoridad_registral:provide evidentiary elements:tribunal)", "subject": "autoridad_registral", "action": "provide evidentiary elements", "object": "tribunal"}, "56": {"asset_name": "carga_dinamica_prueba(tribunal:refute evidence presented by opposing party:tercero)", "subject": "tribunal", "action": "refute evidence presented by opposing party", "object": "tercero"}},
+  "clauses": [
+    {
+      "name": "tesis2017540_exclusividad_fe",
+      "asset_ids": [1, 2],
+      "assignments": [
+        [-1, 2],
+        [1, -2]
+      ]
+    },
+    {
+      "name": "tesis2017540_principio_fundamental",
+      "asset_ids": [2, 49, 53],
+      "assignments": [
+        [-2, -49, -53],
+        [-2, -49, 53],
+        [2, -49, -53],
+        [2, -49, 53],
+        [2, 49, 53]
+      ]
+    },
+    {
+      "name": "tesis2017540_estandar_mala_fe",
+      "asset_ids": [2, 50, 54],
+      "assignments": [
+        [-2, -50, -54],
+        [-2, -50, 54],
+        [-2, 50, -54],
+        [-2, 50, 54],
+        [2, -50, 54],
+        [2, 50, -54],
+        [2, 50, 54]
+      ]
+    },
+    {
+      "name": "tesis2017540_deber_actuar",
+      "asset_ids": [53, 54],
+      "assignments": [
+        [-53, -54],
+        [53, -54],
+        [53, 54]
+      ]
+    },
+    {
+      "name": "tesis2017540_carga_inicial",
+      "asset_ids": [49, 55],
+      "assignments": [
+        [-49, -55],
+        [-49, 55],
+        [49, 55]
+      ]
+    },
+    {
+      "name": "tesis2017540_carga_dinamica",
+      "asset_ids": [55, 56],
+      "assignments": [
+        [-55, -56],
+        [-55, 56],
+        [55, 56]
+      ]
+    },
+    {
+      "name": "tesis2017540_presuncion_buena_fe",
+      "asset_ids": [1, 56],
+      "assignments": [
+        [-1, -56],
+        [1, -56],
+        [1, 56]
+      ]
+    },
+    {
+      "name": "tesis2017540_probabilidad_factica",
+      "asset_ids": [50, 52],
+      "assignments": [
+        [-50, -52],
+        [-50, 52],
+        [50, 52]
+      ]
+    },
+    {
+      "name": "tesis2017540_defensa_exitosa",
+      "asset_ids": [1, 49, 56],
+      "assignments": [
+        [-1, -49, -56],
+        [-1, -49, 56],
+        [-1, 49, -56],
+        [-1, 49, 56],
+        [1, -49, -56],
+        [1, -49, 56],
+        [1, 49, -56]
+      ]
+    },
+    {
+      "name": "tesis2017540_requisito_conocimiento",
+      "asset_ids": [55, 56],
+      "assignments": [
+        [-55, -56],
+        [55, -56],
+        [55, 56]
+      ]
+    }
+  ]
+}

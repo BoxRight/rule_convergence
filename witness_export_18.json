@@ -1,0 +1,94 @@
+{
+  "assets": [1, 2, 49, 50, 51, 52],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "49": "accion_extincion_dominio", "50": "posibilidad_fisica_conocimiento", "51": "ocupacion_independiente", "52": "presuncion_humana"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "49": {"asset_name": "accion_extincion_dominio(tribunal:exercise legal right:tercero)", "subject": "tribunal", "action": "exercise legal right", "object": "tercero"}, "50": {"asset_name": "posibilidad_fisica_conocimiento(tribunal:evaluate physical possibility of knowledge or action:tercero)", "subject": "tribunal", "action": "evaluate physical possibility of knowledge or action", "object": "tercero"}, "51": {"asset_name": "ocupacion_independiente(tercero:occupy independent space within property:titular_registral)", "subject": "tercero", "action": "occupy independent space within property", "object": "titular_registral"}, "52": {"asset_name": "presuncion_humana(tribunal:use human presumption for knowledge determination:tercero)", "subject": "tribunal", "action": "use human presumption for knowledge determination", "object": "tercero"}},
+  "clauses": [
+    {
+      "name": "tesis2017539_exclusividad_fe",
+      "asset_ids": [1, 2],
+      "assignments": [
+        [-1, 2],
+        [1, -2]
+      ]
+    },
+    {
+      "name": "tesis2017539_principio_fundamental",
+      "asset_ids": [1, 49, 50],
+      "assignments": [
+        [-1, -49, -50],
+        [-1, -49, 50],
+        [-1, 49, -50],
+        [-1, 49, 50],
+        [1, -49, -50],
+        [1, -49, 50],
+        [1, 49, 50]
+      ]
+    },
+    {
+      "name": "tesis2017539_proteccion_independencia",
+      "asset_ids": [1, 51],
+      "assignments": [
+        [-1, -51],
+        [1, -51],
+        [1, 51]
+      ]
+    },
+    {
+      "name": "tesis2017539_estandar_conocimiento",
+      "asset_ids": [1, 2, 50],
+      "assignments": [
+        [-1, -2, -50],
+        [-1, 2, -50],
+        [-1, 2, 50],
+        [1, -2, -50],
+        [1, -2, 50],
+        [1, 2, -50],
+        [1, 2, 50]
+      ]
+    },
+    {
+      "name": "tesis2017539_presuncion_aplicable",
+      "asset_ids": [49, 52],
+      "assignments": [
+        [-49, -52],
+        [-49, 52],
+        [49, 52]
+      ]
+    },
+    {
+      "name": "tesis2017539_analisis_factual",
+      "asset_ids": [50, 52],
+      "assignments": [
+        [-50, -52],
+        [50, -52],
+        [50, 52]
+      ]
+    },
+    {
+      "name": "tesis2017539_defensa_buena_fe",
+      "asset_ids": [1, 49, 51],
+      "assignments": [
+        [-1, -49, -51],
+        [-1, -49, 51],
+        [-1, 49, -51],
+        [-1, 49, 51],
+        [1, -49, -51],
+        [1, -49, 51],
+        [1, 49, -51]
+      ]
+    },
+    {
+      "name": "tesis2017539_carga_probatoria",
+      "asset_ids": [2, 49, 50],
+      "assignments": [
+        [-2, -49, -50],
+        [-2, -49, 50],
+        [-2, 49, 50],
+        [2, -49, -50],
+        [2, -49, 50],
+        [2, 49, -50],
+        [2, 49, 50]
+      ]
+    }
+  ]
+}

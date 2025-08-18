@@ -74,6 +74,15 @@ action interrumpir_prescripcion = "interrupt adverse possession period", prescri
 action aplicar_supletoriamente = "apply law supplementarily with adaptations", cumplimiento_contractual;
 action variar_litis = "vary the legal dispute", ejercicio_derecho;
 action probar_independientemente = "prove independently without relying on other evidence", cumplimiento_contractual;
+action conocer_vicios_titulo = "be aware of title defects", buena_fe;
+action convertir_buena_mala_fe = "convert from good faith to bad faith possession", buena_fe;
+action conocer_problemas_legales = "be aware of legal problems (defects, illegal activities, etc.)", buena_fe;
+action utilizar_presuncion_humana = "use human presumption for knowledge determination", proteccion_legal;
+action evaluar_posibilidad_fisica = "evaluate physical possibility of knowledge or action", cumplimiento_contractual;
+action ocupar_espacio_independiente = "occupy independent space within property", posesion_legal;
+action cumplir_deber_legal = "fulfill legal duty or obligation", cumplimiento_contractual;
+action desvirtuar_elementos_prueba = "refute evidence presented by opposing party", proteccion_legal;
+action aportar_elementos_probatorios = "provide evidentiary elements", cumplimiento_contractual;
 
 // ==========================================
 // UNIVERSAL LEGAL ASSETS
@@ -107,6 +116,15 @@ asset interrupcion_prescripcion = tercero, interrumpir_prescripcion, demandante;
 asset aplicacion_supletoria = tribunal_agrario, aplicar_supletoriamente, demandante;
 asset variacion_litis = tribunal_agrario, variar_litis, demandado;
 asset prueba_independiente = demandante, probar_independientemente, tribunal;
+asset conocimiento_vicios = demandante, conocer_vicios_titulo, tribunal;
+asset conversion_fe = demandante, convertir_buena_mala_fe, tribunal;
+asset conocimiento_problemas_legales = tercero, conocer_problemas_legales, tribunal;
+asset presuncion_humana = tribunal, utilizar_presuncion_humana, tercero;
+asset posibilidad_fisica_conocimiento = tribunal, evaluar_posibilidad_fisica, tercero;
+asset ocupacion_independiente = tercero, ocupar_espacio_independiente, titular_registral;
+asset cumplimiento_deber_legal = tercero, cumplir_deber_legal, autoridad_registral;
+asset carga_dinamica_prueba = tribunal, desvirtuar_elementos_prueba, tercero;
+asset elementos_probatorios = autoridad_registral, aportar_elementos_probatorios, tribunal;
 
 // Note: Faith exclusivity constraint must be repeated in each thesis section
 // as the DSL does not support universal clauses
@@ -585,7 +603,202 @@ clause tesis2014940_procedimientos_separados = oblig(causa_remota_diversa) IMPLI
 asset tesis2014940_valida = global();
 
 // ==========================================
-// THESIS [NEXT]: [TITLE]
+// THESIS 2017366: ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION
+// ==========================================
+
+// Additional actions for this thesis (most assets now universal)
+action tener_posesion_delictuosa = "have delictual/criminal possession", prescripcion_legal;
+
+// Additional assets for possession classification (most assets now universal)
+asset posesion_delictuosa = demandante, tener_posesion_delictuosa, tribunal;
+
+// Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
+clause tesis2017366_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+
+// Thesis-specific principle: Possession classification depends on knowledge of title defects and legal basis
+clause tesis2017366_principio_fundamental = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(conocimiento_vicios));
+
+// Good faith types: With sufficient/defective title (unknowing) or without title but reasonable belief
+clause tesis2017366_buena_fe_tipos = oblig(ejercicio_buena_fe) IMPLIES (oblig(diligencia_adquirente) OR not(oblig(documento_con_vicios)));
+
+// Bad faith types: With defective title (knowing) or without title (knowing)
+clause tesis2017366_mala_fe_tipos = oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_vicios) OR not(oblig(causa_generadora_probada)));
+
+// Presumption of good faith: Legal presumption favors good faith until proven otherwise (integrated into universal good faith)
+clause tesis2017366_presuncion_legal = claim(demanda_prescripcion) IMPLIES oblig(ejercicio_buena_fe);
+
+// Conversion mechanism: Good faith converts to bad faith upon knowledge of title defects
+clause tesis2017366_conversion_fe = oblig(conocimiento_vicios) AND oblig(documento_con_vicios) IMPLIES oblig(conversion_fe);
+
+// Conditional nature: Good faith status depends on continued diligence and lack of knowledge of defects
+clause tesis2017366_naturaleza_condicional = oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente);
+
+// Delictual possession: Criminal possession is always bad faith
+clause tesis2017366_posesion_delictuosa = oblig(posesion_delictuosa) IMPLIES oblig(ejercicio_mala_fe);
+
+// Thesis validation
+asset tesis2017366_valida = global();
+
+// ==========================================
+// THESIS 2017539: DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE
+// ==========================================
+
+// Additional assets for domain forfeiture (all actions now universal)
+asset accion_extincion_dominio = tribunal, ejercer_derecho_legal, tercero;
+
+// Faith exclusivity: Good faith vs knowledge of illegal activities (mutually exclusive)
+clause tesis2017539_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+
+// Thesis-specific principle: Courts must determine if third party with good faith claim could reasonably know about illegal use
+clause tesis2017539_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(accion_extincion_dominio) IMPLIES oblig(posibilidad_fisica_conocimiento);
+
+// Independent occupation protection: Separate spaces within same property can support good faith defense
+clause tesis2017539_proteccion_independencia = oblig(ocupacion_independiente) IMPLIES oblig(ejercicio_buena_fe);
+
+// Knowledge standard: Physical possibility determines whether owner should have known about illegal activities
+clause tesis2017539_estandar_conocimiento = oblig(posibilidad_fisica_conocimiento) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(ejercicio_buena_fe));
+
+// Human presumption use: Courts can use reasonable inferences about what people would likely know
+clause tesis2017539_presuncion_aplicable = claim(accion_extincion_dominio) IMPLIES oblig(presuncion_humana);
+
+// Factual analysis requirement: Courts must examine property layout and intercommunication
+clause tesis2017539_analisis_factual = oblig(presuncion_humana) IMPLIES oblig(posibilidad_fisica_conocimiento);
+
+// Good faith defense: Third parties can defend against forfeiture if they lacked knowledge of illegal use
+clause tesis2017539_defensa_buena_fe = oblig(ejercicio_buena_fe) AND oblig(ocupacion_independiente) IMPLIES not(claim(accion_extincion_dominio));
+
+// Burden of proof: Government must prove third party knew or should have known about illegal activities
+clause tesis2017539_carga_probatoria = claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(posibilidad_fisica_conocimiento));
+
+// Thesis validation
+asset tesis2017539_valida = global();
+
+// ==========================================
+// THESIS 2017540: DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD
+// ==========================================
+
+// All actions now universal - no thesis-specific actions needed
+
+// Faith exclusivity: Good faith vs bad faith (mutually exclusive)
+clause tesis2017540_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+
+// Thesis-specific principle: Domain forfeiture against third parties requires proving bad faith (knowledge + failure to act)
+clause tesis2017540_principio_fundamental = claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) AND oblig(cumplimiento_deber_legal));
+
+// Knowledge standard: Bad faith requires actual or constructive knowledge of illegal activities
+clause tesis2017540_estandar_mala_fe = oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_problemas_legales) OR oblig(posibilidad_fisica_conocimiento));
+
+// Duty to act: Knowledge creates obligation to notify authorities or prevent illegal activities
+clause tesis2017540_deber_actuar = oblig(conocimiento_problemas_legales) IMPLIES oblig(cumplimiento_deber_legal);
+
+// Dynamic burden of proof: Initial burden on prosecutor to show evidence of knowledge
+clause tesis2017540_carga_inicial = claim(accion_extincion_dominio) IMPLIES oblig(elementos_probatorios);
+
+// Burden shift: Once prosecutor shows evidence, third party must prove good faith
+clause tesis2017540_carga_dinamica = oblig(elementos_probatorios) IMPLIES oblig(carga_dinamica_prueba);
+
+// Presumption of good faith: Legal presumption favors honest, diligent conduct
+clause tesis2017540_presuncion_buena_fe = oblig(carga_dinamica_prueba) IMPLIES oblig(ejercicio_buena_fe);
+
+// Factual probability standard: "Should have known" refers to factual probability, not abstract duty
+clause tesis2017540_probabilidad_factica = oblig(posibilidad_fisica_conocimiento) IMPLIES oblig(presuncion_humana);
+
+// Good faith defense success: Third party can refute prosecutor's evidence
+clause tesis2017540_defensa_exitosa = oblig(ejercicio_buena_fe) AND oblig(carga_dinamica_prueba) IMPLIES not(claim(accion_extincion_dominio));
+
+// Burden of proof completion: Prosecutor must establish knowledge before burden shifts
+clause tesis2017540_requisito_conocimiento = oblig(carga_dinamica_prueba) IMPLIES oblig(elementos_probatorios);
+
+// Thesis validation
+asset tesis2017540_valida = global();
+
+// ==========================================
+// THESIS 2018505: ADVERSE POSSESSION - ALLANAMIENTO CANNOT DEMONSTRATE POSSESSION ATTRIBUTES
+// ==========================================
+
+// Additional actions for this thesis (reusing most existing assets)
+action proporcionar_seguridad_juridica = "provide legal security to possessors", proteccion_legal;
+
+// Additional assets for public order and legal security (reusing most existing assets)
+asset seguridad_juridica = demandante, proporcionar_seguridad_juridica, tribunal;
+
+// Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
+clause tesis2018505_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+
+// Thesis-specific principle: Allanamiento can prove generating cause but NOT possession attributes (public, peaceful, continuous)
+clause tesis2018505_principio_fundamental = oblig(allanamiento_demandado) IMPLIES oblig(causa_generadora_probada) AND not(oblig(posesion_pacifico_continuo_publico));
+
+// Public order institution: Adverse possession provides legal security for possessors who prove possession attributes
+clause tesis2018505_orden_publico = claim(demanda_prescripcion) IMPLIES (oblig(seguridad_juridica) AND oblig(posesion_pacifico_continuo_publico));
+
+// Independent proof requirement: Plaintiff must prove possession attributes independently despite defendant's admission
+clause tesis2018505_prueba_independiente = oblig(allanamiento_demandado) IMPLIES oblig(prueba_independiente);
+
+// Intrinsic facts limitation: Possession qualities are intrinsic to plaintiff, defendant cannot admit them
+clause tesis2018505_hechos_intrinsecos = oblig(posesion_pacifico_continuo_publico) IMPLIES oblig(prueba_independiente);
+
+// Third party protection: Independent proof required to protect third party rights
+clause tesis2018505_proteccion_terceros = oblig(proteccion_terceros) IMPLIES oblig(prueba_independiente);
+
+// Burden of proof maintenance: Allanamiento does not relieve plaintiff of proving foundational facts
+clause tesis2018505_carga_probatoria = claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_probada) AND oblig(posesion_pacifico_continuo_publico));
+
+// Legal security purpose: System protects possessors who meet all requirements
+clause tesis2018505_proposito_seguridad = oblig(posesion_pacifico_continuo_publico) AND oblig(ejercicio_buena_fe) AND oblig(posesion_temporal) IMPLIES oblig(seguridad_juridica);
+
+// Temporal requirement: Must prove sufficient time period along with other attributes
+clause tesis2018505_requisito_temporal = claim(demanda_prescripcion) IMPLIES (oblig(posesion_temporal) AND oblig(posesion_pacifico_continuo_publico));
+
+// Thesis validation
+asset tesis2018505_valida = global();
+
+// ==========================================
+// THESIS 2016571: GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL
+// ==========================================
+
+// Additional actions for this thesis (reusing most existing assets)
+action proteger_defensa = "protect defendant's right to defense", proteccion_legal;
+action enderezar_litis = "correct/fix the lawsuit by court", ejercicio_derecho;
+
+// Additional assets for due process protection (reusing most existing assets)
+asset proteccion_defensa = demandado, proteger_defensa, tribunal;
+asset enderezamiento_litis = tribunal, enderezar_litis, demandado;
+
+// Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
+clause tesis2016571_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+
+// Thesis-specific principle: Good faith adverse possession claimant cannot vary claims to bad faith during trial
+clause tesis2016571_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis));
+
+// Prohibition of claim variation: Cannot change from good faith (5 years) to bad faith (10 years) theory
+clause tesis2016571_prohibicion_variacion = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(ejercicio_mala_fe));
+
+// Procedural congruence requirement: Court must respect the legal theory chosen by plaintiff
+clause tesis2016571_congruencia_procesal = claim(demanda_prescripcion) IMPLIES oblig(congruencia_procesal);
+
+// Judicial limitation: Judge cannot fix lawsuit to adjust to different legal theory not requested
+clause tesis2016571_limitacion_judicial = oblig(congruencia_procesal) IMPLIES not(oblig(enderezamiento_litis));
+
+// Due process protection: Varying claims would leave defendant defenseless
+clause tesis2016571_proteccion_debido_proceso = oblig(variacion_litis) IMPLIES not(oblig(proteccion_defensa));
+
+// Defense rights preservation: Procedural congruence protects defendant's defense strategy
+clause tesis2016571_preservacion_defensa = oblig(congruencia_procesal) IMPLIES oblig(proteccion_defensa);
+
+// Time period consistency: Must maintain consistent time period based on chosen faith theory
+clause tesis2016571_consistencia_temporal = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal);
+
+// Good faith requirements: Must prove sufficient title or ignorance of title defects
+clause tesis2016571_requisitos_buena_fe = oblig(ejercicio_buena_fe) IMPLIES (oblig(causa_generadora_probada) OR oblig(conocimiento_vicios));
+
+// Legal theory commitment: Once good faith theory is chosen, must prove all its elements
+clause tesis2016571_compromiso_teoria = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_probada) AND oblig(posesion_como_propietario) AND oblig(posesion_temporal));
+
+// Thesis validation
+asset tesis2016571_valida = global();
+
+// ==========================================
+// COMPARATIVE ANALYSIS SECTION
 // Template for next thesis
 // ==========================================
 
