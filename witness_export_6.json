@@ -1,18 +1,14 @@
 {
-  "assets": [1, 2, 3, 8, 9, 13, 19, 20],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "8": "posesion_como_propietario", "9": "posesion_temporal", "13": "proteccion_terceros", "19": "interrupcion_prescripcion", "20": "ejercicio_derecho_legal"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}, "19": {"asset_name": "interrupcion_prescripcion(tercero:interrupt adverse possession period:demandante)", "subject": "tercero", "action": "interrupt adverse possession period", "object": "demandante"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "assets": [1, 2, 5, 8, 9, 13, 19, 20],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "8": "posesion_como_propietario", "9": "posesion_temporal", "13": "proteccion_terceros", "19": "interrupcion_prescripcion", "20": "ejercicio_derecho_legal"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}, "19": {"asset_name": "interrupcion_prescripcion(tercero:interrupt adverse possession period:demandante)", "subject": "tercero", "action": "interrupt adverse possession period", "object": "demandante"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}},
   "clauses": [
     {
       "name": "tesis2025237_exclusividad_fe",
-      "asset_ids": [1, 2, 3],
+      "asset_ids": [1, 2],
       "assignments": [
-        [-1, -2, -3],
-        [-1, -2, 3],
-        [-1, 2, -3],
-        [-1, 2, 3],
-        [1, -2, 3],
-        [1, 2, -3]
+        [-1, 2],
+        [1, -2]
       ]
     },
     {
@@ -46,11 +42,11 @@
     },
     {
       "name": "tesis2025237_contexto_agrario",
-      "asset_ids": [1, 8],
+      "asset_ids": [5, 8],
       "assignments": [
-        [-1, -8],
-        [-1, 8],
-        [1, 8]
+        [-5, -8],
+        [-5, 8],
+        [5, 8]
       ]
     },
     {

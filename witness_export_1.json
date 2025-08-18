@@ -1,58 +1,54 @@
 {
   "assets": [1, 2, 3, 4, 5, 6],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "4": "titularidad_registral", "5": "contrato_no_inscrito", "6": "oponibilidad_terceros"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "4": {"asset_name": "titularidad_registral(titular_registral:be registered in public property registry:autoridad_registral)", "subject": "titular_registral", "action": "be registered in public property registry", "object": "autoridad_registral"}, "5": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "6": {"asset_name": "oponibilidad_terceros(demandante:be legally opposable to third parties:titular_registral)", "subject": "demandante", "action": "be legally opposable to third parties", "object": "titular_registral"}},
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "3": "titularidad_registral", "4": "contrato_no_inscrito", "5": "demanda_prescripcion", "6": "oponibilidad_terceros"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "3": {"asset_name": "titularidad_registral(titular_registral:be registered in public property registry:autoridad_registral)", "subject": "titular_registral", "action": "be registered in public property registry", "object": "autoridad_registral"}, "4": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "6": {"asset_name": "oponibilidad_terceros(demandante:be legally opposable to third parties:titular_registral)", "subject": "demandante", "action": "be legally opposable to third parties", "object": "titular_registral"}},
   "clauses": [
     {
       "name": "tesis2020418_exclusividad_fe",
-      "asset_ids": [1, 2, 3],
+      "asset_ids": [1, 2],
       "assignments": [
-        [-1, -2, -3],
-        [-1, -2, 3],
-        [-1, 2, -3],
-        [-1, 2, 3],
-        [1, -2, 3],
-        [1, 2, -3]
+        [-1, 2],
+        [1, -2]
       ]
     },
     {
       "name": "tesis2020418_principio_fundamental",
-      "asset_ids": [1, 4, 5],
+      "asset_ids": [3, 4, 5],
       "assignments": [
-        [-1, -4, -5],
-        [-1, -4, 5],
-        [-1, 4, -5],
-        [-1, 4, 5],
-        [1, -4, -5],
-        [1, -4, 5],
-        [1, 4, -5]
+        [-3, -4, -5],
+        [-3, -4, 5],
+        [-3, 4, -5],
+        [-3, 4, 5],
+        [3, -4, -5],
+        [3, -4, 5],
+        [3, 4, -5]
       ]
     },
     {
       "name": "tesis2020418_proteccion_registral",
-      "asset_ids": [4, 6],
+      "asset_ids": [3, 6],
       "assignments": [
-        [-4, -6],
-        [-4, 6],
-        [4, 6]
+        [-3, -6],
+        [-3, 6],
+        [3, 6]
       ]
     },
     {
       "name": "tesis2020418_limitacion_no_inscripcion",
-      "asset_ids": [5, 6],
+      "asset_ids": [4, 6],
       "assignments": [
-        [-5, -6],
-        [-5, 6],
-        [5, -6]
+        [-4, -6],
+        [-4, 6],
+        [4, -6]
       ]
     },
     {
       "name": "tesis2020418_consecuencia_logica",
-      "asset_ids": [1, 6],
+      "asset_ids": [5, 6],
       "assignments": [
-        [-1, -6],
-        [-1, 6],
-        [1, 6]
+        [-5, -6],
+        [-5, 6],
+        [5, 6]
       ]
     }
   ]

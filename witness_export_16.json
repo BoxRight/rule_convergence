@@ -1,31 +1,27 @@
 {
-  "assets": [1, 2, 3, 22, 44, 45],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "22": "cumplir_requisitos_legales", "44": "causa_remota_diversa", "45": "cosa_juzgada"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "22": {"asset_name": "cumplir_requisitos_legales", "subject": "unknown", "action": "unknown", "object": "unknown"}, "44": {"asset_name": "causa_remota_diversa(tribunal:analyze remote cause of action:demandante)", "subject": "tribunal", "action": "analyze remote cause of action", "object": "demandante"}, "45": {"asset_name": "cosa_juzgada(demandado:invoke res judicata defense:tribunal)", "subject": "demandado", "action": "invoke res judicata defense", "object": "tribunal"}},
+  "assets": [1, 2, 22, 44, 45],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "22": "cumplir_requisitos_legales", "44": "causa_remota_diversa", "45": "cosa_juzgada"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "22": {"asset_name": "cumplir_requisitos_legales", "subject": "unknown", "action": "unknown", "object": "unknown"}, "44": {"asset_name": "causa_remota_diversa(tribunal:analyze remote cause of action:demandante)", "subject": "tribunal", "action": "analyze remote cause of action", "object": "demandante"}, "45": {"asset_name": "cosa_juzgada(demandado:invoke res judicata defense:tribunal)", "subject": "demandado", "action": "invoke res judicata defense", "object": "tribunal"}},
   "clauses": [
     {
       "name": "tesis2014940_exclusividad_fe",
-      "asset_ids": [1, 2, 3],
+      "asset_ids": [1, 2],
       "assignments": [
-        [-1, -2, -3],
-        [-1, -2, 3],
-        [-1, 2, -3],
-        [-1, 2, 3],
-        [1, -2, 3],
-        [1, 2, -3]
+        [-1, 2],
+        [1, -2]
       ]
     },
     {
       "name": "tesis2014940_principio_fundamental",
-      "asset_ids": [2, 3, 44],
+      "asset_ids": [1, 2, 44],
       "assignments": [
-        [-2, -3, -44],
-        [-2, -3, 44],
-        [-2, 3, -44],
-        [-2, 3, 44],
-        [2, -3, -44],
-        [2, -3, 44],
-        [2, 3, 44]
+        [-1, -2, -44],
+        [-1, -2, 44],
+        [-1, 2, -44],
+        [-1, 2, 44],
+        [1, -2, -44],
+        [1, -2, 44],
+        [1, 2, 44]
       ]
     },
     {

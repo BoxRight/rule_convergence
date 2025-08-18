@@ -1,18 +1,14 @@
 {
-  "assets": [1, 2, 3, 18, 19, 20, 23],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "18": "proteccion_registral", "19": "interrupcion_prescripcion", "20": "ejercicio_derecho_legal", "23": "inutilizacion_tiempo"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "19": {"asset_name": "interrupcion_prescripcion(tercero:interrupt adverse possession period:demandante)", "subject": "tercero", "action": "interrupt adverse possession period", "object": "demandante"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "23": {"asset_name": "inutilizacion_tiempo(tribunal:nullify all time elapsed before recognition:demandante)", "subject": "tribunal", "action": "nullify all time elapsed before recognition", "object": "demandante"}},
+  "assets": [1, 2, 18, 19, 20, 23],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "18": "proteccion_registral", "19": "interrupcion_prescripcion", "20": "ejercicio_derecho_legal", "23": "inutilizacion_tiempo"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "19": {"asset_name": "interrupcion_prescripcion(tercero:interrupt adverse possession period:demandante)", "subject": "tercero", "action": "interrupt adverse possession period", "object": "demandante"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "23": {"asset_name": "inutilizacion_tiempo(tribunal:nullify all time elapsed before recognition:demandante)", "subject": "tribunal", "action": "nullify all time elapsed before recognition", "object": "demandante"}},
   "clauses": [
     {
       "name": "tesis2029251_exclusividad_fe",
-      "asset_ids": [1, 2, 3],
+      "asset_ids": [1, 2],
       "assignments": [
-        [-1, -2, -3],
-        [-1, -2, 3],
-        [-1, 2, -3],
-        [-1, 2, 3],
-        [1, -2, 3],
-        [1, 2, -3]
+        [-1, 2],
+        [1, -2]
       ]
     },
     {
@@ -37,15 +33,15 @@
     },
     {
       "name": "tesis2029251_permanencia_buena_fe",
-      "asset_ids": [2, 3, 20],
+      "asset_ids": [1, 2, 20],
       "assignments": [
-        [-2, -3, -20],
-        [-2, -3, 20],
-        [-2, 3, -20],
-        [-2, 3, 20],
-        [2, -3, -20],
-        [2, 3, -20],
-        [2, 3, 20]
+        [-1, -2, -20],
+        [-1, -2, 20],
+        [-1, 2, -20],
+        [-1, 2, 20],
+        [1, -2, -20],
+        [1, 2, -20],
+        [1, 2, 20]
       ]
     },
     {

@@ -1,29 +1,25 @@
 {
-  "assets": [1, 2, 3, 5, 7, 8, 20, 24],
-  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "5": "contrato_no_inscrito", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "20": "ejercicio_derecho_legal", "24": "aplicacion_supletoria"},
-  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "24": {"asset_name": "aplicacion_supletoria(tribunal_agrario:apply law supplementarily with adaptations:demandante)", "subject": "tribunal_agrario", "action": "apply law supplementarily with adaptations", "object": "demandante"}},
+  "assets": [1, 2, 4, 5, 7, 8, 20, 24],
+  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "4": "contrato_no_inscrito", "5": "demanda_prescripcion", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "20": "ejercicio_derecho_legal", "24": "aplicacion_supletoria"},
+  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "4": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "20": {"asset_name": "ejercicio_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "24": {"asset_name": "aplicacion_supletoria(tribunal_agrario:apply law supplementarily with adaptations:demandante)", "subject": "tribunal_agrario", "action": "apply law supplementarily with adaptations", "object": "demandante"}},
   "clauses": [
     {
       "name": "tesis2030499_exclusividad_fe",
-      "asset_ids": [1, 2, 3],
+      "asset_ids": [1, 2],
       "assignments": [
-        [-1, -2, -3],
-        [-1, -2, 3],
-        [-1, 2, -3],
-        [-1, 2, 3],
-        [1, -2, 3],
-        [1, 2, -3]
+        [-1, 2],
+        [1, -2]
       ]
     },
     {
       "name": "tesis2030499_principio_fundamental",
-      "asset_ids": [1, 20, 24],
+      "asset_ids": [5, 20, 24],
       "assignments": [
-        [-1, -20, -24],
-        [-1, -20, 24],
-        [-1, 20, -24],
-        [-1, 20, 24],
-        [1, 20, 24]
+        [-5, -20, -24],
+        [-5, -20, 24],
+        [-5, 20, -24],
+        [-5, 20, 24],
+        [5, 20, 24]
       ]
     },
     {
@@ -37,24 +33,24 @@
     },
     {
       "name": "tesis2030499_adaptacion_cultural",
-      "asset_ids": [2, 20],
+      "asset_ids": [1, 20],
       "assignments": [
-        [-2, -20],
-        [2, -20],
-        [2, 20]
+        [-1, -20],
+        [1, -20],
+        [1, 20]
       ]
     },
     {
       "name": "tesis2030499_cesion_valida",
-      "asset_ids": [2, 5, 7],
+      "asset_ids": [1, 4, 7],
       "assignments": [
-        [-2, -5, -7],
-        [-2, -5, 7],
-        [-2, 5, -7],
-        [-2, 5, 7],
-        [2, -5, -7],
-        [2, -5, 7],
-        [2, 5, 7]
+        [-1, -4, -7],
+        [-1, -4, 7],
+        [-1, 4, -7],
+        [-1, 4, 7],
+        [1, -4, -7],
+        [1, -4, 7],
+        [1, 4, 7]
       ]
     },
     {
