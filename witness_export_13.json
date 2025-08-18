@@ -1,0 +1,84 @@
+{
+  "assets": [1, 2, 3, 7, 8, 9, 38],
+  "asset_names": {"1": "demanda_prescripcion", "2": "ejercicio_buena_fe", "3": "ejercicio_mala_fe", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "9": "posesion_temporal", "38": "causa_generadora_revelada"},
+  "asset_construction": {"1": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "2": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "3": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "38": {"asset_name": "causa_generadora_revelada(demandante:reveal generating cause of possession:tribunal)", "subject": "demandante", "action": "reveal generating cause of possession", "object": "tribunal"}},
+  "clauses": [
+    {
+      "name": "tesis2009239_exclusividad_fe",
+      "asset_ids": [1, 2, 3],
+      "assignments": [
+        [-1, -2, -3],
+        [-1, -2, 3],
+        [-1, 2, -3],
+        [-1, 2, 3],
+        [1, -2, 3],
+        [1, 2, -3]
+      ]
+    },
+    {
+      "name": "tesis2009239_principio_fundamental",
+      "asset_ids": [1, 3, 7, 38],
+      "assignments": [
+        [-1, -3, -7, -38],
+        [-1, -3, -7, 38],
+        [-1, -3, 7, -38],
+        [-1, -3, 7, 38],
+        [-1, 3, -7, -38],
+        [-1, 3, -7, 38],
+        [-1, 3, 7, -38],
+        [-1, 3, 7, 38],
+        [1, -3, -7, -38],
+        [1, -3, -7, 38],
+        [1, -3, 7, -38],
+        [1, -3, 7, 38],
+        [1, 3, -7, 38]
+      ]
+    },
+    {
+      "name": "tesis2009239_mala_fe_sin_titulo",
+      "asset_ids": [3, 7],
+      "assignments": [
+        [-3, -7],
+        [-3, 7],
+        [3, -7]
+      ]
+    },
+    {
+      "name": "tesis2009239_requisitos_mala_fe",
+      "asset_ids": [1, 3, 8, 9],
+      "assignments": [
+        [-1, -3, -8, -9],
+        [-1, -3, -8, 9],
+        [-1, -3, 8, -9],
+        [-1, -3, 8, 9],
+        [-1, 3, -8, -9],
+        [-1, 3, -8, 9],
+        [-1, 3, 8, -9],
+        [-1, 3, 8, 9],
+        [1, -3, -8, -9],
+        [1, -3, -8, 9],
+        [1, -3, 8, -9],
+        [1, -3, 8, 9],
+        [1, 3, 8, 9]
+      ]
+    },
+    {
+      "name": "tesis2009239_distincion_fe",
+      "asset_ids": [2, 7],
+      "assignments": [
+        [-2, -7],
+        [-2, 7],
+        [2, 7]
+      ]
+    },
+    {
+      "name": "tesis2009239_revelacion_causa",
+      "asset_ids": [1, 38],
+      "assignments": [
+        [-1, -38],
+        [-1, 38],
+        [1, 38]
+      ]
+    }
+  ]
+}

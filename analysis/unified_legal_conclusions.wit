@@ -44,6 +44,9 @@ subject tercero = "third party";
 subject autoridad_registral = "registry authority";
 subject tribunal = "court/tribunal";
 subject notario = "notary public";
+subject tribunal_agrario = "agrarian court/tribunal";
+subject adjudicatario = "judicial auction acquirer";
+subject tercerista = "third party claimant";
 
 // ==========================================
 // UNIVERSAL LEGAL ACTIONS
@@ -60,7 +63,17 @@ action actuar_mala_fe = "act in bad faith", buena_fe;
 action obtener_proteccion_legal = "obtain legal protection", proteccion_legal;
 action cumplir_requisitos_legales = "comply with legal requirements", cumplimiento_contractual;
 action demostrar_causa_generadora = "prove the generating cause of possession", posesion_legal;
+action revelar_causa_generadora = "reveal generating cause of possession", posesion_legal;
 action poseer_tiempo_determinado = "possess property for specified time period", posesion_legal;
+action analizar_causa_remota = "analyze remote cause of action", ejercicio_derecho;
+action respetar_congruencia_procesal = "respect procedural congruence", proteccion_legal;
+action adquirir_por_remate = "acquire through judicial auction", ejercicio_derecho;
+action ejercer_terceria_excluyente = "exercise third party exclusion action", proteccion_legal;
+action invocar_cosa_juzgada = "invoke res judicata defense", proteccion_legal;
+action interrumpir_prescripcion = "interrupt adverse possession period", prescripcion_legal;
+action aplicar_supletoriamente = "apply law supplementarily with adaptations", cumplimiento_contractual;
+action variar_litis = "vary the legal dispute", ejercicio_derecho;
+action probar_independientemente = "prove independently without relying on other evidence", cumplimiento_contractual;
 
 // ==========================================
 // UNIVERSAL LEGAL ASSETS
@@ -82,6 +95,18 @@ asset posesion_temporal = demandante, poseer_tiempo_determinado, titular_registr
 // Universal legal protection patterns
 asset sistema_proteccion_registral = compensation(titularidad_registral, oponibilidad_terceros);
 asset barrera_contratos_no_inscritos = join(contrato_no_inscrito, demanda_prescripcion);
+
+// Universal legal analysis and procedural assets
+asset causa_generadora_revelada = demandante, revelar_causa_generadora, tribunal;
+asset causa_remota_diversa = tribunal, analizar_causa_remota, demandante;
+asset congruencia_procesal = tribunal_agrario, respetar_congruencia_procesal, demandante;
+asset adquisicion_remate = adjudicatario, adquirir_por_remate, tribunal;
+asset terceria_excluyente = tercerista, ejercer_terceria_excluyente, tribunal;
+asset cosa_juzgada = demandado, invocar_cosa_juzgada, tribunal;
+asset interrupcion_prescripcion = tercero, interrumpir_prescripcion, demandante;
+asset aplicacion_supletoria = tribunal_agrario, aplicar_supletoriamente, demandante;
+asset variacion_litis = tribunal_agrario, variar_litis, demandado;
+asset prueba_independiente = demandante, probar_independientemente, tribunal;
 
 // ==========================================
 // THESIS 2020418: ADVERSE POSSESSION AND UNREGISTERED CONTRACTS
@@ -132,13 +157,11 @@ asset tesis2021246_valida = global();
 // Additional actions for this thesis
 action realizar_allanamiento = "make acquiescence/admission to the claim", cumplimiento_contractual;
 action poseer_pacifico_continuo_publico = "possess peacefully, continuously, and publicly", posesion_legal;
-action probar_independientemente = "prove independently without relying on acquiescence", cumplimiento_contractual;
 action afectar_terceros = "affect third parties or public interest", proteccion_legal;
 
 // Additional assets for allanamiento limitations
 asset allanamiento_demandado = demandado, realizar_allanamiento, demandante;
 asset posesion_pacifico_continuo_publico = demandante, poseer_pacifico_continuo_publico, tercero;
-asset prueba_independiente = demandante, probar_independientemente, tribunal;
 asset proteccion_terceros = tercero, afectar_terceros, tribunal;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
@@ -236,11 +259,7 @@ asset tesis2023487_valida = global();
 subject tribunal_agrario = "Agrarian Tribunal";
 subject comisariado_ejidal = "Ejidal Commissariat";
 
-// Additional actions for this thesis
-action interrumpir_prescripcion = "interrupt adverse possession period", prescripcion_legal;
-
-// Additional assets for agrarian adverse possession
-asset interrupcion_prescripcion = tercero, interrumpir_prescripcion, demandante;
+// No additional actions needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
 clause tesis2025237_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
@@ -332,11 +351,7 @@ asset tesis2029251_valida = global();
 // THESIS 2030499: Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations
 // ==========================================
 
-// Additional actions for this thesis
-action aplicar_supletoriamente = "apply civil law supplementarily with agrarian adaptations", cumplimiento_contractual;
-
-// Additional assets for supplementary application and agrarian customs
-asset aplicacion_supletoria = tribunal_agrario, aplicar_supletoriamente, demandante;
+// No additional actions needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
 clause tesis2030499_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
@@ -426,6 +441,147 @@ clause tesis2030717_improcedencia = oblig(caracter_imprescriptible) IMPLIES not(
 
 // Thesis validation
 asset tesis2030717_valida = global();
+// ==========================================
+// THESIS 2008083: GOOD FAITH ADVERSE POSSESSION - PROOF REQUIREMENTS FOR JUST TITLE
+// ==========================================
+
+// Additional actions for this thesis
+action demostrar_autenticidad_titulo = "demonstrate authenticity of title document", buena_fe;
+action probar_fecha_fehaciente = "prove date with reliable evidence", prescripcion_legal;
+action demostrar_diligencia_adquirente = "demonstrate buyer's due diligence", buena_fe;
+action acreditar_pagos_precio = "prove payment of agreed price", cumplimiento_contractual;
+
+// Additional assets for proof requirements
+asset autenticidad_titulo = demandante, demostrar_autenticidad_titulo, tribunal;
+asset fecha_fehaciente = demandante, probar_fecha_fehaciente, tribunal;
+asset diligencia_adquirente = demandante, demostrar_diligencia_adquirente, tribunal;
+asset pagos_precio = demandante, acreditar_pagos_precio, tribunal;
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2008083_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Good faith adverse possession requires proving authenticity, date, and diligence
+clause tesis2008083_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente) AND oblig(diligencia_adquirente));
+
+// Proof requirements: Must prove title authenticity and date reliably
+clause tesis2008083_prueba_autenticidad = oblig(causa_generadora_probada) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente));
+
+// Diligence requirement: Good faith requires demonstrating due diligence in acquisition
+clause tesis2008083_diligencia_buena_fe = oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente);
+
+// Payment proof: Onerous contracts require proving payments made
+clause tesis2008083_prueba_pagos = oblig(causa_generadora_probada) AND oblig(contrato_compraventa) IMPLIES oblig(pagos_precio);
+
+// Burden of proof: Claimant must prove generating cause with reliable evidence
+clause tesis2008083_carga_prueba = claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada);
+
+// Insufficient diligence consequence: Lack of diligence means bad faith (10-year period)
+clause tesis2008083_falta_diligencia = not(oblig(diligencia_adquirente)) IMPLIES oblig(ejercicio_mala_fe);
+
+// Thesis validation
+asset tesis2008083_valida = global();
+
+// ==========================================
+// THESIS 2009239: BAD FAITH ADVERSE POSSESSION WITHOUT JUST TITLE
+// ==========================================
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2009239_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Bad faith adverse possession does not require just title, only revealing generating cause
+clause tesis2009239_principio_fundamental = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_revelada) AND not(oblig(causa_generadora_probada)));
+
+// Bad faith distinction: Bad faith possession requires only revealing cause, not proving just title
+clause tesis2009239_mala_fe_sin_titulo = oblig(ejercicio_mala_fe) IMPLIES not(oblig(causa_generadora_probada));
+
+// Possession requirements: Bad faith requires possession as owner, peaceful, continuous, public for 10 years
+clause tesis2009239_requisitos_mala_fe = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(posesion_como_propietario) AND oblig(posesion_temporal));
+
+// Good faith vs bad faith distinction: Good faith requires just title, bad faith only requires revealing cause
+clause tesis2009239_distincion_fe = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
+
+// Generating cause revelation: Even in bad faith, must reveal how possession was acquired
+clause tesis2009239_revelacion_causa = claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada);
+
+// Thesis validation
+asset tesis2009239_valida = global();
+
+// ==========================================
+// THESIS 2011927: AGRARIAN ADVERSE POSSESSION - PROCEDURAL CONGRUENCE PRINCIPLE
+// ==========================================
+
+// Additional actions for this thesis
+action variar_litis = "vary the legal dispute", ejercicio_derecho;
+
+// No additional assets needed - using universal assets
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2011927_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: If action is filed as good faith, court cannot analyze bad faith variant
+clause tesis2011927_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis));
+
+// Procedural congruence: Court must respect the procedural framework established by parties
+clause tesis2011927_congruencia_procesal = claim(demanda_prescripcion) IMPLIES oblig(congruencia_procesal);
+
+// Prohibition of litis variation: Cannot change from good faith to bad faith analysis
+clause tesis2011927_prohibicion_variacion = oblig(congruencia_procesal) IMPLIES not(oblig(variacion_litis));
+
+// Defense rights protection: Changing legal theory violates defendant's defense rights
+clause tesis2011927_proteccion_defensa = oblig(variacion_litis) IMPLIES not(oblig(proteccion_registral));
+
+// Thesis validation
+asset tesis2011927_valida = global();
+
+// ==========================================
+// THESIS 2014858: THIRD PARTY EXCLUSION - UNREGISTERED DOCUMENTS VS GOOD FAITH ACQUIRERS
+// ==========================================
+
+// No additional subjects or actions needed - using universal assets
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2014858_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Unregistered documents cannot be opposed to good faith acquirers through judicial auction
+clause tesis2014858_principio_fundamental = oblig(contrato_no_inscrito) AND oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES not(oblig(terceria_excluyente));
+
+// Registry protection: Registration is necessary for opposability to good faith third parties
+clause tesis2014858_proteccion_registral = oblig(ejercicio_buena_fe) AND oblig(adquisicion_remate) IMPLIES oblig(proteccion_registral);
+
+// Good faith acquisition: Judicial auction creates real property rights for good faith acquirers
+clause tesis2014858_adquisicion_buena_fe = oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES oblig(ejercer_derecho_legal);
+
+// Opposability limitation: Unregistered documents lack opposability against registered good faith acquirers
+clause tesis2014858_limitacion_oponibilidad = oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros));
+
+// Thesis validation
+asset tesis2014858_valida = global();
+
+// ==========================================
+// THESIS 2014940: RES JUDICATA - GOOD FAITH VS BAD FAITH AS DIFFERENT CAUSES
+// ==========================================
+
+// No additional actions or assets needed - using universal assets
+
+// Faith exclusivity: Adverse possession is either good faith XOR bad faith
+clause tesis2014940_exclusividad_fe = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Thesis-specific principle: Good faith and bad faith adverse possession have different remote causes, so res judicata does not apply
+clause tesis2014940_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(ejercicio_mala_fe) IMPLIES oblig(causa_remota_diversa);
+
+// Different legal causes: Good faith vs bad faith constitute different remote causes
+clause tesis2014940_causas_diferentes = oblig(causa_remota_diversa) IMPLIES not(oblig(cosa_juzgada));
+
+// Res judicata limitation: Res judicata requires identity in remote and proximate causes
+clause tesis2014940_identidad_causas = oblig(cosa_juzgada) IMPLIES not(oblig(causa_remota_diversa));
+
+// Sequential analysis allowed: Different possession qualities allow separate proceedings
+clause tesis2014940_procedimientos_separados = oblig(causa_remota_diversa) IMPLIES oblig(cumplir_requisitos_legales);
+
+// Thesis validation
+asset tesis2014940_valida = global();
+
+// ==========================================
 // THESIS [NEXT]: [TITLE]
 // Template for next thesis
 // ==========================================
