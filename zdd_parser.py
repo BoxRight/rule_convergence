@@ -51,19 +51,15 @@ class ZDDParser:
         if not self._raw_data:
             raise ValueError("No data loaded. Call load() first.")
             
-        # Read magic number (first 4 bytes)
-        magic_number = struct.unpack('<I', self._raw_data[:4])[0]
-        
         logger.info(f"Parsing ZDD file: {self.zdd_file_path.name}")
-        logger.info(f"Magic number: {magic_number} (0x{magic_number:08x})")
         logger.info(f"File size: {len(self._raw_data)} bytes")
         
-        # Parse arrays of arrays
+        # Parse arrays of arrays (no magic number in CUDA output)
         arrays = self._parse_arrays_of_arrays()
         
-        # Initialize structure
+        # Initialize structure (no magic number)
         structure = ZDDStructure(
-            magic_number=magic_number,
+            magic_number=0,  # No magic number in CUDA format
             arrays=arrays
         )
         
@@ -75,15 +71,15 @@ class ZDDParser:
     def _parse_arrays_of_arrays(self) -> List[List[int]]:
         """Parse the binary data as arrays of arrays with integers"""
         arrays = []
-        offset = 4  # Skip magic number
+        offset = 0  # Start from beginning (no magic number)
         
         while offset < len(self._raw_data):
-            # Try to read array length (4 bytes)
+            # Try to read array length (4 bytes, signed integer)
             if offset + 4 > len(self._raw_data):
                 break
                 
             try:
-                array_length = struct.unpack('<I', self._raw_data[offset:offset+4])[0]
+                array_length = struct.unpack('<i', self._raw_data[offset:offset+4])[0]  # Changed to signed int
                 offset += 4
                 
                 # Validate array length
@@ -91,14 +87,14 @@ class ZDDParser:
                     logger.warning(f"Invalid array length {array_length} at offset {offset-4}, stopping")
                     break
                 
-                # Read array elements (each 4 bytes)
+                # Read array elements (each 4 bytes, signed integers)
                 array_data = []
                 for i in range(array_length):
                     if offset + 4 > len(self._raw_data):
                         logger.warning(f"Unexpected end of file while reading array element {i}")
                         break
                     
-                    element = struct.unpack('<I', self._raw_data[offset:offset+4])[0]
+                    element = struct.unpack('<i', self._raw_data[offset:offset+4])[0]  # Changed to signed int
                     array_data.append(element)
                     offset += 4
                 
@@ -226,7 +222,8 @@ class ZDDParser:
         
         print(f"\n📊 ZDD Summary: {self.zdd_file_path.name}")
         print("=" * 50)
-        print(f"Magic Number: {self.structure.magic_number} (0x{self.structure.magic_number:08x})")
+        if self.structure.magic_number != 0:
+            print(f"Magic Number: {self.structure.magic_number} (0x{self.structure.magic_number:08x})")
         print(f"Array Count: {len(self.structure.arrays)}")
         
         # Print statistics
