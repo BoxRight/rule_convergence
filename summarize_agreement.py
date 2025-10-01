@@ -28,15 +28,16 @@ def assignment_to_positive_clause(assignment):
 # Your data
 data = [
     ("[2]", 20, 16),
-    ("[5]", 14, 10), 
-    ("[4]", 9, 6),
-    ("[2,18]", 6, 6),
-    ("[2,7]", 5, 5),
-    ("[2,8]", 5, 5),
-    ("[3]", 4, 4),
+    ("[1]", 14, 10), 
+    ("[1,7]", 9, 6),
+    ("[2,17]", 6, 6),
+    ("[1,18]", 5, 5),
+    ("[1,8]", 5, 5),
     ("[2,4]", 4, 4),
-    ("[1,18]", 4, 4),
-    ("[2,7,8]", 4, 4)
+    ("[2,4]", 4, 4),
+    ("[1,7,8]", 4, 4),
+    ("[2,7,8]", 4, 4),
+    ("[1,7,9]", 4, 4),
 ]
 
 # Process assignments
@@ -55,7 +56,7 @@ print("=== INDIVIDUAL CLAUSES ===")
 for assignment, array_sig, freq, thesis_count in assignments:
     readable_clause = assignment_to_positive_clause(assignment)
     full_clause = assignment_to_clause(assignment, all_variables)
-    print(f"{array_sig:<10} (freq={freq}, thesis={thesis_count})")
+    print(f"{array_sig:<11} (freq={freq}, thesis={thesis_count})")
     print(f"  Readable: {readable_clause}")
     print(f"  Full:     {full_clause}")
     print()
