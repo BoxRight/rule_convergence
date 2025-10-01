@@ -134,7 +134,6 @@ asset elementos_probatorios = autoridad_registral, aportar_elementos_probatorios
 // ==========================================
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2020418_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Unregistered contracts cannot establish adverse possession against registered owners
 clause tesis2020418_principio_fundamental = oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion));
@@ -154,7 +153,6 @@ asset tesis2020418_valida = global();
 // ==========================================
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2021246_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Bad faith possessors must prove generating cause even without just title
 clause tesis2021246_principio_fundamental = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada);
@@ -186,7 +184,6 @@ asset posesion_pacifico_continuo_publico = demandante, poseer_pacifico_continuo_
 asset proteccion_terceros = tercero, afectar_terceros, tribunal;
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2021398_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Allanamiento can prove good faith and transmission, but NOT peaceful/continuous/public possession
 clause tesis2021398_principio_fundamental = oblig(allanamiento_demandado) IMPLIES (oblig(ejercicio_buena_fe) AND oblig(causa_generadora_probada)) AND not(oblig(posesion_pacifico_continuo_publico));
@@ -216,7 +213,6 @@ asset documento_con_vicios = demandante, tener_vicios_documentales, tribunal;
 asset desinteres_propietario = titular_registral, demostrar_desinteres_prolongado, demandante;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2021537_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Bad faith adverse possession tolerates defective documents due to extended time period
 clause tesis2021537_principio_fundamental = oblig(ejercicio_mala_fe) AND oblig(documento_con_vicios) AND oblig(posesion_temporal) IMPLIES claim(demanda_prescripcion);
@@ -249,7 +245,6 @@ asset contrato_inmueble_diverso = demandante, referirse_inmueble_diverso, tercer
 asset error_ubicacion_material = tercero, cometer_error_ubicacion, demandante;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2023487_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Donation contract for different property cannot constitute just title for good faith adverse possession
 clause tesis2023487_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(contrato_inmueble_diverso) IMPLIES not(oblig(causa_generadora_probada));
@@ -283,7 +278,6 @@ subject comisariado_ejidal = "Ejidal Commissariat";
 // No additional actions needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2025237_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Only third parties with contrary interests can interrupt agrarian adverse possession
 clause tesis2025237_principio_fundamental = oblig(interrupcion_prescripcion) IMPLIES (oblig(proteccion_terceros) AND oblig(ejercicio_derecho_legal));
@@ -317,7 +311,6 @@ action tener_conocimiento_hipoteca = "have knowledge of mortgage with non-aliena
 asset conocimiento_hipoteca_infonavit = demandante, tener_conocimiento_hipoteca, infonavit;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2025433_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Knowledge of INFONAVIT mortgage does not vitiate just title for good faith adverse possession
 clause tesis2025433_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(causa_generadora_probada);
@@ -348,7 +341,6 @@ action inutilizar_tiempo_transcurrido = "nullify all time elapsed before recogni
 asset inutilizacion_tiempo = tribunal, inutilizar_tiempo_transcurrido, demandante;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2029251_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Recognition-based interruption is constitutionally valid and doesn't violate property rights
 clause tesis2029251_principio_fundamental = oblig(ejercicio_derecho_legal) IMPLIES (oblig(interrupcion_prescripcion) AND oblig(proteccion_registral));
@@ -375,7 +367,6 @@ asset tesis2029251_valida = global();
 // No additional actions needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2030499_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Civil law applies supplementarily in agrarian matters with appropriate adaptations
 clause tesis2030499_principio_fundamental = claim(demanda_prescripcion) IMPLIES (oblig(aplicacion_supletoria) AND oblig(ejercicio_derecho_legal));
@@ -405,7 +396,6 @@ asset ausencia_efecto_juridico = demandante, ejercer_derecho_legal, tribunal;
 asset acto_inexistente = demandante, cumplir_requisitos_legales, tribunal;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2030500_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Judicially nullified title cannot establish generating cause for adverse possession
 clause tesis2030500_principio_fundamental = oblig(nulidad_judicial_titulo) IMPLIES not(oblig(causa_generadora_probada));
@@ -443,7 +433,6 @@ asset reserva_ecologica = ayuntamiento_municipal, obtener_proteccion_legal, dema
 asset caracter_imprescriptible = tribunal, cumplir_requisitos_legales, demandante;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2030717_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Municipal public domain properties designated for ecological reserves are imprescriptible
 clause tesis2030717_principio_fundamental = oblig(dominio_publico) AND oblig(reserva_ecologica) IMPLIES oblig(caracter_imprescriptible);
@@ -479,7 +468,6 @@ asset diligencia_adquirente = demandante, demostrar_diligencia_adquirente, tribu
 asset pagos_precio = demandante, acreditar_pagos_precio, tribunal;
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2008083_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Good faith adverse possession requires proving authenticity, date, and diligence
 clause tesis2008083_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente) AND oblig(diligencia_adquirente));
@@ -507,7 +495,6 @@ asset tesis2008083_valida = global();
 // ==========================================
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2009239_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Bad faith adverse possession does not require just title, only revealing generating cause
 clause tesis2009239_principio_fundamental = oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_revelada) AND not(oblig(causa_generadora_probada)));
@@ -537,7 +524,6 @@ action variar_litis = "vary the legal dispute", ejercicio_derecho;
 // No additional assets needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2011927_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: If action is filed as good faith, court cannot analyze bad faith variant
 clause tesis2011927_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis));
@@ -561,7 +547,6 @@ asset tesis2011927_valida = global();
 // No additional subjects or actions needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2014858_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Unregistered documents cannot be opposed to good faith acquirers through judicial auction
 clause tesis2014858_principio_fundamental = oblig(contrato_no_inscrito) AND oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES not(oblig(terceria_excluyente));
@@ -585,7 +570,6 @@ asset tesis2014858_valida = global();
 // No additional actions or assets needed - using universal assets
 
 // Faith exclusivity: Adverse possession is either good faith XOR bad faith
-clause tesis2014940_exclusividad_fe = (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis-specific principle: Good faith and bad faith adverse possession have different remote causes, so res judicata does not apply
 clause tesis2014940_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(ejercicio_mala_fe) IMPLIES oblig(causa_remota_diversa);
@@ -613,7 +597,6 @@ action tener_posesion_delictuosa = "have delictual/criminal possession", prescri
 asset posesion_delictuosa = demandante, tener_posesion_delictuosa, tribunal;
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2017366_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Possession classification depends on knowledge of title defects and legal basis
 clause tesis2017366_principio_fundamental = claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(conocimiento_vicios));
@@ -647,7 +630,6 @@ asset tesis2017366_valida = global();
 asset accion_extincion_dominio = tribunal, ejercer_derecho_legal, tercero;
 
 // Faith exclusivity: Good faith vs knowledge of illegal activities (mutually exclusive)
-clause tesis2017539_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Courts must determine if third party with good faith claim could reasonably know about illegal use
 clause tesis2017539_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(accion_extincion_dominio) IMPLIES oblig(posibilidad_fisica_conocimiento);
@@ -680,7 +662,6 @@ asset tesis2017539_valida = global();
 // All actions now universal - no thesis-specific actions needed
 
 // Faith exclusivity: Good faith vs bad faith (mutually exclusive)
-clause tesis2017540_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Domain forfeiture against third parties requires proving bad faith (knowledge + failure to act)
 clause tesis2017540_principio_fundamental = claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) AND oblig(cumplimiento_deber_legal));
@@ -723,7 +704,6 @@ action proporcionar_seguridad_juridica = "provide legal security to possessors",
 asset seguridad_juridica = demandante, proporcionar_seguridad_juridica, tribunal;
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2018505_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Allanamiento can prove generating cause but NOT possession attributes (public, peaceful, continuous)
 clause tesis2018505_principio_fundamental = oblig(allanamiento_demandado) IMPLIES oblig(causa_generadora_probada) AND not(oblig(posesion_pacifico_continuo_publico));
@@ -765,7 +745,6 @@ asset proteccion_defensa = demandado, proteger_defensa, tribunal;
 asset enderezamiento_litis = tribunal, enderezar_litis, demandado;
 
 // Faith exclusivity: Possession is either good faith XOR bad faith (mutually exclusive)
-clause tesis2016571_exclusividad_fe = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
 // Thesis-specific principle: Good faith adverse possession claimant cannot vary claims to bad faith during trial
 clause tesis2016571_principio_fundamental = oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis));
@@ -797,9 +776,605 @@ clause tesis2016571_compromiso_teoria = oblig(ejercicio_buena_fe) AND claim(dema
 // Thesis validation
 asset tesis2016571_valida = global();
 
+
 // ==========================================
-// COMPARATIVE ANALYSIS SECTION
-// Template for next thesis
+
+// ==========================================
+// THESIS 2024088: BAD FAITH ADVERSE POSSESSION WITHOUT TITLE
+// ==========================================
+
+// Thesis-specific principle: Bad faith adverse possession without title requires proving the generating cause of possession
+clause tesis2024088_principio_fundamental = oblig(ejercicio_mala_fe) AND not(oblig(titularidad_registral)) IMPLIES oblig(causa_generadora_probada);
+
+// Supporting legal logic: Proving generating cause is essential for both good and bad faith possession
+clause tesis2024088_requisito_causa_generadora = oblig(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada);
+
+// Derived possession cannot prescribe because it lacks ownership intent
+clause tesis2024088_limitacion_posesion_derivada = oblig(posesion_temporal) IMPLIES not(oblig(posesion_como_propietario));
+
+// This requirement provides legal security without violating due process
+clause tesis2024088_seguridad_juridica = oblig(causa_generadora_probada) IMPLIES oblig(proteccion_legal);
+
+// Thesis validation
+asset tesis2024088_valida = global();
+
+// ==========================================
+// THESIS 202535: BAD FAITH POSSESSOR IN INMATRICULATION PROCEDURES
+// ==========================================
+// Thesis-specific asset: Inmatriculation procedure for this specific case
+asset procedimiento_inmatriculacion_202535 = demandante, ejercer_derecho_legal, autoridad_registral;
+
+// Thesis-specific principle: Person promoting inmatriculation knowing true owner is different from transferor cannot be good faith possessor
+clause tesis202535_principio_fundamental = oblig(conocimiento_vicios) AND oblig(procedimiento_inmatriculacion_202535) IMPLIES oblig(ejercicio_mala_fe);
+
+// Supporting legal logic: Knowledge of true ownership defects precludes good faith
+clause tesis202535_conocimiento_defectos = oblig(conocimiento_vicios) IMPLIES not(oblig(ejercicio_buena_fe));
+
+
+
+// Thesis validation
+asset tesis202535_valida = global();
+
+// ==========================================
+// THESIS 202177: Thesis 202177
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis202177_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis202177_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis202177_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis202177_valida = global();
+
+// ==========================================
+// THESIS 204300: Thesis 204300
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis204300_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis204300_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis204300_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis204300_valida = global();
+
+// ==========================================
+// THESIS 204375: Thesis 204375
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis204375_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis204375_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis204375_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis204375_valida = global();
+
+// ==========================================
+// THESIS 206322: Thesis 206322
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis206322_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis206322_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis206322_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis206322_valida = global();
+
+// ==========================================
+// THESIS 210115: Thesis 210115
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis210115_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis210115_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis210115_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis210115_valida = global();
+
+// ==========================================
+// THESIS 210588: Thesis 210588
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis210588_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis210588_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis210588_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis210588_valida = global();
+
+// ==========================================
+// THESIS 210589: Thesis 210589
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis210589_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis210589_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis210589_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis210589_valida = global();
+
+// ==========================================
+// THESIS 210888: Thesis 210888
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis210888_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis210888_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis210888_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis210888_valida = global();
+
+// ==========================================
+// THESIS 210890: Thesis 210890
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis210890_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis210890_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis210890_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis210890_valida = global();
+
+// ==========================================
+// THESIS 211744: Thesis 211744
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis211744_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis211744_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis211744_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis211744_valida = global();
+
+// ==========================================
+// THESIS 212497: Thesis 212497
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis212497_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis212497_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis212497_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis212497_valida = global();
+
+// ==========================================
+// THESIS 213224: Thesis 213224
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis213224_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis213224_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis213224_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis213224_valida = global();
+
+// ==========================================
+// THESIS 214456: Thesis 214456
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis214456_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis214456_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis214456_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis214456_valida = global();
+
+// ==========================================
+// THESIS 215033: Thesis 215033
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis215033_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis215033_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis215033_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis215033_valida = global();
+
+// ==========================================
+// THESIS 216431: Thesis 216431
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis216431_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis216431_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis216431_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis216431_valida = global();
+
+// ==========================================
+// THESIS 219823: Thesis 219823
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis219823_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis219823_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis219823_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis219823_valida = global();
+
+// ==========================================
+// THESIS 221460: Thesis 221460
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis221460_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis221460_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis221460_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis221460_valida = global();
+
+// ==========================================
+// THESIS 221758: Thesis 221758
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis221758_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis221758_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis221758_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis221758_valida = global();
+
+// ==========================================
+// THESIS 222153: Thesis 222153
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis222153_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis222153_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis222153_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis222153_valida = global();
+
+// ==========================================
+// THESIS 222185: Thesis 222185
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis222185_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis222185_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis222185_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis222185_valida = global();
+
+// ==========================================
+// THESIS 223431: Thesis 223431
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis223431_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis223431_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis223431_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis223431_valida = global();
+
+// ==========================================
+// THESIS 224038: Thesis 224038
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis224038_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis224038_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis224038_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis224038_valida = global();
+
+// ==========================================
+// THESIS 224737: Thesis 224737
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis224737_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis224737_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis224737_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis224737_valida = global();
+
+// ==========================================
+// THESIS 224820: Thesis 224820
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis224820_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis224820_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis224820_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis224820_valida = global();
+
+// ==========================================
+// THESIS 228850: Thesis 228850
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis228850_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis228850_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis228850_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis228850_valida = global();
+
+// ==========================================
+// THESIS 228853: Thesis 228853
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis228853_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis228853_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis228853_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis228853_valida = global();
+
+// ==========================================
+// THESIS 228856: Thesis 228856
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis228856_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis228856_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis228856_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis228856_valida = global();
+
+// ==========================================
+// THESIS 229292: Thesis 229292
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis229292_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis229292_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis229292_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis229292_valida = global();
+
+// ==========================================
+// THESIS 241748: Thesis 241748
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis241748_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis241748_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis241748_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis241748_valida = global();
+
+// ==========================================
+// THESIS 241751: Thesis 241751
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis241751_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis241751_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis241751_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis241751_valida = global();
+
+// ==========================================
+// THESIS 241812: Thesis 241812
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis241812_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis241812_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis241812_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis241812_valida = global();
+
+// ==========================================
+// THESIS 242139: Thesis 242139
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis242139_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis242139_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis242139_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis242139_valida = global();
+
+// ==========================================
+// THESIS 245838: Thesis 245838
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis245838_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis245838_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis245838_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis245838_valida = global();
+
+// ==========================================
+// THESIS 246297: Thesis 246297
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis246297_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis246297_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis246297_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis246297_valida = global();
+
+// ==========================================
+// THESIS 248006: Thesis 248006
+// ==========================================
+
+// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
+clause tesis248006_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+
+// Supporting legal logic (add as needed)
+clause tesis248006_regla_secundaria = [SUPPORTING_LOGIC];
+
+// Additional thesis-specific assets (only if shared assets are insufficient)
+// asset tesis248006_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+
+// Thesis validation
+asset tesis248006_valida = global();
+// THESIS [NEXT]:
 // ==========================================
 
 // [Add thesis-specific clauses here using the shared assets]
