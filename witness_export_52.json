@@ -1,0 +1,50 @@
+{
+  "assets": [5, 10, 40, 60, 63],
+  "asset_names": {"5": "ejercicio_mala_fe", "10": "ejercicio_buena_fe", "40": "congruencia_procesal", "60": "proteccion_legal", "63": "ejercer_prescripcion_positiva"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}, "60": {"asset_name": "proteccion_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "clauses": [
+    {
+      "name": "tesis241748_principio_fundamental",
+      "asset_ids": [10, 40, 63],
+      "assignments": [
+        [-10, -40, -63],
+        [-10, -40, 63],
+        [-10, 40, -63],
+        [-10, 40, 63],
+        [10, -40, -63],
+        [10, 40, -63],
+        [10, 40, 63]
+      ]
+    },
+    {
+      "name": "tesis241748_analisis_fe",
+      "asset_ids": [5, 10, 40],
+      "assignments": [
+        [-5, -10, -40],
+        [-5, 10, -40],
+        [-5, 10, 40],
+        [5, -10, -40],
+        [5, -10, 40],
+        [5, 10, -40]
+      ]
+    },
+    {
+      "name": "tesis241748_declaracion_derecho",
+      "asset_ids": [40, 60],
+      "assignments": [
+        [-40, -60],
+        [-40, 60],
+        [40, 60]
+      ]
+    },
+    {
+      "name": "tesis241748_congruencia_accion",
+      "asset_ids": [40, 63],
+      "assignments": [
+        [-40, -63],
+        [40, -63],
+        [40, 63]
+      ]
+    }
+  ]
+}

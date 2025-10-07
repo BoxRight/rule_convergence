@@ -1,0 +1,59 @@
+{
+  "assets": [8, 10, 60, 62, 63, 64],
+  "asset_names": {"8": "posesion_temporal", "10": "ejercicio_buena_fe", "60": "proteccion_legal", "62": "posesion_agraria", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos"},
+  "asset_construction": {"8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "60": {"asset_name": "proteccion_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "62": {"asset_name": "posesion_agraria(demandante:possess property with ownership character:tribunal_agrario)", "subject": "demandante", "action": "possess property with ownership character", "object": "tribunal_agrario"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis210588_principio_fundamental",
+      "asset_ids": [10, 62, 63, 64],
+      "assignments": [
+        [-10, -62, -63, -64],
+        [-10, -62, -63, 64],
+        [-10, -62, 63, -64],
+        [-10, -62, 63, 64],
+        [-10, 62, -63, -64],
+        [-10, 62, -63, 64],
+        [-10, 62, 63, -64],
+        [-10, 62, 63, 64],
+        [10, -62, -63, -64],
+        [10, -62, -63, 64],
+        [10, -62, 63, -64],
+        [10, -62, 63, 64],
+        [10, 62, -63, -64],
+        [10, 62, 63, -64],
+        [10, 62, 63, 64]
+      ]
+    },
+    {
+      "name": "tesis210588_posesion_anterior",
+      "asset_ids": [8, 62, 64],
+      "assignments": [
+        [-8, -62, -64],
+        [-8, -62, 64],
+        [-8, 62, -64],
+        [-8, 62, 64],
+        [8, -62, -64],
+        [8, 62, -64],
+        [8, 62, 64]
+      ]
+    },
+    {
+      "name": "tesis210588_marco_legal_nuevo",
+      "asset_ids": [62, 63],
+      "assignments": [
+        [-62, -63],
+        [-62, 63],
+        [62, 63]
+      ]
+    },
+    {
+      "name": "tesis210588_proteccion_constitucional",
+      "asset_ids": [60, 62],
+      "assignments": [
+        [-60, -62],
+        [60, -62],
+        [60, 62]
+      ]
+    }
+  ]
+}

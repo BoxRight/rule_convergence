@@ -1,0 +1,65 @@
+{
+  "assets": [6, 7, 10, 11, 63],
+  "asset_names": {"6": "causa_generadora_probada", "7": "posesion_como_propietario", "10": "ejercicio_buena_fe", "11": "posesion_pacifico_continuo_publico", "63": "ejercer_prescripcion_positiva"},
+  "asset_construction": {"6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "11": {"asset_name": "posesion_pacifico_continuo_publico(demandante:possess peacefully, continuously, and publicly:tercero)", "subject": "demandante", "action": "possess peacefully, continuously, and publicly", "object": "tercero"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "clauses": [
+    {
+      "name": "tesis241812_principio_fundamental",
+      "asset_ids": [7, 10, 11, 63],
+      "assignments": [
+        [-7, -10, -11, -63],
+        [-7, -10, -11, 63],
+        [-7, -10, 11, -63],
+        [-7, -10, 11, 63],
+        [-7, 10, -11, -63],
+        [-7, 10, -11, 63],
+        [-7, 10, 11, -63],
+        [-7, 10, 11, 63],
+        [7, -10, -11, -63],
+        [7, -10, -11, 63],
+        [7, -10, 11, -63],
+        [7, -10, 11, 63],
+        [7, 10, -11, -63],
+        [7, 10, -11, 63],
+        [7, 10, 11, 63]
+      ]
+    },
+    {
+      "name": "tesis241812_presuncion_causa",
+      "asset_ids": [6, 7, 11],
+      "assignments": [
+        [-6, -7, -11],
+        [-6, -7, 11],
+        [-6, 7, -11],
+        [6, -7, -11],
+        [6, -7, 11],
+        [6, 7, -11],
+        [6, 7, 11]
+      ]
+    },
+    {
+      "name": "tesis241812_requisitos_posesion",
+      "asset_ids": [7, 11, 63],
+      "assignments": [
+        [-7, -11, -63],
+        [-7, 11, -63],
+        [7, -11, -63],
+        [7, 11, -63],
+        [7, 11, 63]
+      ]
+    },
+    {
+      "name": "tesis241812_presuncion_buena_fe",
+      "asset_ids": [7, 10, 11],
+      "assignments": [
+        [-7, -10, -11],
+        [-7, -10, 11],
+        [-7, 10, -11],
+        [-7, 10, 11],
+        [7, -10, -11],
+        [7, 10, -11],
+        [7, 10, 11]
+      ]
+    }
+  ]
+}

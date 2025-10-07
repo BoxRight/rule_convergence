@@ -1,70 +1,62 @@
 {
-  "assets": [1, 2, 4, 6, 18, 41, 42, 43],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "4": "contrato_no_inscrito", "6": "oponibilidad_terceros", "18": "proteccion_registral", "41": "adquisicion_remate", "42": "terceria_excluyente", "43": "ejercer_derecho_legal"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "4": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "6": {"asset_name": "oponibilidad_terceros(demandante:be legally opposable to third parties:titular_registral)", "subject": "demandante", "action": "be legally opposable to third parties", "object": "titular_registral"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "41": {"asset_name": "adquisicion_remate(adjudicatario:acquire through judicial auction:tribunal)", "subject": "adjudicatario", "action": "acquire through judicial auction", "object": "tribunal"}, "42": {"asset_name": "terceria_excluyente(tercerista:exercise third party exclusion action:tribunal)", "subject": "tercerista", "action": "exercise third party exclusion action", "object": "tribunal"}, "43": {"asset_name": "ejercer_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "assets": [2, 4, 10, 18, 41, 42, 43],
+  "asset_names": {"2": "contrato_no_inscrito", "4": "oponibilidad_terceros", "10": "ejercicio_buena_fe", "18": "proteccion_registral", "41": "adquisicion_remate", "42": "terceria_excluyente", "43": "ejercer_derecho_legal"},
+  "asset_construction": {"2": {"asset_name": "contrato_no_inscrito(demandante:execute contract:tercero)", "subject": "demandante", "action": "execute contract", "object": "tercero"}, "4": {"asset_name": "oponibilidad_terceros(demandante:be legally opposable to third parties:titular_registral)", "subject": "demandante", "action": "be legally opposable to third parties", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "41": {"asset_name": "adquisicion_remate(adjudicatario:acquire through judicial auction:tribunal)", "subject": "adjudicatario", "action": "acquire through judicial auction", "object": "tribunal"}, "42": {"asset_name": "terceria_excluyente(tercerista:exercise third party exclusion action:tribunal)", "subject": "tercerista", "action": "exercise third party exclusion action", "object": "tribunal"}, "43": {"asset_name": "ejercer_derecho_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}},
   "clauses": [
     {
-      "name": "tesis2014858_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2014858_principio_fundamental",
-      "asset_ids": [1, 4, 41, 42],
+      "asset_ids": [2, 10, 41, 42],
       "assignments": [
-        [-1, -4, -41, -42],
-        [-1, -4, -41, 42],
-        [-1, -4, 41, -42],
-        [-1, -4, 41, 42],
-        [-1, 4, -41, -42],
-        [-1, 4, -41, 42],
-        [-1, 4, 41, -42],
-        [-1, 4, 41, 42],
-        [1, -4, -41, -42],
-        [1, -4, -41, 42],
-        [1, -4, 41, -42],
-        [1, -4, 41, 42],
-        [1, 4, -41, -42],
-        [1, 4, -41, 42],
-        [1, 4, 41, -42]
+        [-2, -10, -41, -42],
+        [-2, -10, -41, 42],
+        [-2, -10, 41, -42],
+        [-2, -10, 41, 42],
+        [-2, 10, -41, -42],
+        [-2, 10, -41, 42],
+        [-2, 10, 41, -42],
+        [-2, 10, 41, 42],
+        [2, -10, -41, -42],
+        [2, -10, -41, 42],
+        [2, -10, 41, -42],
+        [2, -10, 41, 42],
+        [2, 10, -41, -42],
+        [2, 10, -41, 42],
+        [2, 10, 41, -42]
       ]
     },
     {
       "name": "tesis2014858_proteccion_registral",
-      "asset_ids": [1, 18, 41],
+      "asset_ids": [10, 18, 41],
       "assignments": [
-        [-1, -18, -41],
-        [-1, -18, 41],
-        [-1, 18, -41],
-        [-1, 18, 41],
-        [1, -18, -41],
-        [1, 18, -41],
-        [1, 18, 41]
+        [-10, -18, -41],
+        [-10, -18, 41],
+        [-10, 18, -41],
+        [-10, 18, 41],
+        [10, -18, -41],
+        [10, 18, -41],
+        [10, 18, 41]
       ]
     },
     {
       "name": "tesis2014858_adquisicion_buena_fe",
-      "asset_ids": [1, 41, 43],
+      "asset_ids": [10, 41, 43],
       "assignments": [
-        [-1, -41, -43],
-        [-1, -41, 43],
-        [-1, 41, -43],
-        [-1, 41, 43],
-        [1, -41, -43],
-        [1, -41, 43],
-        [1, 41, 43]
+        [-10, -41, -43],
+        [-10, -41, 43],
+        [-10, 41, -43],
+        [-10, 41, 43],
+        [10, -41, -43],
+        [10, -41, 43],
+        [10, 41, 43]
       ]
     },
     {
       "name": "tesis2014858_limitacion_oponibilidad",
-      "asset_ids": [4, 6],
+      "asset_ids": [2, 4],
       "assignments": [
-        [-4, -6],
-        [-4, 6],
-        [4, -6]
+        [-2, -4],
+        [-2, 4],
+        [2, -4]
       ]
     }
   ]

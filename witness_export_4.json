@@ -1,75 +1,67 @@
 {
-  "assets": [1, 2, 5, 8, 9, 14, 15],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "8": "posesion_como_propietario", "9": "posesion_temporal", "14": "documento_con_vicios", "15": "desinteres_propietario"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "14": {"asset_name": "documento_con_vicios(demandante:have documentary defects in generating cause:tribunal)", "subject": "demandante", "action": "have documentary defects in generating cause", "object": "tribunal"}, "15": {"asset_name": "desinteres_propietario(titular_registral:demonstrate prolonged disinterest by legitimate owner:demandante)", "subject": "titular_registral", "action": "demonstrate prolonged disinterest by legitimate owner", "object": "demandante"}},
+  "assets": [3, 5, 7, 8, 10, 14, 15],
+  "asset_names": {"3": "demanda_prescripcion", "5": "ejercicio_mala_fe", "7": "posesion_como_propietario", "8": "posesion_temporal", "10": "ejercicio_buena_fe", "14": "documento_con_vicios", "15": "desinteres_propietario"},
+  "asset_construction": {"3": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "14": {"asset_name": "documento_con_vicios(demandante:have documentary defects in generating cause:tribunal)", "subject": "demandante", "action": "have documentary defects in generating cause", "object": "tribunal"}, "15": {"asset_name": "desinteres_propietario(titular_registral:demonstrate prolonged disinterest by legitimate owner:demandante)", "subject": "titular_registral", "action": "demonstrate prolonged disinterest by legitimate owner", "object": "demandante"}},
   "clauses": [
     {
-      "name": "tesis2021537_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2021537_principio_fundamental",
-      "asset_ids": [2, 5, 9, 14],
+      "asset_ids": [3, 5, 8, 14],
       "assignments": [
-        [-2, -5, -9, -14],
-        [-2, -5, -9, 14],
-        [-2, -5, 9, -14],
-        [-2, -5, 9, 14],
-        [-2, 5, -9, -14],
-        [-2, 5, -9, 14],
-        [-2, 5, 9, -14],
-        [-2, 5, 9, 14],
-        [2, -5, -9, -14],
-        [2, -5, -9, 14],
-        [2, -5, 9, -14],
-        [2, 5, -9, -14],
-        [2, 5, -9, 14],
-        [2, 5, 9, -14],
-        [2, 5, 9, 14]
+        [-3, -5, -8, -14],
+        [-3, -5, -8, 14],
+        [-3, -5, 8, -14],
+        [-3, -5, 8, 14],
+        [-3, 5, -8, -14],
+        [-3, 5, -8, 14],
+        [-3, 5, 8, -14],
+        [3, -5, -8, -14],
+        [3, -5, -8, 14],
+        [3, -5, 8, -14],
+        [3, -5, 8, 14],
+        [3, 5, -8, -14],
+        [3, 5, -8, 14],
+        [3, 5, 8, -14],
+        [3, 5, 8, 14]
       ]
     },
     {
       "name": "tesis2021537_compensacion_temporal",
-      "asset_ids": [2, 9, 14],
+      "asset_ids": [5, 8, 14],
       "assignments": [
-        [-2, -9, -14],
-        [-2, -9, 14],
-        [-2, 9, -14],
-        [-2, 9, 14],
-        [2, -9, -14],
-        [2, 9, -14],
-        [2, 9, 14]
+        [-5, -8, -14],
+        [-5, -8, 14],
+        [-5, 8, -14],
+        [-5, 8, 14],
+        [5, -8, -14],
+        [5, 8, -14],
+        [5, 8, 14]
       ]
     },
     {
       "name": "tesis2021537_desinteres_propietario",
-      "asset_ids": [9, 15],
+      "asset_ids": [8, 15],
       "assignments": [
-        [-9, -15],
-        [-9, 15],
-        [9, 15]
+        [-8, -15],
+        [-8, 15],
+        [8, 15]
       ]
     },
     {
       "name": "tesis2021537_ejercicio_dominio",
-      "asset_ids": [5, 8],
+      "asset_ids": [3, 7],
       "assignments": [
-        [-5, -8],
-        [-5, 8],
-        [5, 8]
+        [-3, -7],
+        [-3, 7],
+        [3, 7]
       ]
     },
     {
       "name": "tesis2021537_contraste_buena_fe",
-      "asset_ids": [1, 14],
+      "asset_ids": [10, 14],
       "assignments": [
-        [-1, -14],
-        [-1, 14],
-        [1, -14]
+        [-10, -14],
+        [-10, 14],
+        [10, -14]
       ]
     }
   ]

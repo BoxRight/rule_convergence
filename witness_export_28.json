@@ -1,0 +1,67 @@
+{
+  "assets": [5, 7, 10, 63, 66, 67],
+  "asset_names": {"5": "ejercicio_mala_fe", "7": "posesion_como_propietario", "10": "ejercicio_buena_fe", "63": "ejercer_prescripcion_positiva", "66": "posesion_tiempo_10_anos_estatal", "67": "posesion_tiempo_20_anos_estatal"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "66": {"asset_name": "posesion_tiempo_10_anos_estatal(demandante:possess property for specified time period:tribunal)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal"}, "67": {"asset_name": "posesion_tiempo_20_anos_estatal(demandante:possess property for specified time period:tribunal)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal"}},
+  "clauses": [
+    {
+      "name": "tesis210115_principio_fundamental",
+      "asset_ids": [7, 10, 63, 66],
+      "assignments": [
+        [-7, -10, -63, -66],
+        [-7, -10, -63, 66],
+        [-7, -10, 63, -66],
+        [-7, -10, 63, 66],
+        [-7, 10, -63, -66],
+        [-7, 10, -63, 66],
+        [-7, 10, 63, -66],
+        [-7, 10, 63, 66],
+        [7, -10, -63, -66],
+        [7, -10, -63, 66],
+        [7, -10, 63, -66],
+        [7, -10, 63, 66],
+        [7, 10, -63, -66],
+        [7, 10, 63, -66],
+        [7, 10, 63, 66]
+      ]
+    },
+    {
+      "name": "tesis210115_buena_fe_estatal",
+      "asset_ids": [10, 63, 66],
+      "assignments": [
+        [-10, -63, -66],
+        [-10, -63, 66],
+        [-10, 63, -66],
+        [-10, 63, 66],
+        [10, -63, -66],
+        [10, 63, -66],
+        [10, 63, 66]
+      ]
+    },
+    {
+      "name": "tesis210115_mala_fe_estatal",
+      "asset_ids": [5, 63, 67],
+      "assignments": [
+        [-5, -63, -67],
+        [-5, -63, 67],
+        [-5, 63, -67],
+        [-5, 63, 67],
+        [5, -63, -67],
+        [5, 63, -67],
+        [5, 63, 67]
+      ]
+    },
+    {
+      "name": "tesis210115_requisitos_posesion",
+      "asset_ids": [7, 10, 66],
+      "assignments": [
+        [-7, -10, -66],
+        [-7, -10, 66],
+        [-7, 10, -66],
+        [-7, 10, 66],
+        [7, -10, -66],
+        [7, -10, 66],
+        [7, 10, 66]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "assets": [1, 5, 7, 10, 63, 64, 65],
+  "asset_names": {"1": "titularidad_registral", "5": "ejercicio_mala_fe", "7": "posesion_como_propietario", "10": "ejercicio_buena_fe", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos", "65": "posesion_tiempo_10_anos"},
+  "asset_construction": {"1": {"asset_name": "titularidad_registral(titular_registral:be registered in public property registry:autoridad_registral)", "subject": "titular_registral", "action": "be registered in public property registry", "object": "autoridad_registral"}, "5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}, "65": {"asset_name": "posesion_tiempo_10_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis210890_principio_fundamental",
+      "asset_ids": [5, 7, 10, 63, 64, 65],
+      "assignments": [
+        [-5, -7, -10, -63, -64, -65],
+        [-5, -7, -10, -63, -64, 65],
+        [-5, -7, -10, -63, 64, -65],
+        [-5, -7, -10, -63, 64, 65],
+        [-5, -7, -10, 63, -64, -65],
+        [-5, -7, -10, 63, -64, 65],
+        [-5, -7, -10, 63, 64, -65],
+        [-5, -7, -10, 63, 64, 65],
+        [-5, -7, 10, -63, -64, -65],
+        [-5, -7, 10, -63, -64, 65],
+        [-5, -7, 10, -63, 64, -65],
+        [-5, -7, 10, -63, 64, 65],
+        [-5, -7, 10, 63, -64, -65],
+        [-5, -7, 10, 63, -64, 65],
+        [-5, -7, 10, 63, 64, -65],
+        [-5, -7, 10, 63, 64, 65],
+        [-5, 7, -10, -63, -64, -65],
+        [-5, 7, -10, -63, -64, 65],
+        [-5, 7, -10, -63, 64, -65],
+        [-5, 7, -10, -63, 64, 65],
+        [-5, 7, -10, 63, -64, -65],
+        [-5, 7, -10, 63, -64, 65],
+        [-5, 7, -10, 63, 64, -65],
+        [-5, 7, -10, 63, 64, 65],
+        [-5, 7, 10, -63, -64, -65],
+        [-5, 7, 10, 63, -64, -65],
+        [-5, 7, 10, 63, -64, 65],
+        [-5, 7, 10, 63, 64, -65],
+        [-5, 7, 10, 63, 64, 65],
+        [5, -7, -10, -63, -64, -65],
+        [5, -7, -10, -63, -64, 65],
+        [5, -7, -10, -63, 64, -65],
+        [5, -7, -10, -63, 64, 65],
+        [5, -7, -10, 63, -64, -65],
+        [5, -7, -10, 63, -64, 65],
+        [5, -7, -10, 63, 64, -65],
+        [5, -7, -10, 63, 64, 65],
+        [5, -7, 10, -63, -64, -65],
+        [5, -7, 10, -63, -64, 65],
+        [5, -7, 10, -63, 64, -65],
+        [5, -7, 10, -63, 64, 65],
+        [5, -7, 10, 63, -64, -65],
+        [5, -7, 10, 63, -64, 65],
+        [5, -7, 10, 63, 64, -65],
+        [5, -7, 10, 63, 64, 65],
+        [5, 7, -10, -63, -64, -65],
+        [5, 7, -10, 63, -64, -65],
+        [5, 7, -10, 63, -64, 65],
+        [5, 7, -10, 63, 64, -65],
+        [5, 7, -10, 63, 64, 65],
+        [5, 7, 10, -63, -64, -65],
+        [5, 7, 10, 63, -64, -65],
+        [5, 7, 10, 63, -64, 65],
+        [5, 7, 10, 63, 64, -65],
+        [5, 7, 10, 63, 64, 65]
+      ]
+    },
+    {
+      "name": "tesis210890_igualdad_prueba",
+      "asset_ids": [7, 63],
+      "assignments": [
+        [-7, -63],
+        [7, -63],
+        [7, 63]
+      ]
+    },
+    {
+      "name": "tesis210890_plazos_temporales",
+      "asset_ids": [10, 64],
+      "assignments": [
+        [-10, -64],
+        [-10, 64],
+        [10, 64]
+      ]
+    },
+    {
+      "name": "tesis210890_plazos_mala_fe",
+      "asset_ids": [5, 65],
+      "assignments": [
+        [-5, -65],
+        [-5, 65],
+        [5, 65]
+      ]
+    },
+    {
+      "name": "tesis210890_objetivo_registral",
+      "asset_ids": [1, 63],
+      "assignments": [
+        [-1, -63],
+        [1, -63],
+        [1, 63]
+      ]
+    }
+  ]
+}

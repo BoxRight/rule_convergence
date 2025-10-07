@@ -1,0 +1,55 @@
+{
+  "assets": [6, 7, 10, 46],
+  "asset_names": {"6": "causa_generadora_probada", "7": "posesion_como_propietario", "10": "ejercicio_buena_fe", "46": "conocimiento_vicios"},
+  "asset_construction": {"6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}},
+  "clauses": [
+    {
+      "name": "tesis204375_principio_fundamental",
+      "asset_ids": [6, 10, 46],
+      "assignments": [
+        [-6, -10, -46],
+        [-6, -10, 46],
+        [-6, 10, -46],
+        [-6, 10, 46],
+        [6, -10, -46],
+        [6, 10, -46],
+        [6, 10, 46]
+      ]
+    },
+    {
+      "name": "tesis204375_titulo_suficiente",
+      "asset_ids": [6, 7, 10],
+      "assignments": [
+        [-6, -7, -10],
+        [-6, -7, 10],
+        [-6, 7, -10],
+        [-6, 7, 10],
+        [6, -7, -10],
+        [6, -7, 10],
+        [6, 7, 10]
+      ]
+    },
+    {
+      "name": "tesis204375_validez_titulo",
+      "asset_ids": [6, 10, 46],
+      "assignments": [
+        [-6, -10, -46],
+        [-6, -10, 46],
+        [-6, 10, -46],
+        [-6, 10, 46],
+        [6, -10, 46],
+        [6, 10, -46],
+        [6, 10, 46]
+      ]
+    },
+    {
+      "name": "tesis204375_determinacion_judicial",
+      "asset_ids": [6, 7],
+      "assignments": [
+        [-6, -7],
+        [6, -7],
+        [6, 7]
+      ]
+    }
+  ]
+}

@@ -126,6 +126,17 @@ asset cumplimiento_deber_legal = tercero, cumplir_deber_legal, autoridad_registr
 asset carga_dinamica_prueba = tribunal, desvirtuar_elementos_prueba, tercero;
 asset elementos_probatorios = autoridad_registral, aportar_elementos_probatorios, tribunal;
 
+// Time-based possession assets for different legal contexts
+asset posesion_tiempo_5_anos = demandante, poseer_tiempo_determinado, tribunal_agrario;
+asset posesion_tiempo_10_anos = demandante, poseer_tiempo_determinado, tribunal_agrario;
+
+// Extended time requirements for state/municipal property (double the private property time)
+asset posesion_tiempo_10_anos_estatal = demandante, poseer_tiempo_determinado, tribunal;
+asset posesion_tiempo_20_anos_estatal = demandante, poseer_tiempo_determinado, tribunal;
+
+// Agrarian possession assets
+asset posesion_agraria = demandante, poseer_como_propietario, tribunal_agrario;
+
 // Note: Faith exclusivity constraint must be repeated in each thesis section
 // as the DSL does not support universal clauses
 
@@ -816,561 +827,673 @@ clause tesis202535_conocimiento_defectos = oblig(conocimiento_vicios) IMPLIES no
 asset tesis202535_valida = global();
 
 // ==========================================
-// THESIS 202177: Thesis 202177
+// THESIS 202177: AGRARIAN ADVERSE POSSESSION REQUIREMENTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis202177_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Agrarian adverse possession requires original possession "in concept of ejidatario rights holder" with proven generating cause
+clause tesis202177_principio_fundamental = oblig(posesion_como_propietario) AND oblig(causa_generadora_probada) AND oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis202177_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Original possession excludes precarious or derived possession
+clause tesis202177_posesion_originaria = oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis202177_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Time periods: 5 years for good faith, 10 years for bad faith
+clause tesis202177_plazos_temporales = oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos);
+clause tesis202177_plazos_mala_fe = oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos);
 
 // Thesis validation
 asset tesis202177_valida = global();
 
 // ==========================================
-// THESIS 204300: Thesis 204300
+// THESIS 204300: AGRARIAN ADVERSE POSSESSION TIMING REQUIREMENTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis204300_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Agrarian adverse possession periods start from Agrarian Law effective date, not from previous possession
+clause tesis204300_principio_fundamental = oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis204300_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Previous possession under old law doesn't count toward prescription periods
+clause tesis204300_posesion_anterior = oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis204300_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Legal framework change: New law recognizes adverse possession as means to acquire agrarian rights
+clause tesis204300_marco_legal_nuevo = oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Thesis validation
 asset tesis204300_valida = global();
 
 // ==========================================
-// THESIS 204375: Thesis 204375
+// THESIS 204375: JUST TITLE REQUIREMENT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis204375_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Just title must be proven when invoked as cause of possession, not just revealed
+clause tesis204375_principio_fundamental = oblig(causa_generadora_probada) AND oblig(conocimiento_vicios) IMPLIES oblig(ejercicio_buena_fe);
 
-// Supporting legal logic (add as needed)
-clause tesis204375_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Good faith possessor enters possession by virtue of sufficient title
+clause tesis204375_titulo_suficiente = oblig(posesion_como_propietario) AND oblig(causa_generadora_probada) IMPLIES oblig(ejercicio_buena_fe);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis204375_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Title validity requirement: Title must be objectively or subjectively valid
+clause tesis204375_validez_titulo = oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios)) IMPLIES oblig(ejercicio_buena_fe);
+
+// Judicial determination: Judge must establish possession type and timing
+clause tesis204375_determinacion_judicial = oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada);
 
 // Thesis validation
 asset tesis204375_valida = global();
 
 // ==========================================
-// THESIS 206322: Thesis 206322
+// THESIS 206322: AGRARIAN ADVERSE POSSESSION TIMING FROM LAW EFFECTIVE DATE
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis206322_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Agrarian adverse possession periods count only from Agrarian Law effective date (Feb 27, 1992), not from previous possession
+clause tesis206322_principio_fundamental = oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis206322_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Previous possession before law effective date doesn't count toward prescription periods
+clause tesis206322_posesion_anterior = oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis206322_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Interruption rights: Ejidatarios who lost possession must be able to interrupt prescription
+clause tesis206322_derecho_interrupcion = oblig(interrupcion_prescripcion) IMPLIES oblig(posesion_agraria);
+
+// Constitutional protection: Retroactive application would violate constitutional rights
+clause tesis206322_proteccion_constitucional = oblig(posesion_agraria) IMPLIES oblig(proteccion_legal);
 
 // Thesis validation
 asset tesis206322_valida = global();
 
 // ==========================================
-// THESIS 210115: Thesis 210115
+// THESIS 210115: STATE/MUNICIPAL PROPERTY ADVERSE POSSESSION REQUIREMENTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis210115_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: State/municipal property requires double the time period for adverse possession
+clause tesis210115_principio_fundamental = oblig(posesion_como_propietario) AND oblig(ejercicio_buena_fe) AND oblig(posesion_tiempo_10_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis210115_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Good faith state property possession requires 10 years (double of private property 5 years)
+clause tesis210115_buena_fe_estatal = oblig(ejercicio_buena_fe) AND oblig(posesion_tiempo_10_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis210115_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Bad faith state property possession requires 20 years (double of private property 10 years)
+clause tesis210115_mala_fe_estatal = oblig(ejercicio_mala_fe) AND oblig(posesion_tiempo_20_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva);
+
+// Possession requirements: Must be continuous, public, good faith, and in concept of owner
+clause tesis210115_requisitos_posesion = oblig(posesion_como_propietario) AND oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_10_anos_estatal);
 
 // Thesis validation
 asset tesis210115_valida = global();
 
 // ==========================================
-// THESIS 210588: Thesis 210588
+// THESIS 210588: AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis210588_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Agrarian adverse possession requires 5 years from Agrarian Law effective date (Feb 27, 1992) before it can be invoked
+clause tesis210588_principio_fundamental = oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(ejercicio_buena_fe) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis210588_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Previous possession under old law (imprescriptible) doesn't count toward 5-year requirement
+clause tesis210588_posesion_anterior = oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis210588_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Legal framework change: New law recognizes adverse possession, old law made ejidal lands imprescriptible
+clause tesis210588_marco_legal_nuevo = oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva);
+
+// Constitutional protection: Retroactive application would violate constitutional guarantee
+clause tesis210588_proteccion_constitucional = oblig(posesion_agraria) IMPLIES oblig(proteccion_legal);
 
 // Thesis validation
 asset tesis210588_valida = global();
 
 // ==========================================
-// THESIS 210589: Thesis 210589
+// THESIS 210589: MUTUAL EXCLUSIVITY OF GOOD FAITH AND BAD FAITH POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis210589_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Possession cannot be simultaneously good faith and bad faith - they are mutually exclusive
+clause tesis210589_principio_fundamental = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
 
-// Supporting legal logic (add as needed)
-clause tesis210589_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting legal logic: Cannot have title (generating cause) and not have it simultaneously
+clause tesis210589_titulo_contradiccion = oblig(causa_generadora_probada) XOR not(oblig(causa_generadora_probada));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis210589_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Knowledge contradiction: Cannot simultaneously know and not know title defects
+clause tesis210589_conocimiento_contradiccion = oblig(conocimiento_vicios) XOR not(oblig(conocimiento_vicios));
+
+// Procedural requirement: Action must be based on consistent facts, not contradictory claims
+clause tesis210589_consistencia_procesal = oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
 // Thesis validation
 asset tesis210589_valida = global();
 
 // ==========================================
-// THESIS 210888: Thesis 210888
+// THESIS 210888: POSSESSION AS OWNER REQUIREMENT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis210888_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Possession must be "in concept of owner" (peaceful, continuous, public) for both good and bad faith
+clause tesis210888_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis210888_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Possession as owner applies to both good faith and bad faith cases
+clause tesis210888_posesion_ambas_fe = oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis210888_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Economic dominion: Must be dominator of the thing, commanding and enjoying it as owner
+clause tesis210888_dominio_economico = oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada);
+
+// Original possession: Must begin with cause different from derived possession
+clause tesis210888_posesion_originaria = oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada);
 
 // Thesis validation
 asset tesis210888_valida = global();
 
 // ==========================================
-// THESIS 210890: Thesis 210890
+// THESIS 210890: ADVERSE POSSESSION BY ACTION OR EXCEPTION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis210890_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Adverse possession can be invoked by action or exception, but requires same proof elements
+clause tesis210890_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis210890_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Both action and exception require same proof elements regardless of procedural route
+clause tesis210890_igualdad_prueba = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_como_propietario);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis210890_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Time requirements: 5 years for good faith, 10 years for bad faith
+clause tesis210890_plazos_temporales = oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos);
+clause tesis210890_plazos_mala_fe = oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos);
+
+// Target requirement: Action must be directed against registered owner
+clause tesis210890_objetivo_registral = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(titularidad_registral);
 
 // Thesis validation
 asset tesis210890_valida = global();
 
 // ==========================================
-// THESIS 211744: Thesis 211744
+// THESIS 211744: REVEALING POSSESSION CAUSE REQUIREMENT
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis211744_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Actor must reveal the cause of possession, even for bad faith possessors, for judicial determination
+clause tesis211744_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
-// Supporting legal logic (add as needed)
-clause tesis211744_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge needs to know generating cause to determine possession quality and timing
+clause tesis211744_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis211744_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Universal requirement: Applies to both good faith and bad faith possessors
+clause tesis211744_requisito_universal = (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(causa_generadora_revelada);
+
+// Timing determination: Must establish when prescription period begins to count
+clause tesis211744_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
 
 // Thesis validation
 asset tesis211744_valida = global();
 
 // ==========================================
-// THESIS 212497: Thesis 212497
+// THESIS 212497: AGRARIAN ADVERSE POSSESSION PROCEDURAL REQUIREMENTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis212497_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Agrarian adverse possession requires possession as titular of ejidal rights, peacefully, continuously, and publicly
+clause tesis212497_principio_fundamental = oblig(posesion_agraria) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis212497_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Time period analysis is matter for final resolution, not for dismissal
+clause tesis212497_analisis_temporal = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_agraria);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis212497_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Due process requirement: Must give opportunity to be heard according to essential formalities
+clause tesis212497_debido_proceso = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal);
+
+// Procedural flexibility: Can be voluntary jurisdiction or adversarial proceeding
+clause tesis212497_flexibilidad_procesal = oblig(posesion_agraria) IMPLIES (oblig(ejercer_prescripcion_positiva) OR oblig(congruencia_procesal));
 
 // Thesis validation
 asset tesis212497_valida = global();
 
 // ==========================================
-// THESIS 213224: Thesis 213224
+// THESIS 213224: REVEALING POSSESSION ORIGIN REQUIREMENT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis213224_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Just title not required for adverse possession, but must reveal origin of possession and affirm possession as owner
+clause tesis213224_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(posesion_como_propietario);
 
-// Supporting legal logic (add as needed)
-clause tesis213224_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge needs generating fact/act to determine possession quality and timing
+clause tesis213224_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis213224_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Possession type determination: Can determine if original or derived possession
+clause tesis213224_tipo_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) XOR oblig(posesion_temporal));
+
+// Timing requirement: Must establish when prescription period starts counting
+clause tesis213224_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
 
 // Thesis validation
 asset tesis213224_valida = global();
 
 // ==========================================
-// THESIS 214456: Thesis 214456
+// THESIS 214456: AGRARIAN ADVERSE POSSESSION PREVIOUS POSSESSION TIME COUNTING
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis214456_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Time of possession before Agrarian Law effective date (Feb 27, 1992) can and should be counted for prescription
+clause tesis214456_principio_fundamental = oblig(posesion_agraria) AND oblig(posesion_temporal) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis214456_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Not retroactive application because it only recognizes existing possessory fact
+clause tesis214456_no_retroactividad = oblig(posesion_temporal) AND oblig(posesion_agraria) IMPLIES oblig(proteccion_legal);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis214456_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Legal continuity: Continuation of existing legal figure with different requirements, not new figure
+clause tesis214456_continuidad_legal = oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva);
+
+// Time requirements: 5 years for good faith, 10 years for bad faith
+clause tesis214456_plazos_temporales = oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos);
+clause tesis214456_plazos_mala_fe = oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos);
 
 // Thesis validation
 asset tesis214456_valida = global();
 
 // ==========================================
-// THESIS 215033: Thesis 215033
+// THESIS 215033: ADVERSE POSSESSION ACTION TARGET REQUIREMENTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis215033_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Adverse possession action must be directed against all property owners, not just registered owner, to ensure due process
+clause tesis215033_principio_fundamental = oblig(ejercer_prescripcion_positiva) AND oblig(titularidad_registral) IMPLIES oblig(proteccion_legal);
 
-// Supporting legal logic (add as needed)
-clause tesis215033_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must give opportunity to be heard and defeated in trial (constitutional guarantee)
+clause tesis215033_debido_proceso = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis215033_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Knowledge requirement: When actors know marital regime, must demand all property owners
+clause tesis215033_conocimiento_regimen = oblig(conocimiento_vicios) AND oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal);
+
+// Procedural requirement: Action must be directed against all owners to avoid due process violations
+clause tesis215033_requisito_procesal = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal);
 
 // Thesis validation
 asset tesis215033_valida = global();
 
 // ==========================================
-// THESIS 216431: Thesis 216431
+// THESIS 216431: JUST TITLE REQUIREMENT FOR GOOD FAITH ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis216431_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Good faith possessors require just title as generating cause of possession for adverse possession to operate
+clause tesis216431_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis216431_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must reveal and fully prove the generating cause of possession
+clause tesis216431_revelar_causa = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis216431_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Judicial determination: Judge needs generating fact/act to determine possession quality and timing
+clause tesis216431_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+
+// Timing requirement: Must establish when prescription period begins
+clause tesis216431_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
 
 // Thesis validation
 asset tesis216431_valida = global();
 
 // ==========================================
-// THESIS 219823: Thesis 219823
+// THESIS 219823: GOOD FAITH AND BAD FAITH POSSESSOR DEFINITIONS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis219823_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Good faith requires sufficient title/generating cause, ignorance of title defects, and founded belief of ownership
+clause tesis219823_principio_fundamental = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios));
 
-// Supporting legal logic (add as needed)
-clause tesis219823_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Bad faith possessor has no title/generating cause OR knows title defects that prevent rightful possession
+clause tesis219823_mala_fe = oblig(ejercicio_mala_fe) IMPLIES (not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis219823_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Good faith requirements: Must have sufficient title and ignorance of defects
+clause tesis219823_requisitos_buena_fe = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
+
+// Bad faith conditions: No title or knowledge of defects
+clause tesis219823_condiciones_mala_fe = (not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios)) IMPLIES oblig(ejercicio_mala_fe);
 
 // Thesis validation
 asset tesis219823_valida = global();
 
 // ==========================================
-// THESIS 221460: Thesis 221460
+// THESIS 221460: ORIGIN AND TIMING REQUIREMENT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis221460_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Must specify the fact or act that originated possession and when it occurred for adverse possession to operate
+clause tesis221460_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
-// Supporting legal logic (add as needed)
-clause tesis221460_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge needs this information to determine possession nature (original or derived, good or bad faith)
+clause tesis221460_determinacion_naturaleza = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) XOR oblig(posesion_temporal)) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis221460_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Timing determination: Must establish duration of possession for prescription to be consummated
+clause tesis221460_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
+
+// Usucapion requirement: Essential for adverse possession to operate
+clause tesis221460_requisito_usucapion = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
 // Thesis validation
 asset tesis221460_valida = global();
 
 // ==========================================
-// THESIS 221758: Thesis 221758
+// THESIS 221758: REVEALING AND PROVING POSSESSION ORIGIN REQUIREMENT
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis221758_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Must reveal and prove the origin of possession to determine possession quality and timing
+clause tesis221758_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis221758_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge needs this information to determine if possession is as owner, original or derived, good or bad faith
+clause tesis221758_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis221758_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Timing determination: Must establish when prescription period should start
+clause tesis221758_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
+
+// Proof requirement: Insufficient proof like "me la dio" cannot establish generating cause
+clause tesis221758_requisito_prueba = oblig(causa_generadora_probada) IMPLIES oblig(causa_generadora_revelada);
 
 // Thesis validation
 asset tesis221758_valida = global();
 
 // ==========================================
-// THESIS 222153: Thesis 222153
+// THESIS 222153: JUST TITLE REQUIREMENT FOR GOOD FAITH POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis222153_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Just title is not absolutely necessary for adverse possession, but good faith requires sufficient title and ignorance of defects
+clause tesis222153_principio_fundamental = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios));
 
-// Supporting legal logic (add as needed)
-clause tesis222153_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Good faith possessor enters possession by virtue of sufficient title to give right to possess
+clause tesis222153_titulo_suficiente = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis222153_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Ignorance requirement: Must ignore title defects that prevent rightful possession
+clause tesis222153_ignorancia_vicios = oblig(ejercicio_buena_fe) IMPLIES not(oblig(conocimiento_vicios));
+
+// Just title flexibility: Not absolutely necessary but relevant for good faith determination
+clause tesis222153_flexibilidad_titulo = oblig(ejercer_prescripcion_positiva) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe));
 
 // Thesis validation
 asset tesis222153_valida = global();
 
 // ==========================================
-// THESIS 222185: Thesis 222185
+// THESIS 222185: IMPERFECT GENERATING ACT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis222185_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Generating act of possession does not need to be perfect according to law, even acts with defects can serve as generating cause
+clause tesis222185_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis222185_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: For good faith, only requires act that appears to meet legal requirements and produces conviction in acquirer
+clause tesis222185_buena_fe_aparente = oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis222185_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Defective acts validity: Even acts with defects can be invoked as generating cause for usucapion
+clause tesis222185_actos_viciosos = oblig(conocimiento_vicios) AND oblig(causa_generadora_probada) IMPLIES oblig(ejercer_prescripcion_positiva);
+
+// Apparent validity requirement: Act must appear to meet legal requirements to produce conviction
+clause tesis222185_validez_aparente = oblig(causa_generadora_probada) IMPLIES oblig(ejercicio_buena_fe);
 
 // Thesis validation
 asset tesis222185_valida = global();
 
 // ==========================================
-// THESIS 223431: Thesis 223431
+// THESIS 223431: GOOD/BAD FAITH AS CONDITIONS NOT QUALITIES OF POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis223431_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Good/bad faith are conditions (not qualities) of possession, used only to determine time periods for prescription
+clause tesis223431_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis223431_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge must analyze good/bad faith even if actors claim good faith, to determine appropriate time period
+clause tesis223431_analisis_judicial = oblig(ejercer_prescripcion_positiva) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis223431_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Time determination: Good faith requires 5 years, bad faith requires 10 years
+clause tesis223431_plazos_temporales = oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos);
+clause tesis223431_plazos_mala_fe = oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos);
+
+// Congruence requirement: Judge must analyze good/bad faith to avoid violating congruence principle
+clause tesis223431_congruencia = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal);
 
 // Thesis validation
 asset tesis223431_valida = global();
 
 // ==========================================
-// THESIS 224038: Thesis 224038
+// THESIS 224038: PROOF REQUIREMENT FOR GENERATING CAUSE OF POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis224038_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Generating cause of possession must be proven in trial, not just revealed or claimed
+clause tesis224038_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis224038_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must justify existence of generating cause with direct proof, not just revelation
+clause tesis224038_prueba_directa = oblig(causa_generadora_probada) IMPLIES oblig(causa_generadora_revelada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis224038_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Judicial determination: Without proof, cannot determine if possession is good or bad faith
+clause tesis224038_determinacion_fe = oblig(causa_generadora_probada) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+
+// Timing determination: Must establish when usucapion began and was consummated
+clause tesis224038_determinacion_temporal = oblig(causa_generadora_probada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
 
 // Thesis validation
 asset tesis224038_valida = global();
 
 // ==========================================
-// THESIS 224737: Thesis 224737
+// THESIS 224737: REVEALING AND PROVING GENERATING CAUSE FOR USUCAPION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis224737_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Must reveal and prove the generating cause of possession for usucapion to prosper, even though just title not required
+clause tesis224737_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis224737_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must reveal cause to determine possession quality, timing, and good/bad faith
+clause tesis224737_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis224737_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Proof requirement: Not sufficient to just affirm facts, must prove the generating cause
+clause tesis224737_requisito_prueba = oblig(causa_generadora_probada) IMPLIES oblig(causa_generadora_revelada);
+
+// Timing determination: Must establish when possession began and if good or bad faith
+clause tesis224737_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
 
 // Thesis validation
 asset tesis224737_valida = global();
 
 // ==========================================
-// THESIS 224820: Thesis 224820
+// THESIS 224820: POSSESSION IN CONCEPT OF OWNER REQUIREMENTS FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis224820_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Possession must be in concept of owner, peaceful, continuous, public, and for required time, emanating from translative property acts
+clause tesis224820_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis224820_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must be dominator of the thing, commanding and enjoying it as owner, with original cause different from derived possession
+clause tesis224820_dominio_economico = oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis224820_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Title requirements: Can have objectively valid title, subjectively valid title, or no title but must have original cause
+clause tesis224820_requisitos_titulo = oblig(causa_generadora_probada) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe));
+
+// Translativo acts: Must emanate from translative property acts (sale, donation, exchange, etc.), not derived possession
+clause tesis224820_actos_traslativos = oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada);
+
+// Defective acts validity: Even defective acts can serve as generating cause for adverse possession
+clause tesis224820_actos_defectuosos = oblig(conocimiento_vicios) AND oblig(causa_generadora_probada) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Thesis validation
 asset tesis224820_valida = global();
 
 // ==========================================
-// THESIS 228850: Thesis 228850
+// THESIS 228850: REVEALING POSSESSION CAUSE REQUIREMENT FOR ADVERSE POSSESSION COUNTERCLAIM
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis228850_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Must reveal the cause of possession when asserting adverse possession counterclaim for judicial determination
+clause tesis228850_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_revelada;
 
-// Supporting legal logic (add as needed)
-clause tesis228850_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Judge needs generating fact/act to determine possession quality (as owner, original or derived, good or bad faith)
+clause tesis228850_determinacion_posesion = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis228850_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Timing determination: Must establish when prescription period should start counting
+clause tesis228850_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
+
+// Procedural compliance: Must comply with procedural requirements for judicial analysis
+clause tesis228850_cumplimiento_procesal = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal);
 
 // Thesis validation
 asset tesis228850_valida = global();
 
 // ==========================================
-// THESIS 228853: Thesis 228853
+// THESIS 228853: OMISSION OF REVEALING GENERATING CAUSE WHEN NO CONTROVERSY
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis228853_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Omitting to reveal generating cause of possession does not violate guarantees when there's procedural congruence and parties agree on facts
+clause tesis228853_principio_fundamental = (not(causa_generadora_revelada) AND congruencia_procesal) IMPLIES oblig(proteccion_legal);
 
-// Supporting legal logic (add as needed)
-clause tesis228853_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: When defendant acquiesces and recognizes facts, possession is presumed good faith with original title
+clause tesis228853_presuncion_buena_fe = congruencia_procesal IMPLIES (ejercicio_buena_fe AND posesion_como_propietario);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis228853_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Timing agreement: Parties agree on date when acts as owner began, so no need to reveal generating cause
+clause tesis228853_acuerdo_temporal = congruencia_procesal IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
+
+// No indefensión: Defendant is not left defenseless when there's procedural congruence
+clause tesis228853_no_indefension = congruencia_procesal IMPLIES oblig(proteccion_legal);
 
 // Thesis validation
 asset tesis228853_valida = global();
 
 // ==========================================
-// THESIS 228856: Thesis 228856
+// THESIS 228856: PROOF REQUIREMENT FOR POSSESSION QUALITIES IN ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis228856_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Must prove that possession meets requirements of being public, peaceful, and continuous - these cannot be presumed
+clause tesis228856_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico);
 
-// Supporting legal logic (add as needed)
-clause tesis228856_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Even when good faith is presumed, possession qualities must still be proven
+clause tesis228856_prueba_requerida = (posesion_como_propietario AND ejercicio_buena_fe) IMPLIES posesion_pacifico_continuo_publico;
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis228856_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Burden of proof: The one who affirms is obligated to prove possession qualities
+clause tesis228856_carga_prueba = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_probada);
+
+// No presumption: Possession qualities cannot be presumed, must be proven
+clause tesis228856_no_presuncion = not(posesion_pacifico_continuo_publico) IMPLIES not(oblig(ejercer_prescripcion_positiva));
 
 // Thesis validation
 asset tesis228856_valida = global();
 
 // ==========================================
-// THESIS 229292: Thesis 229292
+// THESIS 229292: SUFFICIENT TITLE CONCEPT FOR GOOD FAITH POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis229292_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Good faith possessor is one who enters possession by virtue of sufficient title, which must be understood as the generating cause of possession
+clause tesis229292_principio_fundamental = (posesion_como_propietario AND causa_generadora_probada) IMPLIES ejercicio_buena_fe;
 
-// Supporting legal logic (add as needed)
-clause tesis229292_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Sufficient title must be understood as the generating cause of possession
+clause tesis229292_titulo_suficiente = causa_generadora_probada IMPLIES ejercicio_buena_fe;
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis229292_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Good faith requirement: Must enter possession by virtue of sufficient title to possess
+clause tesis229292_requisito_buena_fe = ejercicio_buena_fe IMPLIES causa_generadora_probada;
+
+// Usucapion context: Sufficient title is essential for adverse possession
+clause tesis229292_contexto_usucapion = oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_probada;
 
 // Thesis validation
 asset tesis229292_valida = global();
 
 // ==========================================
-// THESIS 241748: Thesis 241748
+// THESIS 241748: CONGRUENCE REQUIREMENT FOR GOOD/BAD FAITH ANALYSIS IN ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis241748_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: When adverse possession is discussed and demand is based on good faith possession, study of the action must include good/bad faith analysis for congruence
+clause tesis241748_principio_fundamental = (oblig(ejercer_prescripcion_positiva) AND ejercicio_buena_fe) IMPLIES oblig(congruencia_procesal);
 
-// Supporting legal logic (add as needed)
-clause tesis241748_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Congruence requires analysis of good/bad faith in possessory fact to establish if actor's petition prospered
+clause tesis241748_analisis_fe = oblig(congruencia_procesal) IMPLIES (ejercicio_buena_fe XOR ejercicio_mala_fe);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis241748_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Right declaration: Must establish declaration of right protected by the action with clarity and precision
+clause tesis241748_declaracion_derecho = oblig(congruencia_procesal) IMPLIES oblig(proteccion_legal);
+
+// Action-based congruence: Congruence is determined by the right exercised and its consequences
+clause tesis241748_congruencia_accion = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal);
 
 // Thesis validation
 asset tesis241748_valida = global();
 
 // ==========================================
-// THESIS 241751: Thesis 241751
+// THESIS 241751: GOOD FAITH POSSESSOR IGNORING TITLE DEFECTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis241751_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Good faith possessor is one who ignores the defects of their title, even when title is vitiated by nullity
+clause tesis241751_principio_fundamental = (causa_generadora_probada AND not(conocimiento_vicios)) IMPLIES ejercicio_buena_fe;
 
-// Supporting legal logic (add as needed)
-clause tesis241751_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: If possessor was ignorant of title defects, must be considered good faith possessor
+clause tesis241751_ignorancia_vicios = not(conocimiento_vicios) IMPLIES ejercicio_buena_fe;
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis241751_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Sufficient for usucapion: If other legal requirements are met, sufficient to found usucapion
+clause tesis241751_suficiente_usucapion = (ejercicio_buena_fe AND posesion_como_propietario) IMPLIES oblig(ejercer_prescripcion_positiva);
+
+// Vicious title validity: Even when title is vitiated by nullity, ignorance of defects makes possessor good faith
+clause tesis241751_titulo_vicioso = (causa_generadora_probada AND not(conocimiento_vicios)) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Thesis validation
 asset tesis241751_valida = global();
 
 // ==========================================
-// THESIS 241812: Thesis 241812
+// THESIS 241812: LACK OF DIRECT PROOF OF POSSESSION CAUSE DOES NOT PREVENT USUCAPION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis241812_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Lack of direct proof of possession cause does not prevent usucapion if possession as owner is demonstrated
+clause tesis241812_principio_fundamental = (posesion_como_propietario AND posesion_pacifico_continuo_publico AND ejercicio_buena_fe) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis241812_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Proof of possession facts allows presuming the generating cause of possession
+clause tesis241812_presuncion_causa = (posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES causa_generadora_probada;
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis241812_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Possession requirements: Must be peaceful, continuous, public, and good faith from origin
+clause tesis241812_requisitos_posesion = oblig(ejercer_prescripcion_positiva) IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico);
+
+// Good faith presumption: When possession is as owner with required qualities, good faith is presumed
+clause tesis241812_presuncion_buena_fe = (posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES ejercicio_buena_fe;
 
 // Thesis validation
 asset tesis241812_valida = global();
 
 // ==========================================
-// THESIS 242139: Thesis 242139
+// THESIS 242139: POSSESSION IN CONCEPT OF OWNER FOR PRESUMPTION OF PROPERTY
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis242139_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Only possession acquired in concept of owner can produce prescription, and must reveal generating cause
+clause tesis242139_principio_fundamental = (posesion_como_propietario AND causa_generadora_revelada) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Supporting legal logic (add as needed)
-clause tesis242139_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must specify the fact or act that originated possession and when it occurred
+clause tesis242139_origin_timing = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis242139_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Nature determination: To determine if possession is original or derived, good or bad faith
+clause tesis242139_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+
+// Duration determination: To determine the time duration for prescription to be consummated
+clause tesis242139_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
+
+// Presumption of property: Possession gives presumption of owner for all legal effects
+clause tesis242139_presuncion_propiedad = posesion_como_propietario IMPLIES oblig(proteccion_legal);
 
 // Thesis validation
 asset tesis242139_valida = global();
 
 // ==========================================
-// THESIS 245838: Thesis 245838
+// THESIS 245838: REVEALING AND PROVING GENERATING CAUSE REQUIREMENT FOR ADVERSE POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis245838_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Not sufficient to reveal the generating cause of possession, must be fully proven through appropriate evidence
+clause tesis245838_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES (causa_generadora_revelada AND causa_generadora_probada);
 
-// Supporting legal logic (add as needed)
-clause tesis245838_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must reveal the generating cause of possession and when it began
+clause tesis245838_revelar_causa = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis245838_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Nature determination: To determine if possession is original or derived
+clause tesis245838_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+
+// Timing determination: To determine when prescription was consummated
+clause tesis245838_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
+
+// Proof requirement: Must be fully proven through appropriate evidence according to the cause invoked
+clause tesis245838_requisito_prueba = causa_generadora_probada IMPLIES causa_generadora_revelada;
 
 // Thesis validation
 asset tesis245838_valida = global();
 
 // ==========================================
-// THESIS 246297: Thesis 246297
+// THESIS 246297: NECESSITY FOR ACTOR TO REVEAL CAUSE OF POSSESSION
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis246297_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: Actor must reveal the cause of their possession when promoting prescription action
+clause tesis246297_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_revelada;
 
-// Supporting legal logic (add as needed)
-clause tesis246297_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Must reveal the fact or act that generated the possession
+clause tesis246297_revelar_acto = causa_generadora_revelada IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis246297_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Quality determination: So the judge can determine the quality of possession (original or derived)
+clause tesis246297_determinacion_calidad = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+
+// Term computation: So the judge can compute the term (good faith, bad faith, or by cause of crime)
+clause tesis246297_computo_termino = causa_generadora_revelada IMPLIES (ejercicio_buena_fe XOR ejercicio_mala_fe);
 
 // Thesis validation
 asset tesis246297_valida = global();
 
 // ==========================================
-// THESIS 248006: Thesis 248006
+// THESIS 248006: ELEMENTS TO CONSIDER WHEN NO TITLE EXISTS
 // ==========================================
 
-// Thesis-specific principle: [DESCRIBE THE MAIN LEGAL RULE]
-clause tesis248006_principio_fundamental = [LOGICAL_EXPRESSION_USING_SHARED_ASSETS];
+// Thesis-specific principle: When defendant admits possession without title for more than 10 years with required qualities, is bad faith possessor and property is eligible for prescription
+clause tesis248006_principio_fundamental = (posesion_como_propietario AND posesion_pacifico_continuo_publico AND posesion_tiempo_10_anos AND not(causa_generadora_probada)) IMPLIES (ejercicio_mala_fe AND oblig(ejercer_prescripcion_positiva));
 
-// Supporting legal logic (add as needed)
-clause tesis248006_regla_secundaria = [SUPPORTING_LOGIC];
+// Supporting logic: Does not need to prove generating cause of possession in trial when no title exists
+clause tesis248006_no_prueba_causa = (not(causa_generadora_probada) AND posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva);
 
-// Additional thesis-specific assets (only if shared assets are insufficient)
-// asset tesis248006_asset_especifico = [SUBJECT], [ACTION], [TARGET];
+// Title definition: In state law, title is understood as the generating cause of possession
+clause tesis248006_definicion_titulo = not(causa_generadora_probada) IMPLIES not(titularidad_registral);
+
+// Prescription eligibility: If 10 years have passed and other elements are met, property is eligible for prescription
+clause tesis248006_apto_prescripcion = (posesion_tiempo_10_anos AND posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Thesis validation
 asset tesis248006_valida = global();

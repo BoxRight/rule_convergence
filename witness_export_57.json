@@ -1,0 +1,51 @@
+{
+  "assets": [5, 7, 8, 10, 11, 38, 63],
+  "asset_names": {"5": "ejercicio_mala_fe", "7": "posesion_como_propietario", "8": "posesion_temporal", "10": "ejercicio_buena_fe", "11": "posesion_pacifico_continuo_publico", "38": "causa_generadora_revelada", "63": "ejercer_prescripcion_positiva"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "11": {"asset_name": "posesion_pacifico_continuo_publico(demandante:possess peacefully, continuously, and publicly:tercero)", "subject": "demandante", "action": "possess peacefully, continuously, and publicly", "object": "tercero"}, "38": {"asset_name": "causa_generadora_revelada(demandante:reveal generating cause of possession:tribunal)", "subject": "demandante", "action": "reveal generating cause of possession", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "clauses": [
+    {
+      "name": "tesis246297_principio_fundamental",
+      "asset_ids": [38, 63],
+      "assignments": [
+        [-38, -63],
+        [38, -63],
+        [38, 63]
+      ]
+    },
+    {
+      "name": "tesis246297_revelar_acto",
+      "asset_ids": [7, 11, 38],
+      "assignments": [
+        [-7, -11, -38],
+        [-7, 11, -38],
+        [7, -11, -38],
+        [7, 11, -38],
+        [7, 11, 38]
+      ]
+    },
+    {
+      "name": "tesis246297_determinacion_calidad",
+      "asset_ids": [7, 8, 38],
+      "assignments": [
+        [-7, -8, -38],
+        [-7, 8, -38],
+        [-7, 8, 38],
+        [7, -8, -38],
+        [7, -8, 38],
+        [7, 8, -38]
+      ]
+    },
+    {
+      "name": "tesis246297_computo_termino",
+      "asset_ids": [5, 10, 38],
+      "assignments": [
+        [-5, -10, -38],
+        [-5, 10, -38],
+        [-5, 10, 38],
+        [5, -10, -38],
+        [5, -10, 38],
+        [5, 10, -38]
+      ]
+    }
+  ]
+}

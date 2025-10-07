@@ -1,0 +1,50 @@
+{
+  "assets": [5, 6, 10, 38, 63, 64, 65],
+  "asset_names": {"5": "ejercicio_mala_fe", "6": "causa_generadora_probada", "10": "ejercicio_buena_fe", "38": "causa_generadora_revelada", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos", "65": "posesion_tiempo_10_anos"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "38": {"asset_name": "causa_generadora_revelada(demandante:reveal generating cause of possession:tribunal)", "subject": "demandante", "action": "reveal generating cause of possession", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}, "65": {"asset_name": "posesion_tiempo_10_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis224038_principio_fundamental",
+      "asset_ids": [6, 63],
+      "assignments": [
+        [-6, -63],
+        [6, -63],
+        [6, 63]
+      ]
+    },
+    {
+      "name": "tesis224038_prueba_directa",
+      "asset_ids": [6, 38],
+      "assignments": [
+        [-6, -38],
+        [-6, 38],
+        [6, 38]
+      ]
+    },
+    {
+      "name": "tesis224038_determinacion_fe",
+      "asset_ids": [5, 6, 10],
+      "assignments": [
+        [-5, -6, -10],
+        [-5, -6, 10],
+        [-5, 6, 10],
+        [5, -6, -10],
+        [5, -6, 10],
+        [5, 6, -10]
+      ]
+    },
+    {
+      "name": "tesis224038_determinacion_temporal",
+      "asset_ids": [6, 64, 65],
+      "assignments": [
+        [-6, -64, -65],
+        [-6, -64, 65],
+        [-6, 64, -65],
+        [-6, 64, 65],
+        [6, -64, 65],
+        [6, 64, -65],
+        [6, 64, 65]
+      ]
+    }
+  ]
+}

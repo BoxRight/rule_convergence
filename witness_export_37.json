@@ -1,0 +1,51 @@
+{
+  "assets": [1, 40, 46, 60, 63],
+  "asset_names": {"1": "titularidad_registral", "40": "congruencia_procesal", "46": "conocimiento_vicios", "60": "proteccion_legal", "63": "ejercer_prescripcion_positiva"},
+  "asset_construction": {"1": {"asset_name": "titularidad_registral(titular_registral:be registered in public property registry:autoridad_registral)", "subject": "titular_registral", "action": "be registered in public property registry", "object": "autoridad_registral"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "60": {"asset_name": "proteccion_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "clauses": [
+    {
+      "name": "tesis215033_principio_fundamental",
+      "asset_ids": [1, 60, 63],
+      "assignments": [
+        [-1, -60, -63],
+        [-1, -60, 63],
+        [-1, 60, -63],
+        [-1, 60, 63],
+        [1, -60, -63],
+        [1, 60, -63],
+        [1, 60, 63]
+      ]
+    },
+    {
+      "name": "tesis215033_debido_proceso",
+      "asset_ids": [60, 63],
+      "assignments": [
+        [-60, -63],
+        [60, -63],
+        [60, 63]
+      ]
+    },
+    {
+      "name": "tesis215033_conocimiento_regimen",
+      "asset_ids": [46, 60, 63],
+      "assignments": [
+        [-46, -60, -63],
+        [-46, -60, 63],
+        [-46, 60, -63],
+        [-46, 60, 63],
+        [46, -60, -63],
+        [46, 60, -63],
+        [46, 60, 63]
+      ]
+    },
+    {
+      "name": "tesis215033_requisito_procesal",
+      "asset_ids": [40, 63],
+      "assignments": [
+        [-40, -63],
+        [40, -63],
+        [40, 63]
+      ]
+    }
+  ]
+}

@@ -1,36 +1,28 @@
 {
-  "assets": [1, 2, 5, 18, 39, 40],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "18": "proteccion_registral", "39": "variacion_litis", "40": "congruencia_procesal"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "39": {"asset_name": "variacion_litis(tribunal_agrario:vary the legal dispute:demandado)", "subject": "tribunal_agrario", "action": "vary the legal dispute", "object": "demandado"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}},
+  "assets": [3, 10, 18, 39, 40],
+  "asset_names": {"3": "demanda_prescripcion", "10": "ejercicio_buena_fe", "18": "proteccion_registral", "39": "variacion_litis", "40": "congruencia_procesal"},
+  "asset_construction": {"3": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}, "39": {"asset_name": "variacion_litis(tribunal_agrario:vary the legal dispute:demandado)", "subject": "tribunal_agrario", "action": "vary the legal dispute", "object": "demandado"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}},
   "clauses": [
     {
-      "name": "tesis2011927_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2011927_principio_fundamental",
-      "asset_ids": [1, 5, 39],
+      "asset_ids": [3, 10, 39],
       "assignments": [
-        [-1, -5, -39],
-        [-1, -5, 39],
-        [-1, 5, -39],
-        [-1, 5, 39],
-        [1, -5, -39],
-        [1, -5, 39],
-        [1, 5, -39]
+        [-3, -10, -39],
+        [-3, -10, 39],
+        [-3, 10, -39],
+        [-3, 10, 39],
+        [3, -10, -39],
+        [3, -10, 39],
+        [3, 10, -39]
       ]
     },
     {
       "name": "tesis2011927_congruencia_procesal",
-      "asset_ids": [5, 40],
+      "asset_ids": [3, 40],
       "assignments": [
-        [-5, -40],
-        [-5, 40],
-        [5, 40]
+        [-3, -40],
+        [-3, 40],
+        [3, 40]
       ]
     },
     {

@@ -1,62 +1,54 @@
 {
-  "assets": [1, 2, 5, 7, 14, 35, 46, 47, 48],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "7": "causa_generadora_probada", "14": "documento_con_vicios", "35": "diligencia_adquirente", "46": "conocimiento_vicios", "47": "conversion_fe", "48": "posesion_delictuosa"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "14": {"asset_name": "documento_con_vicios(demandante:have documentary defects in generating cause:tribunal)", "subject": "demandante", "action": "have documentary defects in generating cause", "object": "tribunal"}, "35": {"asset_name": "diligencia_adquirente(demandante:demonstrate buyer's due diligence:tribunal)", "subject": "demandante", "action": "demonstrate buyer's due diligence", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "47": {"asset_name": "conversion_fe(demandante:convert from good faith to bad faith possession:tribunal)", "subject": "demandante", "action": "convert from good faith to bad faith possession", "object": "tribunal"}, "48": {"asset_name": "posesion_delictuosa(demandante:have delictual/criminal possession:tribunal)", "subject": "demandante", "action": "have delictual/criminal possession", "object": "tribunal"}},
+  "assets": [3, 5, 6, 10, 14, 35, 46, 47, 48],
+  "asset_names": {"3": "demanda_prescripcion", "5": "ejercicio_mala_fe", "6": "causa_generadora_probada", "10": "ejercicio_buena_fe", "14": "documento_con_vicios", "35": "diligencia_adquirente", "46": "conocimiento_vicios", "47": "conversion_fe", "48": "posesion_delictuosa"},
+  "asset_construction": {"3": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "14": {"asset_name": "documento_con_vicios(demandante:have documentary defects in generating cause:tribunal)", "subject": "demandante", "action": "have documentary defects in generating cause", "object": "tribunal"}, "35": {"asset_name": "diligencia_adquirente(demandante:demonstrate buyer's due diligence:tribunal)", "subject": "demandante", "action": "demonstrate buyer's due diligence", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "47": {"asset_name": "conversion_fe(demandante:convert from good faith to bad faith possession:tribunal)", "subject": "demandante", "action": "convert from good faith to bad faith possession", "object": "tribunal"}, "48": {"asset_name": "posesion_delictuosa(demandante:have delictual/criminal possession:tribunal)", "subject": "demandante", "action": "have delictual/criminal possession", "object": "tribunal"}},
   "clauses": [
     {
-      "name": "tesis2017366_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2017366_principio_fundamental",
-      "asset_ids": [1, 5, 46],
+      "asset_ids": [3, 10, 46],
       "assignments": [
-        [-1, -5, -46],
-        [-1, -5, 46],
-        [-1, 5, 46],
-        [1, -5, -46],
-        [1, -5, 46],
-        [1, 5, -46],
-        [1, 5, 46]
+        [-3, -10, -46],
+        [-3, -10, 46],
+        [-3, 10, -46],
+        [-3, 10, 46],
+        [3, -10, 46],
+        [3, 10, -46],
+        [3, 10, 46]
       ]
     },
     {
       "name": "tesis2017366_buena_fe_tipos",
-      "asset_ids": [1, 14, 35],
+      "asset_ids": [10, 14, 35],
       "assignments": [
-        [-1, -14, -35],
-        [-1, -14, 35],
-        [-1, 14, -35],
-        [-1, 14, 35],
-        [1, -14, -35],
-        [1, -14, 35],
-        [1, 14, 35]
+        [-10, -14, -35],
+        [-10, -14, 35],
+        [-10, 14, -35],
+        [-10, 14, 35],
+        [10, -14, -35],
+        [10, -14, 35],
+        [10, 14, 35]
       ]
     },
     {
       "name": "tesis2017366_mala_fe_tipos",
-      "asset_ids": [2, 7, 46],
+      "asset_ids": [5, 6, 46],
       "assignments": [
-        [-2, -7, -46],
-        [-2, -7, 46],
-        [-2, 7, -46],
-        [-2, 7, 46],
-        [2, -7, -46],
-        [2, -7, 46],
-        [2, 7, 46]
+        [-5, -6, -46],
+        [-5, -6, 46],
+        [-5, 6, -46],
+        [-5, 6, 46],
+        [5, -6, -46],
+        [5, -6, 46],
+        [5, 6, 46]
       ]
     },
     {
       "name": "tesis2017366_presuncion_legal",
-      "asset_ids": [1, 5],
+      "asset_ids": [3, 10],
       "assignments": [
-        [-1, -5],
-        [1, -5],
-        [1, 5]
+        [-3, -10],
+        [-3, 10],
+        [3, 10]
       ]
     },
     {
@@ -74,20 +66,20 @@
     },
     {
       "name": "tesis2017366_naturaleza_condicional",
-      "asset_ids": [1, 35],
+      "asset_ids": [10, 35],
       "assignments": [
-        [-1, -35],
-        [-1, 35],
-        [1, 35]
+        [-10, -35],
+        [-10, 35],
+        [10, 35]
       ]
     },
     {
       "name": "tesis2017366_posesion_delictuosa",
-      "asset_ids": [2, 48],
+      "asset_ids": [5, 48],
       "assignments": [
-        [-2, -48],
-        [2, -48],
-        [2, 48]
+        [-5, -48],
+        [5, -48],
+        [5, 48]
       ]
     }
   ]

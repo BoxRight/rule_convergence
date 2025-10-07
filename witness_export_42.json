@@ -1,0 +1,49 @@
+{
+  "assets": [5, 6, 10, 46, 63],
+  "asset_names": {"5": "ejercicio_mala_fe", "6": "causa_generadora_probada", "10": "ejercicio_buena_fe", "46": "conocimiento_vicios", "63": "ejercer_prescripcion_positiva"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}},
+  "clauses": [
+    {
+      "name": "tesis222153_principio_fundamental",
+      "asset_ids": [6, 10, 46],
+      "assignments": [
+        [-6, -10, -46],
+        [-6, -10, 46],
+        [6, -10, -46],
+        [6, -10, 46],
+        [6, 10, -46]
+      ]
+    },
+    {
+      "name": "tesis222153_titulo_suficiente",
+      "asset_ids": [6, 10],
+      "assignments": [
+        [-6, -10],
+        [6, -10],
+        [6, 10]
+      ]
+    },
+    {
+      "name": "tesis222153_ignorancia_vicios",
+      "asset_ids": [10, 46],
+      "assignments": [
+        [-10, -46],
+        [-10, 46],
+        [10, -46]
+      ]
+    },
+    {
+      "name": "tesis222153_flexibilidad_titulo",
+      "asset_ids": [5, 10, 63],
+      "assignments": [
+        [-5, -10, -63],
+        [-5, 10, -63],
+        [-5, 10, 63],
+        [5, -10, -63],
+        [5, -10, 63],
+        [5, 10, -63],
+        [5, 10, 63]
+      ]
+    }
+  ]
+}

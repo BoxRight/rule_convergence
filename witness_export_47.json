@@ -1,0 +1,116 @@
+{
+  "assets": [5, 6, 7, 8, 10, 46, 63, 64, 65],
+  "asset_names": {"5": "ejercicio_mala_fe", "6": "causa_generadora_probada", "7": "posesion_como_propietario", "8": "posesion_temporal", "10": "ejercicio_buena_fe", "46": "conocimiento_vicios", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos", "65": "posesion_tiempo_10_anos"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}, "65": {"asset_name": "posesion_tiempo_10_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis224820_principio_fundamental",
+      "asset_ids": [5, 7, 10, 63, 64, 65],
+      "assignments": [
+        [-5, -7, -10, -63, -64, -65],
+        [-5, -7, -10, -63, -64, 65],
+        [-5, -7, -10, -63, 64, -65],
+        [-5, -7, -10, -63, 64, 65],
+        [-5, -7, -10, 63, -64, -65],
+        [-5, -7, -10, 63, -64, 65],
+        [-5, -7, -10, 63, 64, -65],
+        [-5, -7, -10, 63, 64, 65],
+        [-5, -7, 10, -63, -64, -65],
+        [-5, -7, 10, -63, -64, 65],
+        [-5, -7, 10, -63, 64, -65],
+        [-5, -7, 10, -63, 64, 65],
+        [-5, -7, 10, 63, -64, -65],
+        [-5, -7, 10, 63, -64, 65],
+        [-5, -7, 10, 63, 64, -65],
+        [-5, -7, 10, 63, 64, 65],
+        [-5, 7, -10, -63, -64, -65],
+        [-5, 7, -10, -63, -64, 65],
+        [-5, 7, -10, -63, 64, -65],
+        [-5, 7, -10, -63, 64, 65],
+        [-5, 7, -10, 63, -64, -65],
+        [-5, 7, -10, 63, -64, 65],
+        [-5, 7, -10, 63, 64, -65],
+        [-5, 7, -10, 63, 64, 65],
+        [-5, 7, 10, -63, -64, -65],
+        [-5, 7, 10, 63, -64, -65],
+        [-5, 7, 10, 63, -64, 65],
+        [-5, 7, 10, 63, 64, -65],
+        [-5, 7, 10, 63, 64, 65],
+        [5, -7, -10, -63, -64, -65],
+        [5, -7, -10, -63, -64, 65],
+        [5, -7, -10, -63, 64, -65],
+        [5, -7, -10, -63, 64, 65],
+        [5, -7, -10, 63, -64, -65],
+        [5, -7, -10, 63, -64, 65],
+        [5, -7, -10, 63, 64, -65],
+        [5, -7, -10, 63, 64, 65],
+        [5, -7, 10, -63, -64, -65],
+        [5, -7, 10, -63, -64, 65],
+        [5, -7, 10, -63, 64, -65],
+        [5, -7, 10, -63, 64, 65],
+        [5, -7, 10, 63, -64, -65],
+        [5, -7, 10, 63, -64, 65],
+        [5, -7, 10, 63, 64, -65],
+        [5, -7, 10, 63, 64, 65],
+        [5, 7, -10, -63, -64, -65],
+        [5, 7, -10, 63, -64, -65],
+        [5, 7, -10, 63, -64, 65],
+        [5, 7, -10, 63, 64, -65],
+        [5, 7, -10, 63, 64, 65],
+        [5, 7, 10, -63, -64, -65],
+        [5, 7, 10, 63, -64, -65],
+        [5, 7, 10, 63, -64, 65],
+        [5, 7, 10, 63, 64, -65],
+        [5, 7, 10, 63, 64, 65]
+      ]
+    },
+    {
+      "name": "tesis224820_dominio_economico",
+      "asset_ids": [6, 7],
+      "assignments": [
+        [-6, -7],
+        [6, -7],
+        [6, 7]
+      ]
+    },
+    {
+      "name": "tesis224820_requisitos_titulo",
+      "asset_ids": [5, 6, 10],
+      "assignments": [
+        [-5, -6, -10],
+        [-5, -6, 10],
+        [-5, 6, 10],
+        [5, -6, -10],
+        [5, -6, 10],
+        [5, 6, -10],
+        [5, 6, 10]
+      ]
+    },
+    {
+      "name": "tesis224820_actos_traslativos",
+      "asset_ids": [6, 7, 8],
+      "assignments": [
+        [-6, -7, -8],
+        [-6, -7, 8],
+        [-6, 7, 8],
+        [6, -7, -8],
+        [6, -7, 8],
+        [6, 7, -8],
+        [6, 7, 8]
+      ]
+    },
+    {
+      "name": "tesis224820_actos_defectuosos",
+      "asset_ids": [6, 46, 63],
+      "assignments": [
+        [-6, -46, -63],
+        [-6, -46, 63],
+        [-6, 46, -63],
+        [-6, 46, 63],
+        [6, -46, -63],
+        [6, -46, 63],
+        [6, 46, 63]
+      ]
+    }
+  ]
+}

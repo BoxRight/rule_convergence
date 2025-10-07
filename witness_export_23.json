@@ -1,0 +1,29 @@
+{
+  "assets": [5, 10, 46, 61],
+  "asset_names": {"5": "ejercicio_mala_fe", "10": "ejercicio_buena_fe", "46": "conocimiento_vicios", "61": "procedimiento_inmatriculacion_202535"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "61": {"asset_name": "procedimiento_inmatriculacion_202535(demandante:exercise legal right:autoridad_registral)", "subject": "demandante", "action": "exercise legal right", "object": "autoridad_registral"}},
+  "clauses": [
+    {
+      "name": "tesis202535_principio_fundamental",
+      "asset_ids": [5, 46, 61],
+      "assignments": [
+        [-5, -46, -61],
+        [-5, -46, 61],
+        [-5, 46, -61],
+        [5, -46, -61],
+        [5, -46, 61],
+        [5, 46, -61],
+        [5, 46, 61]
+      ]
+    },
+    {
+      "name": "tesis202535_conocimiento_defectos",
+      "asset_ids": [10, 46],
+      "assignments": [
+        [-10, -46],
+        [-10, 46],
+        [10, -46]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "assets": [5, 10, 40, 60, 62, 63, 64, 65],
+  "asset_names": {"5": "ejercicio_mala_fe", "10": "ejercicio_buena_fe", "40": "congruencia_procesal", "60": "proteccion_legal", "62": "posesion_agraria", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos", "65": "posesion_tiempo_10_anos"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}, "60": {"asset_name": "proteccion_legal", "subject": "unknown", "action": "unknown", "object": "unknown"}, "62": {"asset_name": "posesion_agraria(demandante:possess property with ownership character:tribunal_agrario)", "subject": "demandante", "action": "possess property with ownership character", "object": "tribunal_agrario"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}, "65": {"asset_name": "posesion_tiempo_10_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis212497_principio_fundamental",
+      "asset_ids": [5, 10, 62, 63, 64, 65],
+      "assignments": [
+        [-5, -10, -62, -63, -64, -65],
+        [-5, -10, -62, -63, -64, 65],
+        [-5, -10, -62, -63, 64, -65],
+        [-5, -10, -62, -63, 64, 65],
+        [-5, -10, -62, 63, -64, -65],
+        [-5, -10, -62, 63, -64, 65],
+        [-5, -10, -62, 63, 64, -65],
+        [-5, -10, -62, 63, 64, 65],
+        [-5, -10, 62, -63, -64, -65],
+        [-5, -10, 62, -63, -64, 65],
+        [-5, -10, 62, -63, 64, -65],
+        [-5, -10, 62, -63, 64, 65],
+        [-5, -10, 62, 63, -64, -65],
+        [-5, -10, 62, 63, -64, 65],
+        [-5, -10, 62, 63, 64, -65],
+        [-5, -10, 62, 63, 64, 65],
+        [-5, 10, -62, -63, -64, -65],
+        [-5, 10, -62, -63, -64, 65],
+        [-5, 10, -62, -63, 64, -65],
+        [-5, 10, -62, -63, 64, 65],
+        [-5, 10, -62, 63, -64, -65],
+        [-5, 10, -62, 63, -64, 65],
+        [-5, 10, -62, 63, 64, -65],
+        [-5, 10, -62, 63, 64, 65],
+        [-5, 10, 62, -63, -64, -65],
+        [-5, 10, 62, 63, -64, -65],
+        [-5, 10, 62, 63, -64, 65],
+        [-5, 10, 62, 63, 64, -65],
+        [-5, 10, 62, 63, 64, 65],
+        [5, -10, -62, -63, -64, -65],
+        [5, -10, -62, -63, -64, 65],
+        [5, -10, -62, -63, 64, -65],
+        [5, -10, -62, -63, 64, 65],
+        [5, -10, -62, 63, -64, -65],
+        [5, -10, -62, 63, -64, 65],
+        [5, -10, -62, 63, 64, -65],
+        [5, -10, -62, 63, 64, 65],
+        [5, -10, 62, -63, -64, -65],
+        [5, -10, 62, 63, -64, -65],
+        [5, -10, 62, 63, -64, 65],
+        [5, -10, 62, 63, 64, -65],
+        [5, -10, 62, 63, 64, 65],
+        [5, 10, -62, -63, -64, -65],
+        [5, 10, -62, -63, -64, 65],
+        [5, 10, -62, -63, 64, -65],
+        [5, 10, -62, -63, 64, 65],
+        [5, 10, -62, 63, -64, -65],
+        [5, 10, -62, 63, -64, 65],
+        [5, 10, -62, 63, 64, -65],
+        [5, 10, -62, 63, 64, 65],
+        [5, 10, 62, -63, -64, -65],
+        [5, 10, 62, 63, -64, -65],
+        [5, 10, 62, 63, -64, 65],
+        [5, 10, 62, 63, 64, -65],
+        [5, 10, 62, 63, 64, 65]
+      ]
+    },
+    {
+      "name": "tesis212497_analisis_temporal",
+      "asset_ids": [62, 63],
+      "assignments": [
+        [-62, -63],
+        [62, -63],
+        [62, 63]
+      ]
+    },
+    {
+      "name": "tesis212497_debido_proceso",
+      "asset_ids": [60, 63],
+      "assignments": [
+        [-60, -63],
+        [60, -63],
+        [60, 63]
+      ]
+    },
+    {
+      "name": "tesis212497_flexibilidad_procesal",
+      "asset_ids": [40, 62, 63],
+      "assignments": [
+        [-40, -62, -63],
+        [-40, -62, 63],
+        [-40, 62, 63],
+        [40, -62, -63],
+        [40, -62, 63],
+        [40, 62, -63],
+        [40, 62, 63]
+      ]
+    }
+  ]
+}

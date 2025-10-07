@@ -1,49 +1,41 @@
 {
-  "assets": [1, 2, 5, 7, 13, 16, 17, 18],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "7": "causa_generadora_probada", "13": "proteccion_terceros", "16": "contrato_inmueble_diverso", "17": "error_ubicacion_material", "18": "proteccion_registral"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}, "16": {"asset_name": "contrato_inmueble_diverso(demandante:refer to a different property than the one being claimed:tercero)", "subject": "demandante", "action": "refer to a different property than the one being claimed", "object": "tercero"}, "17": {"asset_name": "error_ubicacion_material(tercero:make material error in property location:demandante)", "subject": "tercero", "action": "make material error in property location", "object": "demandante"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}},
+  "assets": [3, 6, 10, 13, 16, 17, 18],
+  "asset_names": {"3": "demanda_prescripcion", "6": "causa_generadora_probada", "10": "ejercicio_buena_fe", "13": "proteccion_terceros", "16": "contrato_inmueble_diverso", "17": "error_ubicacion_material", "18": "proteccion_registral"},
+  "asset_construction": {"3": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "13": {"asset_name": "proteccion_terceros(tercero:affect third parties or public interest:tribunal)", "subject": "tercero", "action": "affect third parties or public interest", "object": "tribunal"}, "16": {"asset_name": "contrato_inmueble_diverso(demandante:refer to a different property than the one being claimed:tercero)", "subject": "demandante", "action": "refer to a different property than the one being claimed", "object": "tercero"}, "17": {"asset_name": "error_ubicacion_material(tercero:make material error in property location:demandante)", "subject": "tercero", "action": "make material error in property location", "object": "demandante"}, "18": {"asset_name": "proteccion_registral(titular_registral:obtain legal protection:autoridad_registral)", "subject": "titular_registral", "action": "obtain legal protection", "object": "autoridad_registral"}},
   "clauses": [
     {
-      "name": "tesis2023487_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2023487_principio_fundamental",
-      "asset_ids": [1, 7, 16],
+      "asset_ids": [6, 10, 16],
       "assignments": [
-        [-1, -7, -16],
-        [-1, -7, 16],
-        [-1, 7, -16],
-        [-1, 7, 16],
-        [1, -7, -16],
-        [1, -7, 16],
-        [1, 7, -16]
+        [-6, -10, -16],
+        [-6, -10, 16],
+        [-6, 10, -16],
+        [-6, 10, 16],
+        [6, -10, -16],
+        [6, -10, 16],
+        [6, 10, -16]
       ]
     },
     {
       "name": "tesis2023487_especificidad_titulo",
-      "asset_ids": [1, 5, 16],
+      "asset_ids": [3, 10, 16],
       "assignments": [
-        [-1, -5, -16],
-        [-1, -5, 16],
-        [-1, 5, -16],
-        [-1, 5, 16],
-        [1, -5, -16],
-        [1, -5, 16],
-        [1, 5, -16]
+        [-3, -10, -16],
+        [-3, -10, 16],
+        [-3, 10, -16],
+        [-3, 10, 16],
+        [3, -10, -16],
+        [3, -10, 16],
+        [3, 10, -16]
       ]
     },
     {
       "name": "tesis2023487_error_material",
-      "asset_ids": [7, 17],
+      "asset_ids": [6, 17],
       "assignments": [
-        [-7, -17],
-        [-7, 17],
-        [7, -17]
+        [-6, -17],
+        [-6, 17],
+        [6, -17]
       ]
     },
     {
@@ -66,15 +58,15 @@
     },
     {
       "name": "tesis2023487_requisito_buena_fe",
-      "asset_ids": [1, 5, 7],
+      "asset_ids": [3, 6, 10],
       "assignments": [
-        [-1, -5, -7],
-        [-1, -5, 7],
-        [-1, 5, -7],
-        [-1, 5, 7],
-        [1, -5, -7],
-        [1, -5, 7],
-        [1, 5, 7]
+        [-3, -6, -10],
+        [-3, -6, 10],
+        [-3, 6, -10],
+        [-3, 6, 10],
+        [3, -6, -10],
+        [3, 6, -10],
+        [3, 6, 10]
       ]
     }
   ]

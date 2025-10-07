@@ -1,49 +1,41 @@
 {
-  "assets": [1, 2, 5, 7, 8, 9, 39, 40, 46, 58, 59],
-  "asset_names": {"1": "ejercicio_buena_fe", "2": "ejercicio_mala_fe", "5": "demanda_prescripcion", "7": "causa_generadora_probada", "8": "posesion_como_propietario", "9": "posesion_temporal", "39": "variacion_litis", "40": "congruencia_procesal", "46": "conocimiento_vicios", "58": "enderezamiento_litis", "59": "proteccion_defensa"},
-  "asset_construction": {"1": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "2": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "5": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "7": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "8": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "9": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "39": {"asset_name": "variacion_litis(tribunal_agrario:vary the legal dispute:demandado)", "subject": "tribunal_agrario", "action": "vary the legal dispute", "object": "demandado"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "58": {"asset_name": "enderezamiento_litis(tribunal:correct/fix the lawsuit by court:demandado)", "subject": "tribunal", "action": "correct/fix the lawsuit by court", "object": "demandado"}, "59": {"asset_name": "proteccion_defensa(demandado:protect defendant's right to defense:tribunal)", "subject": "demandado", "action": "protect defendant's right to defense", "object": "tribunal"}},
+  "assets": [3, 5, 6, 7, 8, 10, 39, 40, 46, 58, 59],
+  "asset_names": {"3": "demanda_prescripcion", "5": "ejercicio_mala_fe", "6": "causa_generadora_probada", "7": "posesion_como_propietario", "8": "posesion_temporal", "10": "ejercicio_buena_fe", "39": "variacion_litis", "40": "congruencia_procesal", "46": "conocimiento_vicios", "58": "enderezamiento_litis", "59": "proteccion_defensa"},
+  "asset_construction": {"3": {"asset_name": "demanda_prescripcion(demandante:exercise adverse possession action:titular_registral)", "subject": "demandante", "action": "exercise adverse possession action", "object": "titular_registral"}, "5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "6": {"asset_name": "causa_generadora_probada(demandante:prove the generating cause of possession:tribunal)", "subject": "demandante", "action": "prove the generating cause of possession", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "39": {"asset_name": "variacion_litis(tribunal_agrario:vary the legal dispute:demandado)", "subject": "tribunal_agrario", "action": "vary the legal dispute", "object": "demandado"}, "40": {"asset_name": "congruencia_procesal(tribunal_agrario:respect procedural congruence:demandante)", "subject": "tribunal_agrario", "action": "respect procedural congruence", "object": "demandante"}, "46": {"asset_name": "conocimiento_vicios(demandante:be aware of title defects:tribunal)", "subject": "demandante", "action": "be aware of title defects", "object": "tribunal"}, "58": {"asset_name": "enderezamiento_litis(tribunal:correct/fix the lawsuit by court:demandado)", "subject": "tribunal", "action": "correct/fix the lawsuit by court", "object": "demandado"}, "59": {"asset_name": "proteccion_defensa(demandado:protect defendant's right to defense:tribunal)", "subject": "demandado", "action": "protect defendant's right to defense", "object": "tribunal"}},
   "clauses": [
     {
-      "name": "tesis2016571_exclusividad_fe",
-      "asset_ids": [1, 2],
-      "assignments": [
-        [-1, 2],
-        [1, -2]
-      ]
-    },
-    {
       "name": "tesis2016571_principio_fundamental",
-      "asset_ids": [1, 5, 39],
+      "asset_ids": [3, 10, 39],
       "assignments": [
-        [-1, -5, -39],
-        [-1, -5, 39],
-        [-1, 5, -39],
-        [-1, 5, 39],
-        [1, -5, -39],
-        [1, -5, 39],
-        [1, 5, -39]
+        [-3, -10, -39],
+        [-3, -10, 39],
+        [-3, 10, -39],
+        [-3, 10, 39],
+        [3, -10, -39],
+        [3, -10, 39],
+        [3, 10, -39]
       ]
     },
     {
       "name": "tesis2016571_prohibicion_variacion",
-      "asset_ids": [1, 2, 5],
+      "asset_ids": [3, 5, 10],
       "assignments": [
-        [-1, -2, -5],
-        [-1, -2, 5],
-        [-1, 2, -5],
-        [-1, 2, 5],
-        [1, -2, -5],
-        [1, -2, 5],
-        [1, 2, -5]
+        [-3, -5, -10],
+        [-3, -5, 10],
+        [-3, 5, -10],
+        [-3, 5, 10],
+        [3, -5, -10],
+        [3, -5, 10],
+        [3, 5, -10]
       ]
     },
     {
       "name": "tesis2016571_congruencia_procesal",
-      "asset_ids": [5, 40],
+      "asset_ids": [3, 40],
       "assignments": [
-        [-5, -40],
-        [-5, 40],
-        [5, 40]
+        [-3, -40],
+        [-3, 40],
+        [3, 40]
       ]
     },
     {
@@ -75,59 +67,59 @@
     },
     {
       "name": "tesis2016571_consistencia_temporal",
-      "asset_ids": [1, 5, 9],
+      "asset_ids": [3, 8, 10],
       "assignments": [
-        [-1, -5, -9],
-        [-1, -5, 9],
-        [-1, 5, -9],
-        [-1, 5, 9],
-        [1, -5, -9],
-        [1, -5, 9],
-        [1, 5, 9]
+        [-3, -8, -10],
+        [-3, -8, 10],
+        [-3, 8, -10],
+        [-3, 8, 10],
+        [3, -8, -10],
+        [3, 8, -10],
+        [3, 8, 10]
       ]
     },
     {
       "name": "tesis2016571_requisitos_buena_fe",
-      "asset_ids": [1, 7, 46],
+      "asset_ids": [6, 10, 46],
       "assignments": [
-        [-1, -7, -46],
-        [-1, -7, 46],
-        [-1, 7, -46],
-        [-1, 7, 46],
-        [1, -7, 46],
-        [1, 7, -46],
-        [1, 7, 46]
+        [-6, -10, -46],
+        [-6, -10, 46],
+        [-6, 10, 46],
+        [6, -10, -46],
+        [6, -10, 46],
+        [6, 10, -46],
+        [6, 10, 46]
       ]
     },
     {
       "name": "tesis2016571_compromiso_teoria",
-      "asset_ids": [1, 5, 7, 8, 9],
+      "asset_ids": [3, 6, 7, 8, 10],
       "assignments": [
-        [-1, -5, -7, -8, -9],
-        [-1, -5, -7, -8, 9],
-        [-1, -5, -7, 8, -9],
-        [-1, -5, -7, 8, 9],
-        [-1, -5, 7, -8, -9],
-        [-1, -5, 7, -8, 9],
-        [-1, -5, 7, 8, -9],
-        [-1, -5, 7, 8, 9],
-        [-1, 5, -7, -8, -9],
-        [-1, 5, -7, -8, 9],
-        [-1, 5, -7, 8, -9],
-        [-1, 5, -7, 8, 9],
-        [-1, 5, 7, -8, -9],
-        [-1, 5, 7, -8, 9],
-        [-1, 5, 7, 8, -9],
-        [-1, 5, 7, 8, 9],
-        [1, -5, -7, -8, -9],
-        [1, -5, -7, -8, 9],
-        [1, -5, -7, 8, -9],
-        [1, -5, -7, 8, 9],
-        [1, -5, 7, -8, -9],
-        [1, -5, 7, -8, 9],
-        [1, -5, 7, 8, -9],
-        [1, -5, 7, 8, 9],
-        [1, 5, 7, 8, 9]
+        [-3, -6, -7, -8, -10],
+        [-3, -6, -7, -8, 10],
+        [-3, -6, -7, 8, -10],
+        [-3, -6, -7, 8, 10],
+        [-3, -6, 7, -8, -10],
+        [-3, -6, 7, -8, 10],
+        [-3, -6, 7, 8, -10],
+        [-3, -6, 7, 8, 10],
+        [-3, 6, -7, -8, -10],
+        [-3, 6, -7, -8, 10],
+        [-3, 6, -7, 8, -10],
+        [-3, 6, -7, 8, 10],
+        [-3, 6, 7, -8, -10],
+        [-3, 6, 7, -8, 10],
+        [-3, 6, 7, 8, -10],
+        [-3, 6, 7, 8, 10],
+        [3, -6, -7, -8, -10],
+        [3, -6, -7, 8, -10],
+        [3, -6, 7, -8, -10],
+        [3, -6, 7, 8, -10],
+        [3, 6, -7, -8, -10],
+        [3, 6, -7, 8, -10],
+        [3, 6, 7, -8, -10],
+        [3, 6, 7, 8, -10],
+        [3, 6, 7, 8, 10]
       ]
     }
   ]

@@ -1,0 +1,64 @@
+{
+  "assets": [5, 7, 8, 10, 38, 63, 64, 65],
+  "asset_names": {"5": "ejercicio_mala_fe", "7": "posesion_como_propietario", "8": "posesion_temporal", "10": "ejercicio_buena_fe", "38": "causa_generadora_revelada", "63": "ejercer_prescripcion_positiva", "64": "posesion_tiempo_5_anos", "65": "posesion_tiempo_10_anos"},
+  "asset_construction": {"5": {"asset_name": "ejercicio_mala_fe(demandante:act in bad faith:tribunal)", "subject": "demandante", "action": "act in bad faith", "object": "tribunal"}, "7": {"asset_name": "posesion_como_propietario(demandante:possess property with ownership character:titular_registral)", "subject": "demandante", "action": "possess property with ownership character", "object": "titular_registral"}, "8": {"asset_name": "posesion_temporal(demandante:possess property for specified time period:titular_registral)", "subject": "demandante", "action": "possess property for specified time period", "object": "titular_registral"}, "10": {"asset_name": "ejercicio_buena_fe(demandante:act in good faith:tribunal)", "subject": "demandante", "action": "act in good faith", "object": "tribunal"}, "38": {"asset_name": "causa_generadora_revelada(demandante:reveal generating cause of possession:tribunal)", "subject": "demandante", "action": "reveal generating cause of possession", "object": "tribunal"}, "63": {"asset_name": "ejercer_prescripcion_positiva", "subject": "unknown", "action": "unknown", "object": "unknown"}, "64": {"asset_name": "posesion_tiempo_5_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}, "65": {"asset_name": "posesion_tiempo_10_anos(demandante:possess property for specified time period:tribunal_agrario)", "subject": "demandante", "action": "possess property for specified time period", "object": "tribunal_agrario"}},
+  "clauses": [
+    {
+      "name": "tesis221460_principio_fundamental",
+      "asset_ids": [38, 63],
+      "assignments": [
+        [-38, -63],
+        [38, -63],
+        [38, 63]
+      ]
+    },
+    {
+      "name": "tesis221460_determinacion_naturaleza",
+      "asset_ids": [5, 7, 8, 10, 38],
+      "assignments": [
+        [-5, -7, -8, -10, -38],
+        [-5, -7, -8, 10, -38],
+        [-5, -7, 8, -10, -38],
+        [-5, -7, 8, 10, -38],
+        [-5, -7, 8, 10, 38],
+        [-5, 7, -8, -10, -38],
+        [-5, 7, -8, 10, -38],
+        [-5, 7, -8, 10, 38],
+        [-5, 7, 8, -10, -38],
+        [-5, 7, 8, 10, -38],
+        [5, -7, -8, -10, -38],
+        [5, -7, -8, 10, -38],
+        [5, -7, 8, -10, -38],
+        [5, -7, 8, -10, 38],
+        [5, -7, 8, 10, -38],
+        [5, 7, -8, -10, -38],
+        [5, 7, -8, -10, 38],
+        [5, 7, -8, 10, -38],
+        [5, 7, 8, -10, -38],
+        [5, 7, 8, 10, -38]
+      ]
+    },
+    {
+      "name": "tesis221460_determinacion_temporal",
+      "asset_ids": [38, 64, 65],
+      "assignments": [
+        [-38, -64, -65],
+        [-38, -64, 65],
+        [-38, 64, -65],
+        [-38, 64, 65],
+        [38, -64, 65],
+        [38, 64, -65],
+        [38, 64, 65]
+      ]
+    },
+    {
+      "name": "tesis221460_requisito_usucapion",
+      "asset_ids": [38, 63],
+      "assignments": [
+        [-38, -63],
+        [38, -63],
+        [38, 63]
+      ]
+    }
+  ]
+}
