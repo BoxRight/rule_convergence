@@ -940,16 +940,16 @@ asset tesis210588_valida = global();
 // ==========================================
 
 // Thesis-specific principle: Possession cannot be simultaneously good faith and bad faith - they are mutually exclusive
-clause tesis210589_principio_fundamental = oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe);
+clause tesis210589_principio_fundamental = oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe));
 
 // Supporting legal logic: Cannot have title (generating cause) and not have it simultaneously
-clause tesis210589_titulo_contradiccion = oblig(causa_generadora_probada) XOR not(oblig(causa_generadora_probada));
+clause tesis210589_titulo_contradiccion = oblig(causa_generadora_probada) AND not(not(oblig(causa_generadora_probada)));
 
 // Knowledge contradiction: Cannot simultaneously know and not know title defects
-clause tesis210589_conocimiento_contradiccion = oblig(conocimiento_vicios) XOR not(oblig(conocimiento_vicios));
+clause tesis210589_conocimiento_contradiccion = oblig(conocimiento_vicios) AND not(not(oblig(conocimiento_vicios)));
 
 // Procedural requirement: Action must be based on consistent facts, not contradictory claims
-clause tesis210589_consistencia_procesal = oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+clause tesis210589_consistencia_procesal = oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)));
 
 // Thesis validation
 asset tesis210589_valida = global();
@@ -1001,7 +1001,7 @@ asset tesis210890_valida = global();
 clause tesis211744_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
 // Supporting logic: Judge needs to know generating cause to determine possession quality and timing
-clause tesis211744_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+clause tesis211744_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))));
 
 // Universal requirement: Applies to both good faith and bad faith possessors
 clause tesis211744_requisito_universal = (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(causa_generadora_revelada);
@@ -1039,10 +1039,10 @@ asset tesis212497_valida = global();
 clause tesis213224_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(posesion_como_propietario);
 
 // Supporting logic: Judge needs generating fact/act to determine possession quality and timing
-clause tesis213224_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+clause tesis213224_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))));
 
 // Possession type determination: Can determine if original or derived possession
-clause tesis213224_tipo_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) XOR oblig(posesion_temporal));
+clause tesis213224_tipo_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)));
 
 // Timing requirement: Must establish when prescription period starts counting
 clause tesis213224_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
@@ -1100,7 +1100,7 @@ clause tesis216431_principio_fundamental = oblig(ejercicio_buena_fe) AND oblig(p
 clause tesis216431_revelar_causa = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
 // Judicial determination: Judge needs generating fact/act to determine possession quality and timing
-clause tesis216431_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+clause tesis216431_determinacion_judicial = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))));
 
 // Timing requirement: Must establish when prescription period begins
 clause tesis216431_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
@@ -1135,7 +1135,7 @@ asset tesis219823_valida = global();
 clause tesis221460_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada);
 
 // Supporting logic: Judge needs this information to determine possession nature (original or derived, good or bad faith)
-clause tesis221460_determinacion_naturaleza = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) XOR oblig(posesion_temporal)) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+clause tesis221460_determinacion_naturaleza = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal))) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)));
 
 // Timing determination: Must establish duration of possession for prescription to be consummated
 clause tesis221460_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
@@ -1154,7 +1154,7 @@ asset tesis221460_valida = global();
 clause tesis221758_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(causa_generadora_probada);
 
 // Supporting logic: Judge needs this information to determine if possession is as owner, original or derived, good or bad faith
-clause tesis221758_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+clause tesis221758_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))));
 
 // Timing determination: Must establish when prescription period should start
 clause tesis221758_determinacion_temporal = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
@@ -1208,10 +1208,10 @@ asset tesis222185_valida = global();
 // ==========================================
 
 // Thesis-specific principle: Good/bad faith are conditions (not qualities) of possession, used only to determine time periods for prescription
-clause tesis223431_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)) IMPLIES oblig(ejercer_prescripcion_positiva);
+clause tesis223431_principio_fundamental = oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Supporting logic: Judge must analyze good/bad faith even if actors claim good faith, to determine appropriate time period
-clause tesis223431_analisis_judicial = oblig(ejercer_prescripcion_positiva) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+clause tesis223431_analisis_judicial = oblig(ejercer_prescripcion_positiva) IMPLIES (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)));
 
 // Time determination: Good faith requires 5 years, bad faith requires 10 years
 clause tesis223431_plazos_temporales = oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos);
@@ -1234,7 +1234,7 @@ clause tesis224038_principio_fundamental = oblig(ejercer_prescripcion_positiva) 
 clause tesis224038_prueba_directa = oblig(causa_generadora_probada) IMPLIES oblig(causa_generadora_revelada);
 
 // Judicial determination: Without proof, cannot determine if possession is good or bad faith
-clause tesis224038_determinacion_fe = oblig(causa_generadora_probada) IMPLIES (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe));
+clause tesis224038_determinacion_fe = oblig(causa_generadora_probada) IMPLIES (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)));
 
 // Timing determination: Must establish when usucapion began and was consummated
 clause tesis224038_determinacion_temporal = oblig(causa_generadora_probada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos));
@@ -1250,7 +1250,7 @@ asset tesis224038_valida = global();
 clause tesis224737_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(causa_generadora_probada);
 
 // Supporting logic: Must reveal cause to determine possession quality, timing, and good/bad faith
-clause tesis224737_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) XOR oblig(ejercicio_mala_fe)));
+clause tesis224737_determinacion_posesion = oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))));
 
 // Proof requirement: Not sufficient to just affirm facts, must prove the generating cause
 clause tesis224737_requisito_prueba = oblig(causa_generadora_probada) IMPLIES oblig(causa_generadora_revelada);
@@ -1291,7 +1291,7 @@ asset tesis224820_valida = global();
 clause tesis228850_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_revelada;
 
 // Supporting logic: Judge needs generating fact/act to determine possession quality (as owner, original or derived, good or bad faith)
-clause tesis228850_determinacion_posesion = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
+clause tesis228850_determinacion_posesion = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe AND not(ejercicio_mala_fe)));
 
 // Timing determination: Must establish when prescription period should start counting
 clause tesis228850_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
@@ -1367,7 +1367,7 @@ asset tesis229292_valida = global();
 clause tesis241748_principio_fundamental = (oblig(ejercer_prescripcion_positiva) AND ejercicio_buena_fe) IMPLIES oblig(congruencia_procesal);
 
 // Supporting logic: Congruence requires analysis of good/bad faith in possessory fact to establish if actor's petition prospered
-clause tesis241748_analisis_fe = oblig(congruencia_procesal) IMPLIES (ejercicio_buena_fe XOR ejercicio_mala_fe);
+clause tesis241748_analisis_fe = oblig(congruencia_procesal) IMPLIES (ejercicio_buena_fe AND not(ejercicio_mala_fe));
 
 // Right declaration: Must establish declaration of right protected by the action with clarity and precision
 clause tesis241748_declaracion_derecho = oblig(congruencia_procesal) IMPLIES oblig(proteccion_legal);
@@ -1424,10 +1424,10 @@ asset tesis241812_valida = global();
 clause tesis242139_principio_fundamental = (posesion_como_propietario AND causa_generadora_revelada) IMPLIES oblig(ejercer_prescripcion_positiva);
 
 // Supporting logic: Must specify the fact or act that originated possession and when it occurred
-clause tesis242139_origin_timing = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
+clause tesis242139_origin_timing = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe AND not(ejercicio_mala_fe)));
 
 // Nature determination: To determine if possession is original or derived, good or bad faith
-clause tesis242139_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+clause tesis242139_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal));
 
 // Duration determination: To determine the time duration for prescription to be consummated
 clause tesis242139_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
@@ -1446,10 +1446,10 @@ asset tesis242139_valida = global();
 clause tesis245838_principio_fundamental = oblig(ejercer_prescripcion_positiva) IMPLIES (causa_generadora_revelada AND causa_generadora_probada);
 
 // Supporting logic: Must reveal the generating cause of possession and when it began
-clause tesis245838_revelar_causa = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe XOR ejercicio_mala_fe));
+clause tesis245838_revelar_causa = causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe AND not(ejercicio_mala_fe)));
 
 // Nature determination: To determine if possession is original or derived
-clause tesis245838_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+clause tesis245838_determinacion_naturaleza = causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal));
 
 // Timing determination: To determine when prescription was consummated
 clause tesis245838_determinacion_temporal = causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos);
@@ -1471,10 +1471,10 @@ clause tesis246297_principio_fundamental = oblig(ejercer_prescripcion_positiva) 
 clause tesis246297_revelar_acto = causa_generadora_revelada IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico);
 
 // Quality determination: So the judge can determine the quality of possession (original or derived)
-clause tesis246297_determinacion_calidad = causa_generadora_revelada IMPLIES (posesion_como_propietario XOR posesion_temporal);
+clause tesis246297_determinacion_calidad = causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal));
 
 // Term computation: So the judge can compute the term (good faith, bad faith, or by cause of crime)
-clause tesis246297_computo_termino = causa_generadora_revelada IMPLIES (ejercicio_buena_fe XOR ejercicio_mala_fe);
+clause tesis246297_computo_termino = causa_generadora_revelada IMPLIES (ejercicio_buena_fe AND not(ejercicio_mala_fe));
 
 // Thesis validation
 asset tesis246297_valida = global();
