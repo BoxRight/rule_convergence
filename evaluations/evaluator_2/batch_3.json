@@ -1,0 +1,393 @@
+{
+  "batch_number": 3,
+  "evaluator": "Gemini-2.5-Pro",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "2016571",
+    "2024088",
+    "202535",
+    "202177",
+    "204300",
+    "204375",
+    "206322",
+    "210115",
+    "210588",
+    "210589"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "2016571",
+      "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL",
+      "source_text": "texts/tesis2016571.txt",
+      "wit_lines": "747-793",
+      "clauses": [
+        {
+          "clause_id": "tesis2016571_principio_fundamental",
+          "clause_line": 761,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_prohibicion_variacion",
+          "clause_line": 764,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(ejercicio_mala_fe))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_congruencia_procesal",
+          "clause_line": 767,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(congruencia_procesal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_limitacion_judicial",
+          "clause_line": 770,
+          "clause_content": "oblig(congruencia_procesal) IMPLIES not(oblig(enderezamiento_litis))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_proteccion_debido_proceso",
+          "clause_line": 773,
+          "clause_content": "oblig(variacion_litis) IMPLIES not(oblig(proteccion_defensa))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_preservacion_defensa",
+          "clause_line": 776,
+          "clause_content": "oblig(congruencia_procesal) IMPLIES oblig(proteccion_defensa)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_consistencia_temporal",
+          "clause_line": 779,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_requisitos_buena_fe",
+          "clause_line": 782,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES (oblig(causa_generadora_probada) OR oblig(conocimiento_vicios))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2016571_compromiso_teoria",
+          "clause_line": 785,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_probada) AND oblig(posesion_como_propietario) AND oblig(posesion_temporal))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2024088",
+      "thesis_title": "BAD FAITH ADVERSE POSSESSION WITHOUT TITLE",
+      "source_text": "texts/tesis2024088.txt",
+      "wit_lines": "794-812",
+      "clauses": [
+        {
+          "clause_id": "tesis2024088_principio_fundamental",
+          "clause_line": 798,
+          "clause_content": "oblig(ejercicio_mala_fe) AND not(oblig(titularidad_registral)) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2024088_requisito_causa_generadora",
+          "clause_line": 801,
+          "clause_content": "oblig(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2024088_limitacion_posesion_derivada",
+          "clause_line": 804,
+          "clause_content": "oblig(posesion_temporal) IMPLIES not(oblig(posesion_como_propietario))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2024088_seguridad_juridica",
+          "clause_line": 807,
+          "clause_content": "oblig(causa_generadora_probada) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "202535",
+      "thesis_title": "BAD FAITH POSSESSOR IN INMATRICULATION PROCEDURES",
+      "source_text": "texts/tesis202535.txt",
+      "wit_lines": "813-829",
+      "clauses": [
+        {
+          "clause_id": "tesis202535_principio_fundamental",
+          "clause_line": 819,
+          "clause_content": "oblig(conocimiento_vicios) AND oblig(procedimiento_inmatriculacion_202535) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis202535_conocimiento_defectos",
+          "clause_line": 822,
+          "clause_content": "oblig(conocimiento_vicios) IMPLIES not(oblig(ejercicio_buena_fe))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "202177",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION REQUIREMENTS",
+      "source_text": "texts/tesis202177.txt",
+      "wit_lines": "830-846",
+      "clauses": [
+        {
+          "clause_id": "tesis202177_principio_fundamental",
+          "clause_line": 834,
+          "clause_content": "oblig(posesion_como_propietario) AND oblig(causa_generadora_probada) AND oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis202177_posesion_originaria",
+          "clause_line": 837,
+          "clause_content": "oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis202177_plazos_temporales",
+          "clause_line": 840,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis202177_plazos_mala_fe",
+          "clause_line": 841,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "204300",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING REQUIREMENTS",
+      "source_text": "texts/tesis204300.txt",
+      "wit_lines": "847-862",
+      "clauses": [
+        {
+          "clause_id": "tesis204300_principio_fundamental",
+          "clause_line": 851,
+          "clause_content": "oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis204300_posesion_anterior",
+          "clause_line": 854,
+          "clause_content": "oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis204300_marco_legal_nuevo",
+          "clause_line": 857,
+          "clause_content": "oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "204375",
+      "thesis_title": "JUST TITLE REQUIREMENT FOR ADVERSE POSSESSION",
+      "source_text": "texts/tesis204375.txt",
+      "wit_lines": "863-881",
+      "clauses": [
+        {
+          "clause_id": "tesis204375_principio_fundamental",
+          "clause_line": 867,
+          "clause_content": "oblig(causa_generadora_probada) AND oblig(conocimiento_vicios) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis204375_titulo_suficiente",
+          "clause_line": 870,
+          "clause_content": "oblig(posesion_como_propietario) AND oblig(causa_generadora_probada) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis204375_validez_titulo",
+          "clause_line": 873,
+          "clause_content": "oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios)) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis204375_determinacion_judicial",
+          "clause_line": 876,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "206322",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING FROM LAW EFFECTIVE DATE",
+      "source_text": "texts/tesis206322.txt",
+      "wit_lines": "882-900",
+      "clauses": [
+        {
+          "clause_id": "tesis206322_principio_fundamental",
+          "clause_line": 886,
+          "clause_content": "oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis206322_posesion_anterior",
+          "clause_line": 889,
+          "clause_content": "oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis206322_derecho_interrupcion",
+          "clause_line": 892,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(posesion_agraria)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis206322_proteccion_constitucional",
+          "clause_line": 895,
+          "clause_content": "oblig(posesion_agraria) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "210115",
+      "thesis_title": "STATE/MUNICIPAL PROPERTY ADVERSE POSSESSION REQUIREMENTS",
+      "source_text": "texts/tesis210115.txt",
+      "wit_lines": "901-919",
+      "clauses": [
+        {
+          "clause_id": "tesis210115_principio_fundamental",
+          "clause_line": 905,
+          "clause_content": "oblig(posesion_como_propietario) AND oblig(ejercicio_buena_fe) AND oblig(posesion_tiempo_10_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210115_buena_fe_estatal",
+          "clause_line": 908,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(posesion_tiempo_10_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210115_mala_fe_estatal",
+          "clause_line": 911,
+          "clause_content": "oblig(ejercicio_mala_fe) AND oblig(posesion_tiempo_20_anos_estatal) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210115_requisitos_posesion",
+          "clause_line": 914,
+          "clause_content": "oblig(posesion_como_propietario) AND oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_10_anos_estatal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "210588",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD",
+      "source_text": "texts/tesis210588.txt",
+      "wit_lines": "920-938",
+      "clauses": [
+        {
+          "clause_id": "tesis210588_principio_fundamental",
+          "clause_line": 924,
+          "clause_content": "oblig(posesion_agraria) AND oblig(posesion_tiempo_5_anos) AND oblig(ejercicio_buena_fe) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210588_posesion_anterior",
+          "clause_line": 927,
+          "clause_content": "oblig(posesion_temporal) AND not(oblig(posesion_agraria)) IMPLIES not(oblig(posesion_tiempo_5_anos))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210588_marco_legal_nuevo",
+          "clause_line": 930,
+          "clause_content": "oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210588_proteccion_constitucional",
+          "clause_line": 933,
+          "clause_content": "oblig(posesion_agraria) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "210589",
+      "thesis_title": "MUTUAL EXCLUSIVITY OF GOOD FAITH AND BAD FAITH POSSESSION",
+      "source_text": "texts/tesis210589.txt",
+      "wit_lines": "939-957",
+      "clauses": [
+        {
+          "clause_id": "tesis210589_principio_fundamental",
+          "clause_line": 943,
+          "clause_content": "oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210589_titulo_contradiccion",
+          "clause_line": 946,
+          "clause_content": "oblig(causa_generadora_probada) AND not(not(oblig(causa_generadora_probada)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210589_conocimiento_contradiccion",
+          "clause_line": 949,
+          "clause_content": "oblig(conocimiento_vicios) AND not(not(oblig(conocimiento_vicios)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210589_consistencia_procesal",
+          "clause_line": 952,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    }
+  ]
+}

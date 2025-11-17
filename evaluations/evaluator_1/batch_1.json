@@ -1,0 +1,442 @@
+{
+  "batch_number": 1,
+  "evaluator": "Claude Sonnet 4.5",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "2020418",
+    "2021246",
+    "2021398",
+    "2021537",
+    "2023487",
+    "2025237",
+    "2025433",
+    "2029251",
+    "2030499",
+    "2030500"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "2020418",
+      "thesis_title": "ADVERSE POSSESSION AND UNREGISTERED CONTRACTS",
+      "source_text": "texts/tesis2020418.txt",
+      "wit_lines": "144-162",
+      "clauses": [
+        {
+          "clause_id": "tesis2020418_principio_fundamental",
+          "clause_line": 150,
+          "clause_content": "oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion))",
+          "rating": "revise",
+          "justification": "The clause captures the core prohibition but oversimplifies the dual reasoning in the source. The text emphasizes TWO distinct reasons: (1) lack of opposability to registered third party, AND (2) the public deed being a 'perfect title' that transfers full domain, making adverse possession unnecessary ('la prescripción positiva como forma no convencional de adquirir el dominio desaparece'). The clause only models the opposability aspect. Should represent both grounds for rejection."
+        },
+        {
+          "clause_id": "tesis2020418_proteccion_registral",
+          "clause_line": 153,
+          "clause_content": "oblig(titularidad_registral) IMPLIES claim(oponibilidad_terceros)",
+          "rating": "accept",
+          "justification": "Accurately represents registry protection principle. Source emphasizes that registered ownership provides opposability rights against third parties per Articles 2935, 2936, 2944 of Veracruz Civil Code. Correctly models that registered title holders can invoke protection against unregistered contracts."
+        },
+        {
+          "clause_id": "tesis2020418_limitacion_no_inscripcion",
+          "clause_line": 154,
+          "clause_content": "oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros))",
+          "rating": "accept",
+          "justification": "Correctly captures lack of opposability for unregistered contracts. Source: 'dichos actos sólo surtirán efectos entre quienes los otorgaron, mas no podrán producir perjuicios contra terceros ajenos a su celebración' - unregistered acts only affect parties who executed them, cannot harm third parties."
+        },
+        {
+          "clause_id": "tesis2020418_consecuencia_logica",
+          "clause_line": 155,
+          "clause_content": "not(oblig(oponibilidad_terceros)) IMPLIES not(claim(demanda_prescripcion))",
+          "rating": "revise",
+          "justification": "Creates logical chain but incomplete. While lack of opposability is ONE barrier, the source emphasizes the perfect title also makes adverse possession unnecessary as an independent ground. The clause should account for both: (1) contract not opposable to registered owner, AND (2) perfect public deed already transfers full domain, eliminating prescription's purpose."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021246",
+      "thesis_title": "Bad Faith Adverse Possession - Proof of Generating Cause",
+      "source_text": "texts/tesis2021246.txt",
+      "wit_lines": "163-183",
+      "clauses": [
+        {
+          "clause_id": "tesis2021246_principio_fundamental",
+          "clause_line": 169,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Perfectly captures bad faith proof requirement. Source: 'si bien no puede exigirse la acreditación de un justo título cuando la acción relativa se apoye en la posesión de mala fe, lo cierto es que resulta necesario que el promovente justifique la causa generadora de la posesión' - while just title not required for bad faith, must still prove generating cause."
+        },
+        {
+          "clause_id": "tesis2021246_causa_generadora",
+          "clause_line": 172,
+          "clause_content": "oblig(causa_generadora_probada) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "accept",
+          "justification": "Correctly links proof to ownership character. Source emphasizes 'el concepto de propietario comprende al poseedor... siempre que demuestre ser el que tiene el dominio de la cosa' - must demonstrate ownership character through proven generating cause."
+        },
+        {
+          "clause_id": "tesis2021246_plazo_mala_fe",
+          "clause_line": 175,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
+          "rating": "accept",
+          "justification": "Standard bad faith timing requirement. Source: 'mediante la posesión... por diez años cuando es de mala fe' - bad faith requires 10-year possession period per Articles 1135, 1136, 1151, 1152."
+        },
+        {
+          "clause_id": "tesis2021246_estandar_probatorio",
+          "clause_line": 178,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Excellently captures elevated proof standard for bad faith. Source: 'en el caso de la posesión de mala fe, debe exigirse un estándar probatorio elevado, a fin de que el accionante revele y acredite en forma fehaciente dicha causa generadora' - bad faith requires heightened proof standard."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021398",
+      "thesis_title": "Usucapion - Limits of Allanamiento in Proving Possession Qualities",
+      "source_text": "texts/tesis2021398.txt",
+      "wit_lines": "184-214",
+      "clauses": [
+        {
+          "clause_id": "tesis2021398_principio_fundamental",
+          "clause_line": 200,
+          "clause_content": "oblig(allanamiento_demandado) IMPLIES (oblig(ejercicio_buena_fe) AND oblig(causa_generadora_probada)) AND not(oblig(posesion_pacifico_continuo_publico))",
+          "rating": "accept",
+          "justification": "Excellently captures allanamiento's scope and limits. Source: 'la ratificación del allanamiento... resultaría apto para probar... la transmisión de la posesión en concepto de propietario y de buena fe... sin embargo... no puede tener como alcance un reconocimiento propio acerca de que esa posesión se haya desarrollado en forma pacífica, continua y pública' - can prove transmission and good faith, but NOT peaceful/continuous/public qualities."
+        },
+        {
+          "clause_id": "tesis2021398_prueba_independiente",
+          "clause_line": 203,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(prueba_independiente)",
+          "rating": "accept",
+          "justification": "Correctly captures independent proof requirement. Source emphasizes actor must prove 'que ha poseído ininterrumpidamente ese bien por el tiempo exigido' independently of allanamiento, since these qualities affect third-party rights and public interest per Article 1.3."
+        },
+        {
+          "clause_id": "tesis2021398_proteccion_terceros",
+          "clause_line": 206,
+          "clause_content": "oblig(proteccion_terceros) IMPLIES not(oblig(allanamiento_demandado))",
+          "rating": "accept",
+          "justification": "Accurately models third-party protection limitation. Source: qualities that 'pudiera incidir en derechos de terceros o con afectación al interés público' cannot be established by defendant's acquiescence alone - 'resolver con base en ese mero allanamiento, sería tanto como considerar la imposibilidad de terceros para hacer valer acciones.'"
+        },
+        {
+          "clause_id": "tesis2021398_requisito_temporal",
+          "clause_line": 209,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
+          "rating": "accept",
+          "justification": "Standard good faith temporal requirement. Source: good faith usucapion requires proving 'por más de cinco años' per Articles 5.59-5.130 of Estado de México Civil Code."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021537",
+      "thesis_title": "Bad Faith Adverse Possession - Defective Documents Are Less Significant",
+      "source_text": "texts/tesis2021537.txt",
+      "wit_lines": "215-246",
+      "clauses": [
+        {
+          "clause_id": "tesis2021537_principio_fundamental",
+          "clause_line": 229,
+          "clause_content": "oblig(ejercicio_mala_fe) AND oblig(documento_con_vicios) AND oblig(posesion_temporal) IMPLIES claim(demanda_prescripcion)",
+          "rating": "accept",
+          "justification": "Correctly captures that bad faith tolerates defective documents. Source: 'procede la prescripción adquisitiva del bien, aun cuando la causa generadora de la posesión presente vicios, como lo es la falta de facultades del vendedor' - prescription proceeds despite document defects when possessing for sufficient time (20 years per Article 1185.III Veracruz)."
+        },
+        {
+          "clause_id": "tesis2021537_compensacion_temporal",
+          "clause_line": 232,
+          "clause_content": "oblig(documento_con_vicios) AND oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_temporal)",
+          "rating": "accept",
+          "justification": "Accurately models temporal compensation principle. Source: 'al exigir la ley un lapso mayor para su procedencia... implica un desinterés prolongado y continuo del legítimo propietario' - longer time period compensates for document imperfections, showing owner's extended disinterest."
+        },
+        {
+          "clause_id": "tesis2021537_desinteres_propietario",
+          "clause_line": 235,
+          "clause_content": "oblig(posesion_temporal) IMPLIES oblig(desinteres_propietario)",
+          "rating": "accept",
+          "justification": "Correctly represents extended possession significance. Source: 'la voluntad del legislador... no fue incentivar el incumplimiento... sino formalizar una cuestión de hecho, pero sólo cuando sea evidente que el titular del derecho de propiedad no tuvo interés en conservarlo durante el plazo' - extended time demonstrates owner's lack of interest."
+        },
+        {
+          "clause_id": "tesis2021537_ejercicio_dominio",
+          "clause_line": 238,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "accept",
+          "justification": "Standard ownership character requirement. Source emphasizes possessor must have 'el derecho de disposición (ius abutendi), el derecho de apropiarse de los frutos del bien (ius fruendi) y el derecho de usar el bien (ius utendi)' - all ownership powers regardless of document quality."
+        },
+        {
+          "clause_id": "tesis2021537_contraste_buena_fe",
+          "clause_line": 241,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES not(oblig(documento_con_vicios))",
+          "rating": "accept",
+          "justification": "Accurately captures good faith distinction. Source: 'la diferencia entre este tipo de prescripción adquisitiva y la ejercida de buena fe radica en el grado de perfección del justo título... en el segundo supuesto, al establecerse un lapso menor para su procedencia forzosamente requiere que la causa generadora sea lo más perfecta posible' - good faith requires more perfect documentation."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2023487",
+      "thesis_title": "Good Faith Adverse Possession - Donation Contract for Different Property Cannot Constitute Just Title",
+      "source_text": "texts/tesis2023487.txt",
+      "wit_lines": "247-281",
+      "clauses": [
+        {
+          "clause_id": "tesis2023487_principio_fundamental",
+          "clause_line": 261,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(contrato_inmueble_diverso) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "accept",
+          "justification": "Perfectly captures that donation for different property cannot be just title. Source: 'el contrato de donación celebrado entre las partes... sobre un inmueble diverso al que se pretende usucapir de buena fe... no constituye el justo título' - contract for one property cannot serve as title for a different property, as it 'trasciende a la inexistencia del acto jurídico' regarding the claimed property."
+        },
+        {
+          "clause_id": "tesis2023487_especificidad_titulo",
+          "clause_line": 264,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(contrato_inmueble_diverso))",
+          "rating": "accept",
+          "justification": "Correctly models specificity requirement. Source: just title 'debe entenderse en los términos en que fue pactado por las partes, es decir, respecto del bien raíz que ahí se precisó' - contract must relate to the specific property claimed, cannot apply to different property."
+        },
+        {
+          "clause_id": "tesis2023487_error_material",
+          "clause_line": 267,
+          "clause_content": "oblig(error_ubicacion_material) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "accept",
+          "justification": "Accurately represents that physical errors don't cure legal defects. Source: 'los vicios de validez del justo título deben emanar del propio acto jurídico imperfecto, no así de un error humano independiente, ajeno y posterior a la celebración del propio acto traslativo, como lo es la incorrecta ubicación material del predio' - subsequent location errors don't validate title."
+        },
+        {
+          "clause_id": "tesis2023487_prevencion_fraude",
+          "clause_line": 270,
+          "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_terceros)",
+          "rating": "accept",
+          "justification": "Correctly captures fraud prevention. Source: 'no considerarlo así, podría dar lugar a operaciones fraudulentas en perjuicio de terceros, contra un principio de seguridad jurídica en las operaciones realizadas, al estimar que un acto jurídico... sobre un determinado objeto puede constituir justo título para demandar la usucapión de un predio diverso.'"
+        },
+        {
+          "clause_id": "tesis2023487_proteccion_equidad",
+          "clause_line": 273,
+          "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_registral)",
+          "rating": "accept",
+          "justification": "Accurately models equity protection. Source: 'conforme a un principio de equidad entre los contendientes' protects donors who acted in good faith, prevents donee from claiming both donated property AND different property - 'de manera incongruente existiría la posibilidad de que con base en un mismo acto jurídico... se reconozcan dos derechos reales.'"
+        },
+        {
+          "clause_id": "tesis2023487_requisito_buena_fe",
+          "clause_line": 276,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Standard good faith requirement. Reinforces that good faith prescription requires valid just title (Articles 799, 802, 803, 804, 806 Querétaro Civil Code), which must be 'per se suficiente para poseer en concepto de propietario' for the specific property claimed."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2025237",
+      "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+      "source_text": "texts/tesis2025237.txt",
+      "wit_lines": "282-311",
+      "clauses": [
+        {
+          "clause_id": "tesis2025237_principio_fundamental",
+          "clause_line": 294,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES (oblig(proteccion_terceros) AND oblig(ejercicio_derecho_legal))",
+          "rating": "accept",
+          "justification": "Excellently captures dual requirement for interruption. Source: Article 48 paragraph 3 mentions 'cualquier interesado' but this thesis clarifies it means 'un tercero ajeno al poseedor' with 'intereses contrarios' - must be separate third party with opposing interests, not the possessor themselves filing their own claim."
+        },
+        {
+          "clause_id": "tesis2025237_requisito_tercero",
+          "clause_line": 297,
+          "clause_content": "claim(interrupcion_prescripcion) IMPLIES oblig(proteccion_terceros)",
+          "rating": "accept",
+          "justification": "Correctly models third-party requirement. Source: 'debe ser un tercero ajeno al poseedor... que derivado de dicha acción incida o pretenda interrumpir dicha posesión' - interruptor must be separate from possessor to have legitimate standing to interrupt."
+        },
+        {
+          "clause_id": "tesis2025237_intereses_contrarios",
+          "clause_line": 300,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(ejercicio_derecho_legal)",
+          "rating": "accept",
+          "justification": "Accurately represents opposing interests requirement. Source: 'no debe interpretarse en un sentido genérico, sino que quien promueva tenga intereses contrarios a quien tiene la posesión' - interruptor must have contrary interests, not merely any interest."
+        },
+        {
+          "clause_id": "tesis2025237_contexto_agrario",
+          "clause_line": 303,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "accept",
+          "justification": "Standard agrarian possession requirement. Source: Article 48 requires possession 'en concepto de titular de derechos de ejidatario' - possessor must hold as ejido rights holder, equivalent to ownership concept."
+        },
+        {
+          "clause_id": "tesis2025237_plazo_agrario",
+          "clause_line": 306,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(posesion_temporal)",
+          "rating": "accept",
+          "justification": "Standard temporal framework. Source: Article 48 establishes 'cinco años si la posesión es de buena fe, o de diez si fuera de mala fe' - agrarian prescription follows same time periods as general civil law."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2025433",
+      "thesis_title": "Good Faith Adverse Possession - Knowledge of INFONAVIT Mortgage Does Not Vitiate Just Title",
+      "source_text": "texts/tesis2025433.txt",
+      "wit_lines": "312-344",
+      "clauses": [
+        {
+          "clause_id": "tesis2025433_principio_fundamental",
+          "clause_line": 327,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Excellently captures that INFONAVIT mortgage knowledge doesn't vitiate just title. Source: 'el conocimiento de que un inmueble se encuentra hipotecado en favor del... Infonavit... no vicia el justo título para la procedencia de la acción de prescripción adquisitiva de buena fe' - knowledge of mortgage doesn't destroy good faith or just title validity."
+        },
+        {
+          "clause_id": "tesis2025433_conservacion_dominio",
+          "clause_line": 330,
+          "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "accept",
+          "justification": "Correctly models that contractual obligations don't eliminate ownership powers. Source: 'el ius abutendi confiere el dominio jurídico pleno de la cosa... no se pierde por obligarse a no ejecutar ciertos actos frente a terceros' - ius abutendi isn't lost by contractual non-alienation obligations, owner retains disposition power."
+        },
+        {
+          "clause_id": "tesis2025433_proteccion_buena_fe",
+          "clause_line": 333,
+          "clause_content": "oblig(conocimiento_hipoteca_infonavit) IMPLIES not(not(oblig(ejercicio_buena_fe)))",
+          "rating": "revise",
+          "justification": "Double negative creates unnecessary complexity. Should simply state: oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(ejercicio_buena_fe). Source clearly states mortgage knowledge 'no vicia el justo título' and doesn't destroy good faith. The double negative (not not good faith = good faith) is logically correct but unnecessarily convoluted."
+        },
+        {
+          "clause_id": "tesis2025433_validez_verbal",
+          "clause_line": 336,
+          "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Correctly validates verbal contracts as just title. Source: case involves 'compraventa verbal' that can constitute just title despite being unregistered - 'en virtud del contrato de compraventa se adquiere la propiedad de una cosa' per Article 2181 Veracruz Civil Code."
+        },
+        {
+          "clause_id": "tesis2025433_distincion_obligacion",
+          "clause_line": 339,
+          "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES not(not(oblig(posesion_como_propietario)))",
+          "rating": "revise",
+          "justification": "Same double negative issue. Should be: oblig(cumplir_requisitos_legales) IMPLIES oblig(posesion_como_propietario). Source: 'si conforme a la potestad de dominio que le corresponde, el propietario se obliga a un no hacer... ello no elimina el ius abutendi' - obligations don't eliminate ownership, so should be stated positively not with double negative."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2029251",
+      "thesis_title": "Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption",
+      "source_text": "texts/tesis2029251.txt",
+      "wit_lines": "345-374",
+      "clauses": [
+        {
+          "clause_id": "tesis2029251_principio_fundamental",
+          "clause_line": 357,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES (oblig(interrupcion_prescripcion) AND oblig(proteccion_registral))",
+          "rating": "accept",
+          "justification": "Correctly links legal rights exercise to interruption validity. Source: Article 1846.III establishes interruption when possessor 'reconozca expresamente... el derecho de la persona contra quien prescribe' - exercising legal rights (recognition) causes interruption and provides legal security without violating Article 21 Convention on Human Rights."
+        },
+        {
+          "clause_id": "tesis2029251_efecto_interrupcion",
+          "clause_line": 360,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(inutilizacion_tiempo)",
+          "rating": "accept",
+          "justification": "Accurately captures interruption effect. Source: 'la interrupción sólo tiene como efecto inutilizar todo el tiempo transcurrido antes de que se materializara el reconocimiento' - recognition nullifies all elapsed time, restarting prescription period from zero."
+        },
+        {
+          "clause_id": "tesis2029251_permanencia_buena_fe",
+          "clause_line": 363,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "reject",
+          "justification": "Logic error: this says good faith PLUS rights recognition IMPLIES bad faith, which is contradictory. Source states: 'la posesión de buena fe, necesaria para la actualización de la usucapión, debe ser permanente por el plazo legal respectivo... desde que se conozcan los vicios del justo título se interrumpe el tiempo de posesión de buena fe' - recognition interrupts good faith time, but doesn't logically imply becoming bad faith. Should model that recognition reveals title defects, ending good faith period."
+        },
+        {
+          "clause_id": "tesis2029251_validez_constitucional",
+          "clause_line": 366,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(proteccion_registral)",
+          "rating": "accept",
+          "justification": "Correctly models constitutional validity. Source: interruption mechanism 'no viola el artículo 21 de la Convención Americana sobre Derechos Humanos, pues tiene como único objeto brindar seguridad jurídica a los titulares de un justo título' - provides legal security without rights violations."
+        },
+        {
+          "clause_id": "tesis2029251_proteccion_titulares",
+          "clause_line": 369,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(proteccion_registral)",
+          "rating": "accept",
+          "justification": "Accurately represents protection purpose. Source emphasizes interruption's 'único objeto brindar seguridad jurídica a los titulares' - sole purpose is providing legal security to title holders through recognition-based interruption mechanism."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2030499",
+      "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+      "source_text": "texts/tesis2030499.txt",
+      "wit_lines": "375-400",
+      "clauses": [
+        {
+          "clause_id": "tesis2030499_principio_fundamental",
+          "clause_line": 383,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(aplicacion_supletoria) AND oblig(ejercicio_derecho_legal))",
+          "rating": "accept",
+          "justification": "Correctly models supplementary civil law application in agrarian context. Source: 'la legislación civil que regula la prescripción adquisitiva puede aplicarse supletoriamente en los juicios agrarios... con los matices propios de la materia agraria' - civil law applies supplementarily with appropriate agrarian adaptations."
+        },
+        {
+          "clause_id": "tesis2030499_sin_justo_titulo",
+          "clause_line": 386,
+          "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Accurately captures that just title not required but generating cause still needed. Source cites jurisprudence 2a./J. 207/2004: 'no se requiere de un justo título para que prospere la prescripción positiva, sino que sólo es indispensable acreditar la causa generadora de la posesión' - must prove generating cause even without formal just title."
+        },
+        {
+          "clause_id": "tesis2030499_adaptacion_cultural",
+          "clause_line": 389,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "revise",
+          "justification": "Too broad - exercising legal rights doesn't necessarily imply good faith. Source discusses cultural adaptation of formal requirements but doesn't say all agrarian legal exercise is automatically good faith. The thesis emphasizes that ejidatarios 'celebran actos bajo el principio de buena fe y la confianza que implica la palabra' - but this is context about customs, not a logical implication that legal exercise = good faith."
+        },
+        {
+          "clause_id": "tesis2030499_cesion_valida",
+          "clause_line": 392,
+          "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "accept",
+          "justification": "Correctly models that unregistered agrarian rights assignments can prove generating cause. Source: 'es una práctica común... celebrarlos sin cumplir con todas las formalidades de la ley... generalmente enajenan sus derechos conforme a sus prácticas o costumbres... bajo el principio de buena fe' - informal assignments valid as generating cause given agrarian customs."
+        },
+        {
+          "clause_id": "tesis2030499_alcance_supletorio",
+          "clause_line": 395,
+          "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "accept",
+          "justification": "Correctly represents that supplementary application maintains ownership character requirement. Source: civil law principles apply but adapted - possession must still be 'en concepto de titular de derechos de ejidatario' which is equivalent to ownership concept in agrarian context."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2030500",
+      "thesis_title": "Adverse Possession - Judicially Nullified Title Cannot Establish Generating Cause",
+      "source_text": "texts/tesis2030500.txt",
+      "wit_lines": "401-432",
+      "clauses": [
+        {
+          "clause_id": "tesis2030500_principio_fundamental",
+          "clause_line": 412,
+          "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "accept",
+          "justification": "Perfectly captures that judicially nullified title cannot establish generating cause. Source: 'si el documento en el que se funda el justo título es declarado nulo mediante ejecutoria de sentencia, éste no puede considerarse como válido para acreditar la causa generadora de la posesión' - nullity judgment destroys title's validity as generating cause."
+        },
+        {
+          "clause_id": "tesis2030500_efecto_nulidad",
+          "clause_line": 415,
+          "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES oblig(ausencia_efecto_juridico)",
+          "rating": "accept",
+          "justification": "Accurately represents nullity's retroactive effect. Source: 'la nulidad extingue el acto o contrato y los efectos que produjo, desde el momento de su celebración' - nullity eliminates all legal effects retroactively from execution moment."
+        },
+        {
+          "clause_id": "tesis2030500_acto_inexistente",
+          "clause_line": 418,
+          "clause_content": "oblig(ausencia_efecto_juridico) IMPLIES oblig(acto_inexistente)",
+          "rating": "accept",
+          "justification": "Correctly models legal inexistence consequence. Source: 'se funda en un título inexistente' - absence of legal effects means the act is legally nonexistent, as if it never occurred."
+        },
+        {
+          "clause_id": "tesis2030500_imposibilidad_propietario",
+          "clause_line": 421,
+          "clause_content": "oblig(acto_inexistente) IMPLIES not(oblig(posesion_como_propietario))",
+          "rating": "accept",
+          "justification": "Accurately captures impossibility of ownership character. Source: 'es un impedimento que la posesión se ejerza de buena fe y a título de propietario' - nonexistent act prevents possession in ownership character since there's no valid basis."
+        },
+        {
+          "clause_id": "tesis2030500_imposibilidad_buena_fe",
+          "clause_line": 424,
+          "clause_content": "oblig(nulidad_judicial_titulo) AND claim(demanda_prescripcion) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "revise",
+          "justification": "Overstates effect - should model impossibility of good faith, not automatic bad faith. Source states 'es un impedimento que la posesión se ejerza de buena fe' - nullity prevents good faith but doesn't necessarily mean possession is in bad faith. Could be neither good nor bad faith if possession lacks valid basis entirely."
+        },
+        {
+          "clause_id": "tesis2030500_orden_publico",
+          "clause_line": 427,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(proteccion_registral)",
+          "rating": "accept",
+          "justification": "Correctly models public policy protection. Source emphasizes that 'la causa generadora de la posesión... es de orden público' and property rights require 'certeza jurídica' - nullity recognition protects legal certainty and registry integrity as public policy matters."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "batch_number": 4,
+  "evaluator": "Claude Sonnet 4.5",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "210888",
+    "210890",
+    "211744",
+    "212497",
+    "213224",
+    "214456",
+    "215033",
+    "216431",
+    "219823",
+    "221460"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "210888",
+      "thesis_title": "POSSESSION AS OWNER REQUIREMENT FOR ADVERSE POSSESSION",
+      "source_text": "texts/tesis210888.txt",
+      "wit_lines": "958-976",
+      "clauses": [
+        {
+          "clause_id": "tesis210888_principio_fundamental",
+          "clause_line": 962,
+          "clause_content": "oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210888_posesion_ambas_fe",
+          "clause_line": 965,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210888_dominio_economico",
+          "clause_line": 968,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210888_posesion_originaria",
+          "clause_line": 971,
+          "clause_content": "oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "210890",
+      "thesis_title": "ADVERSE POSSESSION BY ACTION OR EXCEPTION",
+      "source_text": "texts/tesis210890.txt",
+      "wit_lines": "977-996",
+      "clauses": [
+        {
+          "clause_id": "tesis210890_principio_fundamental",
+          "clause_line": 981,
+          "clause_content": "oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210890_igualdad_prueba",
+          "clause_line": 984,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210890_plazos_temporales",
+          "clause_line": 987,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210890_plazos_mala_fe",
+          "clause_line": 988,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis210890_objetivo_registral",
+          "clause_line": 991,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(titularidad_registral)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "211744",
+      "thesis_title": "REVEALING POSSESSION CAUSE REQUIREMENT",
+      "source_text": "texts/tesis211744.txt",
+      "wit_lines": "997-1015",
+      "clauses": [
+        {
+          "clause_id": "tesis211744_principio_fundamental",
+          "clause_line": 1001,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis211744_determinacion_judicial",
+          "clause_line": 1004,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis211744_requisito_universal",
+          "clause_line": 1007,
+          "clause_content": "(oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis211744_determinacion_temporal",
+          "clause_line": 1010,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "212497",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION PROCEDURAL REQUIREMENTS",
+      "source_text": "texts/tesis212497.txt",
+      "wit_lines": "1016-1034",
+      "clauses": [
+        {
+          "clause_id": "tesis212497_principio_fundamental",
+          "clause_line": 1020,
+          "clause_content": "oblig(posesion_agraria) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis212497_analisis_temporal",
+          "clause_line": 1023,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_agraria)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis212497_debido_proceso",
+          "clause_line": 1026,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis212497_flexibilidad_procesal",
+          "clause_line": 1029,
+          "clause_content": "oblig(posesion_agraria) IMPLIES (oblig(ejercer_prescripcion_positiva) OR oblig(congruencia_procesal))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "213224",
+      "thesis_title": "REVEALING POSSESSION ORIGIN REQUIREMENT FOR ADVERSE POSSESSION",
+      "source_text": "texts/tesis213224.txt",
+      "wit_lines": "1035-1053",
+      "clauses": [
+        {
+          "clause_id": "tesis213224_principio_fundamental",
+          "clause_line": 1039,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis213224_determinacion_judicial",
+          "clause_line": 1042,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis213224_tipo_posesion",
+          "clause_line": 1045,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis213224_determinacion_temporal",
+          "clause_line": 1048,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "214456",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION PREVIOUS POSSESSION TIME COUNTING",
+      "source_text": "texts/tesis214456.txt",
+      "wit_lines": "1054-1073",
+      "clauses": [
+        {
+          "clause_id": "tesis214456_principio_fundamental",
+          "clause_line": 1058,
+          "clause_content": "oblig(posesion_agraria) AND oblig(posesion_temporal) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis214456_no_retroactividad",
+          "clause_line": 1061,
+          "clause_content": "oblig(posesion_temporal) AND oblig(posesion_agraria) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis214456_continuidad_legal",
+          "clause_line": 1064,
+          "clause_content": "oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis214456_plazos_temporales",
+          "clause_line": 1067,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis214456_plazos_mala_fe",
+          "clause_line": 1068,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "215033",
+      "thesis_title": "ADVERSE POSSESSION ACTION TARGET REQUIREMENTS",
+      "source_text": "texts/tesis215033.txt",
+      "wit_lines": "1074-1092",
+      "clauses": [
+        {
+          "clause_id": "tesis215033_principio_fundamental",
+          "clause_line": 1078,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) AND oblig(titularidad_registral) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis215033_debido_proceso",
+          "clause_line": 1081,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis215033_conocimiento_regimen",
+          "clause_line": 1084,
+          "clause_content": "oblig(conocimiento_vicios) AND oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis215033_requisito_procesal",
+          "clause_line": 1087,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "216431",
+      "thesis_title": "JUST TITLE REQUIREMENT FOR GOOD FAITH ADVERSE POSSESSION",
+      "source_text": "texts/tesis216431.txt",
+      "wit_lines": "1093-1111",
+      "clauses": [
+        {
+          "clause_id": "tesis216431_principio_fundamental",
+          "clause_line": 1097,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis216431_revelar_causa",
+          "clause_line": 1100,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis216431_determinacion_judicial",
+          "clause_line": 1103,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis216431_determinacion_temporal",
+          "clause_line": 1106,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "219823",
+      "thesis_title": "GOOD FAITH AND BAD FAITH POSSESSOR DEFINITIONS",
+      "source_text": "texts/tesis219823.txt",
+      "wit_lines": "1112-1130",
+      "clauses": [
+        {
+          "clause_id": "tesis219823_principio_fundamental",
+          "clause_line": 1116,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis219823_mala_fe",
+          "clause_line": 1119,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis219823_requisitos_buena_fe",
+          "clause_line": 1122,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis219823_condiciones_mala_fe",
+          "clause_line": 1125,
+          "clause_content": "(not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios)) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "221460",
+      "thesis_title": "ORIGIN AND TIMING REQUIREMENT FOR ADVERSE POSSESSION",
+      "source_text": "texts/tesis221460.txt",
+      "wit_lines": "1131-1149",
+      "clauses": [
+        {
+          "clause_id": "tesis221460_principio_fundamental",
+          "clause_line": 1135,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis221460_determinacion_naturaleza",
+          "clause_line": 1138,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal))) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis221460_determinacion_temporal",
+          "clause_line": 1141,
+          "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis221460_requisito_usucapion",
+          "clause_line": 1144,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    }
+  ]
+}

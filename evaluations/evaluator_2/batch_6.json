@@ -1,0 +1,319 @@
+{
+  "batch_number": 6,
+  "evaluator": "Gemini-2.5-Pro",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "229292",
+    "241748",
+    "241751",
+    "241812",
+    "242139",
+    "245838",
+    "246297",
+    "248006"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "229292",
+      "thesis_title": "SUFFICIENT TITLE CONCEPT FOR GOOD FAITH POSSESSION",
+      "source_text": "texts/tesis229292.txt",
+      "wit_lines": "1344-1362",
+      "clauses": [
+        {
+          "clause_id": "tesis229292_principio_fundamental",
+          "clause_line": 1348,
+          "clause_content": "(posesion_como_propietario AND causa_generadora_probada) IMPLIES ejercicio_buena_fe",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis229292_titulo_suficiente",
+          "clause_line": 1351,
+          "clause_content": "causa_generadora_probada IMPLIES ejercicio_buena_fe",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis229292_requisito_buena_fe",
+          "clause_line": 1354,
+          "clause_content": "ejercicio_buena_fe IMPLIES causa_generadora_probada",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis229292_contexto_usucapion",
+          "clause_line": 1357,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_probada",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "241748",
+      "thesis_title": "CONGRUENCE REQUIREMENT FOR GOOD/BAD FAITH ANALYSIS IN ADVERSE POSSESSION",
+      "source_text": "texts/tesis241748.txt",
+      "wit_lines": "1363-1381",
+      "clauses": [
+        {
+          "clause_id": "tesis241748_principio_fundamental",
+          "clause_line": 1367,
+          "clause_content": "(oblig(ejercer_prescripcion_positiva) AND ejercicio_buena_fe) IMPLIES oblig(congruencia_procesal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241748_analisis_fe",
+          "clause_line": 1370,
+          "clause_content": "oblig(congruencia_procesal) IMPLIES (ejercicio_buena_fe AND not(ejercicio_mala_fe))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241748_declaracion_derecho",
+          "clause_line": 1373,
+          "clause_content": "oblig(congruencia_procesal) IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241748_congruencia_accion",
+          "clause_line": 1376,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "241751",
+      "thesis_title": "GOOD FAITH POSSESSOR IGNORING TITLE DEFECTS",
+      "source_text": "texts/tesis241751.txt",
+      "wit_lines": "1382-1400",
+      "clauses": [
+        {
+          "clause_id": "tesis241751_principio_fundamental",
+          "clause_line": 1386,
+          "clause_content": "(causa_generadora_probada AND not(conocimiento_vicios)) IMPLIES ejercicio_buena_fe",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241751_ignorancia_vicios",
+          "clause_line": 1389,
+          "clause_content": "not(conocimiento_vicios) IMPLIES ejercicio_buena_fe",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241751_suficiente_usucapion",
+          "clause_line": 1392,
+          "clause_content": "(ejercicio_buena_fe AND posesion_como_propietario) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241751_titulo_vicioso",
+          "clause_line": 1395,
+          "clause_content": "(causa_generadora_probada AND not(conocimiento_vicios)) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "241812",
+      "thesis_title": "LACK OF DIRECT PROOF OF POSSESSION CAUSE DOES NOT PREVENT USUCAPION",
+      "source_text": "texts/tesis241812.txt",
+      "wit_lines": "1401-1419",
+      "clauses": [
+        {
+          "clause_id": "tesis241812_principio_fundamental",
+          "clause_line": 1405,
+          "clause_content": "(posesion_como_propietario AND posesion_pacifico_continuo_publico AND ejercicio_buena_fe) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241812_presuncion_causa",
+          "clause_line": 1408,
+          "clause_content": "(posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES causa_generadora_probada",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241812_requisitos_posesion",
+          "clause_line": 1411,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis241812_presuncion_buena_fe",
+          "clause_line": 1414,
+          "clause_content": "(posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES ejercicio_buena_fe",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "242139",
+      "thesis_title": "POSSESSION IN CONCEPT OF OWNER FOR PRESUMPTION OF PROPERTY",
+      "source_text": "texts/tesis242139.txt",
+      "wit_lines": "1420-1441",
+      "clauses": [
+        {
+          "clause_id": "tesis242139_principio_fundamental",
+          "clause_line": 1424,
+          "clause_content": "(posesion_como_propietario AND causa_generadora_revelada) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis242139_origin_timing",
+          "clause_line": 1427,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe AND not(ejercicio_mala_fe)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis242139_determinacion_naturaleza",
+          "clause_line": 1430,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis242139_determinacion_temporal",
+          "clause_line": 1433,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis242139_presuncion_propiedad",
+          "clause_line": 1436,
+          "clause_content": "posesion_como_propietario IMPLIES oblig(proteccion_legal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "245838",
+      "thesis_title": "REVEALING AND PROVING GENERATING CAUSE REQUIREMENT FOR ADVERSE POSSESSION",
+      "source_text": "texts/tesis245838.txt",
+      "wit_lines": "1442-1463",
+      "clauses": [
+        {
+          "clause_id": "tesis245838_principio_fundamental",
+          "clause_line": 1446,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES (causa_generadora_revelada AND causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis245838_revelar_causa",
+          "clause_line": 1449,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND (ejercicio_buena_fe AND not(ejercicio_mala_fe)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis245838_determinacion_naturaleza",
+          "clause_line": 1452,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis245838_determinacion_temporal",
+          "clause_line": 1455,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_tiempo_5_anos OR posesion_tiempo_10_anos)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis245838_requisito_prueba",
+          "clause_line": 1458,
+          "clause_content": "causa_generadora_probada IMPLIES causa_generadora_revelada",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "246297",
+      "thesis_title": "NECESSITY FOR ACTOR TO REVEAL CAUSE OF POSSESSION",
+      "source_text": "texts/tesis246297.txt",
+      "wit_lines": "1464-1482",
+      "clauses": [
+        {
+          "clause_id": "tesis246297_principio_fundamental",
+          "clause_line": 1468,
+          "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES causa_generadora_revelada",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis246297_revelar_acto",
+          "clause_line": 1471,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND posesion_pacifico_continuo_publico)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis246297_determinacion_calidad",
+          "clause_line": 1474,
+          "clause_content": "causa_generadora_revelada IMPLIES (posesion_como_propietario AND not(posesion_temporal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis246297_computo_termino",
+          "clause_line": 1477,
+          "clause_content": "causa_generadora_revelada IMPLIES (ejercicio_buena_fe AND not(ejercicio_mala_fe))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "248006",
+      "thesis_title": "ELEMENTS TO CONSIDER WHEN NO TITLE EXISTS",
+      "source_text": "texts/tesis248006.txt",
+      "wit_lines": "1483-1499",
+      "clauses": [
+        {
+          "clause_id": "tesis248006_principio_fundamental",
+          "clause_line": 1487,
+          "clause_content": "(posesion_como_propietario AND posesion_pacifico_continuo_publico AND posesion_tiempo_10_anos AND not(causa_generadora_probada)) IMPLIES (ejercicio_mala_fe AND oblig(ejercer_prescripcion_positiva))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis248006_no_prueba_causa",
+          "clause_line": 1490,
+          "clause_content": "(not(causa_generadora_probada) AND posesion_tiempo_10_anos) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis248006_definicion_titulo",
+          "clause_line": 1493,
+          "clause_content": "not(causa_generadora_probada) IMPLIES not(titularidad_registral)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis248006_apto_prescripcion",
+          "clause_line": 1496,
+          "clause_content": "(posesion_tiempo_10_anos AND posesion_como_propietario AND posesion_pacifico_continuo_publico) IMPLIES oblig(ejercer_prescripcion_positiva)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    }
+  ]
+}

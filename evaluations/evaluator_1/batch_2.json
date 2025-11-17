@@ -1,0 +1,512 @@
+{
+  "batch_number": 2,
+  "evaluator": "Claude Sonnet 4.5",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "2030717",
+    "2008083",
+    "2009239",
+    "2011927",
+    "2014858",
+    "2014940",
+    "2017366",
+    "2017539",
+    "2017540",
+    "2018505"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "2030717",
+      "thesis_title": "Adverse Possession - Improcedence Against Municipal Public Domain Properties",
+      "source_text": "texts/tesis2030717.txt",
+      "wit_lines": "433-465",
+      "clauses": [
+        {
+          "clause_id": "tesis2030717_principio_fundamental",
+          "clause_line": 449,
+          "clause_content": "oblig(dominio_publico) AND oblig(reserva_ecologica) IMPLIES oblig(caracter_imprescriptible)",
+          "rating": "accept",
+          "justification": "Perfectly captures core principle. Source: 'los bienes inmuebles propiedad de los Ayuntamientos municipales, que tienen el carácter de dominio público... al ser destinados a la reserva ecológica, no pueden ser objeto de prescripción adquisitiva' - public domain AND ecological reserve designation makes property imprescriptible."
+        },
+        {
+          "clause_id": "tesis2030717_exclusion_comercial",
+          "clause_line": 452,
+          "clause_content": "oblig(exclusion_comercial) IMPLIES oblig(caracter_imprescriptible)",
+          "rating": "accept",
+          "justification": "Correctly models commercial exclusion effect. Source: properties 'fuera del comercio... no pueden ser prescriptibles' - being outside commerce (exclusion_comercial) makes them imprescriptible per Articles 1123-1125 Chiapas Civil Code."
+        },
+        {
+          "clause_id": "tesis2030717_proteccion_ecologica",
+          "clause_line": 455,
+          "clause_content": "oblig(reserva_ecologica) IMPLIES oblig(exclusion_comercial)",
+          "rating": "accept",
+          "justification": "Accurately links ecological designation to commercial exclusion. Source: 'inmuebles que sí son de dominio público que están destinados a la conservación ecológica y están fuera del comercio' - ecological reserves are inherently outside commerce by their protective nature."
+        },
+        {
+          "clause_id": "tesis2030717_estatus_municipal",
+          "clause_line": 458,
+          "clause_content": "oblig(propiedad_municipal) AND oblig(dominio_publico) IMPLIES oblig(proteccion_registral)",
+          "rating": "revise",
+          "justification": "Misidentifies the legal consequence. Source discusses imprescriptibility and special legal status ('los Ayuntamientos se considerarán como particulares... sólo es posible para aquellos que son susceptibles de propiedad privada'), not registry protection specifically. Should model: oblig(propiedad_municipal) AND oblig(dominio_publico) IMPLIES oblig(caracter_imprescriptible)."
+        },
+        {
+          "clause_id": "tesis2030717_improcedencia",
+          "clause_line": 461,
+          "clause_content": "oblig(caracter_imprescriptible) IMPLIES not(claim(demanda_prescripcion))",
+          "rating": "accept",
+          "justification": "Correctly models imprescriptibility consequence. Source title: 'ES IMPROCEDENTE RESPECTO DE BIENES INMUEBLES' and 'no pueden ser objeto de prescripción adquisitiva' - imprescriptible character makes adverse possession claims legally improper."
+        }
+      ]
+    },
+    {
+      "thesis_id": "2008083",
+      "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROOF REQUIREMENTS FOR JUST TITLE",
+      "source_text": "texts/tesis2008083.txt",
+      "wit_lines": "466-504",
+      "clauses": [
+        {
+          "clause_id": "tesis2008083_principio_fundamental",
+          "clause_line": 484,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente) AND oblig(diligencia_adquirente))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2008083_prueba_autenticidad",
+          "clause_line": 487,
+          "clause_content": "oblig(causa_generadora_probada) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2008083_diligencia_buena_fe",
+          "clause_line": 490,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2008083_prueba_pagos",
+          "clause_line": 493,
+          "clause_content": "oblig(causa_generadora_probada) AND oblig(contrato_compraventa) IMPLIES oblig(pagos_precio)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2008083_carga_prueba",
+          "clause_line": 496,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2008083_falta_diligencia",
+          "clause_line": 499,
+          "clause_content": "not(oblig(diligencia_adquirente)) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2009239",
+      "thesis_title": "BAD FAITH ADVERSE POSSESSION WITHOUT JUST TITLE",
+      "source_text": "texts/tesis2009239.txt",
+      "wit_lines": "505-528",
+      "clauses": [
+        {
+          "clause_id": "tesis2009239_principio_fundamental",
+          "clause_line": 511,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_revelada) AND not(oblig(causa_generadora_probada)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2009239_mala_fe_sin_titulo",
+          "clause_line": 514,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2009239_requisitos_mala_fe",
+          "clause_line": 517,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(posesion_como_propietario) AND oblig(posesion_temporal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2009239_distincion_fe",
+          "clause_line": 520,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2009239_revelacion_causa",
+          "clause_line": 523,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2011927",
+      "thesis_title": "AGRARIAN ADVERSE POSSESSION - PROCEDURAL CONGRUENCE PRINCIPLE",
+      "source_text": "texts/tesis2011927.txt",
+      "wit_lines": "529-554",
+      "clauses": [
+        {
+          "clause_id": "tesis2011927_principio_fundamental",
+          "clause_line": 540,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2011927_congruencia_procesal",
+          "clause_line": 543,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(congruencia_procesal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2011927_prohibicion_variacion",
+          "clause_line": 546,
+          "clause_content": "oblig(congruencia_procesal) IMPLIES not(oblig(variacion_litis))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2011927_proteccion_defensa",
+          "clause_line": 549,
+          "clause_content": "oblig(variacion_litis) IMPLIES not(oblig(proteccion_registral))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2014858",
+      "thesis_title": "THIRD PARTY EXCLUSION - UNREGISTERED DOCUMENTS VS GOOD FAITH ACQUIRERS",
+      "source_text": "texts/tesis2014858.txt",
+      "wit_lines": "555-577",
+      "clauses": [
+        {
+          "clause_id": "tesis2014858_principio_fundamental",
+          "clause_line": 563,
+          "clause_content": "oblig(contrato_no_inscrito) AND oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES not(oblig(terceria_excluyente))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014858_proteccion_registral",
+          "clause_line": 566,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(adquisicion_remate) IMPLIES oblig(proteccion_registral)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014858_adquisicion_buena_fe",
+          "clause_line": 569,
+          "clause_content": "oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES oblig(ejercer_derecho_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014858_limitacion_oponibilidad",
+          "clause_line": 572,
+          "clause_content": "oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2014940",
+      "thesis_title": "RES JUDICATA - GOOD FAITH VS BAD FAITH AS DIFFERENT CAUSES",
+      "source_text": "texts/tesis2014940.txt",
+      "wit_lines": "578-600",
+      "clauses": [
+        {
+          "clause_id": "tesis2014940_principio_fundamental",
+          "clause_line": 586,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ejercicio_mala_fe) IMPLIES oblig(causa_remota_diversa)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014940_causas_diferentes",
+          "clause_line": 589,
+          "clause_content": "oblig(causa_remota_diversa) IMPLIES not(oblig(cosa_juzgada))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014940_identidad_causas",
+          "clause_line": 592,
+          "clause_content": "oblig(cosa_juzgada) IMPLIES not(oblig(causa_remota_diversa))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2014940_procedimientos_separados",
+          "clause_line": 595,
+          "clause_content": "oblig(causa_remota_diversa) IMPLIES oblig(cumplir_requisitos_legales)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2017366",
+      "thesis_title": "ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION",
+      "source_text": "texts/tesis2017366.txt",
+      "wit_lines": "601-636",
+      "clauses": [
+        {
+          "clause_id": "tesis2017366_principio_fundamental",
+          "clause_line": 613,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(conocimiento_vicios))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_buena_fe_tipos",
+          "clause_line": 616,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES (oblig(diligencia_adquirente) OR not(oblig(documento_con_vicios)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_mala_fe_tipos",
+          "clause_line": 619,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_vicios) OR not(oblig(causa_generadora_probada)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_presuncion_legal",
+          "clause_line": 622,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_conversion_fe",
+          "clause_line": 625,
+          "clause_content": "oblig(conocimiento_vicios) AND oblig(documento_con_vicios) IMPLIES oblig(conversion_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_naturaleza_condicional",
+          "clause_line": 628,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017366_posesion_delictuosa",
+          "clause_line": 631,
+          "clause_content": "oblig(posesion_delictuosa) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2017539",
+      "thesis_title": "DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE",
+      "source_text": "texts/tesis2017539.txt",
+      "wit_lines": "637-669",
+      "clauses": [
+        {
+          "clause_id": "tesis2017539_principio_fundamental",
+          "clause_line": 646,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(accion_extincion_dominio) IMPLIES oblig(posibilidad_fisica_conocimiento)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_proteccion_independencia",
+          "clause_line": 649,
+          "clause_content": "oblig(ocupacion_independiente) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_estandar_conocimiento",
+          "clause_line": 652,
+          "clause_content": "oblig(posibilidad_fisica_conocimiento) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(ejercicio_buena_fe))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_presuncion_aplicable",
+          "clause_line": 655,
+          "clause_content": "claim(accion_extincion_dominio) IMPLIES oblig(presuncion_humana)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_analisis_factual",
+          "clause_line": 658,
+          "clause_content": "oblig(presuncion_humana) IMPLIES oblig(posibilidad_fisica_conocimiento)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_defensa_buena_fe",
+          "clause_line": 661,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ocupacion_independiente) IMPLIES not(claim(accion_extincion_dominio))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017539_carga_probatoria",
+          "clause_line": 664,
+          "clause_content": "claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(posibilidad_fisica_conocimiento))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2017540",
+      "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+      "source_text": "texts/tesis2017540.txt",
+      "wit_lines": "670-707",
+      "clauses": [
+        {
+          "clause_id": "tesis2017540_principio_fundamental",
+          "clause_line": 678,
+          "clause_content": "claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) AND oblig(cumplimiento_deber_legal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_estandar_mala_fe",
+          "clause_line": 681,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_problemas_legales) OR oblig(posibilidad_fisica_conocimiento))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_deber_actuar",
+          "clause_line": 684,
+          "clause_content": "oblig(conocimiento_problemas_legales) IMPLIES oblig(cumplimiento_deber_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_carga_inicial",
+          "clause_line": 687,
+          "clause_content": "claim(accion_extincion_dominio) IMPLIES oblig(elementos_probatorios)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_carga_dinamica",
+          "clause_line": 690,
+          "clause_content": "oblig(elementos_probatorios) IMPLIES oblig(carga_dinamica_prueba)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_presuncion_buena_fe",
+          "clause_line": 693,
+          "clause_content": "oblig(carga_dinamica_prueba) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_probabilidad_factica",
+          "clause_line": 696,
+          "clause_content": "oblig(posibilidad_fisica_conocimiento) IMPLIES oblig(presuncion_humana)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_defensa_exitosa",
+          "clause_line": 699,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(carga_dinamica_prueba) IMPLIES not(claim(accion_extincion_dominio))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2017540_requisito_conocimiento",
+          "clause_line": 702,
+          "clause_content": "oblig(carga_dinamica_prueba) IMPLIES oblig(elementos_probatorios)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2018505",
+      "thesis_title": "ADVERSE POSSESSION - ALLANAMIENTO CANNOT DEMONSTRATE POSSESSION ATTRIBUTES",
+      "source_text": "texts/tesis2018505.txt",
+      "wit_lines": "708-746",
+      "clauses": [
+        {
+          "clause_id": "tesis2018505_principio_fundamental",
+          "clause_line": 720,
+          "clause_content": "oblig(allanamiento_demandado) IMPLIES oblig(causa_generadora_probada) AND not(oblig(posesion_pacifico_continuo_publico))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_orden_publico",
+          "clause_line": 723,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(seguridad_juridica) AND oblig(posesion_pacifico_continuo_publico))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_prueba_independiente",
+          "clause_line": 726,
+          "clause_content": "oblig(allanamiento_demandado) IMPLIES oblig(prueba_independiente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_hechos_intrinsecos",
+          "clause_line": 729,
+          "clause_content": "oblig(posesion_pacifico_continuo_publico) IMPLIES oblig(prueba_independiente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_proteccion_terceros",
+          "clause_line": 732,
+          "clause_content": "oblig(proteccion_terceros) IMPLIES oblig(prueba_independiente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_carga_probatoria",
+          "clause_line": 735,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_probada) AND oblig(posesion_pacifico_continuo_publico))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_proposito_seguridad",
+          "clause_line": 738,
+          "clause_content": "oblig(posesion_pacifico_continuo_publico) AND oblig(ejercicio_buena_fe) AND oblig(posesion_temporal) IMPLIES oblig(seguridad_juridica)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2018505_requisito_temporal",
+          "clause_line": 741,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(posesion_temporal) AND oblig(posesion_pacifico_continuo_publico))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    }
+  ]
+}

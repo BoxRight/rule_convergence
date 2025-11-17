@@ -1,0 +1,442 @@
+{
+  "batch_number": 1,
+  "evaluator": "Gemini-2.5-Pro",
+  "evaluation_date": "2025-11-15",
+  "thesis_ids": [
+    "2020418",
+    "2021246",
+    "2021398",
+    "2021537",
+    "2023487",
+    "2025237",
+    "2025433",
+    "2029251",
+    "2030499",
+    "2030500"
+  ],
+  "thesis_evaluations": [
+    {
+      "thesis_id": "2020418",
+      "thesis_title": "ADVERSE POSSESSION AND UNREGISTERED CONTRACTS",
+      "source_text": "texts/tesis2020418.txt",
+      "wit_lines": "144-162",
+      "clauses": [
+        {
+          "clause_id": "tesis2020418_principio_fundamental",
+          "clause_line": 150,
+          "clause_content": "oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2020418_proteccion_registral",
+          "clause_line": 153,
+          "clause_content": "oblig(titularidad_registral) IMPLIES claim(oponibilidad_terceros)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2020418_limitacion_no_inscripcion",
+          "clause_line": 154,
+          "clause_content": "oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2020418_consecuencia_logica",
+          "clause_line": 155,
+          "clause_content": "not(oblig(oponibilidad_terceros)) IMPLIES not(claim(demanda_prescripcion))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021246",
+      "thesis_title": "Bad Faith Adverse Possession - Proof of Generating Cause",
+      "source_text": "texts/tesis2021246.txt",
+      "wit_lines": "163-183",
+      "clauses": [
+        {
+          "clause_id": "tesis2021246_principio_fundamental",
+          "clause_line": 169,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021246_causa_generadora",
+          "clause_line": 172,
+          "clause_content": "oblig(causa_generadora_probada) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021246_plazo_mala_fe",
+          "clause_line": 175,
+          "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021246_estandar_probatorio",
+          "clause_line": 178,
+          "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021398",
+      "thesis_title": "Usucapion - Limits of Allanamiento in Proving Possession Qualities",
+      "source_text": "texts/tesis2021398.txt",
+      "wit_lines": "184-214",
+      "clauses": [
+        {
+          "clause_id": "tesis2021398_principio_fundamental",
+          "clause_line": 200,
+          "clause_content": "oblig(allanamiento_demandado) IMPLIES (oblig(ejercicio_buena_fe) AND oblig(causa_generadora_probada)) AND not(oblig(posesion_pacifico_continuo_publico))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021398_prueba_independiente",
+          "clause_line": 203,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(prueba_independiente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021398_proteccion_terceros",
+          "clause_line": 206,
+          "clause_content": "oblig(proteccion_terceros) IMPLIES not(oblig(allanamiento_demandado))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021398_requisito_temporal",
+          "clause_line": 209,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2021537",
+      "thesis_title": "Bad Faith Adverse Possession - Defective Documents Are Less Significant",
+      "source_text": "texts/tesis2021537.txt",
+      "wit_lines": "215-246",
+      "clauses": [
+        {
+          "clause_id": "tesis2021537_principio_fundamental",
+          "clause_line": 229,
+          "clause_content": "oblig(ejercicio_mala_fe) AND oblig(documento_con_vicios) AND oblig(posesion_temporal) IMPLIES claim(demanda_prescripcion)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021537_compensacion_temporal",
+          "clause_line": 232,
+          "clause_content": "oblig(documento_con_vicios) AND oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_temporal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021537_desinteres_propietario",
+          "clause_line": 235,
+          "clause_content": "oblig(posesion_temporal) IMPLIES oblig(desinteres_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021537_ejercicio_dominio",
+          "clause_line": 238,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2021537_contraste_buena_fe",
+          "clause_line": 241,
+          "clause_content": "oblig(ejercicio_buena_fe) IMPLIES not(oblig(documento_con_vicios))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2023487",
+      "thesis_title": "Good Faith Adverse Possession - Donation Contract for Different Property Cannot Constitute Just Title",
+      "source_text": "texts/tesis2023487.txt",
+      "wit_lines": "247-281",
+      "clauses": [
+        {
+          "clause_id": "tesis2023487_principio_fundamental",
+          "clause_line": 261,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(contrato_inmueble_diverso) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2023487_especificidad_titulo",
+          "clause_line": 264,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(contrato_inmueble_diverso))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2023487_error_material",
+          "clause_line": 267,
+          "clause_content": "oblig(error_ubicacion_material) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2023487_prevencion_fraude",
+          "clause_line": 270,
+          "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_terceros)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2023487_proteccion_equidad",
+          "clause_line": 273,
+          "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_registral)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2023487_requisito_buena_fe",
+          "clause_line": 276,
+          "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2025237",
+      "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+      "source_text": "texts/tesis2025237.txt",
+      "wit_lines": "282-311",
+      "clauses": [
+        {
+          "clause_id": "tesis2025237_principio_fundamental",
+          "clause_line": 294,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES (oblig(proteccion_terceros) AND oblig(ejercicio_derecho_legal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025237_requisito_tercero",
+          "clause_line": 297,
+          "clause_content": "claim(interrupcion_prescripcion) IMPLIES oblig(proteccion_terceros)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025237_intereses_contrarios",
+          "clause_line": 300,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(ejercicio_derecho_legal)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025237_contexto_agrario",
+          "clause_line": 303,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025237_plazo_agrario",
+          "clause_line": 306,
+          "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(posesion_temporal)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2025433",
+      "thesis_title": "Good Faith Adverse Possession - Knowledge of INFONAVIT Mortgage Does Not Vitiate Just Title",
+      "source_text": "texts/tesis2025433.txt",
+      "wit_lines": "312-344",
+      "clauses": [
+        {
+          "clause_id": "tesis2025433_principio_fundamental",
+          "clause_line": 327,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025433_conservacion_dominio",
+          "clause_line": 330,
+          "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025433_proteccion_buena_fe",
+          "clause_line": 333,
+          "clause_content": "oblig(conocimiento_hipoteca_infonavit) IMPLIES not(not(oblig(ejercicio_buena_fe)))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025433_validez_verbal",
+          "clause_line": 336,
+          "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2025433_distincion_obligacion",
+          "clause_line": 339,
+          "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES not(not(oblig(posesion_como_propietario)))",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2029251",
+      "thesis_title": "Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption",
+      "source_text": "texts/tesis2029251.txt",
+      "wit_lines": "345-374",
+      "clauses": [
+        {
+          "clause_id": "tesis2029251_principio_fundamental",
+          "clause_line": 357,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES (oblig(interrupcion_prescripcion) AND oblig(proteccion_registral))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2029251_efecto_interrupcion",
+          "clause_line": 360,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(inutilizacion_tiempo)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2029251_permanencia_buena_fe",
+          "clause_line": 363,
+          "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2029251_validez_constitucional",
+          "clause_line": 366,
+          "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(proteccion_registral)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2029251_proteccion_titulares",
+          "clause_line": 369,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(proteccion_registral)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2030499",
+      "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+      "source_text": "texts/tesis2030499.txt",
+      "wit_lines": "375-400",
+      "clauses": [
+        {
+          "clause_id": "tesis2030499_principio_fundamental",
+          "clause_line": 383,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(aplicacion_supletoria) AND oblig(ejercicio_derecho_legal))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030499_sin_justo_titulo",
+          "clause_line": 386,
+          "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030499_adaptacion_cultural",
+          "clause_line": 389,
+          "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_buena_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030499_cesion_valida",
+          "clause_line": 392,
+          "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030499_alcance_supletorio",
+          "clause_line": 395,
+          "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(posesion_como_propietario)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    },
+    {
+      "thesis_id": "2030500",
+      "thesis_title": "Adverse Possession - Judicially Nullified Title Cannot Establish Generating Cause",
+      "source_text": "texts/tesis2030500.txt",
+      "wit_lines": "401-432",
+      "clauses": [
+        {
+          "clause_id": "tesis2030500_principio_fundamental",
+          "clause_line": 412,
+          "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES not(oblig(causa_generadora_probada))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030500_efecto_nulidad",
+          "clause_line": 415,
+          "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES oblig(ausencia_efecto_juridico)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030500_acto_inexistente",
+          "clause_line": 418,
+          "clause_content": "oblig(ausencia_efecto_juridico) IMPLIES oblig(acto_inexistente)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030500_imposibilidad_propietario",
+          "clause_line": 421,
+          "clause_content": "oblig(acto_inexistente) IMPLIES not(oblig(posesion_como_propietario))",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030500_imposibilidad_buena_fe",
+          "clause_line": 424,
+          "clause_content": "oblig(nulidad_judicial_titulo) AND claim(demanda_prescripcion) IMPLIES oblig(ejercicio_mala_fe)",
+          "rating": "",
+          "justification": ""
+        },
+        {
+          "clause_id": "tesis2030500_orden_publico",
+          "clause_line": 427,
+          "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(proteccion_registral)",
+          "rating": "",
+          "justification": ""
+        }
+      ]
+    }
+  ]
+}
