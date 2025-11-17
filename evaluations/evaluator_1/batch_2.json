@@ -68,43 +68,43 @@
           "clause_id": "tesis2008083_principio_fundamental",
           "clause_line": 484,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente) AND oblig(diligencia_adquirente))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Excellently captures triple proof requirement for good faith. Source: must prove '1) que el acto traslativo de dominio... tuvo lugar... 2)... pagos... 3) la fecha de celebración... deberá acreditarse en forma fehaciente' - authenticity of title act, reliable date proof, and diligence showing belief in seller's authority all required."
         },
         {
           "clause_id": "tesis2008083_prueba_autenticidad",
           "clause_line": 487,
           "clause_content": "oblig(causa_generadora_probada) IMPLIES (oblig(autenticidad_titulo) AND oblig(fecha_fehaciente))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models core proof requirements. Source: 'tanto la certeza de la fecha como la celebración misma del acto jurídico traslativo de dominio, incluyendo la autenticidad del documento, pueden acreditarse con diversos medios de prueba' - proving generating cause requires both authenticity and reliable date."
         },
         {
           "clause_id": "tesis2008083_diligencia_buena_fe",
           "clause_line": 490,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately links good faith to diligence requirement. Source: 'todo aquel que no pueda demostrar un nivel mínimo de diligencia, podrá prescribir, pero en el plazo más largo de diez años' - without diligence proof, cannot claim good faith's shorter 5-year period, must use bad faith's 10-year period."
         },
         {
           "clause_id": "tesis2008083_prueba_pagos",
           "clause_line": 493,
           "clause_content": "oblig(causa_generadora_probada) AND oblig(contrato_compraventa) IMPLIES oblig(pagos_precio)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models payment proof for onerous contracts. Source: 'si el acto traslativo de dominio de que se trata es oneroso, que se hicieron pagos a cuenta del precio pactado; en caso contrario, tendrá que probar que la transmisión del bien se le hizo en forma gratuita' - purchase contracts require proving payments."
         },
         {
           "clause_id": "tesis2008083_carga_prueba",
           "clause_line": 496,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Wrong predicate - should be 'probada' not 'revelada'. Source: 'la carga de la prueba recae en la parte actora' and must prove 'con diversos medios de convicción' - claimant must PROVE (probar) generating cause with evidence, not just REVEAL (revelar) it. Revealing suggests mere disclosure; proving requires evidentiary burden."
         },
         {
           "clause_id": "tesis2008083_falta_diligencia",
           "clause_line": 499,
           "clause_content": "not(oblig(diligencia_adquirente)) IMPLIES oblig(ejercicio_mala_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models that lack of diligence means bad faith. Source: 'todo aquel que no pueda demostrar un nivel mínimo de diligencia, podrá prescribir, pero en el plazo más largo de diez años' - inability to prove minimum diligence relegates to bad faith's longer 10-year period, not good faith's 5-year period."
         }
       ]
     },
@@ -118,36 +118,36 @@
           "clause_id": "tesis2009239_principio_fundamental",
           "clause_line": 511,
           "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_revelada) AND not(oblig(causa_generadora_probada)))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Logical contradiction of source. Source: bad faith 'únicamente debe revelarse y probarse la causa generadora de la posesión' - must reveal AND PROVE generating cause. Clause says reveal AND NOT prove, which directly contradicts. Key distinction is bad faith doesn't need 'justo título' but still must prove causa generadora (just not that it's a valid title)."
         },
         {
           "clause_id": "tesis2009239_mala_fe_sin_titulo",
           "clause_line": 514,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES not(oblig(causa_generadora_probada))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Misrepresents proof requirement. Source: 'debe revelarse y probarse la causa generadora' - must PROVE generating cause even in bad faith. The distinction is: good faith needs proving 'justo título' (specific valid-appearing title), bad faith needs proving 'causa generadora' (any possession origin). Both require proof, just of different things."
         },
         {
           "clause_id": "tesis2009239_requisitos_mala_fe",
           "clause_line": 517,
           "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES (oblig(posesion_como_propietario) AND oblig(posesion_temporal))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models bad faith possession requirements. Source: bad faith requires 'posesión es de mala fe, en la que... debe ser en concepto de propietario, pacífica, continua y pública, y por más de diez años' - ownership character and temporal (10-year) requirement both necessary."
         },
         {
           "clause_id": "tesis2009239_distincion_fe",
           "clause_line": 520,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly distinguishes good faith proof requirement. Source: good faith 'requiere justo título' which is a specific type of causa generadora that must be proven - 'título suficiente para darle derecho de poseer' that transfers ownership even if imperfect."
         },
         {
           "clause_id": "tesis2009239_revelacion_causa",
           "clause_line": 523,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Incomplete - should also require proving, not just revealing. Source: 'debe revelarse y probarse la causa generadora' - BOTH reveal and prove required for prescription claims. While revealing is necessary, omitting the proof requirement understates the evidentiary burden on claimants."
         }
       ]
     },
@@ -161,29 +161,29 @@
           "clause_id": "tesis2011927_principio_fundamental",
           "clause_line": 540,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(variacion_litis))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures congruence principle. Source: 'si... se ejerce la prescripción adquisitiva... sustenta en hechos relativos a la modalidad de buena fe... el tribunal de la materia no puede analizar la usucapión de mala fe... equivaldría a variar la litis' - court cannot vary litis from good faith to bad faith analysis."
         },
         {
           "clause_id": "tesis2011927_congruencia_procesal",
           "clause_line": 543,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(congruencia_procesal)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models procedural requirement. Source: sentence 'debe sujetarse exclusivamente a las pretensiones de las partes... debe atender al principio de congruencia' - prescription claims must respect congruence principle, limiting court to parties' actual claims."
         },
         {
           "clause_id": "tesis2011927_prohibicion_variacion",
           "clause_line": 546,
           "clause_content": "oblig(congruencia_procesal) IMPLIES not(oblig(variacion_litis))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately links congruence to prohibition on varying litis. Source: congruence means 'las pretensiones y hechos de las partes no pueden ser rebasados' - cannot exceed parties' claims and facts, thus no litis variation allowed."
         },
         {
           "clause_id": "tesis2011927_proteccion_defensa",
           "clause_line": 549,
           "clause_content": "oblig(variacion_litis) IMPLIES not(oblig(proteccion_registral))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Wrong legal consequence. Source: varying litis would 'violar el derecho de defensa del enjuiciado' - violates defendant's defense rights, not registry protection. Should model: oblig(variacion_litis) IMPLIES not(oblig(proteccion_defensa)) or similar. 'Proteccion_registral' refers to property registry protection, irrelevant to procedural rights violation."
         }
       ]
     },
@@ -197,29 +197,29 @@
           "clause_id": "tesis2014858_principio_fundamental",
           "clause_line": 563,
           "clause_content": "oblig(contrato_no_inscrito) AND oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES not(oblig(terceria_excluyente))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures opposability limitation. Source: 'la falta de inscripción registral del documento con el que un tercerista pretende fundar su acción de tercería excluyente de dominio, conlleva que no pueda oponerse a un tercero adquirente de buena fe... por adjudicación en un juicio ejecutivo mercantil' - unregistered + auction + good faith = third party exclusion fails."
         },
         {
           "clause_id": "tesis2014858_proteccion_registral",
           "clause_line": 566,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(adquisicion_remate) IMPLIES oblig(proteccion_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models registry protection for auction acquirers. Source: good faith auction acquirer 'se encuentra inmune frente al derecho real que pretende hacer valer el tercerista, que carece de inscripción' - immunity against unregistered claims is form of registry protection."
         },
         {
           "clause_id": "tesis2014858_adquisicion_buena_fe",
           "clause_line": 569,
           "clause_content": "oblig(adquisicion_remate) AND oblig(ejercicio_buena_fe) IMPLIES oblig(ejercer_derecho_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Too generic predicate. Source: auction acquirer 'adquiere un derecho de propiedad sobre el inmueble rematado... adquiere coetáneamente un auténtico derecho real' - should model acquisition of property/real rights (derecho_real), not just generic 'ejercer_derecho_legal' (exercising legal rights). The key is ACQUIRING specific property rights, not exercising them."
         },
         {
           "clause_id": "tesis2014858_limitacion_oponibilidad",
           "clause_line": 572,
           "clause_content": "oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models core registry principle. Source: 'la falta de inscripción registral... conlleva que no pueda oponerse' - lack of registration prevents opposability to third parties, fundamental principle of property law requiring registration for third-party effects."
         }
       ]
     },
@@ -233,29 +233,29 @@
           "clause_id": "tesis2014940_principio_fundamental",
           "clause_line": 586,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ejercicio_mala_fe) IMPLIES oblig(causa_remota_diversa)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Logical impossibility - good faith AND bad faith cannot coexist. Source discusses comparing separate lawsuits: 'en el primer juicio... prescripción positiva sustentada en una posesión de buena fe y, en el segundo... posesión de mala fe' - these are different proceedings, not conjunctive conditions. Should model comparison between lawsuit types, not conjunction of mutually exclusive states."
         },
         {
           "clause_id": "tesis2014940_causas_diferentes",
           "clause_line": 589,
           "clause_content": "oblig(causa_remota_diversa) IMPLIES not(oblig(cosa_juzgada))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models res judicata limitation. Source: 'la causa remota (calidad de esa posesión) es diversa... no se actualiza la excepción de cosa juzgada' - when remote causes differ (good faith vs bad faith possession quality), res judicata exception does not apply."
         },
         {
           "clause_id": "tesis2014940_identidad_causas",
           "clause_line": 592,
           "clause_content": "oblig(cosa_juzgada) IMPLIES not(oblig(causa_remota_diversa))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models contrapositive requirement. Source: res judicata requires 'identidad en las cosas, las causas, las personas... debe atender... a la causa remota' - for res judicata to apply, causes must be identical (not diverse). This is logical contrapositive of previous clause."
         },
         {
           "clause_id": "tesis2014940_procedimientos_separados",
           "clause_line": 595,
           "clause_content": "oblig(causa_remota_diversa) IMPLIES oblig(cumplir_requisitos_legales)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Too vague - doesn't capture the key point. Source allows separate proceedings: 'no se actualiza la excepción de cosa juzgada... no se analizaron los mismos hechos que son materia del segundo juicio' - different remote causes mean second proceeding is allowed. Should model permission for separate proceedings, not generic 'comply with legal requirements'."
         }
       ]
     },
@@ -269,50 +269,50 @@
           "clause_id": "tesis2017366_principio_fundamental",
           "clause_line": 613,
           "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(conocimiento_vicios))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Awkward disjunction doesn't capture classification well. Source discusses 'la posesión puede ser de buena y de mala fe' as mutually exclusive categories, not a disjunction between good faith OR knowledge of defects. Should model that possession is classified as either good faith (lacking knowledge) XOR bad faith (with knowledge), not this specific formula."
         },
         {
           "clause_id": "tesis2017366_buena_fe_tipos",
           "clause_line": 616,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES (oblig(diligencia_adquirente) OR not(oblig(documento_con_vicios)))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models two types of good faith possessors. Source: '(a) los que tienen un título suficiente o bien uno viciado y lo ignoran; y, (b) los que no tienen título pero fundadamente creen tenerlo' - either no defective document (sufficient title) OR diligence (reasonable belief without title)."
         },
         {
           "clause_id": "tesis2017366_mala_fe_tipos",
           "clause_line": 619,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_vicios) OR not(oblig(causa_generadora_probada)))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately captures bad faith subtypes. Source: bad faith possessors are '(a) los que poseen con título viciado y lo saben y (b) los que poseen sin título y lo saben' - either know of title defects OR lack provable generating cause (no title)."
         },
         {
           "clause_id": "tesis2017366_presuncion_legal",
           "clause_line": 622,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(ejercicio_buena_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models rebuttable presumption. Source: 'el legislador estableció en favor del adquirente... una presunción iuris tantum, pues lo considera poseedor de buena fe' - legal presumption favors good faith until proven otherwise."
         },
         {
           "clause_id": "tesis2017366_conversion_fe",
           "clause_line": 625,
           "clause_content": "oblig(conocimiento_vicios) AND oblig(documento_con_vicios) IMPLIES oblig(conversion_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models good faith to bad faith conversion. Source: 'cuando esa presunción se destruye, al acreditarse que quien la tiene en su favor conoce los vicios de su título, la posesión... deja de tener esa calidad, para convertirse en posesión de mala fe' - knowledge of title defects converts good faith to bad faith."
         },
         {
           "clause_id": "tesis2017366_naturaleza_condicional",
           "clause_line": 628,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(diligencia_adquirente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly links good faith to diligence requirement. Source: good faith 'permanencia está condicionada... a que persista la de ignorancia sobre los vicios de su título' and requires reasonable belief - diligence is necessary component of maintaining good faith status."
         },
         {
           "clause_id": "tesis2017366_posesion_delictuosa",
           "clause_line": 631,
           "clause_content": "oblig(posesion_delictuosa) IMPLIES oblig(ejercicio_mala_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly categorizes criminal possession. Source identifies 'poseedores que poseen en forma delictuosa' as subclass of bad faith possession - criminal/unlawful taking ('apoderamiento en forma ilícita') is always bad faith by definition."
         }
       ]
     },
@@ -326,50 +326,50 @@
           "clause_id": "tesis2017539_principio_fundamental",
           "clause_line": 646,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(accion_extincion_dominio) IMPLIES oblig(posibilidad_fisica_conocimiento)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Backwards relationship. Good faith claim requires showing LACK of physical possibility of knowledge, not the possibility itself. Source: court must determine 'si el tercero afectado que alega buena fe... era realmente muy difícil o improbable que advirtiera' - good faith defense succeeds when knowing was 'improbable', not when possibility exists. Should be: oblig(ejercicio_buena_fe) IMPLIES not(oblig(posibilidad_fisica_conocimiento))."
         },
         {
           "clause_id": "tesis2017539_proteccion_independencia",
           "clause_line": 649,
           "clause_content": "oblig(ocupacion_independiente) IMPLIES oblig(ejercicio_buena_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Too strong - makes good faith automatic. Source: independent residences are a FACTOR for courts to consider ('corresponde al órgano jurisdiccional establecer... por su superficie... intercomunicación o total independencia'), not automatic good faith. Independence makes good faith plausible, but court must still evaluate whether knowledge was possible. Should be conditional/evidential, not deterministic."
         },
         {
           "clause_id": "tesis2017539_estandar_conocimiento",
           "clause_line": 652,
           "clause_content": "oblig(posibilidad_fisica_conocimiento) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(ejercicio_buena_fe))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Tautology with no informational content. Says 'physical possibility implies either bad faith or good faith' - but possession is always one or the other regardless of physical possibility. This is like saying 'if it rains, then either you're wet or dry' - true but meaningless. Should model how physical possibility affects faith determination."
         },
         {
           "clause_id": "tesis2017539_presuncion_aplicable",
           "clause_line": 655,
           "clause_content": "claim(accion_extincion_dominio) IMPLIES oblig(presuncion_humana)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models evidentiary tool. Source: 'la presunción humana es idónea' for determining whether owner could have known - courts can use reasonable human inferences about what people would typically notice in similar circumstances."
         },
         {
           "clause_id": "tesis2017539_analisis_factual",
           "clause_line": 658,
           "clause_content": "oblig(presuncion_humana) IMPLIES oblig(posibilidad_fisica_conocimiento)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly links presumption to physical analysis. Source: using human presumptions helps 'establecer si el tercero afectado... por su superficie... intercomunicación... era... improbable que advirtiera' - presumptions applied to physical facts determine possibility of knowledge."
         },
         {
           "clause_id": "tesis2017539_defensa_buena_fe",
           "clause_line": 661,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ocupacion_independiente) IMPLIES not(claim(accion_extincion_dominio))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Confuses action with outcome. The forfeiture action (claim) exists regardless of defenses - clause models that good faith prevents the ACTION from existing, but source discusses whether the action SUCCEEDS. The action is filed; question is whether third party's good faith defense defeats it. Should model defense success, not action non-existence."
         },
         {
           "clause_id": "tesis2017539_carga_probatoria",
           "clause_line": 664,
           "clause_content": "claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) OR oblig(posibilidad_fisica_conocimiento))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models government's burden. Source: government must prove third party 'sabía que su inmueble se utilizaba' (knew - bad faith) or physical circumstances made knowledge likely (possibility of knowledge). Forfeiture requires showing either actual knowledge or that reasonable person would have known."
         }
       ]
     },
@@ -383,64 +383,64 @@
           "clause_id": "tesis2017540_principio_fundamental",
           "clause_line": 678,
           "clause_content": "claim(accion_extincion_dominio) IMPLIES (oblig(ejercicio_mala_fe) AND oblig(cumplimiento_deber_legal))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Reverses success requirement. Source: forfeiture 'únicamente puede proceder... en su contra si se acredita que existió mala fe' - action SUCCEEDS if bad faith proven, not that action itself implies both bad faith AND duty fulfillment. Should model: success requires proving bad faith (knowledge + failure to act), not that filing implies these exist."
         },
         {
           "clause_id": "tesis2017540_estandar_mala_fe",
           "clause_line": 681,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (oblig(conocimiento_problemas_legales) OR oblig(posibilidad_fisica_conocimiento))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly defines bad faith standard. Source: bad faith means 'tuvo conocimiento de que sus bienes eran utilizados para la comisión de delitos... o bien, porque debió tener conocimiento' - either actual knowledge OR should have known (physical possibility)."
         },
         {
           "clause_id": "tesis2017540_deber_actuar",
           "clause_line": 684,
           "clause_content": "oblig(conocimiento_problemas_legales) IMPLIES oblig(cumplimiento_deber_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models duty to act. Source: bad faith includes those who 'tuvo conocimiento... y no lo notificó a la autoridad o hizo algo para impedirlo' - knowledge creates legal duty to report or prevent, fulfillment would negate bad faith."
         },
         {
           "clause_id": "tesis2017540_carga_inicial",
           "clause_line": 687,
           "clause_content": "claim(accion_extincion_dominio) IMPLIES oblig(elementos_probatorios)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models government's initial burden. Source: 'el Ministerio Público debe aportar datos que razonablemente permitan sostener que los delitos se realizaron con conocimiento del propietario' - prosecution must provide evidentiary elements first."
         },
         {
           "clause_id": "tesis2017540_carga_dinamica",
           "clause_line": 690,
           "clause_content": "oblig(elementos_probatorios) IMPLIES oblig(carga_dinamica_prueba)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models burden shift. Source: 'la carga probatoria... se actualiza hasta que el representante social ha ofrecido elementos... Esta forma... lleva a reconocer la existencia de una carga dinámica o sucesiva de la prueba' - government evidence triggers dynamic/successive burden."
         },
         {
           "clause_id": "tesis2017540_presuncion_buena_fe",
           "clause_line": 693,
           "clause_content": "oblig(carga_dinamica_prueba) IMPLIES oblig(ejercicio_buena_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models presumption. Source: 'la buena fe... se presume es honesta, diligente' and third party gets 'la oportunidad de acreditar la buena fe... cuando se da... la posibilidad de desvirtuar los datos' - dynamic burden allows rebutting presumed good faith with evidence."
         },
         {
           "clause_id": "tesis2017540_probabilidad_factica",
           "clause_line": 696,
           "clause_content": "oblig(posibilidad_fisica_conocimiento) IMPLIES oblig(presuncion_humana)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly links physical possibility to evidentiary presumption. Source: when 'deba tener conocimiento... no se refiere a un deber abstracto... sino a una probabilidad fáctica que haga suponer razonablemente' - 'should have known' based on factual probability using human presumption."
         },
         {
           "clause_id": "tesis2017540_defensa_exitosa",
           "clause_line": 699,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(carga_dinamica_prueba) IMPLIES not(claim(accion_extincion_dominio))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Same action/outcome confusion as tesis2017539_defensa_buena_fe. Action exists once filed - question is whether it succeeds. Clause says good faith makes action not exist, but source discusses defense success: third party proves good faith 'y que no pudo tener conocimiento' defeats the action's merits, doesn't erase the claim itself."
         },
         {
           "clause_id": "tesis2017540_requisito_conocimiento",
           "clause_line": 702,
           "clause_content": "oblig(carga_dinamica_prueba) IMPLIES oblig(elementos_probatorios)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Circular/backwards. Dynamic burden arises FROM evidentiary elements (clause 690), not the reverse. Source: 'la carga probatoria... se actualiza hasta que el representante social ha ofrecido elementos' - elements come first, THEN burden shifts. This reverses temporal/causal sequence."
         }
       ]
     },
@@ -454,57 +454,57 @@
           "clause_id": "tesis2018505_principio_fundamental",
           "clause_line": 720,
           "clause_content": "oblig(allanamiento_demandado) IMPLIES oblig(causa_generadora_probada) AND not(oblig(posesion_pacifico_continuo_publico))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures allanamiento's limited scope. Source: 'ese reconocimiento sólo produce el acreditamiento de la causa generadora de la posesión a título de dueño, pero no es apto para demostrar los atributos de la posesión' - defendant's admission proves generating cause BUT NOT possession attributes (peaceful, continuous, public)."
         },
         {
           "clause_id": "tesis2018505_orden_publico",
           "clause_line": 723,
           "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(seguridad_juridica) AND oblig(posesion_pacifico_continuo_publico))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models prescription's public policy basis. Source: 'La prescripción positiva es una institución del derecho civil de orden público, que dota de seguridad jurídica a los poseedores' who prove 'los atributos de la posesión... de manera pública, pacífica, continua' - legal security requires proving possession attributes."
         },
         {
           "clause_id": "tesis2018505_prueba_independiente",
           "clause_line": 726,
           "clause_content": "oblig(allanamiento_demandado) IMPLIES oblig(prueba_independiente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models independent proof requirement. Source: allanamiento 'no se releva al actor de probar los hechos intrínsecos y fundatorios de su pretensión' - even with admission, plaintiff must independently prove possession attributes, can't rely solely on defendant's acquiescence."
         },
         {
           "clause_id": "tesis2018505_hechos_intrinsecos",
           "clause_line": 729,
           "clause_content": "oblig(posesion_pacifico_continuo_publico) IMPLIES oblig(prueba_independiente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly links possession attributes to independent proof requirement. Source: possession qualities 'no son hechos propios del demandado' so plaintiff must prove 'los demás elementos constitutivos de su acción' independently - cannot be established by defendant's admission alone."
         },
         {
           "clause_id": "tesis2018505_proteccion_terceros",
           "clause_line": 732,
           "clause_content": "oblig(proteccion_terceros) IMPLIES oblig(prueba_independiente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models third-party protection rationale. Source: plaintiff must prove possession attributes 'para no afectar derechos de terceros' - independent proof protects third parties who weren't party to defendant's admission and shouldn't be bound by collusive or mistaken acquiescence."
         },
         {
           "clause_id": "tesis2018505_carga_probatoria",
           "clause_line": 735,
           "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(causa_generadora_probada) AND oblig(posesion_pacifico_continuo_publico))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models plaintiff's complete burden. Source: prescription requires proving BOTH 'la causa generadora de la posesión' AND 'los atributos de la posesión' (public, peaceful, continuous, good faith per Articles 1153-1154) - plaintiff must prove all elements, not just one or the other."
         },
         {
           "clause_id": "tesis2018505_proposito_seguridad",
           "clause_line": 738,
           "clause_content": "oblig(posesion_pacifico_continuo_publico) AND oblig(ejercicio_buena_fe) AND oblig(posesion_temporal) IMPLIES oblig(seguridad_juridica)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models prescription's purpose. Source: prescription 'dota de seguridad jurídica a los poseedores' who prove attributes 'de manera pública, pacífica, continua de buena fe y en un lapso suficiente' - proving all required elements achieves legal security purpose."
         },
         {
           "clause_id": "tesis2018505_requisito_temporal",
           "clause_line": 741,
           "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(posesion_temporal) AND oblig(posesion_pacifico_continuo_publico))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models temporal and qualitative requirements. Source: prescription requires possession attributes 'de manera pública, pacífica, continua de buena fe y en un lapso suficiente' per Articles 1153-1154 - both temporal duration (sufficient time period) AND continuous peaceful public possession required together."
         }
       ]
     }

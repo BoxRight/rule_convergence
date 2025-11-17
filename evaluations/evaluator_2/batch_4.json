@@ -25,29 +25,29 @@
           "clause_id": "tesis210888_principio_fundamental",
           "clause_line": 962,
           "clause_content": "oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(ejercer_prescripcion_positiva)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Incomplete. The clause omits the necessary attributes of possession (peaceful, continuous, public) and the time requirement, all of which are explicitly listed in the source as requirements for a successful claim. Source: '...la posesión sea en concepto de propietario, en forma pacífica, continua y pública...'"
         },
         {
           "clause_id": "tesis210888_posesion_ambas_fe",
           "clause_line": 965,
           "clause_content": "oblig(posesion_como_propietario) IMPLIES (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Models a trivial tautology and reverses the thesis's logic. The source states that the requirement of 'posesion_como_propietario' is a necessary condition for *both* good and bad faith claims, not a consequence of them. Source: '...la exigencia de poseer en concepto de propietario para poder adquirir por prescripción, comprende no sólo los casos de buena fe, sino también al caso de la posesión de mala fe...'"
         },
         {
           "clause_id": "tesis210888_dominio_economico",
           "clause_line": 968,
           "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. The thesis explains that you must demonstrate the generating cause of your possession *in order to prove* that you are possessing 'en concepto de propietario' and that the possession is not derived. Proving the cause is the method, not the result. Source: '...siempre y cuando haya comenzado a poseer en virtud de una causa diversa de la que origina la posesión derivada.'"
         },
         {
           "clause_id": "tesis210888_posesion_originaria",
           "clause_line": 971,
           "clause_content": "oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. The thesis explains that you must demonstrate the generating cause of your possession *in order to prove* that you are possessing 'en concepto de propietario' and that the possession is not derived. Proving the cause is the method, not the result. Source: '...siempre y cuando haya comenzado a poseer en virtud de una causa diversa de la que origina la posesión derivada.'"
         }
       ]
     },
@@ -61,36 +61,36 @@
           "clause_id": "tesis210890_principio_fundamental",
           "clause_line": 981,
           "clause_content": "oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Incomplete. The clause fails to include the necessary requirements that the possession be 'en forma pacífica, continua y pública,' which are explicitly mentioned in the source text as essential elements to be proven. Source: '...los elementos a demostrar son los siguientes: Que el bien que se pretende prescribir, haya sido poseído en concepto de propietario, en forma pacífica, continua y pública...'"
         },
         {
           "clause_id": "tesis210890_igualdad_prueba",
           "clause_line": 984,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies a foundational requirement for any adverse possession claim, whether by action or exception. Source: '...el interesado debe probar todos los elementos necesarios para que opere la usucapión, concretamente... Que el bien que se pretende prescribir, haya sido poseído en concepto de propietario...'"
         },
         {
           "clause_id": "tesis210890_plazos_temporales",
           "clause_line": 987,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies the specific time periods required for both good faith and bad faith possession as detailed in the source text."
         },
         {
           "clause_id": "tesis210890_plazos_mala_fe",
           "clause_line": 988,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies the specific time periods required for both good faith and bad faith possession as detailed in the source text."
         },
         {
           "clause_id": "tesis210890_objetivo_registral",
           "clause_line": 991,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(titularidad_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "The clause is ambiguous and misleading. A successful prescription action *leads to* registered title; it is not a prerequisite. The source text's actual point is that the lawsuit must be filed *against* the person who appears as the registered owner, which this clause fails to model. Source: '...la acción respectiva debe enderezarse en contra de quien aparezca como propietario del bien en el Registro Público.'"
         }
       ]
     },
@@ -104,29 +104,29 @@
           "clause_id": "tesis211744_principio_fundamental",
           "clause_line": 1001,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly and directly models the central rule of the thesis: a positive prescription claim necessitates revealing the cause of possession. Source: 'El actor en un juicio de prescripción positiva, debe revelar la causa de su posesión...'"
         },
         {
           "clause_id": "tesis211744_determinacion_judicial",
           "clause_line": 1004,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "This clause contradicts the source text. The thesis clearly states that revealing the cause is a requirement even for bad-faith possessors. The purpose of revealing the cause is to enable the judge to make a determination about the possession's quality, not because the cause itself proves good faith. Source: '...debe revelar la causa de su posesión, aun en el caso de poseedor de mala fe...'"
         },
         {
           "clause_id": "tesis211744_requisito_universal",
           "clause_line": 1007,
           "clause_content": "(oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models the universal applicability of the rule. The thesis makes it clear that the requirement to reveal the cause of possession applies to both good faith and bad faith possessors. Source: '...debe revelar la causa de su posesión, aun en el caso de poseedor de mala fe...'"
         },
         {
           "clause_id": "tesis211744_determinacion_temporal",
           "clause_line": 1010,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to 'precisar el momento en que debe empezar a contar el plazo de la prescripción.' It does not, by itself, imply that the required time has passed."
         }
       ]
     },
@@ -140,29 +140,29 @@
           "clause_id": "tesis212497_principio_fundamental",
           "clause_line": 1020,
           "clause_content": "oblig(posesion_agraria) AND (oblig(ejercicio_buena_fe) OR oblig(ejercicio_mala_fe)) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Incomplete. The clause omits the essential requirements that the possession must be 'en concepto de titular', 'pacífica', and 'pública', all of which are explicitly listed in the source text. Source: '...la posesión de la tierra parcelada es en concepto de titular de ese derecho, en forma pacífica, continua y pública...'"
         },
         {
           "clause_id": "tesis212497_analisis_temporal",
           "clause_line": 1023,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(posesion_agraria)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately identifies a fundamental prerequisite for an agrarian prescription claim. The entire context is about acquiring rights to ejido land through possession."
         },
         {
           "clause_id": "tesis212497_debido_proceso",
           "clause_line": 1026,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the procedural guarantee at the heart of the thesis. Filing a claim ('ejercer_prescripcion_positiva') entitles the claimant to legal protection ('proteccion_legal') in the form of due process, meaning their case cannot be dismissed without a proper hearing. Source: '...no se da oportunidad al promovente de ser oído en el procedimiento relativo...'"
         },
         {
           "clause_id": "tesis212497_flexibilidad_procesal",
           "clause_line": 1029,
           "clause_content": "oblig(posesion_agraria) IMPLIES (oblig(ejercer_prescripcion_positiva) OR oblig(congruencia_procesal))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "The clause presents a false dichotomy. Having agrarian possession is a prerequisite to filing a claim; procedural congruence is a principle that should govern that claim's process. They are not alternative outcomes of possession. The clause misinterprets the legal concepts involved."
         }
       ]
     },
@@ -176,29 +176,29 @@
           "clause_id": "tesis213224_principio_fundamental",
           "clause_line": 1039,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada) AND oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the central holding of the thesis, which is that a claim for adverse possession requires the plaintiff to both reveal the origin of the possession and to possess as an owner. Source: '...basta con revelar el origen de la posesión y afirmar que se posee a título de dueño...'"
         },
         {
           "clause_id": "tesis213224_determinacion_judicial",
           "clause_line": 1042,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Contradicts the source text. Revealing the cause of possession is a procedural step that allows the judge to determine its nature, including whether it is 'de buena o de mala fe.' It does not logically imply that the possession must be in good faith."
         },
         {
           "clause_id": "tesis213224_tipo_posesion",
           "clause_line": 1045,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal)))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models one of the key reasons for the rule. The thesis explains that revealing the cause is necessary for the judge to determine if the possession is 'originaria o derivada.' The clause correctly shows that a valid revealed cause leads to the conclusion of original (not temporary) possession."
         },
         {
           "clause_id": "tesis213224_determinacion_temporal",
           "clause_line": 1048,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to determine the starting point of the prescription period. It does not, by itself, imply that the required time has already elapsed."
         }
       ]
     },
@@ -212,36 +212,36 @@
           "clause_id": "tesis214456_principio_fundamental",
           "clause_line": 1058,
           "clause_content": "oblig(posesion_agraria) AND oblig(posesion_temporal) AND (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos)) IMPLIES oblig(ejercer_prescripcion_positiva)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "This clause is inaccurate and incomplete. It incorrectly uses `posesion_temporal` and omits the required qualities of possession. Most importantly, it completely fails to model the thesis's core argument about counting possession time that occurred prior to the new Agrarian Law."
         },
         {
           "clause_id": "tesis214456_no_retroactividad",
           "clause_line": 1061,
           "clause_content": "oblig(posesion_temporal) AND oblig(posesion_agraria) IMPLIES oblig(proteccion_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "The clause is vague and uses the wrong predicate (`posesion_temporal`). It fails to represent the specific legal reasoning of the thesis, which is that taking prior possession into account for the purposes of the new law does not constitute a prohibited retroactive application of the law. Source: '...la aplicación del artículo 48 de la Ley Agraria sobre la posesión material de tierras ejidales de cultivo, anterior a su entrada en vigor, no constituye una aplicación retroactiva de la misma.'"
         },
         {
           "clause_id": "tesis214456_continuidad_legal",
           "clause_line": 1064,
           "clause_content": "oblig(posesion_agraria) IMPLIES oblig(ejercer_prescripcion_positiva)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Grossly oversimplifies the legal rule. While agrarian possession is required to file a claim, it does not by itself imply that the claim will be successful. The clause ignores all other essential requirements (time, manner of possession, etc.)."
         },
         {
           "clause_id": "tesis214456_plazos_temporales",
           "clause_line": 1067,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(posesion_tiempo_5_anos)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies the time requirements for good and bad faith agrarian prescription as mentioned in the source text. Source: '...el artículo 48 fija plazos prescriptivos de cinco y diez años para las ocupaciones de buena y mala fe, respectivamente.'"
         },
         {
           "clause_id": "tesis214456_plazos_mala_fe",
           "clause_line": 1068,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_tiempo_10_anos)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies the time requirements for good and bad faith agrarian prescription as mentioned in the source text. Source: '...el artículo 48 fija plazos prescriptivos de cinco y diez años para las ocupaciones de buena y mala fe, respectivamente.'"
         }
       ]
     },
@@ -255,29 +255,29 @@
           "clause_id": "tesis215033_principio_fundamental",
           "clause_line": 1078,
           "clause_content": "oblig(ejercer_prescripcion_positiva) AND oblig(titularidad_registral) IMPLIES oblig(proteccion_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Fails to model the core legal issue. The thesis focuses on the procedural rights of a *non-registered* co-owner (the mother) when the plaintiffs have insider knowledge. The clause's focus on the registered titleholder misses the entire point of the ruling."
         },
         {
           "clause_id": "tesis215033_debido_proceso",
           "clause_line": 1081,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Too general. The statement is correct in the abstract, but it omits the crucial detail of the thesis: that 'proteccion_legal' (the right to be sued and heard) extends to a known but non-registered co-owner in a marital partnership."
         },
         {
           "clause_id": "tesis215033_conocimiento_regimen",
           "clause_line": 1084,
           "clause_content": "oblig(conocimiento_vicios) AND oblig(ejercer_prescripcion_positiva) IMPLIES oblig(proteccion_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "The predicate `conocimiento_vicios` is imprecise; the key is the plaintiffs' knowledge of the 'régimen matrimonial'. More importantly, the clause fails to specify *whose* right to 'proteccion_legal' is being established—namely, the non-registered spouse. Source: '...es de estimarse fundadamente que conocían el régimen matrimonial que regían sus bienes, por lo que también debieron demandar a la quejosa...'"
         },
         {
           "clause_id": "tesis215033_requisito_procesal",
           "clause_line": 1087,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(congruencia_procesal)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Too abstract and fails to model the specific procedural rule established by the thesis. The core issue is not general procedural congruence, but the specific obligation to sue all known co-owners, even those not listed in the public registry, under the particular facts of the case."
         }
       ]
     },
@@ -291,29 +291,29 @@
           "clause_id": "tesis216431_principio_fundamental",
           "clause_line": 1097,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(posesion_como_propietario) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly captures the main legal rule of the thesis: for good faith possessors, proving the generating cause (which the text equates to a 'justo título') is an essential requirement. Source: '...los poseedores de buena fe requieren de justo título como causa generadora de la posesión para que opere la prescripción positiva...'"
         },
         {
           "clause_id": "tesis216431_revelar_causa",
           "clause_line": 1100,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models the procedural requirement stated in the thesis. The plaintiff must reveal the cause of possession so that it can be evaluated by the court. Source: '...si la quejosa no reveló ni acreditó en forma plena la causa generadora de la posesión que detenta a título de dueña, no pueda producirse a su favor la prescripción que demanda.'"
         },
         {
           "clause_id": "tesis216431_determinacion_judicial",
           "clause_line": 1103,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe))))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Overstates the implication. The thesis states that revealing the cause is necessary for the judge 'a fin de determinar la calidad de la misma'. It is a prerequisite for analysis, not a guarantee that the possession will be classified as good faith and as an owner."
         },
         {
           "clause_id": "tesis216431_determinacion_temporal",
           "clause_line": 1106,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to determine the starting point of the prescription period. It does not, by itself, imply that the required time has already elapsed."
         }
       ]
     },
@@ -327,29 +327,29 @@
           "clause_id": "tesis219823_principio_fundamental",
           "clause_line": 1116,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada) AND not(oblig(conocimiento_vicios))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly captures the core definition of good faith possession provided in the thesis, which includes both having a sufficient title and being unaware of its defects. Source: '...es poseedor de buena fe el que entra en la posesión del inmueble en virtud de una causa generadora o título suficiente... así como el que ignora los vicios de su título...'"
         },
         {
           "clause_id": "tesis219823_mala_fe",
           "clause_line": 1119,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES (not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately represents the definition of bad faith possession given in the text. Source: 'En cambio, es poseedor de mala fe el que no tiene título, causa generadora o modo de adquirir, o el que conoce los vicios del título que le impide poseer con derecho.'"
         },
         {
           "clause_id": "tesis219823_requisitos_buena_fe",
           "clause_line": 1122,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies a key, necessary component of good faith possession as defined in the source text. While not the complete definition, it is an accurate statement."
         },
         {
           "clause_id": "tesis219823_condiciones_mala_fe",
           "clause_line": 1125,
           "clause_content": "(not(oblig(causa_generadora_probada)) OR oblig(conocimiento_vicios)) IMPLIES oblig(ejercicio_mala_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the conditions that lead to a classification of bad faith possession, which is the logical inverse of the definition provided in the text and is fully supported by it."
         }
       ]
     },
@@ -363,29 +363,29 @@
           "clause_id": "tesis221460_principio_fundamental",
           "clause_line": 1135,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the central rule of the thesis, which states that it is essential to specify the act or event that originated the possession. Source: 'Para usucapir es imprescindible señalar el hecho o el acto que la originó...'"
         },
         {
           "clause_id": "tesis221460_determinacion_naturaleza",
           "clause_line": 1138,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_como_propietario) AND not(oblig(posesion_temporal))) AND (oblig(ejercicio_buena_fe) AND not(oblig(ejercicio_mala_fe)))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "This clause reverses the logic of the thesis. Revealing the cause of possession does not guarantee a particular outcome; it is the necessary input for the judge to determine if the possession is 'originaria o derivada, de buena o mala fe.'"
         },
         {
           "clause_id": "tesis221460_determinacion_temporal",
           "clause_line": 1141,
           "clause_content": "oblig(causa_generadora_revelada) IMPLIES (oblig(posesion_tiempo_5_anos) OR oblig(posesion_tiempo_10_anos))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Reverses the logical relationship. Revealing the cause and its timing is a necessary step for the judge to determine the duration of the possession ('cuál es el tiempo de su duración'). It does not, by itself, imply that the required time has already elapsed."
         },
         {
           "clause_id": "tesis221460_requisito_usucapion",
           "clause_line": 1144,
           "clause_content": "oblig(ejercer_prescripcion_positiva) IMPLIES oblig(causa_generadora_revelada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the central rule of the thesis. It is redundant with the first clause but is an accurate statement on its own."
         }
       ]
     }

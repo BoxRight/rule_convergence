@@ -25,29 +25,29 @@
           "clause_id": "tesis2020418_principio_fundamental",
           "clause_line": 150,
           "clause_content": "oblig(titularidad_registral) AND oblig(contrato_no_inscrito) IMPLIES not(claim(demanda_prescripcion))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the core holding. Source: '...la falta de inscripción, no resulta oponible contra el titular registral... tampoco es apto para acreditar la causa generadora de la posesión.' The combination of a registered owner and an unregistered contract from a third party defeats the prescription claim."
         },
         {
           "clause_id": "tesis2020418_proteccion_registral",
           "clause_line": 153,
           "clause_content": "oblig(titularidad_registral) IMPLIES claim(oponibilidad_terceros)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately reflects the legal principle of registry publicity. Source: '...conforme a los artículos 2935, fracción I, 2936 y 2944, fracción I, del Código Civil citado... la sanción en caso de que no se haga, es que dichos actos... mas no podrán producir perjuicios contra terceros...'"
         },
         {
           "clause_id": "tesis2020418_limitacion_no_inscripcion",
           "clause_line": 154,
           "clause_content": "oblig(contrato_no_inscrito) IMPLIES not(oblig(oponibilidad_terceros))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly captures the consequence of non-registration. Source: '...la sanción en caso de que no se haga, es que dichos actos sólo surtirán efectos entre quienes los otorgaron, mas no podrán producir perjuicios contra terceros...'"
         },
         {
           "clause_id": "tesis2020418_consecuencia_logica",
           "clause_line": 155,
           "clause_content": "not(oblig(oponibilidad_terceros)) IMPLIES not(claim(demanda_prescripcion))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Oversimplifies the thesis's reasoning. The prescription fails not just due to lack of opposability, but because it is not opposable *to the registered owner* who is the defendant. Source: '...no resulta oponible contra el titular registral que no participó en la celebración del acto jurídico.' The clause removes this crucial context, making the implication too broad."
         }
       ]
     },
@@ -61,29 +61,29 @@
           "clause_id": "tesis2021246_principio_fundamental",
           "clause_line": 169,
           "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures the core principle. The thesis explicitly distinguishes bad faith from good faith possession, stating that while a 'justo título' is not required for the former, proving the 'causa generadora' is still mandatory. Source: '...si bien no puede exigirse la acreditación de un justo título cuando la acción relativa se apoye en la posesión de mala fe, lo cierto es que resulta necesario que el promovente justifique la causa generadora de la posesión...'"
         },
         {
           "clause_id": "tesis2021246_causa_generadora",
           "clause_line": 172,
           "clause_content": "oblig(causa_generadora_probada) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the relationship between generating cause and possession character. The thesis defines the generating cause as the act that enables one to possess as an owner. Source: '...demuestre ser el que tiene el dominio de la cosa y que empezó a poseerla en virtud de una causa que le permite ostentarse como dueño...'"
         },
         {
           "clause_id": "tesis2021246_plazo_mala_fe",
           "clause_line": 175,
           "clause_content": "oblig(ejercicio_mala_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies that time is a necessary element for bad faith prescription. The source text specifies a ten-year requirement. Source: '...la posesión por cinco años si ésta es de buena fe o por diez años cuando es de mala fe...'"
         },
         {
           "clause_id": "tesis2021246_estandar_probatorio",
           "clause_line": 178,
           "clause_content": "oblig(ejercicio_mala_fe) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Acceptable simplification. Within the context of the thesis (adverse possession), exercising a claim based on bad faith possession inherently requires proving the generating cause. The implication is valid. Source: '...en el caso de la posesión de mala fe, debe exigirse un estándar probatorio elevado, a fin de que el accionante revele y acredite en forma fehaciente dicha causa generadora...'"
         }
       ]
     },
@@ -97,29 +97,29 @@
           "clause_id": "tesis2021398_principio_fundamental",
           "clause_line": 200,
           "clause_content": "oblig(allanamiento_demandado) IMPLIES (oblig(ejercicio_buena_fe) AND oblig(causa_generadora_probada)) AND not(oblig(posesion_pacifico_continuo_publico))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models the nuanced core argument of the thesis. It correctly identifies which elements of possession can be proven by the defendant's admission ('causa generadora' and 'buena fe') and which cannot ('pacífica, continua y pública'). Source: '...la ratificación del allanamiento... resultaría apto para probar... la transmisión de la posesión en concepto de propietario y de buena fe... sin embargo... no puede tener como alcance un reconocimiento propio acerca de que esa posesión se haya desarrollado en forma pacífica, continua y pública...'"
         },
         {
           "clause_id": "tesis2021398_prueba_independiente",
           "clause_line": 203,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(prueba_independiente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly captures the thesis's requirement for proof beyond the defendant's admission for certain elements. Source: '...el actor debe probar que ha poseído ininterrumpidamente ese bien por el tiempo exigido, por lo cual, resolver con base en ese mero allanamiento, sería tanto como considerar la imposibilidad de terceros para hacer valer acciones...'"
         },
         {
           "clause_id": "tesis2021398_proteccion_terceros",
           "clause_line": 206,
           "clause_content": "oblig(proteccion_terceros) IMPLIES not(oblig(allanamiento_demandado))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrectly models the logical relationship. The need to protect third parties does not prevent the defendant's admission ('allanamiento'); it merely limits its legal sufficiency for proving public-facing facts like continuous and public possession. The admission is still valid but not all-encompassing. Source: '...confluye en un hecho que pudiera incidir en derechos de terceros o con afectación al interés público, condición exigida para poder realizar esa renuncia...'"
         },
         {
           "clause_id": "tesis2021398_requisito_temporal",
           "clause_line": 209,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(posesion_temporal)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies a basic requirement of adverse possession that is upheld by the thesis. The time period (five years for good faith) must be proven independently and cannot be established by the defendant's admission alone. Source: '...el plazo de más de cinco años previsto para prescribir, tampoco podría justificarse con dicho allanamiento...'"
         }
       ]
     },
@@ -133,36 +133,36 @@
           "clause_id": "tesis2021537_principio_fundamental",
           "clause_line": 229,
           "clause_content": "oblig(ejercicio_mala_fe) AND oblig(documento_con_vicios) AND oblig(posesion_temporal) IMPLIES claim(demanda_prescripcion)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Incomplete. The clause correctly identifies bad faith, a defective document, and time as key elements, but it omits the other essential qualities of possession required by law and mentioned in the text: possessing as an owner ('en concepto de propietario'), and in a peaceful, continuous, and public manner. Source: '...si la posesión ejercida por una persona es originaria, a título de dueño y por el tiempo suficiente, de forma continua, pública y pacífica, es procedente la prescripción adquisitiva de mala fe...'"
         },
         {
           "clause_id": "tesis2021537_compensacion_temporal",
           "clause_line": 232,
           "clause_content": "oblig(documento_con_vicios) AND oblig(ejercicio_mala_fe) IMPLIES oblig(posesion_temporal)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrectly models the causal relationship. The legal requirement for a longer possession period in bad faith is not a consequence of having a defective title. Rather, the fulfillment of this longer time period compensates for the title's defects. The implication is reversed. Source: '...al exigir la ley un lapso mayor para su procedencia... implica un desinterés prolongado y continuo del legítimo propietario...'"
         },
         {
           "clause_id": "tesis2021537_desinteres_propietario",
           "clause_line": 235,
           "clause_content": "oblig(posesion_temporal) IMPLIES oblig(desinteres_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately captures the rationale behind the long time requirement for bad faith prescription. The thesis directly links the extended time period to the presumption of the owner's disinterest. Source: '...al exigir la ley un lapso mayor para su procedencia... implica un desinterés prolongado y continuo del legítimo propietario para recuperar el bien.'"
         },
         {
           "clause_id": "tesis2021537_ejercicio_dominio",
           "clause_line": 238,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models a fundamental and explicitly stated requirement for any adverse possession claim. The thesis opens by stating that possessing 'en concepto de propietario' is the central principle. Source: 'El concepto de propietario constituye el eje rector bajo el cual se analiza la procedencia o improcedencia de la acción adquisitiva por prescripción...'"
         },
         {
           "clause_id": "tesis2021537_contraste_buena_fe",
           "clause_line": 241,
           "clause_content": "oblig(ejercicio_buena_fe) IMPLIES not(oblig(documento_con_vicios))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Contradicts the legal definition of good faith possession. Good faith does not require a perfect title, but rather a 'just title' where the possessor is ignorant of its defects. The source itself contrasts the *degree* of perfection, not its absolute presence or absence. Source: '...la diferencia... radica en el grado de perfección del justo título... requiere que la causa generadora sea lo más perfecta posible.' This does not mean it must be free of all defects."
         }
       ]
     },
@@ -176,43 +176,43 @@
           "clause_id": "tesis2023487_principio_fundamental",
           "clause_line": 261,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(contrato_inmueble_diverso) IMPLIES not(oblig(causa_generadora_probada))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures the core legal holding. The thesis is explicit that a title for one property cannot serve as the generating cause for possessing a different one. Source: '...el contrato de donación celebrado entre las partes materiales sobre un inmueble diverso al que se pretende usucapir... no constituye el justo título que exige la ley...'"
         },
         {
           "clause_id": "tesis2023487_especificidad_titulo",
           "clause_line": 264,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES not(oblig(contrato_inmueble_diverso))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the necessary condition for a valid just title. If the title is for a different property, the good faith claim fails. This is a direct and accurate logical inference from the source. Source: '...dicho acto jurídico debe entenderse en los términos en que fue pactado por las partes, es decir, respecto del bien raíz que ahí se precisó, de manera que no es apto para transmitir la posesión de un inmueble diverso...'"
         },
         {
           "clause_id": "tesis2023487_error_material",
           "clause_line": 267,
           "clause_content": "oblig(error_ubicacion_material) IMPLIES not(oblig(causa_generadora_probada))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately reflects the court's reasoning about the source of the defect. The thesis specifies that a 'just title' must have a defect in the act itself, not in a subsequent physical error. Source: '...los vicios de validez del justo título deben emanar del propio acto jurídico imperfecto, no así de un error humano independiente, ajeno y posterior... como lo es la incorrecta ubicación material del predio...'"
         },
         {
           "clause_id": "tesis2023487_prevencion_fraude",
           "clause_line": 270,
           "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_terceros)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrectly models the relationship. The court's *rejection* of a mismatched title is what serves to protect third parties; the mismatched title itself is the *threat* to that protection. The clause states a consequence that is the opposite of the court's reasoning. Source: '...no considerarlo así, podría dar lugar a operaciones fraudulentas en perjuicio de terceros, contra un principio de seguridad jurídica...'"
         },
         {
           "clause_id": "tesis2023487_proteccion_equidad",
           "clause_line": 273,
           "clause_content": "oblig(contrato_inmueble_diverso) IMPLIES oblig(proteccion_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrectly models the reasoning. The thesis argues that allowing a mismatched title to be valid would be *inequitable* and create absurd results, not that it implies protection. The court's ruling prevents this inequity. Source: '...conforme a un principio de equidad entre los contendientes... no puede aceptarse que en perjuicio de estos últimos, se permitiera al donatario ostentar no sólo el predio que real y efectivamente se donó, sino también el diverso...'"
         },
         {
           "clause_id": "tesis2023487_requisito_buena_fe",
           "clause_line": 276,
           "clause_content": "oblig(ejercicio_buena_fe) AND claim(demanda_prescripcion) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly states a foundational principle that is a premise of the thesis's entire argument. The requirement of a 'justo título' (generating cause) for good faith prescription is mentioned throughout the text. Source: '...la posesión legalmente exigida para la procedencia de la prescripción adquisitiva de buena fe debe ser originaria, es decir, en concepto de dueño o propietario y por este último debe entenderse al que detenta con 'justo título'...'"
         }
       ]
     },
@@ -226,36 +226,36 @@
           "clause_id": "tesis2025237_principio_fundamental",
           "clause_line": 294,
           "clause_content": "oblig(interrupcion_prescripcion) IMPLIES (oblig(proteccion_terceros) AND oblig(ejercicio_derecho_legal))",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrectly models the causal and logical relationships. The thesis states that an 'interrupcion_prescripcion' is *caused* by a third party with contrary interests exercising a legal right. The clause incorrectly frames third-party status ('proteccion_terceros') and the legal action as a *consequence* of the interruption. The logic is backwards."
         },
         {
           "clause_id": "tesis2025237_requisito_tercero",
           "clause_line": 297,
           "clause_content": "claim(interrupcion_prescripcion) IMPLIES oblig(proteccion_terceros)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "The clause is vague and misrepresents the core requirement. The thesis requires the interrupting party to *be* a third party with contrary interests, not that the claim itself implies a general obligation of protection. Source: '...debe ser un tercero ajeno al poseedor, que derivado de dicha acción incida o pretenda interrumpir dicha posesión.' The predicate `proteccion_terceros` is not the correct way to model this specific requirement."
         },
         {
           "clause_id": "tesis2025237_intereses_contrarios",
           "clause_line": 300,
           "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(ejercicio_derecho_legal)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Oversimplification. The clause correctly states that a legal action is involved, but it completely omits the thesis's main and crucial qualifier: that the legal action must be initiated by a third party with *contrary interests*. Source: '...el que promueva tenga intereses contrarios al que tenga la posesión, esto es, debe ser un tercero ajeno al poseedor...'"
         },
         {
           "clause_id": "tesis2025237_contexto_agrario",
           "clause_line": 303,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly identifies a fundamental prerequisite for agrarian adverse possession mentioned in the text. Source: '...aquella persona que hubiere poseído tierras ejidales, en concepto de titular de derechos de ejidatario...'"
         },
         {
           "clause_id": "tesis2025237_plazo_agrario",
           "clause_line": 306,
           "clause_content": "oblig(posesion_como_propietario) IMPLIES oblig(posesion_temporal)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrect logical relationship. Possessing as an owner and possessing for the required time are two separate, co-equal requirements for prescription. One does not imply the other. The source lists them as distinct conditions. Source: '...de manera pacífica, continua y pública durante un periodo de cinco años si la posesión es de buena fe, o de diez si fuera de mala fe...'"
         }
       ]
     },
@@ -269,36 +269,36 @@
           "clause_id": "tesis2025433_principio_fundamental",
           "clause_line": 327,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(conocimiento_hipoteca_infonavit) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly captures the core holding of the thesis. The court's main point is that knowledge of the mortgage does not destroy the good faith of the buyer's just title. Source: '...el que un ulterior adquiriente del inmueble cuente con el conocimiento del contrato de crédito con pacto de no enajenar, no puede fungir como un vicio que anule la buena fe del título imperfecto...'"
         },
         {
           "clause_id": "tesis2025433_conservacion_dominio",
           "clause_line": 330,
           "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "The clause is too vague and abstract. While not strictly false, it fails to capture the specific legal reasoning of the thesis, which is about the owner retaining the right of disposal ('ius abutendi') despite a mortgage covenant. This clause does not model that specific, crucial argument."
         },
         {
           "clause_id": "tesis2025433_proteccion_buena_fe",
           "clause_line": 333,
           "clause_content": "oblig(conocimiento_hipoteca_infonavit) IMPLIES not(not(oblig(ejercicio_buena_fe)))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Overstates the thesis's conclusion. The source argues that knowledge of the mortgage does not *negate* good faith, not that it affirmatively *implies* it. Good faith could be absent for other reasons. The clause creates too strong of an implication. Source: '...no puede fungir como un vicio que anule la buena fe...'"
         },
         {
           "clause_id": "tesis2025433_validez_verbal",
           "clause_line": 336,
           "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the premise of the case described in the thesis. The 'justo título' under examination was a verbal contract, which is a valid form of generating cause for good faith prescription, provided the other elements are met."
         },
         {
           "clause_id": "tesis2025433_distincion_obligacion",
           "clause_line": 339,
           "clause_content": "oblig(cumplir_requisitos_legales) IMPLIES not(not(oblig(posesion_como_propietario)))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "This clause is a stylistic variant of clause 2 and suffers from the same flaw. It is too vague and abstract to be a useful model of the thesis's specific argument regarding the retention of ownership rights despite a mortgage."
         }
       ]
     },
@@ -312,36 +312,36 @@
           "clause_id": "tesis2029251_principio_fundamental",
           "clause_line": 357,
           "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES (oblig(interrupcion_prescripcion) AND oblig(proteccion_registral))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Partially correct but misleading. The possessor's recognition ('ejercicio_derecho_legal' is a poor predicate choice here) does cause the 'interrupcion_prescripcion'. However, it does not directly imply 'proteccion_registral'. The *purpose* of the law is to protect title holders, but the act itself only interrupts the time period. Source: '...la interrupción sólo tiene como efecto inutilizar todo el tiempo transcurrido...'"
         },
         {
           "clause_id": "tesis2029251_efecto_interrupcion",
           "clause_line": 360,
           "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(inutilizacion_tiempo)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models the specific legal effect of interruption. The thesis is explicit that the consequence of the possessor's recognition is to nullify the time that has passed. Source: '...la interrupción sólo tiene como efecto inutilizar todo el tiempo transcurrido antes de que se materializara el reconocimiento...'"
         },
         {
           "clause_id": "tesis2029251_permanencia_buena_fe",
           "clause_line": 363,
           "clause_content": "oblig(ejercicio_buena_fe) AND oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_mala_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Logical contradiction. The clause states that good faith plus an act of recognition results in bad faith, which is incoherent. The source text says that recognition *interrupts the time* of good faith possession because good faith ceases to exist from that moment forward; it does not transform the prior state. Source: '...desde que se conozcan los vicios del justo título se interrumpe el tiempo de posesión de buena fe...'"
         },
         {
           "clause_id": "tesis2029251_validez_constitucional",
           "clause_line": 366,
           "clause_content": "oblig(interrupcion_prescripcion) IMPLIES oblig(proteccion_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Confuses the purpose of a law with its direct logical consequence. The law of interruption exists to provide 'seguridad jurídica a los titulares de un justo título,' but the interruption itself simply nullifies the elapsed time. The clause makes a poor logical leap."
         },
         {
           "clause_id": "tesis2029251_proteccion_titulares",
           "clause_line": 369,
           "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(proteccion_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "This is a flawed summary of the thesis's rationale. The act of recognition by the possessor does not in itself generate registry protection; it is an event that, under the law, protects the actual title holder's rights by stopping the adverse possession clock."
         }
       ]
     },
@@ -355,36 +355,36 @@
           "clause_id": "tesis2030499_principio_fundamental",
           "clause_line": 383,
           "clause_content": "claim(demanda_prescripcion) IMPLIES (oblig(aplicacion_supletoria) AND oblig(ejercicio_derecho_legal))",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Fails to capture the core argument. The thesis is not about whether supplementary law applies, but *how* it applies—with nuance and flexibility for agrarian customs. The clause is a tautology that misses this central point. Source: '...la legislación civil que regula la prescripción adquisitiva puede aplicarse supletoriamente... con los matices propios de la materia agraria.'"
         },
         {
           "clause_id": "tesis2030499_sin_justo_titulo",
           "clause_line": 386,
           "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrect logical relationship. The requirement to prove a 'causa generadora' is a core tenet of agrarian prescription law itself, not a consequence of applying civil law supplementarily. The source states this as a pre-existing rule. Source: '...en los juicios agrarios no se requiere de un justo título... sino que sólo es indispensable acreditar la causa generadora de la posesión...'"
         },
         {
           "clause_id": "tesis2030499_adaptacion_cultural",
           "clause_line": 389,
           "clause_content": "oblig(ejercicio_derecho_legal) IMPLIES oblig(ejercicio_buena_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Gross overgeneralization and incorrect as a legal principle. The thesis notes that agrarian contracts are often based on good faith, but it does not state that exercising any legal right implies good faith. Bad faith adverse possession is a valid legal action."
         },
         {
           "clause_id": "tesis2030499_cesion_valida",
           "clause_line": 392,
           "clause_content": "oblig(contrato_no_inscrito) AND oblig(ejercicio_buena_fe) IMPLIES oblig(causa_generadora_probada)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly models the thesis's core argument for flexibility. The court should consider informal, unregistered agreements as a valid generating cause, especially in a good faith context, without the strict formalities of civil law. Source: '...no puede exigirse que los contratos de cesión de derechos agrarios sean de fecha cierta con el rigor de la materia civil, pues es una práctica común... celebrarlos sin cumplir con todas las formalidades...'"
         },
         {
           "clause_id": "tesis2030499_alcance_supletorio",
           "clause_line": 395,
           "clause_content": "oblig(aplicacion_supletoria) IMPLIES oblig(posesion_como_propietario)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "Incorrect logical relationship. The requirement to possess as an owner is native to agrarian prescription law, not a result of applying supplementary civil law. The source confirms this is a pre-existing condition for the claim."
         }
       ]
     },
@@ -398,43 +398,43 @@
           "clause_id": "tesis2030500_principio_fundamental",
           "clause_line": 412,
           "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES not(oblig(causa_generadora_probada))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Perfectly models the core legal principle of the thesis. The text is unambiguous that a title declared judicially null is not a valid generating cause. Source: '...si la acción de prescripción positiva se sustenta en un título declarado judicialmente nulo, éste no es apto para demostrar la causa que dio origen a la posesión...'"
         },
         {
           "clause_id": "tesis2030500_efecto_nulidad",
           "clause_line": 415,
           "clause_content": "oblig(nulidad_judicial_titulo) IMPLIES oblig(ausencia_efecto_juridico)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correctly captures the consequence of a judicial declaration of nullity (specifically for non-existence). Source: 'Al ser inexistente el acto traslativo del inmueble respectivo, significa que nunca produjo efecto alguno...'"
         },
         {
           "clause_id": "tesis2030500_acto_inexistente",
           "clause_line": 418,
           "clause_content": "oblig(ausencia_efecto_juridico) IMPLIES oblig(acto_inexistente)",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Accurately models the court's reasoning. The thesis links the total absence of legal effect directly to the legal category of a non-existent act. Source: '...implica que no existió el acto traslativo de dominio... Al ser inexistente... nunca produjo efecto alguno...'"
         },
         {
           "clause_id": "tesis2030500_imposibilidad_propietario",
           "clause_line": 421,
           "clause_content": "oblig(acto_inexistente) IMPLIES not(oblig(posesion_como_propietario))",
-          "rating": "",
-          "justification": ""
+          "rating": "accept",
+          "justification": "Correct. If the generating cause is a non-existent act, it cannot provide the basis for possessing as an owner. Source: '...al no acreditarse la existencia del acto traslativo de dominio que dio origen a la posesión, no se genera la convicción de que la parte accionante posee en concepto de dueña o propietaria...'"
         },
         {
           "clause_id": "tesis2030500_imposibilidad_buena_fe",
           "clause_line": 424,
           "clause_content": "oblig(nulidad_judicial_titulo) AND claim(demanda_prescripcion) IMPLIES oblig(ejercicio_mala_fe)",
-          "rating": "",
-          "justification": ""
+          "rating": "revise",
+          "justification": "Overstates the conclusion. The thesis says a nullified title prevents proof of *good faith*. It does not state this automatically means the possession is in *bad faith*. Bad faith is a separate legal category that is not explicitly addressed or concluded here. Source: '...esa nulidad genera que no se acredite la posesión de buena fe por carecer precisamente de un título...'"
         },
         {
           "clause_id": "tesis2030500_orden_publico",
           "clause_line": 427,
           "clause_content": "claim(demanda_prescripcion) IMPLIES oblig(proteccion_registral)",
-          "rating": "",
-          "justification": ""
+          "rating": "reject",
+          "justification": "The clause is irrelevant to the thesis's main argument and makes an unsupported logical leap. The source discusses usucapion as a matter of public order but does not connect it to 'proteccion_registral' in the manner this clause suggests."
         }
       ]
     }

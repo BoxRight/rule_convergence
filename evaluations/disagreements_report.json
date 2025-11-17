@@ -1,0 +1,875 @@
+[
+  {
+    "clause_id": "tesis2008083_carga_prueba",
+    "thesis_id": "2008083",
+    "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROOF REQUIREMENTS FOR JUST TITLE",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Wrong predicate - should be 'probada' not 'revelada'. Source: 'la carga de la prueba recae en la par...",
+    "justification_2": "Correctly states a foundational requirement for an adverse possession claim, which is a necessary pr..."
+  },
+  {
+    "clause_id": "tesis2009239_requisitos_mala_fe",
+    "thesis_id": "2009239",
+    "thesis_title": "BAD FAITH ADVERSE POSSESSION WITHOUT JUST TITLE",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models bad faith possession requirements. Source: bad faith requires 'posesión es de mala ...",
+    "justification_2": "Incomplete. The clause correctly lists possession as owner and for a required time as necessary elem..."
+  },
+  {
+    "clause_id": "tesis2009239_revelacion_causa",
+    "thesis_id": "2009239",
+    "thesis_title": "BAD FAITH ADVERSE POSSESSION WITHOUT JUST TITLE",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Incomplete - should also require proving, not just revealing. Source: 'debe revelarse y probarse la ...",
+    "justification_2": "Correct. The thesis confirms that for both good and bad faith claims, the plaintiff must reveal the ..."
+  },
+  {
+    "clause_id": "tesis2011927_proteccion_defensa",
+    "thesis_id": "2011927",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION - PROCEDURAL CONGRUENCE PRINCIPLE",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong legal consequence. Source: varying litis would 'violar el derecho de defensa del enjuiciado' -...",
+    "justification_2": "Uses an incorrect predicate and misrepresents the harm. The thesis states that varying the litis har..."
+  },
+  {
+    "clause_id": "tesis2014940_principio_fundamental",
+    "thesis_id": "2014940",
+    "thesis_title": "RES JUDICATA - GOOD FAITH VS BAD FAITH AS DIFFERENT CAUSES",
+    "evaluator_1": "reject",
+    "evaluator_2": "revise",
+    "justification_1": "Logical impossibility - good faith AND bad faith cannot coexist. Source discusses comparing separate...",
+    "justification_2": "The logical structure is flawed. Using 'AND' suggests a single possession can be both good and bad f..."
+  },
+  {
+    "clause_id": "tesis2016571_compromiso_teoria",
+    "thesis_id": "2016571",
+    "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models complete proof burden. Source: Article 1152.I requires 'cinco años, cuando se posee...",
+    "justification_2": "Irrelevant. This clause correctly lists the elements of a good faith claim, but the thesis is not ab..."
+  },
+  {
+    "clause_id": "tesis2016571_consistencia_temporal",
+    "thesis_id": "2016571",
+    "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models temporal requirement. Source: good faith requires 'cinco años' per Article 1152.I -...",
+    "justification_2": "These clauses are irrelevant to the procedural topic of the thesis, which is about the prohibition o..."
+  },
+  {
+    "clause_id": "tesis2016571_prohibicion_variacion",
+    "thesis_id": "2016571",
+    "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models mutually exclusive theories. Source: cannot vary 'para ajustarse a otro de sus supu...",
+    "justification_2": "The clause states a definitional truth but misses the procedural focus of the thesis. The key point ..."
+  },
+  {
+    "clause_id": "tesis2016571_requisitos_buena_fe",
+    "thesis_id": "2016571",
+    "thesis_title": "GOOD FAITH ADVERSE POSSESSION - PROHIBITION AGAINST VARYING CLAIMS DURING TRIAL",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Confusing disjunction. Source: Article 806 defines good faith as 'título suficiente... o bien, el qu...",
+    "justification_2": "These clauses are irrelevant to the procedural topic of the thesis, which is about the prohibition o..."
+  },
+  {
+    "clause_id": "tesis2017366_buena_fe_tipos",
+    "thesis_id": "2017366",
+    "thesis_title": "ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models two types of good faith possessors. Source: '(a) los que tienen un título suficient...",
+    "justification_2": "The clause attempts to model the two types of good faith possessors described, but the predicates ar..."
+  },
+  {
+    "clause_id": "tesis2017366_naturaleza_condicional",
+    "thesis_id": "2017366",
+    "thesis_title": "ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly links good faith to diligence requirement. Source: good faith 'permanencia está condiciona...",
+    "justification_2": "The clause introduces a concept (diligence) that is not the focus of this thesis. The source text de..."
+  },
+  {
+    "clause_id": "tesis2017366_presuncion_legal",
+    "thesis_id": "2017366",
+    "thesis_title": "ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models rebuttable presumption. Source: 'el legislador estableció en favor del adquirente.....",
+    "justification_2": "Incorrect. The law does not presume all prescription claims are in good faith; bad faith claims are ..."
+  },
+  {
+    "clause_id": "tesis2017366_principio_fundamental",
+    "thesis_id": "2017366",
+    "thesis_title": "ADVERSE POSSESSION CLASSIFICATION BY QUALITY OF POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Awkward disjunction doesn't capture classification well. Source discusses 'la posesión puede ser de ...",
+    "justification_2": "Poorly models the content. The thesis provides a classification of possession types, it does not est..."
+  },
+  {
+    "clause_id": "tesis2017539_analisis_factual",
+    "thesis_id": "2017539",
+    "thesis_title": "DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly links presumption to physical analysis. Source: using human presumptions helps 'establecer...",
+    "justification_2": "Incorrectly models the relationship. 'Presuncion_humana' is the evidentiary method used to analyze t..."
+  },
+  {
+    "clause_id": "tesis2017539_carga_probatoria",
+    "thesis_id": "2017539",
+    "thesis_title": "DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models government's burden. Source: government must prove third party 'sabía que su inmueb...",
+    "justification_2": "The logical structure is incoherent and does not reflect the allocation of burdens of proof or the e..."
+  },
+  {
+    "clause_id": "tesis2017539_estandar_conocimiento",
+    "thesis_id": "2017539",
+    "thesis_title": "DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Tautology with no informational content. Says 'physical possibility implies either bad faith or good...",
+    "justification_2": "The clause is a logically valid but uninformative tautology. It does not model any specific reasonin..."
+  },
+  {
+    "clause_id": "tesis2017539_principio_fundamental",
+    "thesis_id": "2017539",
+    "thesis_title": "DOMAIN FORFEITURE - INDEPENDENT RESIDENCES AND GOOD FAITH KNOWLEDGE",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Backwards relationship. Good faith claim requires showing LACK of physical possibility of knowledge,...",
+    "justification_2": "Reverses the logical relationship. The court's analysis of the 'posibilidad_fisica_conocimiento' is ..."
+  },
+  {
+    "clause_id": "tesis2017540_carga_dinamica",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models burden shift. Source: 'la carga probatoria... se actualiza hasta que el representan...",
+    "justification_2": "The clause is abstract and imprecise. The state's initial evidence doesn't 'imply' the dynamic burde..."
+  },
+  {
+    "clause_id": "tesis2017540_deber_actuar",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models duty to act. Source: bad faith includes those who 'tuvo conocimiento... y no lo not...",
+    "justification_2": "Reverses the logic. The source text defines bad faith as the combination of knowledge and the *failu..."
+  },
+  {
+    "clause_id": "tesis2017540_presuncion_buena_fe",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models presumption. Source: 'la buena fe... se presume es honesta, diligente' and third pa...",
+    "justification_2": "Incorrect. The dynamic burden of proof is the process by which the owner's claim of good faith is ch..."
+  },
+  {
+    "clause_id": "tesis2017540_principio_fundamental",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Reverses success requirement. Source: forfeiture 'únicamente puede proceder... en su contra si se ac...",
+    "justification_2": "Incorrectly structured. The thesis states forfeiture proceeds if bad faith is proven, which consists..."
+  },
+  {
+    "clause_id": "tesis2017540_probabilidad_factica",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly links physical possibility to evidentiary presumption. Source: when 'deba tener conocimien...",
+    "justification_2": "Reverses the relationship. Human presumption is the method of reasoning used to infer whether a phys..."
+  },
+  {
+    "clause_id": "tesis2017540_requisito_conocimiento",
+    "thesis_id": "2017540",
+    "thesis_title": "DOMAIN FORFEITURE - DYNAMIC BURDEN OF PROOF AND BAD FAITH STANDARD",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Circular/backwards. Dynamic burden arises FROM evidentiary elements (clause 690), not the reverse. S...",
+    "justification_2": "Reverses the causality. The submission of initial probative elements by the state is the trigger for..."
+  },
+  {
+    "clause_id": "tesis2018505_orden_publico",
+    "thesis_id": "2018505",
+    "thesis_title": "ADVERSE POSSESSION - ALLANAMIENTO CANNOT DEMONSTRATE POSSESSION ATTRIBUTES",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models prescription's public policy basis. Source: 'La prescripción positiva es una instit...",
+    "justification_2": "Reverses the logical relationship. Proving the attributes of possession is a *requirement* for a suc..."
+  },
+  {
+    "clause_id": "tesis2020418_principio_fundamental",
+    "thesis_id": "2020418",
+    "thesis_title": "ADVERSE POSSESSION AND UNREGISTERED CONTRACTS",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "The clause captures the core prohibition but oversimplifies the dual reasoning in the source. The te...",
+    "justification_2": "Correctly models the core holding. Source: '...la falta de inscripción, no resulta oponible contra e..."
+  },
+  {
+    "clause_id": "tesis2021398_proteccion_terceros",
+    "thesis_id": "2021398",
+    "thesis_title": "Usucapion - Limits of Allanamiento in Proving Possession Qualities",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Accurately models third-party protection limitation. Source: qualities that 'pudiera incidir en dere...",
+    "justification_2": "Incorrectly models the logical relationship. The need to protect third parties does not prevent the ..."
+  },
+  {
+    "clause_id": "tesis2021537_compensacion_temporal",
+    "thesis_id": "2021537",
+    "thesis_title": "Bad Faith Adverse Possession - Defective Documents Are Less Significant",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Accurately models temporal compensation principle. Source: 'al exigir la ley un lapso mayor para su ...",
+    "justification_2": "Incorrectly models the causal relationship. The legal requirement for a longer possession period in ..."
+  },
+  {
+    "clause_id": "tesis2021537_contraste_buena_fe",
+    "thesis_id": "2021537",
+    "thesis_title": "Bad Faith Adverse Possession - Defective Documents Are Less Significant",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Accurately captures good faith distinction. Source: 'la diferencia entre este tipo de prescripción a...",
+    "justification_2": "Contradicts the legal definition of good faith possession. Good faith does not require a perfect tit..."
+  },
+  {
+    "clause_id": "tesis2021537_principio_fundamental",
+    "thesis_id": "2021537",
+    "thesis_title": "Bad Faith Adverse Possession - Defective Documents Are Less Significant",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly captures that bad faith tolerates defective documents. Source: 'procede la prescripción ad...",
+    "justification_2": "Incomplete. The clause correctly identifies bad faith, a defective document, and time as key element..."
+  },
+  {
+    "clause_id": "tesis202177_principio_fundamental",
+    "thesis_id": "202177",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models agrarian prescription requirements. Source: Article 48 requires possession 'en conc...",
+    "justification_2": "Incomplete. The clause omits the crucial requirements of peaceful, continuous, public possession, an..."
+  },
+  {
+    "clause_id": "tesis2023487_prevencion_fraude",
+    "thesis_id": "2023487",
+    "thesis_title": "Good Faith Adverse Possession - Donation Contract for Different Property Cannot Constitute Just Title",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly captures fraud prevention. Source: 'no considerarlo así, podría dar lugar a operaciones fr...",
+    "justification_2": "Incorrectly models the relationship. The court's *rejection* of a mismatched title is what serves to..."
+  },
+  {
+    "clause_id": "tesis2023487_proteccion_equidad",
+    "thesis_id": "2023487",
+    "thesis_title": "Good Faith Adverse Possession - Donation Contract for Different Property Cannot Constitute Just Title",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Accurately models equity protection. Source: 'conforme a un principio de equidad entre los contendie...",
+    "justification_2": "Incorrectly models the reasoning. The thesis argues that allowing a mismatched title to be valid wou..."
+  },
+  {
+    "clause_id": "tesis2024088_limitacion_posesion_derivada",
+    "thesis_id": "2024088",
+    "thesis_title": "BAD FAITH ADVERSE POSSESSION WITHOUT TITLE",
+    "evaluator_1": "reject",
+    "evaluator_2": "accept",
+    "justification_1": "Nonsensical - says temporal possession excludes ownership character. Source: 'la posesión derivada.....",
+    "justification_2": "Correctly models the critical distinction between derived and original possession, which is a core p..."
+  },
+  {
+    "clause_id": "tesis2025237_intereses_contrarios",
+    "thesis_id": "2025237",
+    "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Accurately represents opposing interests requirement. Source: 'no debe interpretarse en un sentido g...",
+    "justification_2": "Oversimplification. The clause correctly states that a legal action is involved, but it completely o..."
+  },
+  {
+    "clause_id": "tesis2025237_plazo_agrario",
+    "thesis_id": "2025237",
+    "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Standard temporal framework. Source: Article 48 establishes 'cinco años si la posesión es de buena f...",
+    "justification_2": "Incorrect logical relationship. Possessing as an owner and possessing for the required time are two ..."
+  },
+  {
+    "clause_id": "tesis2025237_principio_fundamental",
+    "thesis_id": "2025237",
+    "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Excellently captures dual requirement for interruption. Source: Article 48 paragraph 3 mentions 'cua...",
+    "justification_2": "Incorrectly models the causal and logical relationships. The thesis states that an 'interrupcion_pre..."
+  },
+  {
+    "clause_id": "tesis2025237_requisito_tercero",
+    "thesis_id": "2025237",
+    "thesis_title": "Agrarian Adverse Possession - Third Party Requirement for Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models third-party requirement. Source: 'debe ser un tercero ajeno al poseedor... que deri...",
+    "justification_2": "The clause is vague and misrepresents the core requirement. The thesis requires the interrupting par..."
+  },
+  {
+    "clause_id": "tesis2025433_conservacion_dominio",
+    "thesis_id": "2025433",
+    "thesis_title": "Good Faith Adverse Possession - Knowledge of INFONAVIT Mortgage Does Not Vitiate Just Title",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models that contractual obligations don't eliminate ownership powers. Source: 'el ius abut...",
+    "justification_2": "The clause is too vague and abstract. While not strictly false, it fails to capture the specific leg..."
+  },
+  {
+    "clause_id": "tesis2029251_principio_fundamental",
+    "thesis_id": "2029251",
+    "thesis_title": "Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly links legal rights exercise to interruption validity. Source: Article 1846.III establishes...",
+    "justification_2": "Partially correct but misleading. The possessor's recognition ('ejercicio_derecho_legal' is a poor p..."
+  },
+  {
+    "clause_id": "tesis2029251_proteccion_titulares",
+    "thesis_id": "2029251",
+    "thesis_title": "Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Accurately represents protection purpose. Source emphasizes interruption's 'único objeto brindar seg...",
+    "justification_2": "This is a flawed summary of the thesis's rationale. The act of recognition by the possessor does not..."
+  },
+  {
+    "clause_id": "tesis2029251_validez_constitucional",
+    "thesis_id": "2029251",
+    "thesis_title": "Good Faith Adverse Possession Interruption - Constitutional Validity of Recognition-Based Interruption",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models constitutional validity. Source: interruption mechanism 'no viola el artículo 21 de...",
+    "justification_2": "Confuses the purpose of a law with its direct logical consequence. The law of interruption exists to..."
+  },
+  {
+    "clause_id": "tesis2030499_adaptacion_cultural",
+    "thesis_id": "2030499",
+    "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too broad - exercising legal rights doesn't necessarily imply good faith. Source discusses cultural ...",
+    "justification_2": "Gross overgeneralization and incorrect as a legal principle. The thesis notes that agrarian contract..."
+  },
+  {
+    "clause_id": "tesis2030499_alcance_supletorio",
+    "thesis_id": "2030499",
+    "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly represents that supplementary application maintains ownership character requirement. Sourc...",
+    "justification_2": "Incorrect logical relationship. The requirement to possess as an owner is native to agrarian prescri..."
+  },
+  {
+    "clause_id": "tesis2030499_principio_fundamental",
+    "thesis_id": "2030499",
+    "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models supplementary civil law application in agrarian context. Source: 'la legislación ci...",
+    "justification_2": "Fails to capture the core argument. The thesis is not about whether supplementary law applies, but *..."
+  },
+  {
+    "clause_id": "tesis2030499_sin_justo_titulo",
+    "thesis_id": "2030499",
+    "thesis_title": "Agrarian Adverse Possession - Supplementary Application of Civil Law with Agrarian Adaptations",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Accurately captures that just title not required but generating cause still needed. Source cites jur...",
+    "justification_2": "Incorrect logical relationship. The requirement to prove a 'causa generadora' is a core tenet of agr..."
+  },
+  {
+    "clause_id": "tesis2030500_orden_publico",
+    "thesis_id": "2030500",
+    "thesis_title": "Adverse Possession - Judicially Nullified Title Cannot Establish Generating Cause",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models public policy protection. Source emphasizes that 'la causa generadora de la posesió...",
+    "justification_2": "The clause is irrelevant to the thesis's main argument and makes an unsupported logical leap. The so..."
+  },
+  {
+    "clause_id": "tesis2030717_estatus_municipal",
+    "thesis_id": "2030717",
+    "thesis_title": "Adverse Possession - Improcedence Against Municipal Public Domain Properties",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Misidentifies the legal consequence. Source discusses imprescriptibility and special legal status ('...",
+    "justification_2": "The clause introduces an irrelevant concept. The thesis's reasoning is based on the property's publi..."
+  },
+  {
+    "clause_id": "tesis204300_marco_legal_nuevo",
+    "thesis_id": "204300",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING REQUIREMENTS",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Overly broad - makes ALL agrarian possession sufficient for prescription. Source: Article 48 enables...",
+    "justification_2": "Oversimplification leading to a false statement. Agrarian possession is a necessary but not sufficie..."
+  },
+  {
+    "clause_id": "tesis204300_posesion_anterior",
+    "thesis_id": "204300",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING REQUIREMENTS",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Confusing predicate use. Source: 'los términos... deben empezar a contar a partir de la vigencia de ...",
+    "justification_2": "Despite awkward predicates, this clause correctly models the core holding of the thesis: time of pos..."
+  },
+  {
+    "clause_id": "tesis204375_determinacion_judicial",
+    "thesis_id": "204375",
+    "thesis_title": "JUST TITLE REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models proof requirement. Source: 'el Juez estaría imposibilitado para establecer si es en...",
+    "justification_2": "Reverses the logical relationship. The thesis argues that proving the generating cause is necessary ..."
+  },
+  {
+    "clause_id": "tesis204375_titulo_suficiente",
+    "thesis_id": "204375",
+    "thesis_title": "JUST TITLE REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Too weak - doesn't guarantee good faith. Source: proving generating cause necessary but not sufficie...",
+    "justification_2": "Correctly models the connection for a 'privileged' good faith claim. When a plaintiff's case is base..."
+  },
+  {
+    "clause_id": "tesis206322_derecho_interrupcion",
+    "thesis_id": "206322",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING FROM LAW EFFECTIVE DATE",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Backwards causation. Source: agrarian possession under 1992 Law enables interruption, not vice versa...",
+    "justification_2": "The clause is nonsensical and fails to model the thesis's reasoning. The thesis uses the existence o..."
+  },
+  {
+    "clause_id": "tesis206322_posesion_anterior",
+    "thesis_id": "206322",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING FROM LAW EFFECTIVE DATE",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Same confusing predicate as 204300. Source: 'se debe tomar en cuenta únicamente el tiempo que se ha ...",
+    "justification_2": "Despite the awkward predicates, this clause correctly models the central holding: possession time pr..."
+  },
+  {
+    "clause_id": "tesis206322_proteccion_constitucional",
+    "thesis_id": "206322",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION TIMING FROM LAW EFFECTIVE DATE",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models constitutional protection. Source: counting pre-1992 time 'constituiría una aplicac...",
+    "justification_2": "Too generic and misses the specific constitutional point. The thesis invokes Article 14 to prohibit ..."
+  },
+  {
+    "clause_id": "tesis210115_mala_fe_estatal",
+    "thesis_id": "210115",
+    "thesis_title": "STATE/MUNICIPAL PROPERTY ADVERSE POSSESSION REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models bad faith double-time. Source: 'aquellos casos en que la posesión... sea de mala fe...",
+    "justification_2": "Incomplete. The clause correctly identifies the special 20-year time period for bad faith claims aga..."
+  },
+  {
+    "clause_id": "tesis210115_principio_fundamental",
+    "thesis_id": "210115",
+    "thesis_title": "STATE/MUNICIPAL PROPERTY ADVERSE POSSESSION REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models double-time requirement for state/municipal property. Source: Article 918 'los bien...",
+    "justification_2": "Incomplete. The clause omits the essential requirements that the possession must be continuous and p..."
+  },
+  {
+    "clause_id": "tesis210115_requisitos_posesion",
+    "thesis_id": "210115",
+    "thesis_title": "STATE/MUNICIPAL PROPERTY ADVERSE POSSESSION REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly links good faith to temporal requirement. Source: good faith ownership possession of state...",
+    "justification_2": "Incorrect logical relationship. The 10-year period is a separate legal requirement that must be fulf..."
+  },
+  {
+    "clause_id": "tesis210588_marco_legal_nuevo",
+    "thesis_id": "210588",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Same overbroad issue as 204300. Agrarian possession alone insufficient - must also meet all Article ...",
+    "justification_2": "Oversimplification that results in a falsehood. Agrarian possession alone does not create a right to..."
+  },
+  {
+    "clause_id": "tesis210588_posesion_anterior",
+    "thesis_id": "210588",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Same predicate confusion as prior theses. Source: pre-1992 possession under old LFRA doesn't count t...",
+    "justification_2": "Correctly models the thesis's main point. It shows that possession time prior to the 1992 law (`not(..."
+  },
+  {
+    "clause_id": "tesis210588_principio_fundamental",
+    "thesis_id": "210588",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models good faith agrarian prescription after waiting period. Source: Article 48 requires ...",
+    "justification_2": "Irrelevant and incomplete. The clause lists some substantive requirements but completely ignores the..."
+  },
+  {
+    "clause_id": "tesis210588_proteccion_constitucional",
+    "thesis_id": "210588",
+    "thesis_title": "AGRARIAN ADVERSE POSSESSION 5-YEAR WAITING PERIOD",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models constitutional protection. Source: counting only post-1992 time avoids 'transgredir...",
+    "justification_2": "Too vague. The thesis provides a specific constitutional argument regarding the prohibition of retro..."
+  },
+  {
+    "clause_id": "tesis210589_conocimiento_contradiccion",
+    "thesis_id": "210589",
+    "thesis_title": "MUTUAL EXCLUSIVITY OF GOOD FAITH AND BAD FAITH POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Same tautology - says 'know defects AND know defects'. Source: 'contando con él, se conozcan y desco...",
+    "justification_2": "These clauses are tautologies (A and not(not(A)) is just A) that provide no information. They fail t..."
+  },
+  {
+    "clause_id": "tesis210589_consistencia_procesal",
+    "thesis_id": "210589",
+    "thesis_title": "MUTUAL EXCLUSIVITY OF GOOD FAITH AND BAD FAITH POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong implication - ownership possession doesn't imply good faith. Source discusses procedural consi...",
+    "justification_2": "Incorrect. Possessing 'como propietario' is a necessary condition for both good faith and bad faith ..."
+  },
+  {
+    "clause_id": "tesis210589_titulo_contradiccion",
+    "thesis_id": "210589",
+    "thesis_title": "MUTUAL EXCLUSIVITY OF GOOD FAITH AND BAD FAITH POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Tautology - says 'proven cause AND proven cause' (double negative = positive). Source: 'no puede ocu...",
+    "justification_2": "These clauses are tautologies (A and not(not(A)) is just A) that provide no information. They fail t..."
+  },
+  {
+    "clause_id": "tesis210888_dominio_economico",
+    "thesis_id": "210888",
+    "thesis_title": "POSSESSION AS OWNER REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly links ownership character to proving generating cause. Source: must prove 'que el poseedor...",
+    "justification_2": "Reverses the logical relationship. The thesis explains that you must demonstrate the generating caus..."
+  },
+  {
+    "clause_id": "tesis210888_posesion_ambas_fe",
+    "thesis_id": "210888",
+    "thesis_title": "POSSESSION AS OWNER REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models faith requirement. Source: 'la exigencia de poseer en concepto de propietario... co...",
+    "justification_2": "Models a trivial tautology and reverses the thesis's logic. The source states that the requirement o..."
+  },
+  {
+    "clause_id": "tesis210890_objetivo_registral",
+    "thesis_id": "210890",
+    "thesis_title": "ADVERSE POSSESSION BY ACTION OR EXCEPTION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - should be against registered owner, not that prescription implies registration. So...",
+    "justification_2": "The clause is ambiguous and misleading. A successful prescription action *leads to* registered title..."
+  },
+  {
+    "clause_id": "tesis211744_determinacion_temporal",
+    "thesis_id": "211744",
+    "thesis_title": "REVEALING POSSESSION CAUSE REQUIREMENT",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'para poder determinar... ...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to 'precisa..."
+  },
+  {
+    "clause_id": "tesis213224_determinacion_temporal",
+    "thesis_id": "213224",
+    "thesis_title": "REVEALING POSSESSION ORIGIN REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'para precisar el momento ...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to determin..."
+  },
+  {
+    "clause_id": "tesis213224_tipo_posesion",
+    "thesis_id": "213224",
+    "thesis_title": "REVEALING POSSESSION ORIGIN REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "reject",
+    "evaluator_2": "accept",
+    "justification_1": "Wrong on multiple levels: (1) revealing cause doesn't create ownership character or determine posses...",
+    "justification_2": "Accurately models one of the key reasons for the rule. The thesis explains that revealing the cause ..."
+  },
+  {
+    "clause_id": "tesis215033_debido_proceso",
+    "thesis_id": "215033",
+    "thesis_title": "ADVERSE POSSESSION ACTION TARGET REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models due process requirement. Source: 'es evidente que se violaron en perjuicio de aquél...",
+    "justification_2": "Too general. The statement is correct in the abstract, but it omits the crucial detail of the thesis..."
+  },
+  {
+    "clause_id": "tesis215033_principio_fundamental",
+    "thesis_id": "215033",
+    "thesis_title": "ADVERSE POSSESSION ACTION TARGET REQUIREMENTS",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too broad - thesis is about who must be named as defendant when property is in marital community but...",
+    "justification_2": "Fails to model the core legal issue. The thesis focuses on the procedural rights of a *non-registere..."
+  },
+  {
+    "clause_id": "tesis215033_requisito_procesal",
+    "thesis_id": "215033",
+    "thesis_title": "ADVERSE POSSESSION ACTION TARGET REQUIREMENTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models procedural congruence requirement. Source: 'también debieron demandar a la quejosa....",
+    "justification_2": "Too abstract and fails to model the specific procedural rule established by the thesis. The core iss..."
+  },
+  {
+    "clause_id": "tesis216431_determinacion_judicial",
+    "thesis_id": "216431",
+    "thesis_title": "JUST TITLE REQUIREMENT FOR GOOD FAITH ADVERSE POSSESSION",
+    "evaluator_1": "reject",
+    "evaluator_2": "revise",
+    "justification_1": "Wrong - revealing cause doesn't imply good faith. Source: 'el juzgador no estuvo en aptitud de conoc...",
+    "justification_2": "Overstates the implication. The thesis states that revealing the cause is necessary for the judge 'a..."
+  },
+  {
+    "clause_id": "tesis216431_determinacion_temporal",
+    "thesis_id": "216431",
+    "thesis_title": "JUST TITLE REQUIREMENT FOR GOOD FAITH ADVERSE POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'a fin de determinar la ca...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause is a necessary step for the judge to determin..."
+  },
+  {
+    "clause_id": "tesis221460_determinacion_temporal",
+    "thesis_id": "221460",
+    "thesis_title": "ORIGIN AND TIMING REQUIREMENT FOR ADVERSE POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'y cuándo ocurrió... y cuá...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause and its timing is a necessary step for the ju..."
+  },
+  {
+    "clause_id": "tesis221758_determinacion_temporal",
+    "thesis_id": "221758",
+    "thesis_title": "REVEALING AND PROVING POSSESSION ORIGIN REQUIREMENT",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'así precisar el momento e...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause is necessary to 'precisar el momento en que d..."
+  },
+  {
+    "clause_id": "tesis223431_principio_fundamental",
+    "thesis_id": "223431",
+    "thesis_title": "GOOD/BAD FAITH AS CONDITIONS NOT QUALITIES OF POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Incomplete and logically problematic. Source: Articles 1180-1181 require 'en concepto de propietario...",
+    "justification_2": "This clause directly contradicts the thesis's central argument. The thesis explicitly separates the ..."
+  },
+  {
+    "clause_id": "tesis224038_determinacion_temporal",
+    "thesis_id": "224038",
+    "thesis_title": "PROOF REQUIREMENT FOR GENERATING CAUSE OF POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - proving cause doesn't create time obligation. Source: 'en qué momentos empezó y se...",
+    "justification_2": "Reverses the logical relationship. Proving the cause is necessary for the court to determine 'en qué..."
+  },
+  {
+    "clause_id": "tesis224737_determinacion_temporal",
+    "thesis_id": "224737",
+    "thesis_title": "REVEALING AND PROVING GENERATING CAUSE FOR USUCAPION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Wrong direction - revealing cause doesn't create time obligation. Source: 'desde cuándo... para prec...",
+    "justification_2": "Reverses the logical relationship. Revealing the cause is necessary for the court to determine the s..."
+  },
+  {
+    "clause_id": "tesis224820_actos_defectuosos",
+    "thesis_id": "224820",
+    "thesis_title": "POSSESSION IN CONCEPT OF OWNER REQUIREMENTS FOR ADVERSE POSSESSION",
+    "evaluator_1": "reject",
+    "evaluator_2": "accept",
+    "justification_1": "Wrong - knowing defects doesn't create obligation to prescribe. Source: 'el acto jurídico defectuoso...",
+    "justification_2": "Correctly models the foundation of a bad-faith prescription claim: possessing with a title known to ..."
+  },
+  {
+    "clause_id": "tesis224820_dominio_economico",
+    "thesis_id": "224820",
+    "thesis_title": "POSSESSION IN CONCEPT OF OWNER REQUIREMENTS FOR ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models ownership character requirement. Source: 'siempre y cuando esté demostrado, tanto q...",
+    "justification_2": "Contradicts the nuanced definition within this specific thesis. The text explicitly contemplates a s..."
+  },
+  {
+    "clause_id": "tesis228850_cumplimiento_procesal",
+    "thesis_id": "228850",
+    "thesis_title": "REVEALING POSSESSION CAUSE REQUIREMENT FOR ADVERSE POSSESSION COUNTERCLAIM",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models procedural requirement. Source: 'pues de lo contrario no se acata lo ordenado por e...",
+    "justification_2": "Too abstract and uninformative. The thesis is about a specific procedural requirement (revealing the..."
+  },
+  {
+    "clause_id": "tesis228853_no_indefension",
+    "thesis_id": "228853",
+    "thesis_title": "OMISSION OF REVEALING GENERATING CAUSE WHEN NO CONTROVERSY",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models procedural protection. Source: 'en esa hipótesis no se deja en estado de indefensió...",
+    "justification_2": "Fails to model the specific legal reasoning. The reason there is no violation of rights is because t..."
+  },
+  {
+    "clause_id": "tesis228853_principio_fundamental",
+    "thesis_id": "228853",
+    "thesis_title": "OMISSION OF REVEALING GENERATING CAUSE WHEN NO CONTROVERSY",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Imprecise predicate - needs defendant admission concept. Source: 'si de las constancias de autos se ...",
+    "justification_2": "Fails to model the core concepts. The crucial condition is the defendant's 'allanamiento' (unconditi..."
+  },
+  {
+    "clause_id": "tesis228856_carga_prueba",
+    "thesis_id": "228856",
+    "thesis_title": "PROOF REQUIREMENT FOR POSSESSION QUALITIES IN ADVERSE POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "accept",
+    "justification_1": "Too narrow - thesis emphasizes peaceful/continuous/public proof. Source: 'el que afirma está obligad...",
+    "justification_2": "This clause is consistent with the thesis's reasoning. The text's emphasis on the plaintiff's burden..."
+  },
+  {
+    "clause_id": "tesis229292_contexto_usucapion",
+    "thesis_id": "229292",
+    "thesis_title": "SUFFICIENT TITLE CONCEPT FOR GOOD FAITH POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models general requirement. Source: thesis defines 'título suficiente' as 'la causa genera...",
+    "justification_2": "Overgeneralization. The thesis only defines 'sufficient title' in the context of *good faith* posses..."
+  },
+  {
+    "clause_id": "tesis229292_principio_fundamental",
+    "thesis_id": "229292",
+    "thesis_title": "SUFFICIENT TITLE CONCEPT FOR GOOD FAITH POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too strong - having title doesn't guarantee good faith. Source: Article 781 'es poseedor de buena fe...",
+    "justification_2": "Logically incorrect. The thesis defines a sufficient title (causa generadora) as a prerequisite *for..."
+  },
+  {
+    "clause_id": "tesis229292_titulo_suficiente",
+    "thesis_id": "229292",
+    "thesis_title": "SUFFICIENT TITLE CONCEPT FOR GOOD FAITH POSSESSION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too strong - proving cause doesn't guarantee good faith. Source: 'título suficiente... debiéndose en...",
+    "justification_2": "Logically incorrect for the same reason as the first clause. Having a title is a necessary, but not ..."
+  },
+  {
+    "clause_id": "tesis241748_congruencia_accion",
+    "thesis_id": "241748",
+    "thesis_title": "CONGRUENCE REQUIREMENT FOR GOOD/BAD FAITH ANALYSIS IN ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models universal procedural requirement. Source: 'el principio de congruencia que rige a l...",
+    "justification_2": "Too general. Fails to model the specific application of the congruence principle that is the entire ..."
+  },
+  {
+    "clause_id": "tesis241748_declaracion_derecho",
+    "thesis_id": "241748",
+    "thesis_title": "CONGRUENCE REQUIREMENT FOR GOOD/BAD FAITH ANALYSIS IN ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models legal protection requirement. Source: 'solicita que el Estado... declare el derecho...",
+    "justification_2": "Too abstract to be meaningful. This is a definitional statement that fails to capture any of the spe..."
+  },
+  {
+    "clause_id": "tesis241748_principio_fundamental",
+    "thesis_id": "241748",
+    "thesis_title": "CONGRUENCE REQUIREMENT FOR GOOD/BAD FAITH ANALYSIS IN ADVERSE POSSESSION",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models congruence requirement. Source: 'si se discute la prescripción de un predio y la de...",
+    "justification_2": "Too abstract. The clause should model the specific consequence of the congruence principle in this c..."
+  },
+  {
+    "clause_id": "tesis241751_ignorancia_vicios",
+    "thesis_id": "241751",
+    "thesis_title": "GOOD FAITH POSSESSOR IGNORING TITLE DEFECTS",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too weak - ignorance alone insufficient for good faith. Source: 'funda el origen de su posesión en u...",
+    "justification_2": "Oversimplification. The thesis clearly bases its reasoning on a situation where a 'título viciado' e..."
+  },
+  {
+    "clause_id": "tesis241812_presuncion_buena_fe",
+    "thesis_id": "241812",
+    "thesis_title": "LACK OF DIRECT PROOF OF POSSESSION CAUSE DOES NOT PREVENT USUCAPION",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Too strong - these qualities don't guarantee good faith. Source: thesis allows presuming generating ...",
+    "justification_2": "Logically incorrect. The thesis lists 'buena fe' as one of the elements the plaintiff must demonstra..."
+  },
+  {
+    "clause_id": "tesis242139_presuncion_propiedad",
+    "thesis_id": "242139",
+    "thesis_title": "POSSESSION IN CONCEPT OF OWNER FOR PRESUMPTION OF PROPERTY",
+    "evaluator_1": "accept",
+    "evaluator_2": "revise",
+    "justification_1": "Correctly models Article 798 presumption. Source: 'la posesión da al que la tiene la presunción de p...",
+    "justification_2": "Oversimplification. While possessing as owner does afford the legal protection of a rebuttable presu..."
+  },
+  {
+    "clause_id": "tesis242139_principio_fundamental",
+    "thesis_id": "242139",
+    "thesis_title": "POSSESSION IN CONCEPT OF OWNER FOR PRESUMPTION OF PROPERTY",
+    "evaluator_1": "revise",
+    "evaluator_2": "reject",
+    "justification_1": "Incomplete - missing time, peaceful/continuous/public requirements. Source: Article 1151 requires 'e...",
+    "justification_2": "Incomplete. The thesis states that the cause must not only be revealed but also proven, and this cla..."
+  },
+  {
+    "clause_id": "tesis248006_definicion_titulo",
+    "thesis_id": "248006",
+    "thesis_title": "ELEMENTS TO CONSIDER WHEN NO TITLE EXISTS",
+    "evaluator_1": "accept",
+    "evaluator_2": "reject",
+    "justification_1": "Correctly models Morelos definition. Source: 'en la legislación civil del Estado de Morelos, se enti...",
+    "justification_2": "Uses inappropriate predicates. The thesis equates 'título' with 'causa generadora de la posesión.' T..."
+  }
+]

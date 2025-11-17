@@ -67,7 +67,16 @@ def compute_cohens_kappa(eval1: Dict, eval2: Dict) -> Tuple[float, List, List]:
 
 
 def compute_model_quality(evaluations: Dict) -> Dict:
-    """Compute model quality metrics from evaluation ratings."""
+    """
+    Compute model quality metrics from evaluation ratings.
+    
+    Treats ratings as:
+    - Accept: True Positives (TP) - correctly modeled clauses
+    - Reject: False Positives (FP) - incorrectly modeled clauses  
+    - Revise: False Negatives (FN) - incomplete/imprecise clauses
+    
+    Computes Precision, Recall, and F1 score.
+    """
     ratings = [e['rating'] for e in evaluations.values() if e['rating']]
     
     total = len(ratings)
@@ -76,15 +85,31 @@ def compute_model_quality(evaluations: Dict) -> Dict:
     
     counter = Counter(ratings)
     
+    tp = counter['accept']  # True Positives
+    fp = counter['reject']  # False Positives
+    fn = counter['revise']  # False Negatives
+    
+    # Precision: Of clauses model made, how many correct?
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    
+    # Recall: Of clauses that should be correct, how many are?
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    
+    # F1: Harmonic mean of precision and recall
+    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+    
     return {
         'total_clauses': total,
-        'accept_count': counter['accept'],
-        'revise_count': counter['revise'],
-        'reject_count': counter['reject'],
-        'accept_rate': counter['accept'] / total * 100,
-        'revise_rate': counter['revise'] / total * 100,
-        'reject_rate': counter['reject'] / total * 100,
-        'error_rate': (counter['revise'] + counter['reject']) / total * 100
+        'accept_count': tp,
+        'revise_count': fn,
+        'reject_count': fp,
+        'accept_rate': tp / total * 100,
+        'revise_rate': fn / total * 100,
+        'reject_rate': fp / total * 100,
+        'error_rate': (fn + fp) / total * 100,
+        'precision': precision * 100,  # As percentage
+        'recall': recall * 100,         # As percentage
+        'f1_score': f1 * 100            # As percentage
     }
 
 
@@ -191,6 +216,10 @@ def main():
         print(f"    - Revise:  {quality1['revise_count']:3d} ({quality1['revise_rate']:5.1f}%)")
         print(f"    - Reject:  {quality1['reject_count']:3d} ({quality1['reject_rate']:5.1f}%)")
         print(f"    - Error Rate: {quality1['error_rate']:.1f}% (clauses needing revision/rejection)")
+        print(f"\n    Model Quality Metrics:")
+        print(f"    - Precision: {quality1['precision']:.1f}% (of clauses made, how many correct?)")
+        print(f"    - Recall:    {quality1['recall']:.1f}% (of what should be correct, how many are?)")
+        print(f"    - F1 Score:  {quality1['f1_score']:.1f}% (harmonic mean of precision & recall)")
     else:
         print("    ⚠ No ratings yet")
     
@@ -200,6 +229,10 @@ def main():
         print(f"    - Revise:  {quality2['revise_count']:3d} ({quality2['revise_rate']:5.1f}%)")
         print(f"    - Reject:  {quality2['reject_count']:3d} ({quality2['reject_rate']:5.1f}%)")
         print(f"    - Error Rate: {quality2['error_rate']:.1f}% (clauses needing revision/rejection)")
+        print(f"\n    Model Quality Metrics:")
+        print(f"    - Precision: {quality2['precision']:.1f}% (of clauses made, how many correct?)")
+        print(f"    - Recall:    {quality2['recall']:.1f}% (of what should be correct, how many are?)")
+        print(f"    - F1 Score:  {quality2['f1_score']:.1f}% (harmonic mean of precision & recall)")
     else:
         print("    ⚠ No ratings yet")
     
@@ -267,6 +300,10 @@ def main():
             f.write(f"| Reject | {quality1['reject_count']:3d} | {quality1['reject_rate']:5.1f}% |\n")
             f.write(f"| **Total** | **{quality1['total_clauses']}** | **100.0%** |\n\n")
             f.write(f"**Model Error Rate: {quality1['error_rate']:.1f}%** (clauses needing revision/rejection)\n\n")
+            f.write(f"**Model Quality Metrics:**\n")
+            f.write(f"- **Precision**: {quality1['precision']:.1f}% (of clauses made, how many correct?)\n")
+            f.write(f"- **Recall**: {quality1['recall']:.1f}% (of what should be correct, how many are?)\n")
+            f.write(f"- **F1 Score**: {quality1['f1_score']:.1f}% (harmonic mean of precision & recall)\n\n")
         
         if quality2:
             f.write("### Evaluator 2\n\n")
@@ -277,6 +314,10 @@ def main():
             f.write(f"| Reject | {quality2['reject_count']:3d} | {quality2['reject_rate']:5.1f}% |\n")
             f.write(f"| **Total** | **{quality2['total_clauses']}** | **100.0%** |\n\n")
             f.write(f"**Model Error Rate: {quality2['error_rate']:.1f}%** (clauses needing revision/rejection)\n\n")
+            f.write(f"**Model Quality Metrics:**\n")
+            f.write(f"- **Precision**: {quality2['precision']:.1f}% (of clauses made, how many correct?)\n")
+            f.write(f"- **Recall**: {quality2['recall']:.1f}% (of what should be correct, how many are?)\n")
+            f.write(f"- **F1 Score**: {quality2['f1_score']:.1f}% (harmonic mean of precision & recall)\n\n")
         
         if quality1 and quality2:
             f.write("### Overall Assessment\n\n")
