@@ -1,4 +1,9 @@
-# Rule Convergence: Legal Thesis Analysis
+# Computational Analysis of Judicial Consistency
+
+Code and data for the paper "Computational Analysis of Judicial 
+Consistency through Satisfiability Theory"
+
+## Rule Convergence: Legal Thesis Analysis
 
 A principled approach to modeling Mexican Supreme Court legal conclusions using formal logic.
 
