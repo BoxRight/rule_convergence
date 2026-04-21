@@ -38,6 +38,7 @@ OUT_PNG = ROOT / "results" / "analysis" / "case_resolution_similarity.png"
 OUT_THESIS_STATS = ROOT / "results" / "analysis" / "thesis_tamano_medio_desviacion.csv"
 OUT_THESIS_PNG = ROOT / "results" / "analysis" / "thesis_tamano_medio_desviacion.png"
 OUT_THESIS_SUMMARY = ROOT / "results" / "analysis" / "thesis_decision_space_summary.txt"
+OUT_THESIS_DEV_PNG = ROOT / "results" / "analysis" / "thesis_model_size_deviation_zscore.png"
 
 _THESIS_ORDER_RE = re.compile(
     r"asset\s+tesis(\d+)_valida\s*=\s*global\(\s*\)\s*;",
@@ -204,18 +205,29 @@ def main() -> None:
             }
         )
 
+    model_sizes = [int(r["thesis_decision_space_model_size"]) for r in stat_rows]
+    model_size_mean = statistics.mean(model_sizes)
+    model_size_stdev = statistics.stdev(model_sizes) if len(model_sizes) > 1 else 0.0
+    for row in stat_rows:
+        s = int(row["thesis_decision_space_model_size"])
+        dev = s - model_size_mean
+        row["model_size_deviation_from_mean"] = round(dev, 6)
+        row["model_size_abs_deviation_from_mean"] = round(abs(dev), 6)
+        row["model_size_zscore"] = (
+            round(dev / model_size_stdev, 6) if model_size_stdev > 0 else 0.0
+        )
+
     with open(OUT_THESIS_STATS, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(stat_rows[0].keys()))
         w.writeheader()
         w.writerows(stat_rows)
     print(str(OUT_THESIS_STATS.relative_to(ROOT)))
 
-    model_sizes = [int(r["thesis_decision_space_model_size"]) for r in stat_rows]
     summary_lines = [
         "thesis_decision_space_model_size summary (across theses)",
         f"thesis_count: {len(model_sizes)}",
-        f"mean: {statistics.mean(model_sizes):.6f}",
-        f"stdev: {statistics.stdev(model_sizes):.6f}" if len(model_sizes) > 1 else "stdev: 0.000000",
+        f"mean: {model_size_mean:.6f}",
+        f"stdev: {model_size_stdev:.6f}",
         f"min: {min(model_sizes)}",
         f"median: {statistics.median(model_sizes):.6f}",
         f"max: {max(model_sizes)}",
@@ -310,6 +322,29 @@ def main() -> None:
         plt.savefig(OUT_THESIS_PNG, dpi=150)
         plt.close()
         print(str(OUT_THESIS_PNG.relative_to(ROOT)))
+
+        zscores = [float(r["model_size_zscore"]) for r in stat_sorted]
+        plt.figure(figsize=(14, 5))
+        plt.axhline(0.0, color="gray", linewidth=1.0, linestyle="--")
+        plt.plot(
+            xz,
+            zscores,
+            marker="o",
+            linewidth=1.0,
+            markersize=3,
+            color="C3",
+            alpha=0.9,
+            label="Z-score of thesis model size",
+        )
+        plt.xlabel("Thesis index in unified model (global() order)")
+        plt.ylabel("Model-size deviation (z-score)")
+        plt.title("Per-thesis deviation from mean model size")
+        plt.grid(True, alpha=0.35)
+        plt.legend(loc="upper right")
+        plt.tight_layout()
+        plt.savefig(OUT_THESIS_DEV_PNG, dpi=150)
+        plt.close()
+        print(str(OUT_THESIS_DEV_PNG.relative_to(ROOT)))
     except ImportError:
         print("matplotlib not installed; skipped plot. pip install matplotlib", file=sys.stderr)
 
