@@ -1,0 +1,7 @@
+thesis_decision_space_model_size summary (across theses)
+thesis_count: 152
+mean: 266.453947
+stdev: 395.089391
+min: 7
+median: 110.000000
+max: 1899

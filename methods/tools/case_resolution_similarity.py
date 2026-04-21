@@ -1,23 +1,20 @@
 #!/usr/bin/env python3
 """
-Case vs resolution similarity — one summary table only.
+Case vs resolution similarity and thesis decision-space size.
 
-Case similarity: Jaccard on global fact ID sets from witness_export_<n>.json (field assets).
-Resolution similarity: Jaccard on sets of ZDD solution lines from zdd_<n>.txt.
+Definitions:
+- facts: asset IDs in witness_export_<n>.json (field "assets")
+- thesis decision space: full ZDD in zdd_<n>.txt
+- permitted case/state: one vector line in zdd_<n>.txt
 
 Writes:
-  - results/analysis/case_resolution_similarity.txt — table (case band vs median resolution %)
-  - results/analysis/case_resolution_similarity.png — same data as a line chart
-  - results/analysis/thesis_tamano_medio_desviacion.csv — por tesis: hechos en el caso,
-    número de líneas ZDD, tamaño medio de cada solución (cardinal del vector testigo),
-    desviación estándar de esos tamaños
-  - results/analysis/thesis_tamano_medio_desviacion.png — gráfico del tamaño medio ± σ por tesis
-
-Band definitions (raw case Jaccard c), no overlap:
-  - Rows 100 and 90: same value — median resolution among all pairs with c >= 0.9
-  - 80: [0.8, 0.9)   70: [0.7, 0.8)  …  0: [0.0, 0.1)
-
-  python3 methods/tools/case_resolution_similarity.py
+  - results/analysis/case_resolution_similarity.txt
+  - results/analysis/case_resolution_similarity.png
+  - results/analysis/thesis_tamano_medio_desviacion.csv
+    per thesis: facts, permitted cases, mean/stdev vector length, and
+    model-size metric = sum of lengths of all vectors in thesis decision space.
+  - results/analysis/thesis_tamano_medio_desviacion.png
+    plot of thesis decision-space model size by thesis index.
 """
 from __future__ import annotations
 
@@ -40,6 +37,7 @@ OUT_TABLE = ROOT / "results" / "analysis" / "case_resolution_similarity.txt"
 OUT_PNG = ROOT / "results" / "analysis" / "case_resolution_similarity.png"
 OUT_THESIS_STATS = ROOT / "results" / "analysis" / "thesis_tamano_medio_desviacion.csv"
 OUT_THESIS_PNG = ROOT / "results" / "analysis" / "thesis_tamano_medio_desviacion.png"
+OUT_THESIS_SUMMARY = ROOT / "results" / "analysis" / "thesis_decision_space_summary.txt"
 
 _THESIS_ORDER_RE = re.compile(
     r"asset\s+tesis(\d+)_valida\s*=\s*global\(\s*\)\s*;",
@@ -193,14 +191,16 @@ def main() -> None:
         else:
             mean_sz = 0.0
             dev_sz = 0.0
+        model_size_sum = sum(lengths)
         stat_rows.append(
             {
-                "tesis_numero_registro": tid,
-                "indice_zdd": zid,
-                "numero_hechos_caso": n_facts,
-                "numero_soluciones_zdd": n_lines,
-                "tamano_medio_vector_testigo": round(mean_sz, 6),
-                "desviacion_estandar_tamano_vector": round(dev_sz, 6),
+                "thesis_registry_id": tid,
+                "thesis_zdd_index": zid,
+                "facts_count": n_facts,
+                "permitted_cases_count": n_lines,
+                "mean_vector_length": round(mean_sz, 6),
+                "stdev_vector_length": round(dev_sz, 6),
+                "thesis_decision_space_model_size": model_size_sum,
             }
         )
 
@@ -209,6 +209,19 @@ def main() -> None:
         w.writeheader()
         w.writerows(stat_rows)
     print(str(OUT_THESIS_STATS.relative_to(ROOT)))
+
+    model_sizes = [int(r["thesis_decision_space_model_size"]) for r in stat_rows]
+    summary_lines = [
+        "thesis_decision_space_model_size summary (across theses)",
+        f"thesis_count: {len(model_sizes)}",
+        f"mean: {statistics.mean(model_sizes):.6f}",
+        f"stdev: {statistics.stdev(model_sizes):.6f}" if len(model_sizes) > 1 else "stdev: 0.000000",
+        f"min: {min(model_sizes)}",
+        f"median: {statistics.median(model_sizes):.6f}",
+        f"max: {max(model_sizes)}",
+    ]
+    OUT_THESIS_SUMMARY.write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+    print(str(OUT_THESIS_SUMMARY.relative_to(ROOT)))
 
     ge_090: List[float] = []
     by_band: Dict[int, list] = defaultdict(list)
@@ -271,28 +284,25 @@ def main() -> None:
         plt.close()
         print(str(OUT_PNG.relative_to(ROOT)))
 
-        stat_sorted = sorted(stat_rows, key=lambda r: int(r["indice_zdd"]))
-        xz = [int(r["indice_zdd"]) for r in stat_sorted]
-        means = [float(r["tamano_medio_vector_testigo"]) for r in stat_sorted]
-        stdevs = [float(r["desviacion_estandar_tamano_vector"]) for r in stat_sorted]
+        stat_sorted = sorted(stat_rows, key=lambda r: int(r["thesis_zdd_index"]))
+        xz = [int(r["thesis_zdd_index"]) for r in stat_sorted]
+        model_sizes = [int(r["thesis_decision_space_model_size"]) for r in stat_sorted]
         plt.figure(figsize=(14, 5))
-        plt.errorbar(
+        plt.plot(
             xz,
-            means,
-            yerr=stdevs,
-            fmt="o",
+            model_sizes,
+            marker="o",
+            linewidth=1.2,
             markersize=3,
-            capsize=1.5,
-            elinewidth=0.85,
             color="C0",
             alpha=0.88,
-            label="Media ± σ",
+            label="Model size = sum(vector lengths)",
         )
-        plt.xlabel("Índice ZDD (orden de global() en el modelo)")
-        plt.ylabel("Longitud del vector testigo (literales por solución)")
+        plt.xlabel("Thesis index in unified model (global() order)")
+        plt.ylabel("Thesis decision-space model size")
         plt.title(
-            "Tamaño medio y desviación estándar del vector testigo por tesis "
-            "(sobre todas las líneas del zdd_*.txt correspondiente)"
+            "Thesis decision-space size by thesis "
+            "(sum of lengths of all permitted cases/states in zdd_*.txt)"
         )
         plt.grid(True, alpha=0.35)
         plt.legend(loc="upper left")

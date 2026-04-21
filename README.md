@@ -1,12 +1,12 @@
 # Computational Analysis of Judicial Consistency
 
-Code and data for *Computational Analysis of Judicial Consistency through Satisfiability Theory* — formalizing Mexican Supreme Court theses in **Witness**, solving each thesis’s validation constraint with a **CUDA ZDD** workflow, and comparing **case structure** (shared legal facts from witness exports) with **resolution structure** (overlap of solution-space fingerprints).
+Code and data for *Computational Analysis of Judicial Consistency through Satisfiability Theory* — formalizing Mexican Supreme Court theses in **Witness**, solving each thesis’s validation constraint with a **CUDA ZDD** workflow, and comparing **facts overlap** across theses with overlap in their **thesis decision spaces**.
 
 ## What this repository does
 
 1. **`methods/analysis/unified_legal_conclusions.wit`** — single model: shared legal vocabulary plus one section per thesis with clauses and `asset tesis<ID>_valida = global();`.
 2. **`witnessc`** (built under `methods/witness/`) compiles the model and, with **`tree_fold_cuda`** as external solver (run from **`results/zdd/`**), emits **`zdd_*.bin`** solution-space dumps and **`witness_export_*.json`** per global check (thesis order matches `global()` order in the `.wit` file).
-3. Python tools convert binaries to text, aggregate **arrays** into CSVs, and compute **case vs resolution Jaccard similarity** plus per-thesis **mean/std of witness-vector lengths**, producing **tables and PNG plots** under **`results/analysis/`**.
+3. Python tools convert binaries to text, aggregate solution vectors into CSVs, and compute **facts-vs-decision-space Jaccard similarity** plus per-thesis decision-space size metrics, producing tables and PNG plots under **`results/analysis/`**.
 
 ## Repository layout
 
