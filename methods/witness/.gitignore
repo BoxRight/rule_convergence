@@ -1,0 +1,7 @@
+build/
+lexer.yy.cpp
+*.o
+*.stamp
+*.tab.cpp
+*.tab.hpp
+*.yy.cpp

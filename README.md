@@ -1,144 +1,106 @@
 # Computational Analysis of Judicial Consistency
 
-Code and data for the paper "Computational Analysis of Judicial 
-Consistency through Satisfiability Theory"
+Code and data for *Computational Analysis of Judicial Consistency through Satisfiability Theory* — formalizing Mexican Supreme Court theses in **Witness**, solving each thesis’s validation constraint with a **CUDA ZDD** workflow, and comparing **case structure** (shared legal facts from witness exports) with **resolution structure** (overlap of solution-space fingerprints).
 
-## Rule Convergence: Legal Thesis Analysis
+## What this repository does
 
-A principled approach to modeling Mexican Supreme Court legal conclusions using formal logic.
+1. **`methods/analysis/unified_legal_conclusions.wit`** — single model: shared legal vocabulary plus one section per thesis with clauses and `asset tesis<ID>_valida = global();`.
+2. **`witnessc`** (built under `methods/witness/`) compiles the model and, with **`tree_fold_cuda`** as external solver (run from **`results/zdd/`**), emits **`zdd_*.bin`** solution-space dumps and **`witness_export_*.json`** per global check (thesis order matches `global()` order in the `.wit` file).
+3. Python tools convert binaries to text, aggregate **arrays** into CSVs, and compute **case vs resolution Jaccard similarity** plus per-thesis **mean/std of witness-vector lengths**, producing **tables and PNG plots** under **`results/analysis/`**.
 
-## 📁 Project Structure
+## Repository layout
 
 ```
 rule_convergence/
-├── PDFs/          # Original thesis PDF files (11 files)
-├── texts/         # Converted text files
-├── models/        # Individual .wit models (deprecated - use unified)
-├── analysis/      # Unified analysis
-│   └── unified_legal_conclusions.wit  # Main model file
-├── tools/         # Automation scripts
-├── tests/         # Test cases
-└── README.md      # This file
+├── materials/               # Thesis extracts (texts), PDFs, human evaluations
+├── methods/
+│   ├── witness/             # witnessc + tree_fold_cuda (build with make)
+│   ├── analysis/
+│   │   └── unified_legal_conclusions.wit
+│   ├── zdd_parser.py
+│   ├── generate_thesis_documentation.py
+│   └── tools/               # validate, ZDD→CSV, similarity, pipeline helpers
+├── results/
+│   ├── zdd/                 # Solver cwd: zdd_*.bin, zdd_*.txt, witness_export_*.json
+│   ├── witness_exports/     # Copy of witness_export_*.json (used by analysis scripts)
+│   ├── documentation/       # Generated LaTeX (optional)
+│   └── analysis/
+│       ├── case_resolution_similarity.txt    # Median resolution % by case-similarity band
+│       ├── case_resolution_similarity.png    # Plot of that table
+│       ├── thesis_tamano_medio_desviacion.csv / .png
+│       └── zdd_correct_analysis/             # CSVs from zdd_to_csv_correct.py
+├── run_pipeline.sh          # Main entry: build → solve → graphs & tables
+├── requirements.txt
+├── witnessc → methods/witness/witnessc
+└── tree_fold_cuda → methods/witness/tree_fold_cuda
 ```
 
-## 🎯 Principled Modeling Approach
+Run commands from the **repository root** unless noted otherwise.
 
-### Core Principles
+## Main pipeline (recommended)
 
-1. **Reusable Assets**: All thesis models share the same foundational legal concepts
-2. **Consistent Structure**: Each thesis follows the same logical pattern
-3. **Unified Model**: All conclusions in one file, separated by `global()` operations
-4. **Comparative Analysis**: Enables cross-thesis pattern identification
+Builds **`witnessc`**, runs the unified model with the external solver, converts ZDD binaries to text, copies witness JSON for Python, generates **similarity plots** and **thesis-size plot**, and regenerates **ZDD CSV analysis**.
 
-### Shared Foundation
-
-The unified model defines reusable components:
-
-- **Objects**: `inmueble`, `contrato_compraventa`, `titulo_propiedad`, etc.
-- **Services**: `posesion_legal`, `inscripcion_registral`, `oponibilidad`, etc.
-- **Subjects**: `demandante`, `titular_registral`, `tercero`, `tribunal`, etc.
-- **Actions**: `poseer_como_propietario`, `estar_inscrito_registro`, etc.
-- **Assets**: `titularidad_registral`, `contrato_no_inscrito`, etc.
-
-### Thesis-Specific Sections
-
-Each thesis adds only:
-- Specific legal clauses using shared assets
-- Unique logical relationships
-- `global()` validation point
-
-## 🛠️ Workflow Tools
-
-### 1. PDF Conversion
 ```bash
-./tools/convert_pdfs.sh
+chmod +x run_pipeline.sh   # once
+./run_pipeline.sh
 ```
-Converts all PDFs in `PDFs/` to text files in `texts/`
 
-### 2. Add New Thesis
+- **`SKIP_WITNESS_BUILD=1`** — skip `make` if `witnessc` is already built.
+- **`SKIP_SOLVER=1`** — skip the long `witnessc` run; reuse existing `results/zdd/*` (still runs conversion, plots, and CSV steps).
+
+Dependencies: **`pip install -r requirements.txt`** (includes **matplotlib** for figures). The CUDA solver binary **`tree_fold_cuda`** must be built in `methods/witness/` (see `methods/witness/README.md`).
+
+## Individual steps
+
+| Step | Command |
+|------|---------|
+| Build compiler | `make -C methods/witness` |
+| Validate / compile-only style check | `./methods/tools/validate_unified.sh` |
+| Full solver run (same cwd convention as pipeline) | `cd results/zdd && ../methods/witness/witnessc --solver=external ../../methods/analysis/unified_legal_conclusions.wit` |
+| Copy exports for tools | `cp results/zdd/witness_export_*.json results/witness_exports/` |
+| Binaries → `zdd_*.txt` | `bash methods/tools/zdd_bins_to_txt.sh` |
+| Similarity + thesis-size outputs | `python3 methods/tools/case_resolution_similarity.py` |
+| ZDD → CSV tables | `python3 methods/tools/zdd_to_csv_correct.py results/zdd` |
+
+## Other workflows
+
+### PDF → text
+
 ```bash
-./tools/add_thesis_to_unified.sh 2021246 "Contract Interpretation"
+./methods/tools/convert_pdfs.sh
 ```
-Adds a new thesis section to the unified model
 
-### 3. Validate Model
+### LaTeX documentation from the unified model
+
 ```bash
-./tools/validate_unified.sh
-```
-Tests compilation and reports structure statistics
-
-## 📊 Current Status
-
-- ✅ **11 PDF files** converted to text
-- ✅ **Unified model structure** established
-- ✅ **Thesis 2020418** modeled (adverse possession)
-- ⏳ **10 remaining thesis** to be modeled
-
-## 🔄 Adding New Thesis Models
-
-### Step-by-Step Process
-
-1. **Add thesis section**:
-   ```bash
-   ./tools/add_thesis_to_unified.sh 2021246 "Your Thesis Title"
-   ```
-
-2. **Read the text file**:
-   ```bash
-   cat texts/tesis2021246.txt
-   ```
-
-3. **Edit the unified model**:
-   ```bash
-   nano analysis/unified_legal_conclusions.wit
-   ```
-
-4. **Replace placeholders** with actual legal logic using shared assets
-
-5. **Validate**:
-   ```bash
-   ./tools/validate_unified.sh
-   ```
-
-### Template Structure
-
-Each thesis section follows this pattern:
-
-```wit
-// ==========================================
-// THESIS XXXXXX: TITLE
-// ==========================================
-
-// Main legal principle
-clause tesisXXXXXX_principio_fundamental = [LOGIC_USING_SHARED_ASSETS];
-
-// Supporting rules (as needed)
-clause tesisXXXXXX_regla_secundaria = [SUPPORTING_LOGIC];
-
-// Validation
-asset tesisXXXXXX_valida = global();
+python3 methods/generate_thesis_documentation.py
 ```
 
-## 🎯 Benefits of This Approach
+Writes **`results/documentation/thesis_documentation.tex`**.
 
-1. **Consistency**: All models use the same vocabulary and structure
-2. **Comparability**: Easy to identify patterns across different legal conclusions
-3. **Maintainability**: Changes to shared concepts propagate automatically
-4. **Scalability**: Adding new thesis models is standardized
-5. **Analysis-Ready**: Structure enables automated comparative analysis
+### Add a thesis stub
 
-## 📈 Future Analysis
+```bash
+./methods/tools/add_thesis_to_unified.sh 2021246 "Your Short Title"
+```
 
-Once all thesis models are complete, the unified structure will enable:
+Then edit **`methods/analysis/unified_legal_conclusions.wit`** and remove placeholders.
 
-- **Rule convergence identification**
-- **Legal principle evolution tracking**
-- **Pattern analysis across different legal domains**
-- **Automated consistency checking**
+### Human evaluations
 
-## 🔧 Technical Notes
+See **`materials/evaluations/README.md`**.
 
-- Uses `.wit` domain-specific language for legal modeling
-- Compiled with `witnessc` solver
-- Each `global()` operation creates a validation checkpoint
-- Shared assets prevent duplication and ensure consistency 
+## Building Witness and CUDA solver
+
+```bash
+cd methods/witness && make clean && make
+```
+
+Optional: build **`tree_fold_cuda`** per **`methods/witness/README.md`**. The pipeline expects **`tree_fold_cuda`** next to **`witnessc`** (repo root symlinks point there).
+
+## Dependencies
+
+```bash
+pip install -r requirements.txt
+```

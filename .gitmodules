@@ -1,3 +1,3 @@
 [submodule "witness"]
-	path = witness
+	path = methods/witness
 	url = https://github.com/BoxRight/Witness
